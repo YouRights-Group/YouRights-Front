@@ -1,0 +1,17 @@
+Andalucía;Andalucía
+Aragón;Aragón
+Asturias;Asturias
+Baleares;Baleares
+Canarias;Canarias
+Cantabria;Cantabria
+Castilla-La Mancha;Castilla-La Mancha
+Castilla y León;Castilla y León
+Cataluña;Cataluña
+Comunidad Valenciana;Comunidad Valenciana
+Extremadura;Extremadura
+Galicia;Galicia
+Comunidad de Madrid;Comunidad de Madrid
+Murcia;Murcia
+Navarra;Navarra
+País Vasco;País Vasco
+La Rioja;La Rioja

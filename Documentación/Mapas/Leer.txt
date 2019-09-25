@@ -1,0 +1,2 @@
+Puedes abrir estos mapas desde esta carpeta como si fuera un archivo html normal. 
+Pincha en index-españa.html

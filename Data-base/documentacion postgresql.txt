@@ -1,0 +1,2 @@
+http://fernando-bustos.blogspot.com/2013/03/tipos-de-datos-postgres.html
+https://code-examples.net/es/docs/postgresql~10/ddl-alter

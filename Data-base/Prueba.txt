@@ -1,0 +1,68 @@
+https://www.youtube.com/watch?v=RDBjuN0B7dk
+
+
+select * from list_protest;
+copy list_protest from 'E:\Proyectos\YouRights\YouRights\Data-base\list-protestt.txt' delimiter ';';
+alter table list_protest ADD FOREIGN KEY id_internal_protest primary key;
+ALTER TABLE list_protest ADD COLUMN id_internal_protest serial primary key;
+ALTER TABLE list_protest DROP COLUMN id_internal_protest;
+CREATE TABLE public.list_protest
+(
+    name_protest character varying(30) NOT NULL,
+    who_defends character varying(200) NOT NULL,
+    promoted_by character varying(30) NOT NULL,
+    area_protest character varying(30) NOT NULL,
+    date_time_protest timestamp without time zone NOT NULL,
+    country character varying(30) NOT NULL,
+    district character varying(30) NOT NULL,
+    cities character varying(30) NOT NULL,
+    type_protest character varying(30) NOT NULL
+)
+
+
+
+
+--Insertar registros
+insert into (tabla)
+--Nombre de los campos separado por comas--
+('nombre','apellidos','edad','fecha_nacimiento')
+values 
+(default,'Alvaro','Lopez','28','1990-10-11')
+,
+(default,'Alvaro','Lopez','28','1990-10-11');
+
+
+
+-- [ASC | DESC] [NULLS { FIRST | LAST } cada uno por separado
+
+select * from list_protest
+,
+ORDER BY id_internal_protest ASC];
+
+
+-- Traer datos desde una tabla a la otra
+INSERT INTO (Tabla donde se importan, esto sin parentesis) SELECT * FROM (Tabla de donse se extrae, esto sin parentesis);
+
+
+
+
+
+--Mostrar tabla con las columnas que quieras
+select 
+(nombre columna1, nombre columna2)
+from 
+usuarios
+
+
+--POner un alias y mostrar dos datos en una columna,
+select 
+(nombre columna1) as (alias de la columna1)
+,
+(nombre columna2) || ' - ' || (nombre columna que tb quieres mostrar) as (alias de la columna2)
+from 
+usuarios
+order by (columna1) desc
+limit 2;--Para que solo salgan 2 datos, es bueno para la paginacion
+
+
+

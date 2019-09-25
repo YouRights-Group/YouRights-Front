@@ -1,0 +1,38 @@
+.p {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+.map svg {
+  height: auto;
+  width: 550px;
+  margin: 0 auto;
+  display: block;
+}
+.map path {
+  fill: #d3d3d3;
+  stroke: #000000;
+  stroke-width: 1;
+  stroke-linecap:square;
+  stroke-miterlimit:10;
+  fill-opacity:1;
+}
+
+.map path:hover {
+  fill: #fc0 !important;
+}
+
+.info_panel {
+  background-color: rgba(255,255,255, .8);
+  padding: 5px;
+  font-size: 12px;
+  font-family: Helvetica, Arial, sans-serif;
+  position: absolute;
+  border: 1px solid #333;
+  color: #333;
+  white-space: nowrap;
+}
+
+.info_panel::first-line {
+  font-weight: bold;
+}

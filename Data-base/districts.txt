@@ -1,0 +1,17 @@
+﻿1;Andalucía
+2;Aragón
+3;Asturias
+4;Baleares
+5;Canarias
+6;Cantabria
+7;Castilla-La Mancha
+8;Castilla y León
+9;Cataluña
+10;Comunidad Valenciana
+11;Extremadura
+12;Galicia
+13;Comunidad de Madrid
+14;Murcia
+15;Navarra
+16;País Vasco
+17;La Rioja

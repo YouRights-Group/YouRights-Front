@@ -1,0 +1,3 @@
+﻿user_1;user_1;surname_1;user_1@hotmail.com;666554433;1234;trabajador
+user_2;user_2;surname_2;user_2@hotmail.com;666778899;12341234;usuario
+user_2;user_2;surname_3;user_3@hotmail.com;666556655;1234;colaborador
