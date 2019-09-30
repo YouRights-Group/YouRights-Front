@@ -2,11 +2,11 @@
 
 $( document ).ready(function() {
 
-    console.log('11111111111');
+    console.log('11111111111111');
 
     const listProtest = new XMLHttpRequest();
 
-    listProtest.open('GET', 'list-protest.json', true);
+    listProtest.open('GET', 'list_protest.json', true);
 
     listProtest.send();
     console.log('2222222222222');
@@ -18,7 +18,7 @@ $( document ).ready(function() {
             let dataTextListProtest = JSON.parse(this.responseText);
             console.log(dataTextListProtest);
 
-            console.log('44444444444444');
+            console.log('holaaaa');
             
             let dataJsonListProtest = document.querySelector('#data-list-protest');
             dataJsonListProtest.innerHTML = '';
@@ -27,11 +27,11 @@ $( document ).ready(function() {
                // console.log('555555555555555');
                dataJsonListProtest.innerHTML += `
                 <tr>
-                    <td>${item.name-protest}</td>
-                    <td>${item.who-defends}</td>
-                    <td>${item.promoted-by}</td>
-                    <td>${item.area-by}</td>
-                    <td>${item.date}</td>
+                    <td>${item.name}</td>
+                    <td>${item.defends}</td>
+                    <td>${item.promoted}</td>
+                    <td>${item.area}</td>
+                    <td>${item.registered}</td>
                 </tr>
                `
             }

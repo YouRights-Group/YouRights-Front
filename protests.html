@@ -495,14 +495,8 @@
                             </th>
                         </tr>
                         </thead>
-                        <tbody>
-                        <tr *ngFor="let item of mf.data">
-                            <td>{{item.name}}</td>
-                            <td>{{item.who-defends}}</td>
-                            <td>{{item.promoted-by}}</td>
-                            <td>{{item.area | uppercase}}</td>
-                            <td class="text-right">{{item.date-time}}</td>
-                        </tr>
+                        <tbody id="data-list-protest">
+
                         </tbody>
                         <tfoot>
                         <tr>
@@ -1016,5 +1010,6 @@
 
         <!-- Nuestros js -->
         <script src="js/index.js"></script>
+        <script src="js/data-base.js"></script>
     </body>
 </html>
