@@ -87,18 +87,18 @@
                     <p class="divider-text text-center">
                         <span class="bg-light">OR</span>
                     </p>
-                    <form>
+                    <form id="formulario" action="" name="" method="post">
                         <div class="form-group input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                             </div>
-                            <input name="" class="form-control" placeholder="Nombre para tu usuario" type="text">
+                            <input id="login-name" name="name" class="form-control" placeholder="Nombre para tu usuario" type="text">
                         </div> <!-- form-group// -->
                         <div class="form-group input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                             </div>
-                                <input class="form-control" placeholder="Tu contraseña" type="password">
+                                <input id="login-password" name="password" class="form-control" placeholder="Tu contraseña" type="password">
                         </div> <!-- form-group// -->
                         <div class="form-group custom-control custom-switch">
                             <input type="checkbox" class="custom-control-input" id="remember-ging-up">
@@ -109,7 +109,7 @@
                             <label class="custom-control-label" for="forgot-password">¿Olvidaste la contraseña?</label>
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-block">Pulsa para entrar</button>
+                            <button id="login-submit" type="submit" class="btn btn-primary btn-block">Pulsa para entrar</button>
                         </div> <!-- form-group// -->      
                     </form>
                 </article>
@@ -195,6 +195,9 @@
                     </form>
                 </article>
             </div>
+            <div class="alert alert-primary" id="respuesta" role="alert">
+                A simple primary alert—check it out!
+            </div>
         </div> <!-- card.// -->
                     
         
@@ -210,5 +213,6 @@
 
         <!-- Nuestros js -->
         <script src="js/index.js"></script>
+        <script src="js/data-base1.js"></script>
     </body>
 </html>
