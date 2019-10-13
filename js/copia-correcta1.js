@@ -10,29 +10,15 @@
 //  https://foros.velneo.es/t/modificar-registro-en-base-a-un-json/7672
 //  https://www.youtube.com/watch?v=fqMOntGd2BQ
 
-$(document).ready(function () {
+$( document ).ready(function() {
     console.log('hola')
-
-    async function main() {
-        fetch('http://prueba-env.us-east-2.elasticbeanstalk.com/protests/list')
-        .then((res) => res.json())
-        .then((data) => {
-            let output = '<h2 class="mb-4">Users</h2>';
-            $.each(data, function(key, val){
-                output += `
-                    <tr>
-                        <td id=''${key}''>${val.protests}</td>
-                        <td id=''${key}''>${val.protests}</td>
-                    </tr>
-                `;    
-            });
-            $('output').innerHTML = output;
-        })
-
-    }
-
-    main();
-
-});
-
-//  http://prueba-env.us-east-2.elasticbeanstalk.com/protests/list
+    
+        async function getUserAsync(name){
+            let response = await fetch(`http://prueba-env.us-east-2.elasticbeanstalk.com/protests/list`);
+            let data = await response.json()
+            return data;
+        }
+    
+        getUserAsync('yourUsernameHere')
+        .then(data => console.log(data)); 
+    });

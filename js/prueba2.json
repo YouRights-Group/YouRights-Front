@@ -1,18 +1,9 @@
-[
-    {
-        "titulo": "Harry",
-        "email": "harry@bluuweb.cl"
-    },
-    {
-        "titulo": "Harry",
-        "email": "harry@bluuweb.cl"
-    },
-    {
-        "titulo": "Harry",
-        "email": "harry@bluuweb.cl"
-    },
-    {
-        "titulo": "Harry",
-        "email": "harry@bluuweb.cl"
-    }
-]
+{
+    "protests": [
+      {
+        "city": "Madrid",
+        "id": 0,
+        "name": "Alvaro"
+      }
+    ]
+  }
