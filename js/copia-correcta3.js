@@ -14,7 +14,7 @@
 
 $( document ).ready(function() {
 
-    $.getJSON("http://prueba-env.us-east-2.elasticbeanstalk.com/protests/list",function(data){
+    $.getJSON("protesta1.json",function(data){
 
         var items = [];
         $.each(data, function(key, val){
@@ -23,8 +23,8 @@ $( document ).ready(function() {
             items.push("<td id=''"+key+"''>"+val.name+"</td>");
             items.push("<td id=''"+key+"''>"+val.defends+"</td>");
             items.push("<td id=''"+key+"''>"+val.promoted+"</td>");
-            items.push("<td id=''"+key+"''>"+val.distrito+"</td>");
-            items.push("<td id=''"+key+"''>"+val.calle+"</td>");
+            items.push("<td id=''"+key+"''>"+val.location.distrito+"</td>");
+            items.push("<td id=''"+key+"''>"+val.location.calle+"</td>");
             items.push("</tr>");
 
         });

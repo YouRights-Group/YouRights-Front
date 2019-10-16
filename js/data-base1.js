@@ -16,13 +16,25 @@ $(document).ready(function () {
     async function main() {
         fetch('http://prueba-env.us-east-2.elasticbeanstalk.com/protests/list')
         .then((res) => res.json())
-        .catch((data) => {
+        .then((data) => {
+            console.log(data.protests.name)
+            console.log(data.protests.area)
+            console.log(data.protests.date)
+            console.log(data.protests.id)
+            console.log(data.protests.promotedBy)
+            console.log(data.protests.time)
+            console.log(data.protests.whoDefends)
+            console.log(data.protests)
             let output = '<h2 class="mb-4">Users</h2>';
-            $.each(data, function(user){
+            //  Object.keys(data).forEach(function(i, user){
+            $.each(data, function(i, user){
+                console.log(user);
+                console.log(user.name);
+                // $('#output').append('<p>Edad : ' + user.name+ '</p>');
                 output += `
                     <ul>
-                        <li id="">${user.protests.name}</li>
-                        <li id="">${user.protests.city}</li>
+                        <li id="" class="list-group-item">${user.name}</li>
+                        <li id="" class="list-group-item">${user.city}</li>
                     </ul>
                 `;    
             });
