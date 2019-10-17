@@ -17,22 +17,27 @@ $(document).ready(function () {
         fetch('http://prueba-env.us-east-2.elasticbeanstalk.com/protests/list')
         .then((res) => res.json())
         .then((data) => {
-            
-            var items = [];
+            console.log(data.protests.name)
+            console.log(data.protests.area)
+            console.log(data.protests.date)
+            console.log(data.protests.id)
+            console.log(data.protests.promotedBy)
+            console.log(data.protests.time)
+            console.log(data.protests.whoDefends)
+            console.log(data.protests)
 
-            $.each(data.protests, function(key, val){
+            var $output = $('#output');
 
-                items.push("<tr>");
-                items.push("<td id=''"+key+"''>"+val.name+"</td>");
-                items.push("<td id=''"+key+"''>"+val.whoDefends+"</td>");
-                items.push("<td id=''"+key+"''>"+val.promotedBy+"</td>");
-                items.push("<td id=''"+key+"''>"+val.city+"</td>");
-                items.push("<td id=''"+key+"''>"+val.date+"</td>");
-                items.push("</tr>");
 
+            //  Object.keys(data).forEach(function(i, user){
+            $.each(data.protests, function(i, user){
+                console.log(user.name);
+                //  $('#output').append('<p>Edad : ' + user.name+ '</p>');
+                $output.append(
+                    '<tr><td id="">'+user.name+'</td><td id="">'+user.whoDefends+'</td><td id="">'+user.promotedBy+'</td><td id="">'+user.city+'</td><td id="">'+user.date+'</td></utr>'
+                );     
+                console.log(user.city);
             });
-
-            $("<tbody/>", {html: items.join("")}).appendTo("table");
         })
 
     }
