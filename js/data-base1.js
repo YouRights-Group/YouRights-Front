@@ -15,24 +15,22 @@ $(document).ready(function () {
 
     async function main() {
         fetch('http://prueba-env.us-east-2.elasticbeanstalk.com/protests/list')
+        
         .then((res) => res.json())
         .then((data) => {
             
-            var items = [];
+            var $output = $('#output');
 
-            $.each(data.protests, function(key, val){
-
-                items.push("<tr>");
-                items.push("<td id=''"+key+"''>"+val.name+"</td>");
-                items.push("<td id=''"+key+"''>"+val.whoDefends+"</td>");
-                items.push("<td id=''"+key+"''>"+val.promotedBy+"</td>");
-                items.push("<td id=''"+key+"''>"+val.city+"</td>");
-                items.push("<td id=''"+key+"''>"+val.date+"</td>");
-                items.push("</tr>");
-
+            //  Object.keys(data).forEach(function(i, user){
+            $.each(data.protests, function(i, user){
+                $output.append(
+                    '<tr><td id="">'+user.name+'</td><td id="">'+user.whoDefends+'</td><td id="">'+user.promotedBy+'</td><td id="">'+user.city+'</td><td id="">'+user.date+'</td></utr>'
+                );     
+                console.log(user.city);
             });
-
-            $("<tbody/>", {html: items.join("")}).appendTo("table");
+        })
+        .catch(err => {
+            console.error(err.message);
         })
 
     }
