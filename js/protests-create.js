@@ -6,6 +6,7 @@ protestsCreate.addEventListener('submit', function (e) {
     e.preventDefault();
     console.log('me diste un click')
     
+    // para meter datos a cholón
     let newPost = {
         area: "Boadilla del Monte",
         city: "Madrid",
@@ -16,20 +17,25 @@ protestsCreate.addEventListener('submit', function (e) {
         whoDefends: "Sanidad"          
     }
 
+    var data = new FormData(protestsCreate);
+
+    var select1 = document.getElementById("city-protest-select").value;
+    console.log(select1);
+
     fetch(`http://prueba-env.us-east-2.elasticbeanstalk.com/protests/create`, {
             method: 'POST',
             headers: [
                 ["Content-Type", "application/json"]
               ],
-            body: JSON.stringify(newPost)
+            body: JSON.stringify(select1)
         })
         // tambien:    .then((resp) => resp.json())
         .then(function (response) {
             return response.json()
         })
         .then(function (data) {
-            console.log('post request response data', data)
+            console.log(data)
             return data;
         })
-
+        
 });
