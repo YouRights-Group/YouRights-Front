@@ -1,43 +1,41 @@
-//  https://www.youtube.com/watch?v=M4LaQ3KUGOM&list=PLPl81lqbj-4I11QPam9ApoT7tGbmyBg9P&index=15
+//  https://www.youtube.com/watch?v=c3qWHnJJbSY
 
-$( document ).ready(function() {
+const protestsCreate = document.getElementById('form-protests-create');
 
-    console.log('11111111111');
+protestsCreate.addEventListener('submit', function(e){
+    e.preventDefault();
+    console.log('me diste un click')
 
-    const listProtest = new XMLHttpRequest();
+    const formData = new FormData(this);
 
-    listProtest.open('GET', 'list-protest.json', true);
+    const searchParams  = new URLSearchParams();
 
-    listProtest.send();
-    console.log('2222222222222');
-    listProtest.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            
-            console.log('33333333333333333');
+    // el for recorre el formdata del 1 (0) al 9 (10) input
+    for (const pair of formData){
+        searchParams.append(pair[0], pair[2]);
+    }
 
-            let dataTextListProtest = JSON.parse(this.responseText);
-            console.log(dataTextListProtest);
+    //  http://prueba-env.us-east-2.elasticbeanstalk.com/protests/create
+    //  http://jsonplaceholder.typicode.com/posts
 
-            console.log('44444444444444');
-            
-            let dataJsonListProtest = document.querySelector('#data-list-protest');
-            dataJsonListProtest.innerHTML = '';
+    fetch('http://prueba-env.us-east-2.elasticbeanstalk.com/protests/create', {
 
-            for(let item of dataTextListProtest){
-               // console.log('555555555555555');
-               dataJsonListProtest.innerHTML += `
-                <tr>
-                    <td>${item.name-protest}</td>
-                    <td>${item.who-defends}</td>
-                    <td>${item.promoted-by}</td>
-                    <td>${item.area-by}</td>
-                    <td>${item.date}</td>
-                </tr>
-               `
-            }
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: searchParams
 
-        }
-
-}
+    })
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(text){
+            console.log(text);
+        })
+        .catch(function(error){
+            console.log(error);
+        })
 
 });
+

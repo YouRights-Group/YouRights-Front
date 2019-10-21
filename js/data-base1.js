@@ -20,14 +20,37 @@ $(document).ready(function () {
         .then((data) => {
             
             var $output = $('#output');
+            /* sirve que dentro de la variable no haya nada, 
+            se empiece desde cero */
+            $output.innerHTML = '';
 
             //  Object.keys(data).forEach(function(i, user){
             $.each(data.protests, function(i, user){
-                $output.append(
-                    '<tr><td id="">'+user.name+'</td><td id="">'+user.whoDefends+'</td><td id="">'+user.promotedBy+'</td><td id="">'+user.city+'</td><td id="">'+user.date+'</td></utr>'
-                );     
+                $output.append( `
+                <tr>
+                    <td>${user.name}</td>
+                    <td>${user.whoDefends}</td>
+                    <td>${user.promotedBy}</td>
+                    <td>${user.city}</td>
+                    <td>${user.date}</td>
+                </tr>
+               `
+               );     
                 console.log(user.city);
             });
+            /* Tambien deberia de funcionar con:
+                for(let item of dataTextListProtest){
+                dataJsonListProtest.innerHTML += `
+                <tr>
+                    <td>${item.name-protest}</td>
+                    <td>${item.who-defends}</td>
+                    <td>${item.promoted-by}</td>
+                    <td>${item.area-by}</td>
+                    <td>${item.date}</td>
+                </tr>
+               `
+            }
+            */
         })
         .catch(err => {
             console.error(err.message);

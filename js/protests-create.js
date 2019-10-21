@@ -1,29 +1,35 @@
-const root = 'http://prueba-env.us-east-2.elasticbeanstalk.com/protests/create';
-let uri = root + 'posts';
+//  https://www.youtube.com/watch?v=c3qWHnJJbSY
 
-let formdata = new FormData();
-formdata.append("userId", 3);
-formdata.append('title','This is my title');
-formdata.append('body','This is the body text of the post');
+const protestsCreate = document.getElementById('form-protests-create');
 
-let options = {
-    method: 'POST',
-    mode: 'cors',
-    body: formdata
-}
-let req = new Request(uri, options);
+protestsCreate.addEventListener('submit', function (e) {
+    e.preventDefault();
+    console.log('me diste un click')
+    
+    let newPost = {
+        area: "Boadilla del Monte",
+        city: "Madrid",
+        date: "2019-10-12",
+        name: "Por nuesta sanidad",
+        promotedBy: "Álvaro López",
+        time: "10:30",
+        whoDefends: "Sanidad"          
+    }
 
-fetch(req)
-    .then((response)=>{
-        if(response.ok){
-            return response.json();
-        }else{
-            throw new Error('Bad HTTP!')
-        }
-    })
-    .then( (j) =>{
-        console.log(j);
-    })
-    .catch( (err) =>{
-        console.log('ERROR:', err.message);
-    });
+    fetch(`http://prueba-env.us-east-2.elasticbeanstalk.com/protests/create`, {
+            method: 'POST',
+            headers: [
+                ["Content-Type", "application/json"]
+              ],
+            body: JSON.stringify(newPost)
+        })
+        // tambien:    .then((resp) => resp.json())
+        .then(function (response) {
+            return response.json()
+        })
+        .then(function (data) {
+            console.log('post request response data', data)
+            return data;
+        })
+
+});
