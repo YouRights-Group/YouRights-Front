@@ -1,29 +1,74 @@
-//  https://www.youtube.com/watch?v=M4LaQ3KUGOM&list=PLPl81lqbj-4I11QPam9ApoT7tGbmyBg9P&index=15
-//  https://www.youtube.com/watch?v=pUQFToFrMF4
+//  https://www.youtube.com/watch?v=c3qWHnJJbSY
+//  https://www.youtube.com/watch?v=-iv274it7CM
 
-//  https://www.youtube.com/watch?v=ZDtN2Dm1LYM
-//  https://www.youtube.com/watch?v=J9W0aW78o14&t=1041s
-//  https://www.youtube.com/watch?v=52niJ-2TrQ0&t=4s
-//  https://www.youtube.com/results?search_query=%24getJSON+jQuery.prototype+json
-//  https://obedalvarado.pw/blog/paginacion-con-php-mysql-jquery-ajax-y-bootstrap/
-//  https://blog.openalfa.com/como-leer-ficheros-json-con-jquery-en-modo-sincrono
-//  https://foros.velneo.es/t/modificar-registro-en-base-a-un-json/7672
-//  https://www.youtube.com/watch?v=fqMOntGd2BQ
+const protestsCreate = document.getElementById('form-protests-create');
 
-$( document ).ready(function() {
-    console.log('hola')
+protestsCreate.addEventListener('submit', function (e) {
+    e.preventDefault();
+    console.log('me diste un click')
     
-        await fetch('http://prueba-env.us-east-2.elasticbeanstalk.com/protests/list')
-                .then((res) => res.json())
-                .then((data) => {
-                    $.each(myJson, function(key, val){
+    // para meter datos a cholón
+    let newPost = {
+        area: "Boadilla del Monte",
+        city: "Madrid",
+        date: "2019-10-01",
+        name: "Por nuesta sanidad",
+        promotedBy: "Álvaro López",
+        time: "10:30",
+        whoDefends: "Sanidad"          
+    }
     
-                        items.push("<tr>");
-                        items.push("<td id=''"+key+"''>"+val.protests.name+"</td>");
-                        items.push("<td id=''"+key+"''>"+val.protests.city+"</td>");
-                        items.push("</tr>");
-            
-                    });
-                })
-                .catch((err) => console.log(err))
+    /* 1-------- Para obtener el valor */
+    var cod = document.getElementById("city-protest-select").value;
+    console.log(cod);
+    
+    var nameForm = document.getElementById("city-protest-select").name;
+    console.log(nameForm);
+
+    var selectedOptions = $('#city-protest-select option:selected');
+    var dataForm = '';
+    selectedOptions.each(function () {
+        dataForm += `{"${nameForm}": "${cod}"}`
     });
+    console.log(dataForm);
+
+
+    /* 1 -------- Para obtener el texto 
+    var combo = document.getElementById("city");
+    var selected = combo.options[combo.selectedIndex].text;
+    alert(selected);
+
+    /* 2......... 
+    var select = document.getElementById("city-protest-select");
+    var options=document.getElementsByTagName("option");
+    console.log(select.value);
+    console.log(options[select.value-1].innerHTML)
+
+    */
+
+    var data = new FormData(protestsCreate);
+
+    var select1 = document.getElementById("city-protest-select").value;
+    // console.log(select1);
+
+
+
+    fetch(`http://prueba-env.us-east-2.elasticbeanstalk.com/protests/create`, {
+            method: 'POST',
+            headers: [
+                ["Content-Type", "application/json"]
+              ],
+            body: JSON.stringify(dataForm)
+        })
+
+
+        // tambien:    .then((resp) => resp.json())
+        .then(function (response) {
+            return response.json()
+        })
+        .then(function (data) {
+            console.log(data)
+            return data;
+        })
+        
+});

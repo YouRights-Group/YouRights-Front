@@ -6,11 +6,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+<!-- Dependencias CSS -->
+<link rel="stylesheet" href="../../../dependencias/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../../dependencias/jquery/jquery-ui/jquery-ui.min.css">
 </head>
 
 <body>
 
-  <script src="script.js"></script>
+    <div class="container py-2">
+      <p class="lead"> Ingrese usuarios</p>
+      <form>
+        <input type="text" class="form-control" id="nombre" placeholder="Ingresa nombre">
+        <input type="text" class="form-control" id="edad" placeholder="Ingresa edad">
+        <button id="boton" class="btn btn-success" type="reset" onclick="capturar();">Agregar</button>
+      </form>
+    </div>
+    <div class="container">
+      <table class="tabla" id="tabla">
+        <thead class="thead-inverse">
+          <tr>
+            <th>Nombre</th>
+            <th>Edad</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+
+  <script src="objetos.js"></script>
 </body>
 
 </html>
