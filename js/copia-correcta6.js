@@ -7,13 +7,19 @@ protestsCreate.addEventListener('submit', function (e) {
     e.preventDefault();
     console.log('me diste un click')
     
-    function Personas(city) {
-        this.city = city;
+    function Personas(name, tittleProtestLetter, nameProtest) {
+        this.city = name;
+        this.tittleProtestLetter = tittleProtestLetter;
+        this.nameProtest = nameProtest;
     }
     var cityGet = document.getElementById("name-protest").value;
     console.log(cityGet);
+    var tittleProtestLetterGet = document.getElementById("tittle-protest-letter").value;
+    console.log(tittleProtestLetterGet);
+    var nameProtestGet = document.getElementById("name-protest").value;
+    console.log(nameProtestGet);
 
-    dataForm = new Personas(cityGet);
+    dataForm = new Personas(cityGet, tittleProtestLetterGet, nameProtestGet);
     console.log(dataForm);
     
 

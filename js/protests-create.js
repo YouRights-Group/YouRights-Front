@@ -1,5 +1,6 @@
 //  https://www.youtube.com/watch?v=c3qWHnJJbSY
 //  https://www.youtube.com/watch?v=-iv274it7CM
+//  https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Funciones
 
 const protestsCreate = document.getElementById('form-protests-create');
 
@@ -7,13 +8,13 @@ protestsCreate.addEventListener('submit', function (e) {
     e.preventDefault();
     console.log('me diste un click')
     
-    function Personas(name) {
-        this.name = name;
+    function Personas(city, tittleProtestLetter, nameProtest) {
+        this.name = city;
     }
-    var nameGet = document.getElementById("namee").value;
-    console.log(nameGet);
+    var cityGet = document.getElementById("name-protest").value;
+    console.log(cityGet);
 
-    dataForm = new Personas(nameGet);
+    dataForm = new Personas(cityGet);
     console.log(dataForm);
     
 
