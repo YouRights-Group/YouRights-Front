@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>selected demo</title>
+  <style>
+  div {
+    color: red;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+ 
+<select id="selectId" name="garden" multiple="multiple" onchange="getSelectValue();">
+  <option value='1'>Flowers</option>
+  <option value='2' selected="selected">Shrubs</option>
+  <option value='3'>Trees</option>
+  <option value='4' selected="selected">Bushes</option>
+  <option value='5'>Grass</option>
+  <option value='6'>Dirt</option>
+</select>
+<div></div>
+ 
+<script>
+function getSelectValue(){
+    var selectedValue = document.getElementById("selectId").value;
+    console.log(selectedValue);
+    return selectedValue;
+}
+var retorno = getSelectValue();
+console.log(retorno);
+/*
+$( "select" ).change(function() {
+    var str = "";
+    $( "select option:selected" ).each(function() {
+      str += $( this ).text() + " ";
+    });
+    $( "div" ).text( str );
+  })
+  .trigger( "change" );
+*/
+
+</script>
+ 
+</body>
+</html>

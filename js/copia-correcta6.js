@@ -7,19 +7,36 @@ protestsCreate.addEventListener('submit', function (e) {
     e.preventDefault();
     console.log('me diste un click')
     
-    function Personas(name, tittleProtestLetter, nameProtest) {
-        this.city = name;
-        this.tittleProtestLetter = tittleProtestLetter;
-        this.nameProtest = nameProtest;
+    function Personas(selectedOptions, tittleProtestLetter, nameProtest) {
+        this.city = selectedOptions;
+        this.name = tittleProtestLetter;
+        this.whoDefends = nameProtest;
     }
-    var cityGet = document.getElementById("name-protest").value;
-    console.log(cityGet);
     var tittleProtestLetterGet = document.getElementById("tittle-protest-letter").value;
     console.log(tittleProtestLetterGet);
-    var nameProtestGet = document.getElementById("name-protest").value;
+    var nameProtestGet = document.getElementById("body-protest-letter").value;
     console.log(nameProtestGet);
 
-    dataForm = new Personas(cityGet, tittleProtestLetterGet, nameProtestGet);
+    // esta funcion sirve para poder sacar el valor de los select
+    function getSelectValue(){
+        var selectedValue = document.getElementById("city-protest-select").value;
+        console.log(selectedValue);
+        return selectedValue;
+    }
+    // variable creada con el valor del return de la funcion para el select
+    var retorno = getSelectValue();
+    console.log(retorno);
+
+    /*
+    var selectedOptionsGet = $('#city-protest-select option:selected').text;
+    console.log(selectedOptionsGet);
+    */
+
+    dataForm = new Personas(
+        retorno,
+        tittleProtestLetterGet, 
+        nameProtestGet
+    );
     console.log(dataForm);
     
 
