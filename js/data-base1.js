@@ -10,6 +10,8 @@
 //  https://foros.velneo.es/t/modificar-registro-en-base-a-un-json/7672
 //  https://www.youtube.com/watch?v=fqMOntGd2BQ
 
+// data-table      https://www.youtube.com/watch?v=70j_1YRfblM
+
 $(document).ready(function () {
     console.log('hola')
 
@@ -53,6 +55,7 @@ $(document).ready(function () {
                `
             }
             */
+           $('#list-protest').DataTable();
         })
         .catch(err => {
             console.error(err.message);
