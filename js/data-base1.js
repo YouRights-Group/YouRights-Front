@@ -19,6 +19,8 @@ $(document).ready(function () {
         .then((res) => res.json())
         .then((data) => {
             
+            
+
             var $output = $('#output');
             /* sirve que dentro de la variable no haya nada, 
             se empiece desde cero */

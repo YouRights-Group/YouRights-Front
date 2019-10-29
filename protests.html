@@ -475,35 +475,37 @@
                             </div>
                         </div>
                     </div>
-                    <table class="table table-striped" [mfData]="data | dataFilter : filterQuery" #mf="mfDataTable" [mfRowsOnPage]="10">
+                    <table id="list-protest" class="table table-striped" [mfData]="data | dataFilter : filterQuery" #mf="mfDataTable" [mfRowsOnPage]="10">
                         <thead>
-                        <tr>
-                            <th style="width: 15%">
-                            <mfDefaultSorter by="name">Nombre</mfDefaultSorter>
-                            </th>
-                            <th style="width: 45%">
-                            <mfDefaultSorter by="who-defends">En defensa de</mfDefaultSorter>
-                            </th>
-                            <th style="width: 15%">
-                            <mfDefaultSorter by="promoted-by">Promovido por</mfDefaultSorter>
-                            </th>
-                            <th style="width: 15%">
-                            <mfDefaultSorter by="city">Zona</mfDefaultSorter>
-                            </th>
-                            <th style="width: 15%">
-                            <mfDefaultSorter by="date">Fecha / Hora</mfDefaultSorter>
-                            </th>
-                        </tr>
+                            <tr>
+                                <th style="width: 15%">
+                                <mfDefaultSorter by="name">Nombre</mfDefaultSorter>
+                                </th>
+                                <th style="width: 45%">
+                                <mfDefaultSorter by="who-defends">En defensa de</mfDefaultSorter>
+                                </th>
+                                <th style="width: 15%">
+                                <mfDefaultSorter by="promoted-by">Promovido por</mfDefaultSorter>
+                                </th>
+                                <th style="width: 15%">
+                                <mfDefaultSorter by="city">Zona</mfDefaultSorter>
+                                </th>
+                                <th style="width: 15%">
+                                <mfDefaultSorter by="date">Fecha / Hora</mfDefaultSorter>
+                                </th>
+                            </tr>
                         </thead>
                         <tbody id="output">
                         </tbody>
+                        <!--
                         <tfoot>
-                        <tr>
-                            <td colspan="4">
-                            <mfBootstrapPaginator [rowsOnPageSet]="[5,10,15]"></mfBootstrapPaginator>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td colspan="4">
+                                <mfBootstrapPaginator [rowsOnPageSet]="[5,10,15]"></mfBootstrapPaginator>
+                                </td>
+                            </tr>
                         </tfoot>
+                        -->
                     </table>
                     </div>
                 </div>
