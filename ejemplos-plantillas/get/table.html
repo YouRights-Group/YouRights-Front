@@ -1,32 +1,81 @@
-<table id="list-protest" class="table table-bordered table-hover" [mfData]="data | dataFilter : filterQuery" #mf="mfDataTable" [mfRowsOnPage]="10">
-        <thead>
-            <tr>
-                <th style="width: 15%">
-                <mfDefaultSorter by="name">Nombre</mfDefaultSorter>
-                </th>
-                <th style="width: 45%">
-                <mfDefaultSorter by="who-defends">En defensa de</mfDefaultSorter>
-                </th>
-                <th style="width: 15%">
-                <mfDefaultSorter by="promoted-by">Promovido por</mfDefaultSorter>
-                </th>
-                <th style="width: 15%">
-                <mfDefaultSorter by="city">Zona</mfDefaultSorter>
-                </th>
-                <th style="width: 15%">
-                <mfDefaultSorter by="date">Fecha / Hora</mfDefaultSorter>
-                </th>
-            </tr>
-        </thead>
-        <tbody id="output">
-        </tbody>
-        <!--
-        <tfoot>
-            <tr>
-                <td colspan="4">
-                <mfBootstrapPaginator [rowsOnPageSet]="[5,10,15]"></mfBootstrapPaginator>
-                </td>
-            </tr>
-        </tfoot>
-        -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Dependencias CSS -->
+    <link
+      rel="stylesheet"
+      href="../../../dependencias/bootstrap/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../../dependencias/jquery/jquery-ui/jquery-ui.min.css"
+    />
+    <link rel="stylesheet" href="../../../css/fontawesome-all.css" />
+
+    <!-- Calendario CSS -->
+    <link
+      rel="stylesheet"
+      href="../../../dependencias/datepicker-calendarios/css/bootstrap-datepicker.min.css"
+    />
+
+    <!-- Nuestros CSS -->
+    <link rel="stylesheet" href="../../../css/index.css" />
+    <link rel="stylesheet" href="../../../css/style-maps-logo.css" />
+
+    <title>Hello, world!</title>
+  </head>
+
+  <body>
+    <table
+      id="list-protest"
+      class="table table-bordered table-hover"
+      [mfData]="data | dataFilter: filterQuery"
+      #mf="mfDataTable"
+      [mfRowsOnPage]="10"
+    >
+      <thead>
+        <tr>
+          <th>
+            Cliente
+          </th>
+          <th>
+            Tipo de Membresia
+          </th>
+          <th>
+            Eliminar
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        foreach ()
+      </tbody>
     </table>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../../../dependencias/jquery/jquery.js"></script>
+    <script src="../../../dependencias/popper.js"></script>
+    <script src="../../../dependencias/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Otra dependencia js -->
+    <script src="../../../dependencias/jquery/jquery-ui/jquery-ui.min.js"></script>
+    <script defer src="../../../js/fontawesome-all.js"></script>
+
+    <!-- Calendar js -->
+    <script
+      defer
+      src="../../../dependencias/datepicker-calendarios/js/bootstrap-datepicker.js"
+    ></script>
+    <script src="../../../js/bootstrap-datepicker.es.js"></script>
+
+    <!-- Nuestros js -->
+    <script src="api-data-table.js"></script>
+  </body>
+</html>
