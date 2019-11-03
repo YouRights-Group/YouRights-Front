@@ -1,53 +1,78 @@
-//  https://www.youtube.com/watch?v=c3qWHnJJbSY
-//  https://www.youtube.com/watch?v=-iv274it7CM
+// data-table      https://www.youtube.com/watch?v=70j_1YRfblM
+// fetch con data-table  https://datatables.net/forums/discussion/54076/use-fetch-api-instead-of-ajax-call-in-datatable
+$(document).ready(function() {
 
-const protestsCreate = document.getElementById('form-protests-create');
-
-protestsCreate.addEventListener('submit', function (e) {
-    e.preventDefault();
-    console.log('me diste un click')
-    
-    capturar();
-
-    function capturar() {
-        console.log("capturar");
-        function Personas(city) {
-            this.city = city;
+    $('#list-protest').dataTable({
+        ajax: {
+            url: "http://prueba-env.us-east-2.elasticbeanstalk.com/protests/list",
+            dataSrc: "protests"
+        },
+        columns: [
+            {
+                data: "name",
+                render: function (data, type, name){
+                    return `<a href='../protest-id${name.id}'>${name.name}</a>`
+                },
+            },
+            {
+                data: "whoDefends",
+                render: function (data, type, whoDefends){
+                    return "<a href='../protest-id" + whoDefends.id + "'>" + whoDefends.whoDefends + "</a>"
+                },
+            },
+            {
+                data: "promotedBy",
+                render: function (data, type, promotedBy){
+                    return "<a href='../protest-id" + promotedBy.id + "'>" + promotedBy.promotedBy + "</a>"
+                },
+            },
+            {
+                data: "city",
+                render: function (data, type, city){
+                    return "<a href='../protest-id" + city.id + "'>" + city.city + "</a>"
+                },
+            },
+            {
+                data: "date",
+                render: function (data, type, date){
+                    return "<a href='../protest-id" + date.id + "'>" + date.date + "</a>"
+                },
+            },
+            {
+                data: "id",
+                render: function (deleteId){
+                    return `<button id="btn-start" onclick="delete-protest" class='btn btn-link js-eliminar' role="button" data-name-id='${deleteId}'>Eliminar</button>`
+                },
+            }
+        ]
+    });
+    $('#list-protest').on('click', '.js-eliminar', function(){
+        var deleteId = confirm("¿Esta seguro de eliminar?");
+        if (deleteId == true){
+            console.log("aceptado")
+        } else {
+            console.log("cancelado")
         }
-        var cityGet = document.getElementById("nombre").value;
-        console.log(cityGet);
-    
-        dataForm = new Personas(cityGet);
-        console.log(dataForm);
-        
-        // sirve para agregar la funcion de abajo
-        agregar();
-    }
-    
-    var baseDatos = [];
-    
-    function agregar() {
-        //console.log("capturado");
-        baseDatos.push(dataForm);
-        console.log(baseDatos);
-    };
+    });
+});
 
-    fetch(`http://prueba-env.us-east-2.elasticbeanstalk.com/protests/create`, {
-            method: 'POST',
-            headers: [
-                ["Content-Type", "application/json"]
-              ],
-            body: JSON.stringify(baseDatos)
-        })
-        //  console.log(newProtest);
-
-        // tambien:    .then((resp) => resp.json())
-        .then(function (response) {
-            return response.json()
-        })
-        .then(function (data) {
-            console.log(data)
-            return data;
-        })
-        
+$('#list-protest').on('click', '.js-eliminar', function(){
+    console.log("empezando")
+    var button = $(this);
+    confirm("¿Esta seguro de eliminar?", function (result){
+        if (result){
+            console.log("estoyyyyyyyyy");
+            var root = "http://prueba-env.us-east-2.elasticbeanstalk.com/protests";
+            var url = root += deleteId;
+            console.log(root);
+            $.ajax({
+                url: url,
+                method: "DELETE",
+                success: function (){
+                    console.log("Petición Exitosa")
+                    button.parents("tr").remove();
+                }
+            })
+        }
+    });
 });
