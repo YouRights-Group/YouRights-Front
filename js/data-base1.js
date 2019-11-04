@@ -1,8 +1,15 @@
 // data-table      https://www.youtube.com/watch?v=70j_1YRfblM
+// https://www.youtube.com/watch?v=e-HA2YQUoi0
 // fetch con data-table  https://datatables.net/forums/discussion/54076/use-fetch-api-instead-of-ajax-call-in-datatable
 $(document).ready(function() {
 
-    $('#list-protest').dataTable({
+    var table = $('#list-protest').DataTable({
+        // processing: true,
+        // serverSide: true,
+        // orderMulti: false,
+        // dom: '<"top"i>rt<"botton"lp><"clear">',
+        // searching: false,
+        info: false,
         ajax: {
             url: "http://prueba-env.us-east-2.elasticbeanstalk.com/protests/list",
             dataSrc: "protests"
@@ -45,12 +52,24 @@ $(document).ready(function() {
                 },
             }
         ]
+        
     });
+
+    $('#city_select').change(function(){
+        var city_select = $('#city_select').val()
+        console.log(city_select)
+        table.column($(this).data('columns'))
+        console.log(city_select)
+        table.search($(this).val())
+        .draw();
+    });
+        
+    
+
     $('#list-protest').on('click', '.js-eliminar', function(){
         var button = $(this);
         var deleteId = confirm("¿Esta seguro de eliminar?");
         if (deleteId == true){
-            console.log("estoyyyyyyyyy");
             var root = "http://prueba-env.us-east-2.elasticbeanstalk.com/protests/delete/";
             var rootId = button.attr("data-name-id")
             var url = root += rootId;
