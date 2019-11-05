@@ -8,8 +8,10 @@ $(document).ready(function() {
         // serverSide: true,
         // orderMulti: false,
         // dom: '<"top"i>rt<"botton"lp><"clear">',
-        // searching: false,
+        searching: false,
         info: false,
+        pageLength : 10,
+        dom: 'Bfrtip',
         ajax: {
             url: "http://prueba-env.us-east-2.elasticbeanstalk.com/protests/list",
             dataSrc: "protests"
@@ -20,6 +22,7 @@ $(document).ready(function() {
                 render: function (data, type, name){
                     return `<a href='../protest-id${name.id}'>${name.name}</a>`
                 },
+                visible: true,
             },
             {
                 data: "whoDefends",
@@ -55,16 +58,21 @@ $(document).ready(function() {
         
     });
 
+    // filtro de los select
     $('#city_select').change(function(){
-        var city_select = $('#city_select').val()
-        console.log(city_select)
-        table.column($(this).data('columns'))
-        console.log(city_select)
+        table.column(3).search($(this).val())
+        .draw();
+    });   
+
+    $('#filter-text').change(function(){
         table.search($(this).val())
         .draw();
     });
-        
-    
+    // no funcionaa---------------
+    $('#download-list').change(function(){
+        table.search($(this).val())
+        .draw();
+    });
 
     $('#list-protest').on('click', '.js-eliminar', function(){
         var button = $(this);

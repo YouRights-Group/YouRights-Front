@@ -145,7 +145,7 @@
                         <form class="form-row align-items-center float-left">
                             <div class="d-flex justify-content-end my-1">
                                 <select class="custom-select mr-sm-2" id="country-select" name="pais" required>
-                                    <option value="0" selected>País</option>
+                                    <option value="" selected>País</option>
                                     <option value="AF">Afganistán</option>
                                     <option value="AL">Albania</option>
                                     <option value="DE">Alemania</option>
@@ -382,7 +382,7 @@
                                     <option value="ZW">Zimbabue</option>
                                 </select>
                                 <select class="custom-select mr-sm-2" id="districts-select" name="districts" required>
-                                    <option value="0" selected>Comunidad autónoma</option>
+                                    <option value="" selected>Comunidad autónoma</option>
                                     <option value='Andalucía' >Andalucía</option>
                                     <option value='Aragón'>Aragón</option>
                                     <option value='Asturias' >Asturias</option>
@@ -458,15 +458,13 @@
                                     <option value='Zaragoza'>Zaragoza</option>
                                 </select>
                                 <select class="custom-select mr-sm-2" id="tipe-protest-select" name="tipe-protest">
-                                    <option selected>Tipo de protesta</option>
+                                    <option value="" selected>Tipo de protesta</option>
                                     <option value="1">Todas</option>
                                     <option value="2">Manifestación</option>
                                     <option value="3">Huelga</option>
                                     <option value="4">Protesta</option>
                                 </select>
-                                <button type="button" id="filter" class="btn btn-success float-left ml-2">Filtrar</button>
-                                <button type="button" id="reset" class="btn btn-success float-left ml-2">Reset</button>
-                                <button type="button" class="btn btn-success float-left ml-2" ><i class="fas fa-cloud-download-alt"></i></button>
+                                <button id="download-list" type="button" class="btn btn-success float-left ml-2" ><i class="fas fa-cloud-download-alt"></i></button>
                             </div>
                         </form>
                     </div>
@@ -476,7 +474,7 @@
                                 <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fa fa-search"></i></span>
                                 </div>
-                                <input type="text" class="form-control" [(ngModel)]="filterQuery" placeholder="Search by name"/>
+                                <input id="filter-text" type="text" class="form-control" [(ngModel)]="filterQuery" placeholder="Busca lo que quieras"/>
                             </div>
                         </div>
                     </div>
