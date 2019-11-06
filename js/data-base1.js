@@ -8,7 +8,7 @@ $(document).ready(function() {
         // serverSide: true,
         // orderMulti: false,
         // dom: '<"top"i>rt<"botton"lp><"clear">',
-        searching: false,
+        // searching: false,
         info: false,
         pageLength : 10,
         dom: 'Bfrtip',
@@ -27,25 +27,25 @@ $(document).ready(function() {
             {
                 data: "whoDefends",
                 render: function (data, type, whoDefends){
-                    return "<a href='../protest-id" + whoDefends.id + "'>" + whoDefends.whoDefends + "</a>"
+                    return "<a" + whoDefends.id + ">" + whoDefends.whoDefends + "</a"
                 },
             },
             {
                 data: "promotedBy",
                 render: function (data, type, promotedBy){
-                    return "<a href='../protest-id" + promotedBy.id + "'>" + promotedBy.promotedBy + "</a>"
+                    return "<a" + promotedBy.id + ">" + promotedBy.promotedBy + "</a"
                 },
             },
             {
                 data: "city",
                 render: function (data, type, city){
-                    return "<a href='../protest-id" + city.id + "'>" + city.city + "</a>"
+                    return "<a" + city.id + ">" + city.city + "</a"
                 },
             },
             {
                 data: "date",
                 render: function (data, type, date){
-                    return "<a href='../protest-id" + date.id + "'>" + date.date + "</a>"
+                    return "<a" + date.id + ">" + date.date + "</a"
                 },
             },
             {
@@ -63,16 +63,6 @@ $(document).ready(function() {
         table.column(3).search($(this).val())
         .draw();
     });   
-
-    $('#filter-text').change(function(){
-        table.search($(this).val())
-        .draw();
-    });
-    // no funcionaa---------------
-    $('#download-list').change(function(){
-        table.search($(this).val())
-        .draw();
-    });
 
     $('#list-protest').on('click', '.js-eliminar', function(){
         var button = $(this);
