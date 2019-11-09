@@ -23,6 +23,14 @@ $(document).ready(function() {
 $(window).scroll(function(){
     $('#nav-main').toggleClass('position-fixed bg-white nav-style', $(this).scrollTop() > 200);
 });
+// Para fijar el nav cuando se hace scroll, en la pagina protest-id.html, NO FUNCIONA
+$(window).scroll(function(){
+    var scrollNav = document.createElement("div");
+    scrollNav.setAttribute("id", "nav-scroll");
+    $('#nav-scroll').addClass('col w-100 position-fixed bg-white nav-style', $(this).scrollTop() > 200);
+    $('#nav-main2').append(scrollNav);
+    console.log("#nav-scroll")
+});
 
 $(document).ready(function() {
     // Para que aparezca o desaparezca el boton de archivar adjunto en el formulario de insertar protesta, no funciona bien!!!!!!!!!!!!
