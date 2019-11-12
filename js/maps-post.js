@@ -1,7 +1,7 @@
 //  https://www.youtube.com/watch?v=zE2xCshIYhs&list=PLHAwr9gJjquel5iPqOXxPQkV2Dou6zddO&index=6
 
 // todo lo que hace referencia a marcadores_nuevos sirve para
-// cuando pinches en el mapa siempre se quede el ultimo pinchado
+// cuando pinches en el mapa siempre se quede el último pinchado
 var marcadores_nuevos = [];
 
 function quitar_marcadores(lista){
@@ -10,6 +10,8 @@ function quitar_marcadores(lista){
         lista[i].setMap(null);
     }
 };
+var cxGet = [];
+var cyGet = [];
 
 $(document).ready(function () {
 
@@ -31,7 +33,7 @@ $(document).ready(function () {
         // Listen for click on map
         google.maps.event.addListener(map, 'click', function (event) {
 
-            const protestsCreate = document.getElementById('form-protests-create-map');
+            
 
             // alert(event.latLng)
             var coordenadas = event.latLng.toString();
@@ -57,14 +59,12 @@ $(document).ready(function () {
             // $("#form-protests-create-map").find("input[name='cx']").val(lista[0]);
             // $("#form-protests-create-map").find("input[name='cx']").val(lista[1]);
             
-            var coordinateXgetMap = $("#form-cx-map").val(lista[0]);
-            var coordinateYgetMap = $("#form-cy-map").val(lista[1]);
-            var tittleCoordinateGetMap = $("#form-tittle-map").val();
+            var cxMap = $("#form-cx-map").val(lista[0]);
+            console.log(cxMap);
+            var cyMap = $("#form-cy-map").val(lista[1]);
 
-            tittleCoordinate.push(tittleCoordinateGetMap);
-            coordinateX.push(coordinateXgetMap);
-            coordinateY.push(coordinateYgetMap);
-
+            cxGet.push(cxMap);
+            cyGet.push(cyMap);
             marcadores_nuevos.push(marcador);
 
             google.maps.event.addListener(marcador, "click", function(){
@@ -80,10 +80,11 @@ $(document).ready(function () {
                 this.coordinateX = coordinateX;
                 this.coordinateY = coordinateY;
             }
-            var tittleCoordinateGet = [];
-            console.log(tittleCoordinateGet);
-            var coordinateXget = [];
-            var coordinateYget = [];
+            var tittleCoordinateGet = $("#form-tittle-map").val();
+            var coordinateXget = cxGet;
+            console.log(cxGet)
+            var coordinateYget = cyGet;
+            console.log(cyGet)
 
             dataForm = new DataProtest(
                 tittleCoordinateGet,

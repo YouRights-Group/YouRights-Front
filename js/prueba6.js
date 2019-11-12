@@ -1,38 +1,119 @@
-//  https://www.youtube.com/watch?v=M4LaQ3KUGOM&list=PLPl81lqbj-4I11QPam9ApoT7tGbmyBg9P&index=15
-//  https://www.youtube.com/watch?v=pUQFToFrMF4
+//  https://www.youtube.com/watch?v=zE2xCshIYhs&list=PLHAwr9gJjquel5iPqOXxPQkV2Dou6zddO&index=6
 
-//  https://www.youtube.com/watch?v=ZDtN2Dm1LYM
-//  https://www.youtube.com/watch?v=J9W0aW78o14&t=1041s
-//  https://www.youtube.com/watch?v=52niJ-2TrQ0&t=4s
-//  https://www.youtube.com/results?search_query=%24getJSON+jQuery.prototype+json
-//  https://obedalvarado.pw/blog/paginacion-con-php-mysql-jquery-ajax-y-bootstrap/
-//  https://blog.openalfa.com/como-leer-ficheros-json-con-jquery-en-modo-sincrono
-//  https://foros.velneo.es/t/modificar-registro-en-base-a-un-json/7672
-//  https://www.youtube.com/watch?v=fqMOntGd2BQ
+// todo lo que hace referencia a marcadores_nuevos sirve para
+// cuando pinches en el mapa siempre se quede el ultimo pinchado
+var marcadores_nuevos = [];
+
+function quitar_marcadores(lista){
+    // recorrer el array de los marcadores
+    for (i in lista){
+        lista[i].setMap(null);
+    }
+};
+var cxGet = [];
+var cyGet = [];
+var tittleGet = [];
 
 $(document).ready(function () {
-    console.log('hola')
 
-    async function main() {
-        fetch('http://prueba-env.us-east-2.elasticbeanstalk.com/protests/list')
-        .then((res) => res.json())
-        .then((data) => {
-            let output = '<h2 class="mb-4">Users</h2>';
-            $.each(data, function(key, val){
-                output += `
-                    <tr>
-                        <td id=''${key}''>${val.protests}</td>
-                        <td id=''${key}''>${val.protests}</td>
-                    </tr>
-                `;    
+    initMap();
+
+    function initMap() {
+        // Map options
+        var options = {
+            zoom: 5,
+            center: {
+                lat: 40.42928819958918,
+                lng: -3.6999707343627506
+            }
+        }
+
+        // New map
+        var map = new google.maps.Map(document.getElementById('map'), options);
+
+        // Listen for click on map
+        google.maps.event.addListener(map, 'click', function (event) {
+
+            const protestsCreate = document.getElementById('form-protests-create-map');
+
+            // alert(event.latLng)
+            var coordenadas = event.latLng.toString();
+
+            coordenadas = coordenadas.replace("(","");
+            coordenadas = coordenadas.replace(")","");
+            var lista = coordenadas.split(",");
+
+            // alert("La coordenada X es: " + lista [0]);
+            // alert("La coordenada Y es: " + lista [1]);
+
+            var direccion = new google.maps.LatLng(lista[0],lista[1]);
+
+            var marcador = new google.maps.Marker({
+                // titulo: prompt("Titulo del marcador?"),
+                position: direccion,
+                map: map,
+                animation: google.maps.Animation.DROP,
+                draggble: false // no permite el arrastre del marcador
             });
-            $('output').innerHTML = output;
-        })
 
+            // pasar coordenadas al formulario
+            // $("#form-protests-create-map").find("input[name='cx']").val(lista[0]);
+            // $("#form-protests-create-map").find("input[name='cx']").val(lista[1]);
+            
+            var cxMap = $("#form-cx-map").val(lista[0]);
+            var cyMap = $("#form-cy-map").val(lista[1]);
+            var tittleMap = $("#form-tittle-map").val();
+            console.log()
+
+            cxGet.push(cxMap);
+            cyGet.push(cyMap);
+            tittleGet.psuh(tittleMap);
+            marcadores_nuevos.push(marcador);
+
+            google.maps.event.addListener(marcador, "click", function(){
+                // alert(marcador.titulo);
+            });
+
+            quitar_marcadores(marcadores_nuevos);
+            marcador.setMap(map);
+        });
+        $("#button-map-save").on("click", function(){
+            function DataProtest(tittleCoordinate, coordinateX, coordinateY) {
+                this.tittleCoordinate = tittleCoordinate;
+                this.coordinateX = coordinateX;
+                this.coordinateY = coordinateY;
+            }
+            var tittleCoordinateGet = tittleGet;
+            console.log(tittleCoordinateGet)
+            var coordinateXget = cxGet;
+            console.log(cxGet)
+            var coordinateYget = cyGet;
+            console.log(cyGet)
+
+            dataForm = new DataProtest(
+                tittleCoordinateGet,
+                coordinateXget, 
+                coordinateYget,
+            );
+            console.log(dataForm);
+            fetch(`http://prueba-env.us-east-2.elasticbeanstalk.com/protests/create`, {
+            method: 'POST',
+            headers: [
+                ["Content-Type", "application/json"]
+              ],
+            body: JSON.stringify(dataForm)
+            })
+            //  console.log(newProtest);
+
+            // tambien:    .then((resp) => resp.json())
+            .then(function (response) {
+                return response.json()
+            })
+            .then(function (data) {
+                console.log(data)
+                return data;
+            })
+                return false;
+            });
     }
-
-    main();
-
 });
-
-//  http://prueba-env.us-east-2.elasticbeanstalk.com/protests/list
