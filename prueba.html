@@ -7,451 +7,256 @@
 
         <!-- Dependencias CSS -->
         <link rel="stylesheet" href="dependencias/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="dependencias/jquery/jquery-ui/jquery-ui.min.css">
         <link rel="stylesheet" href="css/fontawesome-all.css">
 
         <!-- Nuestros CSS -->
         <link rel="stylesheet" href="css/index.css">
         <link rel="stylesheet" href="css/style-maps-logo.css">
-       
-        
+
     </head>
     <body>
-        <div class="bg-white">
-            <div class="col position-absolute w-100" id="nav-main" style="z-index: 1">
-                <nav class="navbar navbar-light navbar-expand-xl bg-transparent justify-content-center w-75 mx-auto ftco-navbar-light">
-                    <a href="index.html" class="navbar-brand d-flex w-25 mr-auto pb-0">
-                        <div class="logo-nav" style="margin-top: -5px">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26pt" height="34pt" viewBox="0 0 26 34" version="1.1">
-                                <g id="surface1">
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 155.577959 302.189271 C 168.946537 350.03909 205.463394 388.05152 252.926335 402.950865 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 342.110009 402.950865 C 389.483228 388.05152 426.000085 350.03909 439.368664 302.189271 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 444.841706 262.648703 C 444.841706 181.275359 378.80631 115.374412 297.518172 115.374412 C 216.140313 115.374412 150.194638 181.275359 150.194638 262.648703 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 150.194638 262.648703 C 150.194638 267.615151 150.912414 272.772617 152.437688 277.643556 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 152.437688 277.643556 C 152.437688 285.857298 153.514352 294.166547 155.577959 302.189271 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 271.588512 346.314254 C 288.815138 348.224426 306.131485 348.224426 323.35811 346.314254 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 442.508934 277.643556 C 444.034208 272.772617 444.841706 267.615151 444.841706 262.648703 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 439.368664 302.189271 C 441.43227 294.166547 442.508934 285.857298 442.508934 277.643556 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 297.518172 657.767861 L 297.518172 726.438558 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 297.518172 657.767861 L 595.126066 485.852346 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 297.518172 726.438558 L 595.126066 554.618552 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -0.179444 485.852346 L -0.179444 554.618552 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -0.179444 485.852346 L 297.518172 657.767861 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -0.179444 554.618552 L 297.518172 726.438558 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 252.926335 529.022242 L 297.518172 554.618552 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 297.518172 554.618552 L 342.110009 529.022242 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 416.489552 382.894055 L 396.660989 371.43302 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 416.489552 434.373201 L 461.171111 460.256036 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 461.171111 460.256036 L 505.85267 434.373201 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 595.126066 485.852346 L 505.85267 434.373201 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 89.183674 434.373201 L -0.179444 485.852346 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 89.183674 434.373201 L 133.865233 460.256036 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 133.865233 460.256036 L 178.546792 434.373201 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 198.375355 371.43302 L 178.546792 382.894055 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 297.518172 382.894055 L 342.110009 357.011219 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 252.926335 357.011219 L 297.518172 382.894055 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 271.588512 346.314254 L 252.926335 357.011219 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 342.110009 357.011219 L 323.35811 346.314254 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 252.926335 357.011219 L 252.926335 529.022242 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 297.518172 382.894055 L 297.518172 554.618552 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 342.110009 357.011219 L 342.110009 529.022242 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 461.171111 288.340522 L 461.171111 460.256036 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 416.489552 349.370529 L 416.489552 434.373201 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 442.508934 277.643556 L 461.171111 288.340522 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 461.171111 288.340522 L 505.85267 262.648703 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 461.171111 236.765867 L 443.944486 246.794272 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 505.85267 262.648703 L 461.171111 236.765867 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 505.85267 262.648703 L 505.85267 434.373201 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 89.183674 262.648703 L 133.865233 288.340522 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 151.091858 246.794272 L 133.865233 236.765867 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 133.865233 288.340522 L 152.437688 277.643556 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 133.865233 236.765867 L 89.183674 262.648703 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 133.865233 288.340522 L 133.865233 460.256036 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 89.183674 262.648703 L 89.183674 434.373201 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                    <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 178.546792 349.370529 L 178.546792 434.373201 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                </g>
-                            </svg>  
-                        </div>
-                        YouRights
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
-                        <!-- PARA METER LINKS EN EL CENTRO
-                        <ul class="navbar-nav w-100 justify-content-center">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Link</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="//codeply.com">Codeply</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
-                            </li>
-                        </ul>
-                        -->
-                        <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="page-main.html">Mapa virtual <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Servicios
-                                </a>
-                                <div class="dropdown-menu mt-1" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="protests.html">Detalles de protestas</a>
-                                    <a class="dropdown-item" href="event-planner.html">Organizador de eventos</a>
-                                    <a class="dropdown-item" href="collaborations.html">Te ayudamos</a>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                            <a class="nav-link" href="about-as.html">Sobre nosotros</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="transparency.html">Transparencia & Donaciones</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="legal-info.html">Información legal</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contacto</a>
-                            </li>
-                            <li class="nav-item ml-2">
-                                <a class="btn btn-outline-info" href="login-sing-up.html" role="button">Entrar & Registro</a>
-                            </li>
-                        </ul>
+        <div class="col position-absolute w-100" id="nav-main" style="z-index: 1">
+            <nav class="navbar navbar-light navbar-expand-xl bg-transparent justify-content-center w-75 mx-auto ftco-navbar-light">
+                <a href="index.html" class="navbar-brand d-flex w-25 mr-auto pb-0">
+                    <div class="logo-nav" style="margin-top: -5px">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26pt" height="34pt" viewBox="0 0 26 34" version="1.1">
+                            <g id="surface1">
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 155.577959 302.189271 C 168.946537 350.03909 205.463394 388.05152 252.926335 402.950865 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 342.110009 402.950865 C 389.483228 388.05152 426.000085 350.03909 439.368664 302.189271 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 444.841706 262.648703 C 444.841706 181.275359 378.80631 115.374412 297.518172 115.374412 C 216.140313 115.374412 150.194638 181.275359 150.194638 262.648703 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 150.194638 262.648703 C 150.194638 267.615151 150.912414 272.772617 152.437688 277.643556 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 152.437688 277.643556 C 152.437688 285.857298 153.514352 294.166547 155.577959 302.189271 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 271.588512 346.314254 C 288.815138 348.224426 306.131485 348.224426 323.35811 346.314254 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 442.508934 277.643556 C 444.034208 272.772617 444.841706 267.615151 444.841706 262.648703 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 439.368664 302.189271 C 441.43227 294.166547 442.508934 285.857298 442.508934 277.643556 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 297.518172 657.767861 L 297.518172 726.438558 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 297.518172 657.767861 L 595.126066 485.852346 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 297.518172 726.438558 L 595.126066 554.618552 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -0.179444 485.852346 L -0.179444 554.618552 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -0.179444 485.852346 L 297.518172 657.767861 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -0.179444 554.618552 L 297.518172 726.438558 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 252.926335 529.022242 L 297.518172 554.618552 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 297.518172 554.618552 L 342.110009 529.022242 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 416.489552 382.894055 L 396.660989 371.43302 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 416.489552 434.373201 L 461.171111 460.256036 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 461.171111 460.256036 L 505.85267 434.373201 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 595.126066 485.852346 L 505.85267 434.373201 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 89.183674 434.373201 L -0.179444 485.852346 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 89.183674 434.373201 L 133.865233 460.256036 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 133.865233 460.256036 L 178.546792 434.373201 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 198.375355 371.43302 L 178.546792 382.894055 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 297.518172 382.894055 L 342.110009 357.011219 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 252.926335 357.011219 L 297.518172 382.894055 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 271.588512 346.314254 L 252.926335 357.011219 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 342.110009 357.011219 L 323.35811 346.314254 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 252.926335 357.011219 L 252.926335 529.022242 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 297.518172 382.894055 L 297.518172 554.618552 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 342.110009 357.011219 L 342.110009 529.022242 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 461.171111 288.340522 L 461.171111 460.256036 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 416.489552 349.370529 L 416.489552 434.373201 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 442.508934 277.643556 L 461.171111 288.340522 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 461.171111 288.340522 L 505.85267 262.648703 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 461.171111 236.765867 L 443.944486 246.794272 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 505.85267 262.648703 L 461.171111 236.765867 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 505.85267 262.648703 L 505.85267 434.373201 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 89.183674 262.648703 L 133.865233 288.340522 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 151.091858 246.794272 L 133.865233 236.765867 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 133.865233 288.340522 L 152.437688 277.643556 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 133.865233 236.765867 L 89.183674 262.648703 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 133.865233 288.340522 L 133.865233 460.256036 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 89.183674 262.648703 L 89.183674 434.373201 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 178.546792 349.370529 L 178.546792 434.373201 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
+                            </g>
+                        </svg>  
                     </div>
-                </nav>
-            </div>
-            <!--Indicar el js para que funciones-->
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                    <img class="d-block w-100" src="img/Prototipo/Imagen 12.jpg" alt="First slide">
-                    </div>
-                    <div class="carousel-item">
-                    <img class="d-block w-100" src="img/Prototipo/Imagen 13.jpg" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                    <img class="d-block w-100" src="img/Prototipo/Imagen 9.jpg" alt="Third slide">
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
+                    YouRights
                 </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
-            <div class="position-relative" style="margin-top: -100px; padding-bottom: 100px">
-                <div class="container">
-                    <div class="card-deck" style="height: 400px">
-                        <div class="card">
-                            <img class="card-img-top img-fluid" style="height: 200px" src="img/Prototipo/Imagen 8.jpg" alt="Card image cap">
-                            <button type="button" class="btn btn-primary w-75 mx-auto rounded" style="margin-top: -20px; padding-top: 10px"><p class="h5"><strong>Ir a la oferta</strong></p></button>
-                            <div class="card-body">
-                                <div class="container p-relative">
-                                    <div class="progress-group-header">
-                                        <i class="fas fa-check fa-2x text-primary fa-pull-left"></i>
-                                        <div class="ml-3 mt-3"><h5>Nos rompemos la cabeza por tí.</h5></div>
-                                        
-                                    </div>
-                                    <div class="progress-group-header">
-                                        <i class="fas fa-check fa-2x text-primary fa-pull-left"></i>
-                                        <div class="ml-3 mt-3">
-                                            <h5>Tu comunicación es importante para nosotros.</h5>
-                                        </div>
-                                    </div>
-                                    <div class="progress-group-header">
-                                        <i class="fas fa-check fa-2x text-primary fa-pull-left"></i>
-                                        <div class="ml-3 mt-3"><h5>Mejoramos tu presencia.</h5></div>
-                                    </div>
-                                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
+                    <!-- PARA METER LINKS EN EL CENTRO
+                    <ul class="navbar-nav w-100 justify-content-center">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="//codeply.com">Codeply</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                    </ul>
+                    -->
+                    <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="page-main.html">Mapa virtual <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Servicios
+                            </a>
+                            <div class="dropdown-menu mt-1" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="protests.html">Detalles de protestas</a>
+                                <a class="dropdown-item" href="event-planner.html">Organizador de eventos</a>
+                                <a class="dropdown-item" href="collaborations.html">Te ayudamos</a>
                             </div>
-                        </div>
-                        <div class="card">
-                            <img class="card-img-top img-fluid" style="height: 200px" src="img/Prototipo/Imagen 9.jpg" alt="Card image cap">
-                            <button type="button" class="btn btn-primary w-75 mx-auto rounded" style="margin-top: -20px; padding-top: 10px"><p class="h5"><strong>Ir a la oferta</strong></p></button>
-                            <div class="card-body">
-                                <div class="container p-relative">
-                                    <div class="progress-group-header">
-                                        <i class="fas fa-check fa-2x text-primary fa-pull-left"></i>
-                                        <div class="ml-3 mt-3"><h5>Nos rompemos la cabeza por tí.</h5></div>
-                                    </div>
-                                    <div class="progress-group-header">
-                                        <i class="fas fa-check fa-2x text-primary fa-pull-left"></i>
-                                        <div class="ml-3 mt-3"><h5>Nosotros te lo montamos.</h5></div>
-                                    </div>
-                                    <div class="progress-group-header">
-                                        <i class="fas fa-check fa-2x text-primary fa-pull-left"></i>
-                                        <div class="ml-3 mt-3"><h5>Pequeñas, medianas y grandes plataformas.</h5></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <img class="card-img-top img-fluid" style="height: 200px" src="img/Prototipo/Imagen 11.jpg" alt="Card image cap">
-                            <button type="button" class="btn btn-primary w-75 mx-auto rounded" style="margin-top: -20px; padding-top: 10px"><p class="h5"><strong>Ir a la oferta</strong></p></button>
-                            <div class="card-body">
-                                <div class="container p-relative">
-                                    <div class="progress-group-header">
-                                        <i class="fas fa-check fa-2x text-primary fa-pull-left"></i>
-                                        <div class="ml-3 mt-3"><h5>Tu marketing es importante para nosotros.</h5></div>
-                                    </div>
-                                    <div class="progress-group-header">
-                                        <i class="fas fa-check fa-2x text-primary fa-pull-left"></i>
-                                        <div class="ml-3 mt-3"><h5>Prendas personalizadas como tu quieras.</h5></div>
-                                    </div>
-                                    <div class="progress-group-header">
-                                        <i class="fas fa-check fa-2x text-primary fa-pull-left"></i>
-                                        <div class="ml-3 mt-3"><h5>Lo enviamos y repartimos como tu digas.</h5></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="about-as.html">Sobre nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="transparency.html">Transparencia & Donaciones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="legal-info.html">Información legal</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contacto</a>
+                        </li>
+                        <li class="nav-item ml-2">
+                            <a class="btn btn-outline-info" href="login-sing-up.html" role="button">Entrar & Registro</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="container w-100 pt-6">
+            <div class="row mx-auto">
+                <div class="row justify-content-center text-center mb-5">
+                    <div class="col-md-7">
+                        <h1 class="heading" data-aos="fade-up">Contactanos</h1>
+                        <p class="h6 mt-5" data-aos="fade-up">Escribenos y te ayudaremos en todo lo posible para que la protesta salga adelante. Preguntanos las dudas que tengas y nosotros te responderemos lo antes posible.<br>No pierdes nada por preguntar.</p>
                     </div>
                 </div>
-            </div>
-            <div class="row mt-5"></div>
-            <div class="col mt-5 w-100">
-                <div class="col text-center">
-                    <h1><strong>Organizamos tu Evento</strong></h1>
-                    <p class="h5"><small class="text-muted"><em>Preocupate por lo que de verdad importa, deja la organización para nosotros.</em></small></p>
-                </div>
-                <!--Poner enfasis a los siguientes div-->
-                <div class="row mt-5">
-                    <div class="col bg-light m-5" style="height: 200px">
-                        <div class="container">
-                            <i class="fas fa-sitemap fa-2x mt-4"></i>
-                            <div class="mt-4">
-                                <h5 class="card-title">Te lo organizamos</h5>
-                                <h6 class="card-subtitle text-muted">Nosotros nos encargamos de obtener los permisos necesarios para cualquier tipo de instalación o estacionamiento de vehiculos en los alrededores.</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col bg-light m-5" style="height: 200px">
-                        <div class="container">
-                            <i class="fas fa-clipboard-list fa-2x mt-4"></i>
-                            <div class="mt-4">
-                                <h5 class="card-title">A tu medida</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Ofrecemos distintos precios adaptados a tus necesidades y al tipo de protesta que realices.</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col bg-light m-5" style="height: 200px">
-                        <div class="container">
-                            <i class="fas fa-users fa-2x mt-4"></i>
-                            <div class="mt-4">
-                                <h5 class="card-title">Recursos suficientes</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">En YouRight tenemos gran cantidad de colaboradores con los que podemos trabajar para que tu protesta este donde este, pueda dar luz sobre un cielo nublado.</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row text-white p-5" style="background-color:  #002347; height: 600px; margin-top: 50px">
+                <section class="py-5 bg-light mt-5" id="section-about">
                     <div class="container">
-                        <div class="row">
-                            <div class="col">
-                                <h1>Nuestros servicios</h1>
-                                <br>
-                                <h5>Desde YouRights te queremos ofrecer la posibilidad de organizar tu evento como tu quieras. </h5>
-                                <div class="position-relative float-right" style="height: 200px; width: 200px; margin-top: -200px">
-                                    <img class="d-block w-100" src="img/Prototipo/nuestros-servicios-png-3.ico" alt="First slide">
-                                </div>
+                        <div class="row align-items-center ml-3">
+                            <div id="map" class="col-md-12 col-lg-7 ml-auto order-lg-2 position-relative mb-5" data-aos="fade-up" style="height: 80%">
+                                <!-- Poner el mapa aquí -->
                             </div>
-                            <!-- Poner correctamente el nav para que se quede fijo dentro de la caja -->
-                            <div class="container border border-primary overflow-auto" data-spy="scroll" data-target="#myScrollspy" data-offset="1" style="height: 350px">
-                                <div class="container-fluid">
-                                    <div class="row">
-                                        <nav class="col-sm-3 col-4" id="myScrollspy">
-                                            <ul class="nav nav-pills flex-column">
-                                            <li class="nav-item">
-                                                <a class="nav-link active" href="#section1">Section 1</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#section2">Section 2</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#section3">Section 3</a>
-                                            </li>
-                                            <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Section 4</a>
-                                                <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="#section41">Link 1</a>
-                                                <a class="dropdown-item" href="#section42">Link 2</a>
-                                                </div>
-                                            </li>
-                                            </ul>
-                                        </nav>
-                                        <div class="col-sm-9 col-8">
-                                            <div id="section-scrollspy" class="bg-success">    
-                                            <h1>Section 1</h1>
-                                            <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-                                            </div>
-                                            <div id="section-scrollspy" class="bg-warning"> 
-                                            <h1>Section 2</h1>
-                                            <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-                                            </div>        
-                                            <div id="section-scrollspy" class="bg-secondary">         
-                                            <h1>Section 3</h1>
-                                            <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-                                            </div>
-                                            <div id="section-scrollspy" class="bg-danger">         
-                                            <h1>Section 4-1</h1>
-                                            <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-                                            </div>      
-                                            <div id="section-scrollspy" class="bg-info">         
-                                            <h1>Section 4-2</h1>
-                                            <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-                                            </div>
-                                        </div>
+                            <div class="col-md-5">
+                                <div class="row">
+                                    <div class="col-md-10 contact-info bg-light border p-3">
+                                        <p><span class="d-block h6">Dirección:</span> <span class="text-black"> Calle Joaquín Maria Lopez 48</span></p>
+                                        <p><span class="d-block h6">Teléfono:</span> <span class="text-black"> (+34) 654616868</span></p>
+                                        <p><span class="d-block h6">Email:</span> <span class="text-black"> info@yourights.eu</span></p>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>                      
                         </div>
                     </div>
-                </div>
-                <div class="row mt-5">
-                    <section class="section contact-section w-100" id="section-contact">
-                        <div class="container">
-                            <div class="row justify-content-center text-center mb-5">
-                                <div class="col-md-7">
-                                    <h1 class="heading" data-aos="fade-up">Contactanos</h1>
-                                    <p class="h6" data-aos="fade-up">Escribenos y te ayudaremos en todo lo posible para que la protesta salga adelante. Preguntanos las dudas que tengas y nosotros te responderemos lo antes posible.<br>No pierdes nada por preguntar.</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
-                                    <form method="post" class="bg-light p-md-5 p-4 mb-5 border" action="./php/from-contact.php">
-                                        <!-- form message -->
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="alert alert-success contact__msg" style="display: none" role="alert">
-                                                    Tu mensaje fue enviado exitosamente.
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- end message -->
-                                        <!-- form element -->
-                                        <div class="row">
-                                            <div class="col-md-6 form-group">
-                                                <label for="name">Nombre</label>
-                                                <input type="text" name="name" id="name" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-6 form-group">
-                                                <label for="phone">Teléfono</label>
-                                                <input type="text" name="phone" id="phone" class="form-control" required>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6 form-group">
-                                                <label for="inputCity">Ciudad</label>
-                                                <select name="city" type="text" id="inputCity" class="form-control" required>
-                                                    <option selected>Elige...</option>
-                                                    <option value='selecciona'>Selecciona</option>
-                                                    <option value='A Coruña' >A Coruña</option>
-                                                    <option value='álava'>álava</option>
-                                                    <option value='Albacete' >Albacete</option>
-                                                    <option value='Alicante'>Alicante</option>
-                                                    <option value='Almería' >Almería</option>
-                                                    <option value='Asturias' >Asturias</option>
-                                                    <option value='ávila' >Ávila</option>
-                                                    <option value='Badajoz' >Badajoz</option>
-                                                    <option value='Barcelona'>Barcelona</option>
-                                                    <option value='Burgos' >Burgos</option>
-                                                    <option value='Cáceres' >Cáceres</option>
-                                                    <option value='Cádiz' >Cádiz</option>
-                                                    <option value='Cantabria' >Cantabria</option>
-                                                    <option value='Castellón' >Castellón</option>
-                                                    <option value='Ceuta' >Ceuta</option>
-                                                    <option value='Ciudad Real' >Ciudad Real</option>
-                                                    <option value='Córdoba' >Córdoba</option>
-                                                    <option value='Cuenca' >Cuenca</option>
-                                                    <option value='Gerona' >Gerona</option>
-                                                    <option value='Girona' >Girona</option>
-                                                    <option value='Las Palmas' >Las Palmas</option>
-                                                    <option value='Granada' >Granada</option>
-                                                    <option value='Guadalajara' >Guadalajara</option>
-                                                    <option value='Guipúzcoa' >Guipúzcoa</option>
-                                                    <option value='Huelva' >Huelva</option>
-                                                    <option value='Huesca' >Huesca</option>
-                                                    <option value='Jaén' >Jaén</option>
-                                                    <option value='La Rioja' >La Rioja</option>
-                                                    <option value='León' >León</option>
-                                                    <option value='Lleida' >Lleida</option>
-                                                    <option value='Lugo' >Lugo</option>
-                                                    <option value='Madrid' >Madrid</option>
-                                                    <option value='Malaga' >Málaga</option>
-                                                    <option value='Mallorca' >Mallorca</option>
-                                                    <option value='Melilla' >Melilla</option>
-                                                    <option value='Murcia' >Murcia</option>
-                                                    <option value='Navarra' >Navarra</option>
-                                                    <option value='Orense' >Orense</option>
-                                                    <option value='Palencia' >Palencia</option>
-                                                    <option value='Pontevedra'>Pontevedra</option>
-                                                    <option value='Salamanca'>Salamanca</option>
-                                                    <option value='Segovia' >Segovia</option>
-                                                    <option value='Sevilla' >Sevilla</option>
-                                                    <option value='Soria' >Soria</option>
-                                                    <option value='Tarragona' >Tarragona</option>
-                                                    <option value='Tenerife' >Tenerife</option>
-                                                    <option value='Teruel' >Teruel</option>
-                                                    <option value='Toledo' >Toledo</option>
-                                                    <option value='Valencia' >Valencia</option>
-                                                    <option value='Valladolid' >Valladolid</option>
-                                                    <option value='Vizcaya' >Vizcaya</option>
-                                                    <option value='Zamora' >Zamora</option>
-                                                    <option value='Zaragoza'>Zaragoza</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-6 form-group">
-                                                <label for="email">Email</label>
-                                                <input type="email" name="email" id="email" class="form-control" required>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="attched">Inserte archivo adjunto</label>
-                                            <input name="attched" type="file" class="form-control-file" id="attched">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="subjet">Asunto</label>
-                                            <input class="form-control" name="subject" type="text" id="subjet" required>
-                                        </div>
-                                        <div class="row mb-4">
-                                            <div class="col-md-12 form-group">
-                                            <label for="message">Escribe el mensaje</label>
-                                            <textarea name="message" id="message" class="form-control" cols="30" rows="8" required></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6 form-group">
-                                            <input type="submit" value="Enviar" class="btn btn-primary text-white font-weight-bold">
-                                            <div class="submitting"></div>
-                                            </div>
-                                        </div>
-                                        <!-- end form element -->
-                                    </form>
-                                </div>
-                                <div class="col-md-5" data-aos="fade-up" data-aos-delay="200">
-                                    <div class="row">
-                                        <div class="col-md-10 ml-auto contact-info bg-light border p-3">
-                                            <p><span class="d-block h6">Dirección:</span> <span class="text-black"> Calle Joaquín Maria Lopez 48</span></p>
-                                            <p><span class="d-block h6">Teléfono:</span> <span class="text-black"> (+34) 654616868</span></p>
-                                            <p><span class="d-block h6">Email:</span> <span class="text-black"> info@yourights.eu</span></p>
-                                        </div>
-                                    </div>
+                </section>
+                <div class="col-md-7 mx-auto mt-6" data-aos="fade-up" data-aos-delay="100">
+                    <form method="post" class="bg-light p-md-5 p-4 mb-5 border" action="./php/from-contact.php">
+                        <!-- form message -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="alert alert-success contact__msg" style="display: none" role="alert">
+                                    Tu mensaje fue enviado exitosamente.
                                 </div>
                             </div>
                         </div>
-                    </section>
+                        <!-- end message -->
+                        <!-- form element -->
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <label for="name">Nombre</label>
+                                <input type="text" name="name" id="name" class="form-control" required>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label for="phone">Teléfono</label>
+                                <input type="text" name="phone" id="phone" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <label for="inputCity">Ciudad</label>
+                                <select name="city" type="text" id="inputCity" class="form-control" required>
+                                    <option selected>Elige...</option>
+                                    <option value='selecciona'>Selecciona</option>
+                                    <option value='A Coruña' >A Coruña</option>
+                                    <option value='álava'>álava</option>
+                                    <option value='Albacete' >Albacete</option>
+                                    <option value='Alicante'>Alicante</option>
+                                    <option value='Almería' >Almería</option>
+                                    <option value='Asturias' >Asturias</option>
+                                    <option value='ávila' >Ávila</option>
+                                    <option value='Badajoz' >Badajoz</option>
+                                    <option value='Barcelona'>Barcelona</option>
+                                    <option value='Burgos' >Burgos</option>
+                                    <option value='Cáceres' >Cáceres</option>
+                                    <option value='Cádiz' >Cádiz</option>
+                                    <option value='Cantabria' >Cantabria</option>
+                                    <option value='Castellón' >Castellón</option>
+                                    <option value='Ceuta' >Ceuta</option>
+                                    <option value='Ciudad Real' >Ciudad Real</option>
+                                    <option value='Córdoba' >Córdoba</option>
+                                    <option value='Cuenca' >Cuenca</option>
+                                    <option value='Gerona' >Gerona</option>
+                                    <option value='Girona' >Girona</option>
+                                    <option value='Las Palmas' >Las Palmas</option>
+                                    <option value='Granada' >Granada</option>
+                                    <option value='Guadalajara' >Guadalajara</option>
+                                    <option value='Guipúzcoa' >Guipúzcoa</option>
+                                    <option value='Huelva' >Huelva</option>
+                                    <option value='Huesca' >Huesca</option>
+                                    <option value='Jaén' >Jaén</option>
+                                    <option value='La Rioja' >La Rioja</option>
+                                    <option value='León' >León</option>
+                                    <option value='Lleida' >Lleida</option>
+                                    <option value='Lugo' >Lugo</option>
+                                    <option value='Madrid' >Madrid</option>
+                                    <option value='Malaga' >Málaga</option>
+                                    <option value='Mallorca' >Mallorca</option>
+                                    <option value='Melilla' >Melilla</option>
+                                    <option value='Murcia' >Murcia</option>
+                                    <option value='Navarra' >Navarra</option>
+                                    <option value='Orense' >Orense</option>
+                                    <option value='Palencia' >Palencia</option>
+                                    <option value='Pontevedra'>Pontevedra</option>
+                                    <option value='Salamanca'>Salamanca</option>
+                                    <option value='Segovia' >Segovia</option>
+                                    <option value='Sevilla' >Sevilla</option>
+                                    <option value='Soria' >Soria</option>
+                                    <option value='Tarragona' >Tarragona</option>
+                                    <option value='Tenerife' >Tenerife</option>
+                                    <option value='Teruel' >Teruel</option>
+                                    <option value='Toledo' >Toledo</option>
+                                    <option value='Valencia' >Valencia</option>
+                                    <option value='Valladolid' >Valladolid</option>
+                                    <option value='Vizcaya' >Vizcaya</option>
+                                    <option value='Zamora' >Zamora</option>
+                                    <option value='Zaragoza'>Zaragoza</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" id="email" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="attched">Inserte archivo adjunto</label>
+                            <input name="attched" type="file" class="form-control-file" id="attched">
+                        </div>
+                        <div class="form-group">
+                            <label for="subjet">Asunto</label>
+                            <input class="form-control" name="subject" type="text" id="subjet" required>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-md-12 form-group">
+                            <label for="message">Escribe el mensaje</label>
+                            <textarea name="message" id="message" class="form-control" cols="30" rows="8" required></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                            <input type="submit" value="Enviar" class="btn btn-primary text-white font-weight-bold">
+                            <div class="submitting"></div>
+                            </div>
+                        </div>
+                        <!-- end form element -->
+                    </form>
                 </div>
             </div>
         </div>
@@ -551,21 +356,27 @@
                 </div>
             </div>
         </footer>
-        
 
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="dependencias/jquery/jquery.js"></script>
-        <script src="dependencias/popper.js"></script>
-        <script src="dependencias/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="dependencias/jquery/jquery.js"></script>
+    <script src="dependencias/popper.js"></script>
+    <script src="dependencias/bootstrap/js/bootstrap.min.js"></script>
+    
+    <!-- Otra dependencia js -->
+    <script defer src="js/fontawesome-all.js"></script>
 
-        <!-- Otra dependencia js -->
-        <script defer src="js/fontawesome-all.js"></script>
+    <!-- Maps js -->
+    <script defer src="js/maps.js"></script>
 
-        <!-- Calendar js -->
-        <script defer src="dependencias/datepicker-calendarios/js/bootstrap-datepicker.js"></script>
+    <!-- Nuestros js -->
+    <script src="js/form-contact.js"></script>
 
-        <!-- Nuestros js -->
-        <script src="js/index.js"></script>
+    <!-- API de Google Maps  -->
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5akWPMLPYomMobHO0gvV2Z7WssIsFuZM&callback=initMap">
+    </script>
+    <script src="js/google-map-contact.js"></script>
+
     </body>
 </html>
