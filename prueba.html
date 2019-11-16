@@ -1,81 +1,225 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <!-- Dependencias CSS -->
-        <link rel="stylesheet" href="dependencias/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/fontawesome-all.css">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <!-- Nuestros CSS -->
-        <link rel="stylesheet" href="css/index.css">
-        <link rel="stylesheet" href="css/style-maps-logo.css">
+    <!-- Dependencias CSS -->
+    <link rel="stylesheet" href="dependencias/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dependencias/jquery/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/fontawesome-all.css">
 
-    </head>
-    <body>
-        <div class="col position-absolute w-100" id="nav-main" style="z-index: 1">
-            <nav class="navbar navbar-light navbar-expand-xl bg-transparent justify-content-center w-75 mx-auto ftco-navbar-light">
-                <a href="index.html" class="navbar-brand d-flex w-25 mr-auto pb-0">
-                    <div class="logo-nav" style="margin-top: -5px">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26pt" height="34pt" viewBox="0 0 26 34" version="1.1">
-                            <g id="surface1">
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 155.577959 302.189271 C 168.946537 350.03909 205.463394 388.05152 252.926335 402.950865 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 342.110009 402.950865 C 389.483228 388.05152 426.000085 350.03909 439.368664 302.189271 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 444.841706 262.648703 C 444.841706 181.275359 378.80631 115.374412 297.518172 115.374412 C 216.140313 115.374412 150.194638 181.275359 150.194638 262.648703 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 150.194638 262.648703 C 150.194638 267.615151 150.912414 272.772617 152.437688 277.643556 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 152.437688 277.643556 C 152.437688 285.857298 153.514352 294.166547 155.577959 302.189271 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 271.588512 346.314254 C 288.815138 348.224426 306.131485 348.224426 323.35811 346.314254 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 442.508934 277.643556 C 444.034208 272.772617 444.841706 267.615151 444.841706 262.648703 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 439.368664 302.189271 C 441.43227 294.166547 442.508934 285.857298 442.508934 277.643556 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 297.518172 657.767861 L 297.518172 726.438558 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 297.518172 657.767861 L 595.126066 485.852346 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 297.518172 726.438558 L 595.126066 554.618552 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -0.179444 485.852346 L -0.179444 554.618552 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -0.179444 485.852346 L 297.518172 657.767861 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -0.179444 554.618552 L 297.518172 726.438558 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 252.926335 529.022242 L 297.518172 554.618552 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 297.518172 554.618552 L 342.110009 529.022242 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 416.489552 382.894055 L 396.660989 371.43302 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 416.489552 434.373201 L 461.171111 460.256036 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 461.171111 460.256036 L 505.85267 434.373201 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 595.126066 485.852346 L 505.85267 434.373201 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 89.183674 434.373201 L -0.179444 485.852346 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 89.183674 434.373201 L 133.865233 460.256036 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 133.865233 460.256036 L 178.546792 434.373201 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 198.375355 371.43302 L 178.546792 382.894055 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 297.518172 382.894055 L 342.110009 357.011219 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 252.926335 357.011219 L 297.518172 382.894055 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 271.588512 346.314254 L 252.926335 357.011219 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 342.110009 357.011219 L 323.35811 346.314254 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 252.926335 357.011219 L 252.926335 529.022242 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 297.518172 382.894055 L 297.518172 554.618552 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 342.110009 357.011219 L 342.110009 529.022242 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 461.171111 288.340522 L 461.171111 460.256036 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 416.489552 349.370529 L 416.489552 434.373201 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 442.508934 277.643556 L 461.171111 288.340522 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 461.171111 288.340522 L 505.85267 262.648703 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 461.171111 236.765867 L 443.944486 246.794272 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 505.85267 262.648703 L 461.171111 236.765867 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 505.85267 262.648703 L 505.85267 434.373201 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 89.183674 262.648703 L 133.865233 288.340522 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 151.091858 246.794272 L 133.865233 236.765867 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 133.865233 288.340522 L 152.437688 277.643556 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 133.865233 236.765867 L 89.183674 262.648703 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 133.865233 288.340522 L 133.865233 460.256036 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 89.183674 262.648703 L 89.183674 434.373201 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                                <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 178.546792 349.370529 L 178.546792 434.373201 " transform="matrix(0.0435373,0,0,0.0408995,0,0)"/>
-                            </g>
-                        </svg>  
-                    </div>
-                    YouRights
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
-                    <!-- PARA METER LINKS EN EL CENTRO
+    <!-- Calendario CSS -->
+    <link rel="stylesheet" href="dependencias/datepicker-calendarios/css/bootstrap-datepicker.min.css">
+
+    <!-- Nuestros CSS -->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/style-maps-logo.css">
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <div class="col position-absolute w-100" id="nav-main" style="z-index: 1">
+        <nav
+            class="navbar navbar-light navbar-expand-xl bg-transparent justify-content-center w-75 mx-auto ftco-navbar-light">
+            <a href="index.html" class="navbar-brand d-flex w-25 mr-auto pb-0">
+                <div class="logo-nav" style="margin-top: -5px">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26pt"
+                        height="34pt" viewBox="0 0 26 34" version="1.1">
+                        <g id="surface1">
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 155.577959 302.189271 C 168.946537 350.03909 205.463394 388.05152 252.926335 402.950865 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 342.110009 402.950865 C 389.483228 388.05152 426.000085 350.03909 439.368664 302.189271 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 444.841706 262.648703 C 444.841706 181.275359 378.80631 115.374412 297.518172 115.374412 C 216.140313 115.374412 150.194638 181.275359 150.194638 262.648703 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 150.194638 262.648703 C 150.194638 267.615151 150.912414 272.772617 152.437688 277.643556 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 152.437688 277.643556 C 152.437688 285.857298 153.514352 294.166547 155.577959 302.189271 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 271.588512 346.314254 C 288.815138 348.224426 306.131485 348.224426 323.35811 346.314254 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 442.508934 277.643556 C 444.034208 272.772617 444.841706 267.615151 444.841706 262.648703 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 439.368664 302.189271 C 441.43227 294.166547 442.508934 285.857298 442.508934 277.643556 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 297.518172 657.767861 L 297.518172 726.438558 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 297.518172 657.767861 L 595.126066 485.852346 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 297.518172 726.438558 L 595.126066 554.618552 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M -0.179444 485.852346 L -0.179444 554.618552 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M -0.179444 485.852346 L 297.518172 657.767861 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M -0.179444 554.618552 L 297.518172 726.438558 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 252.926335 529.022242 L 297.518172 554.618552 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 297.518172 554.618552 L 342.110009 529.022242 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 416.489552 382.894055 L 396.660989 371.43302 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 416.489552 434.373201 L 461.171111 460.256036 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 461.171111 460.256036 L 505.85267 434.373201 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 595.126066 485.852346 L 505.85267 434.373201 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 89.183674 434.373201 L -0.179444 485.852346 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 89.183674 434.373201 L 133.865233 460.256036 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 133.865233 460.256036 L 178.546792 434.373201 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 198.375355 371.43302 L 178.546792 382.894055 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 297.518172 382.894055 L 342.110009 357.011219 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 252.926335 357.011219 L 297.518172 382.894055 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 271.588512 346.314254 L 252.926335 357.011219 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 342.110009 357.011219 L 323.35811 346.314254 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 252.926335 357.011219 L 252.926335 529.022242 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 297.518172 382.894055 L 297.518172 554.618552 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 342.110009 357.011219 L 342.110009 529.022242 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 461.171111 288.340522 L 461.171111 460.256036 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 416.489552 349.370529 L 416.489552 434.373201 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 442.508934 277.643556 L 461.171111 288.340522 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 461.171111 288.340522 L 505.85267 262.648703 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 461.171111 236.765867 L 443.944486 246.794272 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 505.85267 262.648703 L 461.171111 236.765867 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 505.85267 262.648703 L 505.85267 434.373201 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 89.183674 262.648703 L 133.865233 288.340522 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 151.091858 246.794272 L 133.865233 236.765867 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 133.865233 288.340522 L 152.437688 277.643556 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 133.865233 236.765867 L 89.183674 262.648703 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 133.865233 288.340522 L 133.865233 460.256036 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 89.183674 262.648703 L 89.183674 434.373201 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+                                d="M 178.546792 349.370529 L 178.546792 434.373201 "
+                                transform="matrix(0.0435373,0,0,0.0408995,0,0)" />
+                        </g>
+                    </svg>
+                </div>
+                YouRights
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
+                <!-- PARA METER LINKS EN EL CENTRO
                     <ul class="navbar-nav w-100 justify-content-center">
                         <li class="nav-item active">
                             <a class="nav-link" href="#">Link</a>
@@ -88,295 +232,1194 @@
                         </li>
                     </ul>
                     -->
-                    <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="page-main.html">Mapa virtual <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Servicios
-                            </a>
-                            <div class="dropdown-menu mt-1" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="protests.html">Detalles de protestas</a>
-                                <a class="dropdown-item" href="event-planner.html">Organizador de eventos</a>
-                                <a class="dropdown-item" href="collaborations.html">Te ayudamos</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
+                <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="page-main.html">Mapa virtual <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Servicios
+                        </a>
+                        <div class="dropdown-menu mt-1" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="protests.html">Detalles de protestas</a>
+                            <a class="dropdown-item" href="event-planner.html">Organizador de eventos</a>
+                            <a class="dropdown-item" href="collaborations.html">Te ayudamos</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="about-as.html">Sobre nosotros</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="transparency.html">Transparencia & Donaciones</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="legal-info.html">Información legal</a>
-                        </li>
-                        <li class="nav-item">
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="transparency.html">Transparencia & Donaciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="legal-info.html">Información legal</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contacto</a>
-                        </li>
-                        <li class="nav-item ml-2">
-                            <a class="btn btn-outline-info" href="login-sing-up.html" role="button">Entrar & Registro</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+                    </li>
+                    <li class="nav-item ml-2">
+                        <a class="btn btn-outline-info" href="login-sing-up.html" role="button">Entrar & Registro</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="row justify-content-center mb-5">
+        <div class="col-md-7 mt-6 w-100 text-center ">
+            <h1 class="heading" data-aos="fade-up">Inserta tu protesta</h1>
+            <p class="h6 mt-5" data-aos="fade-up">Con el siguiente formulario podrás insertar la protesta que quieras
+                para que cualquier persona pueda apuntarse en la misma lucha que tú.
         </div>
-        <div class="container w-100 pt-6">
-            <div class="row mx-auto">
-                <div class="row justify-content-center text-center mb-5">
-                    <div class="col-md-7">
-                        <h1 class="heading" data-aos="fade-up">Contactanos</h1>
-                        <p class="h6 mt-5" data-aos="fade-up">Escribenos y te ayudaremos en todo lo posible para que la protesta salga adelante. Preguntanos las dudas que tengas y nosotros te responderemos lo antes posible.<br>No pierdes nada por preguntar.</p>
+        <div class="container mt-6 w-100">
+            <div class="row">
+                <div class="col bg-white m-3 pb-4" style="max-width: 24rem;">
+                    <div class="container d-flex">
+                        <i class="fas fa-seedling fa-4x mt-4 pr-4"></i>
+                        <div class="mt-4">
+                            <h5 class="card-title">Pon tú semilla</h5>
+                            <h6 class="card-subtitle text-muted">Podrás dar a conocer el problema a toda la población
+                                para que todos podamos participar.</h6>
+                        </div>
                     </div>
                 </div>
-                <section class="py-5 bg-light mt-5" id="section-about">
-                    <div class="container">
-                        <div class="row align-items-center ml-3">
-                            <div id="map" class="col-md-12 col-lg-7 ml-auto order-lg-2 position-relative mb-5" data-aos="fade-up" style="height: 80%">
-                                <!-- Poner el mapa aquí -->
-                            </div>
-                            <div class="col-md-5">
-                                <div class="row">
-                                    <div class="col-md-10 contact-info bg-light border p-3">
-                                        <p><span class="d-block h6">Dirección:</span> <span class="text-black"> Calle Joaquín Maria Lopez 48</span></p>
-                                        <p><span class="d-block h6">Teléfono:</span> <span class="text-black"> (+34) 654616868</span></p>
-                                        <p><span class="d-block h6">Email:</span> <span class="text-black"> info@yourights.eu</span></p>
-                                    </div>
-                                </div>
-                            </div>                      
+                <div class="col bg-white m-3 pb-4" style="max-width: 24rem;">
+                    <div class="container d-flex">
+                        <i class="fas fa-volume-up fa-4x mt-4 pr-4"></i>
+                        <div class="mt-4">
+                            <h5 class="card-title">Consigue gente</h5>
+                            <h6 class="card-subtitle text-muted">Con YouRights podrás tener más audiencia en tu
+                                protesta, nosotros nos encargamos de comunicarselo a todo el mundo.</h6>
                         </div>
                     </div>
-                </section>
-                <div class="col-md-7 mx-auto mt-6" data-aos="fade-up" data-aos-delay="100">
-                    <form method="post" class="bg-light p-md-5 p-4 mb-5 border" action="./php/from-contact.php">
-                        <!-- form message -->
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="alert alert-success contact__msg" style="display: none" role="alert">
-                                    Tu mensaje fue enviado exitosamente.
-                                </div>
-                            </div>
+                </div>
+                <div class="col bg-white m-3 pb-4" style="max-width: 24rem;">
+                    <div class="container d-flex">
+                        <i class="far fa-comments fa-4x mt-4 pr-4"></i>
+                        <div class="mt-4">
+                            <h5 class="card-title">Haz que se hable</h5>
+                            <h6 class="card-subtitle text-muted">La mejor manera de conseguir cambiar las cosas es a
+                                través de los argumentos.<br> Haz posible el debate. </h6>
                         </div>
-                        <!-- end message -->
-                        <!-- form element -->
-                        <div class="row">
-                            <div class="col-md-6 form-group">
-                                <label for="name">Nombre</label>
-                                <input type="text" name="name" id="name" class="form-control" required>
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <label for="phone">Teléfono</label>
-                                <input type="text" name="phone" id="phone" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 form-group">
-                                <label for="inputCity">Ciudad</label>
-                                <select name="city" type="text" id="inputCity" class="form-control" required>
-                                    <option selected>Elige...</option>
-                                    <option value='selecciona'>Selecciona</option>
-                                    <option value='A Coruña' >A Coruña</option>
-                                    <option value='álava'>álava</option>
-                                    <option value='Albacete' >Albacete</option>
-                                    <option value='Alicante'>Alicante</option>
-                                    <option value='Almería' >Almería</option>
-                                    <option value='Asturias' >Asturias</option>
-                                    <option value='ávila' >Ávila</option>
-                                    <option value='Badajoz' >Badajoz</option>
-                                    <option value='Barcelona'>Barcelona</option>
-                                    <option value='Burgos' >Burgos</option>
-                                    <option value='Cáceres' >Cáceres</option>
-                                    <option value='Cádiz' >Cádiz</option>
-                                    <option value='Cantabria' >Cantabria</option>
-                                    <option value='Castellón' >Castellón</option>
-                                    <option value='Ceuta' >Ceuta</option>
-                                    <option value='Ciudad Real' >Ciudad Real</option>
-                                    <option value='Córdoba' >Córdoba</option>
-                                    <option value='Cuenca' >Cuenca</option>
-                                    <option value='Gerona' >Gerona</option>
-                                    <option value='Girona' >Girona</option>
-                                    <option value='Las Palmas' >Las Palmas</option>
-                                    <option value='Granada' >Granada</option>
-                                    <option value='Guadalajara' >Guadalajara</option>
-                                    <option value='Guipúzcoa' >Guipúzcoa</option>
-                                    <option value='Huelva' >Huelva</option>
-                                    <option value='Huesca' >Huesca</option>
-                                    <option value='Jaén' >Jaén</option>
-                                    <option value='La Rioja' >La Rioja</option>
-                                    <option value='León' >León</option>
-                                    <option value='Lleida' >Lleida</option>
-                                    <option value='Lugo' >Lugo</option>
-                                    <option value='Madrid' >Madrid</option>
-                                    <option value='Malaga' >Málaga</option>
-                                    <option value='Mallorca' >Mallorca</option>
-                                    <option value='Melilla' >Melilla</option>
-                                    <option value='Murcia' >Murcia</option>
-                                    <option value='Navarra' >Navarra</option>
-                                    <option value='Orense' >Orense</option>
-                                    <option value='Palencia' >Palencia</option>
-                                    <option value='Pontevedra'>Pontevedra</option>
-                                    <option value='Salamanca'>Salamanca</option>
-                                    <option value='Segovia' >Segovia</option>
-                                    <option value='Sevilla' >Sevilla</option>
-                                    <option value='Soria' >Soria</option>
-                                    <option value='Tarragona' >Tarragona</option>
-                                    <option value='Tenerife' >Tenerife</option>
-                                    <option value='Teruel' >Teruel</option>
-                                    <option value='Toledo' >Toledo</option>
-                                    <option value='Valencia' >Valencia</option>
-                                    <option value='Valladolid' >Valladolid</option>
-                                    <option value='Vizcaya' >Vizcaya</option>
-                                    <option value='Zamora' >Zamora</option>
-                                    <option value='Zaragoza'>Zaragoza</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <label for="email">Email</label>
-                                <input type="email" name="email" id="email" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="attched">Inserte archivo adjunto</label>
-                            <input name="attched" type="file" class="form-control-file" id="attched">
-                        </div>
-                        <div class="form-group">
-                            <label for="subjet">Asunto</label>
-                            <input class="form-control" name="subject" type="text" id="subjet" required>
-                        </div>
-                        <div class="row mb-4">
-                            <div class="col-md-12 form-group">
-                            <label for="message">Escribe el mensaje</label>
-                            <textarea name="message" id="message" class="form-control" cols="30" rows="8" required></textarea>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 form-group">
-                            <input type="submit" value="Enviar" class="btn btn-primary text-white font-weight-bold">
-                            <div class="submitting"></div>
-                            </div>
-                        </div>
-                        <!-- end form element -->
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
-        <footer class="bg-dark mt-6">
-            <div class="container">
-                <div class="row pt-5">
-                    <div class="col-md-3 text-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120pt" height="120pt" viewBox="0 0 120 120" version="1.1">
+        <div class="container mt-6 w-100">
+            <!-- Puedes ver este formulario y la explicación dentro de Bootstrap, Form -->
+            <form id="form-protests-create">
+                <!-- form message -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="alert alert-success form-users-msg" style="display: none" role="alert">
+                            Tu mensaje fue enviado exitosamente.
+                        </div>
+                    </div>
+                </div>
+                <!-- end message -->
+                <div class="form-row">
+                    <h4>Datos personales</h4>
+                </div>
+                <div class="form-row" style="margin-top: 10px">
+                    <div class="col-md-3 mb-3">
+                        <label class="sr-only" for="first-name">Nombre</label>
+                        <input name="name" type="text" class="form-control is-valid" id="first-name"
+                            placeholder="Nombre" value="Mark" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label class="sr-only" for="last-name">Apellidos</label>
+                        <input name="last-name" type="text" class="form-control is-valid" id="last-name"
+                            placeholder="Apellidos" value="Otto" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label class="sr-only" for="dni">DNI</label>
+                        <input name="dni" type="text" class="form-control is-valid" id="dni-user" placeholder="DNI"
+                            value="Otto" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label class="sr-only" for="email">Email</label>
+                        <input name="email" type="email" class="form-control" id="email-user" placeholder="Email">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label class="sr-only" for="email">Repetir Email</label>
+                        <input name="email2" type="email" class="form-control" id="repeat-email-user"
+                            placeholder="Repetir Email">
+                    </div>
+                </div>
+                <div class="form-row" style="margin-top: 10px">
+                    <div class="form-group col">
+                        <label class="sr-only">País</label>
+                        <select class="custom-select" id="country-select" name="pais" required>
+                            <option value="0" selected>País</option>
+                            <option value="AF">Afganistán</option>
+                            <option value="AL">Albania</option>
+                            <option value="DE">Alemania</option>
+                            <option value="AD">Andorra</option>
+                            <option value="AO">Angola</option>
+                            <option value="AI">Anguilla</option>
+                            <option value="AQ">Antártida</option>
+                            <option value="AG">Antigua y Barbuda</option>
+                            <option value="AN">Antillas Holandesas</option>
+                            <option value="SA">Arabia Saudí</option>
+                            <option value="DZ">Argelia</option>
+                            <option value="AR">Argentina</option>
+                            <option value="AM">Armenia</option>
+                            <option value="AW">Aruba</option>
+                            <option value="AU">Australia</option>
+                            <option value="AT">Austria</option>
+                            <option value="AZ">Azerbaiyán</option>
+                            <option value="BS">Bahamas</option>
+                            <option value="BH">Bahrein</option>
+                            <option value="BD">Bangladesh</option>
+                            <option value="BB">Barbados</option>
+                            <option value="BE">Bélgica</option>
+                            <option value="BZ">Belice</option>
+                            <option value="BJ">Benin</option>
+                            <option value="BM">Bermudas</option>
+                            <option value="BY">Bielorrusia</option>
+                            <option value="MM">Birmania</option>
+                            <option value="BO">Bolivia</option>
+                            <option value="BA">Bosnia y Herzegovina</option>
+                            <option value="BW">Botswana</option>
+                            <option value="BR">Brasil</option>
+                            <option value="BN">Brunei</option>
+                            <option value="BG">Bulgaria</option>
+                            <option value="BF">Burkina Faso</option>
+                            <option value="BI">Burundi</option>
+                            <option value="BT">Bután</option>
+                            <option value="CV">Cabo Verde</option>
+                            <option value="KH">Camboya</option>
+                            <option value="CM">Camerún</option>
+                            <option value="CA">Canadá</option>
+                            <option value="TD">Chad</option>
+                            <option value="CL">Chile</option>
+                            <option value="CN">China</option>
+                            <option value="CY">Chipre</option>
+                            <option value="VA">Ciudad del Vaticano (Santa Sede)</option>
+                            <option value="CO">Colombia</option>
+                            <option value="KM">Comores</option>
+                            <option value="CG">Congo</option>
+                            <option value="CD">Congo, República Democrática del</option>
+                            <option value="KR">Corea</option>
+                            <option value="KP">Corea del Norte</option>
+                            <option value="CI">Costa de Marfíl</option>
+                            <option value="CR">Costa Rica</option>
+                            <option value="HR">Croacia (Hrvatska)</option>
+                            <option value="CU">Cuba</option>
+                            <option value="DK">Dinamarca</option>
+                            <option value="DJ">Djibouti</option>
+                            <option value="DM">Dominica</option>
+                            <option value="EC">Ecuador</option>
+                            <option value="EG">Egipto</option>
+                            <option value="SV">El Salvador</option>
+                            <option value="AE">Emiratos Árabes Unidos</option>
+                            <option value="ER">Eritrea</option>
+                            <option value="SI">Eslovenia</option>
+                            <option value="ES">España</option>
+                            <option value="US">Estados Unidos</option>
+                            <option value="EE">Estonia</option>
+                            <option value="ET">Etiopía</option>
+                            <option value="FJ">Fiji</option>
+                            <option value="PH">Filipinas</option>
+                            <option value="FI">Finlandia</option>
+                            <option value="FR">Francia</option>
+                            <option value="GA">Gabón</option>
+                            <option value="GM">Gambia</option>
+                            <option value="GE">Georgia</option>
+                            <option value="GH">Ghana</option>
+                            <option value="GI">Gibraltar</option>
+                            <option value="GD">Granada</option>
+                            <option value="GR">Grecia</option>
+                            <option value="GL">Groenlandia</option>
+                            <option value="GP">Guadalupe</option>
+                            <option value="GU">Guam</option>
+                            <option value="GT">Guatemala</option>
+                            <option value="GY">Guayana</option>
+                            <option value="GF">Guayana Francesa</option>
+                            <option value="GN">Guinea</option>
+                            <option value="GQ">Guinea Ecuatorial</option>
+                            <option value="GW">Guinea-Bissau</option>
+                            <option value="HT">Haití</option>
+                            <option value="HN">Honduras</option>
+                            <option value="HU">Hungría</option>
+                            <option value="IN">India</option>
+                            <option value="ID">Indonesia</option>
+                            <option value="IQ">Irak</option>
+                            <option value="IR">Irán</option>
+                            <option value="IE">Irlanda</option>
+                            <option value="BV">Isla Bouvet</option>
+                            <option value="CX">Isla de Christmas</option>
+                            <option value="IS">Islandia</option>
+                            <option value="KY">Islas Caimán</option>
+                            <option value="CK">Islas Cook</option>
+                            <option value="CC">Islas de Cocos o Keeling</option>
+                            <option value="FO">Islas Faroe</option>
+                            <option value="HM">Islas Heard y McDonald</option>
+                            <option value="FK">Islas Malvinas</option>
+                            <option value="MP">Islas Marianas del Norte</option>
+                            <option value="MH">Islas Marshall</option>
+                            <option value="UM">Islas menores de Estados Unidos</option>
+                            <option value="PW">Islas Palau</option>
+                            <option value="SB">Islas Salomón</option>
+                            <option value="SJ">Islas Svalbard y Jan Mayen</option>
+                            <option value="TK">Islas Tokelau</option>
+                            <option value="TC">Islas Turks y Caicos</option>
+                            <option value="VI">Islas Vírgenes (EEUU)</option>
+                            <option value="VG">Islas Vírgenes (Reino Unido)</option>
+                            <option value="WF">Islas Wallis y Futuna</option>
+                            <option value="IL">Israel</option>
+                            <option value="IT">Italia</option>
+                            <option value="JM">Jamaica</option>
+                            <option value="JP">Japón</option>
+                            <option value="JO">Jordania</option>
+                            <option value="KZ">Kazajistán</option>
+                            <option value="KE">Kenia</option>
+                            <option value="KG">Kirguizistán</option>
+                            <option value="KI">Kiribati</option>
+                            <option value="KW">Kuwait</option>
+                            <option value="LA">Laos</option>
+                            <option value="LS">Lesotho</option>
+                            <option value="LV">Letonia</option>
+                            <option value="LB">Líbano</option>
+                            <option value="LR">Liberia</option>
+                            <option value="LY">Libia</option>
+                            <option value="LI">Liechtenstein</option>
+                            <option value="LT">Lituania</option>
+                            <option value="LU">Luxemburgo</option>
+                            <option value="MK">Macedonia, Ex-República Yugoslava de</option>
+                            <option value="MG">Madagascar</option>
+                            <option value="MY">Malasia</option>
+                            <option value="MW">Malawi</option>
+                            <option value="MV">Maldivas</option>
+                            <option value="ML">Malí</option>
+                            <option value="MT">Malta</option>
+                            <option value="MA">Marruecos</option>
+                            <option value="MQ">Martinica</option>
+                            <option value="MU">Mauricio</option>
+                            <option value="MR">Mauritania</option>
+                            <option value="YT">Mayotte</option>
+                            <option value="MX">México</option>
+                            <option value="FM">Micronesia</option>
+                            <option value="MD">Moldavia</option>
+                            <option value="MC">Mónaco</option>
+                            <option value="MN">Mongolia</option>
+                            <option value="MS">Montserrat</option>
+                            <option value="MZ">Mozambique</option>
+                            <option value="NA">Namibia</option>
+                            <option value="NR">Nauru</option>
+                            <option value="NP">Nepal</option>
+                            <option value="NI">Nicaragua</option>
+                            <option value="NE">Níger</option>
+                            <option value="NG">Nigeria</option>
+                            <option value="NU">Niue</option>
+                            <option value="NF">Norfolk</option>
+                            <option value="NO">Noruega</option>
+                            <option value="NC">Nueva Caledonia</option>
+                            <option value="NZ">Nueva Zelanda</option>
+                            <option value="OM">Omán</option>
+                            <option value="NL">Países Bajos</option>
+                            <option value="PA">Panamá</option>
+                            <option value="PG">Papúa Nueva Guinea</option>
+                            <option value="PK">Paquistán</option>
+                            <option value="PY">Paraguay</option>
+                            <option value="PE">Perú</option>
+                            <option value="PN">Pitcairn</option>
+                            <option value="PF">Polinesia Francesa</option>
+                            <option value="PL">Polonia</option>
+                            <option value="PT">Portugal</option>
+                            <option value="PR">Puerto Rico</option>
+                            <option value="QA">Qatar</option>
+                            <option value="UK">Reino Unido</option>
+                            <option value="CF">República Centroafricana</option>
+                            <option value="CZ">República Checa</option>
+                            <option value="ZA">República de Sudáfrica</option>
+                            <option value="DO">República Dominicana</option>
+                            <option value="SK">República Eslovaca</option>
+                            <option value="RE">Reunión</option>
+                            <option value="RW">Ruanda</option>
+                            <option value="RO">Rumania</option>
+                            <option value="RU">Rusia</option>
+                            <option value="EH">Sahara Occidental</option>
+                            <option value="KN">Saint Kitts y Nevis</option>
+                            <option value="WS">Samoa</option>
+                            <option value="AS">Samoa Americana</option>
+                            <option value="SM">San Marino</option>
+                            <option value="VC">San Vicente y Granadinas</option>
+                            <option value="SH">Santa Helena</option>
+                            <option value="LC">Santa Lucía</option>
+                            <option value="ST">Santo Tomé y Príncipe</option>
+                            <option value="SN">Senegal</option>
+                            <option value="SC">Seychelles</option>
+                            <option value="SL">Sierra Leona</option>
+                            <option value="SG">Singapur</option>
+                            <option value="SY">Siria</option>
+                            <option value="SO">Somalia</option>
+                            <option value="LK">Sri Lanka</option>
+                            <option value="PM">St Pierre y Miquelon</option>
+                            <option value="SZ">Suazilandia</option>
+                            <option value="SD">Sudán</option>
+                            <option value="SE">Suecia</option>
+                            <option value="CH">Suiza</option>
+                            <option value="SR">Surinam</option>
+                            <option value="TH">Tailandia</option>
+                            <option value="TW">Taiwán</option>
+                            <option value="TZ">Tanzania</option>
+                            <option value="TJ">Tayikistán</option>
+                            <option value="TF">Territorios franceses del Sur</option>
+                            <option value="TP">Timor Oriental</option>
+                            <option value="TG">Togo</option>
+                            <option value="TO">Tonga</option>
+                            <option value="TT">Trinidad y Tobago</option>
+                            <option value="TN">Túnez</option>
+                            <option value="TM">Turkmenistán</option>
+                            <option value="TR">Turquía</option>
+                            <option value="TV">Tuvalu</option>
+                            <option value="UA">Ucrania</option>
+                            <option value="UG">Uganda</option>
+                            <option value="UY">Uruguay</option>
+                            <option value="UZ">Uzbekistán</option>
+                            <option value="VU">Vanuatu</option>
+                            <option value="VE">Venezuela</option>
+                            <option value="VN">Vietnam</option>
+                            <option value="YE">Yemen</option>
+                            <option value="YU">Yugoslavia</option>
+                            <option value="ZM">Zambia</option>
+                            <option value="ZW">Zimbabue</option>
+                        </select>
+                    </div>
+                    <div class="form-group col">
+                        <label class="sr-only">Ciudad</label>
+                        <select class="custom-select" id="city-select" name="city" required>
+                            <option value="0" selected>Ciudad</option>
+                            <option value='selecciona'>Selecciona</option>
+                            <option value='A Coruña'>A Coruña</option>
+                            <option value='álava'>álava</option>
+                            <option value='Albacete'>Albacete</option>
+                            <option value='Alicante'>Alicante</option>
+                            <option value='Almería'>Almería</option>
+                            <option value='Asturias'>Asturias</option>
+                            <option value='ávila'>Ávila</option>
+                            <option value='Badajoz'>Badajoz</option>
+                            <option value='Barcelona'>Barcelona</option>
+                            <option value='Burgos'>Burgos</option>
+                            <option value='Cáceres'>Cáceres</option>
+                            <option value='Cádiz'>Cádiz</option>
+                            <option value='Cantabria'>Cantabria</option>
+                            <option value='Castellón'>Castellón</option>
+                            <option value='Ceuta'>Ceuta</option>
+                            <option value='Ciudad Real'>Ciudad Real</option>
+                            <option value='Córdoba'>Córdoba</option>
+                            <option value='Cuenca'>Cuenca</option>
+                            <option value='Gerona'>Gerona</option>
+                            <option value='Girona'>Girona</option>
+                            <option value='Las Palmas'>Las Palmas</option>
+                            <option value='Granada'>Granada</option>
+                            <option value='Guadalajara'>Guadalajara</option>
+                            <option value='Guipúzcoa'>Guipúzcoa</option>
+                            <option value='Huelva'>Huelva</option>
+                            <option value='Huesca'>Huesca</option>
+                            <option value='Jaén'>Jaén</option>
+                            <option value='La Rioja'>La Rioja</option>
+                            <option value='León'>León</option>
+                            <option value='Lleida'>Lleida</option>
+                            <option value='Lugo'>Lugo</option>
+                            <option value='Madrid'>Madrid</option>
+                            <option value='Malaga'>Málaga</option>
+                            <option value='Mallorca'>Mallorca</option>
+                            <option value='Melilla'>Melilla</option>
+                            <option value='Murcia'>Murcia</option>
+                            <option value='Navarra'>Navarra</option>
+                            <option value='Orense'>Orense</option>
+                            <option value='Palencia'>Palencia</option>
+                            <option value='Pontevedra'>Pontevedra</option>
+                            <option value='Salamanca'>Salamanca</option>
+                            <option value='Segovia'>Segovia</option>
+                            <option value='Sevilla'>Sevilla</option>
+                            <option value='Soria'>Soria</option>
+                            <option value='Tarragona'>Tarragona</option>
+                            <option value='Tenerife'>Tenerife</option>
+                            <option value='Teruel'>Teruel</option>
+                            <option value='Toledo'>Toledo</option>
+                            <option value='Valencia'>Valencia</option>
+                            <option value='Valladolid'>Valladolid</option>
+                            <option value='Vizcaya'>Vizcaya</option>
+                            <option value='Zamora'>Zamora</option>
+                            <option value='Zaragoza'>Zaragoza</option>
+                        </select>
+                    </div>
+                    <div class="form-group col">
+                        <label class="sr-only" for="street-home">Codigo postal</label>
+                        <input type="text" class="form-control" id="postal-code-user" placeholder="Codigo postal">
+                    </div>
+                    <div class="form-group col">
+                        <label class="sr-only" for="street-home">Calle</label>
+                        <input type="text" class="form-control" id="street-user" placeholder="Calle">
+                    </div>
+                    <div class="form-group col">
+                        <label class="sr-only" for="number-street-home">Número</label>
+                        <input type="text" class="form-control" id="number-street-user" placeholder="Número">
+                    </div>
+                    <div class="form-group col">
+                        <label class="sr-only" for="phone">Teléfono</label>
+                        <input type="text" class="form-control" id="phone-user" placeholder="Teléfono">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <h4>Resgistro</h4>
+                </div>
+                <div class="form-row" style="margin-top: 10px">
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label class="sr-only" for="username">Nombre de usuario</label>
+                            <input type="text" class="form-control" id="username" placeholder="Nombre de usuario">
+                            <small id="passwordHelpBlock" class="form-text text-muted">
+                                Your password must be 8-20 characters long, contain letters and numbers, and must not
+                                contain spaces, special characters, or emoji.
+                            </small>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label class="sr-only" for="password">Contraseña</label>
+                            <input type="password" class="form-control" id="password" placeholder="Contraseña">
+                            <small id="passwordHelpBlock" class="form-text text-muted">
+                                Your password must be 8-20 characters long, contain letters and numbers, and must not
+                                contain spaces, special characters, or emoji.
+                            </small>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label class="sr-only" for="repeat-password">Repetir contraseña</label>
+                            <input type="password" class="form-control" id="repeat-password"
+                                placeholder="Respite la contraseña">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row" style="margin-top: 20px">
+                    <h4>Datos de la protesta</h4>
+                </div>
+                <div class="form-row" style="margin-top: 10px">
+                    <div class="form-group col">
+                        <label class="sr-only">País</label>
+                        <select class="custom-select" id="country-protest-select" name="pais" required>
+                            <option value="0" selected>País</option>
+                            <option value="AF">Afganistán</option>
+                            <option value="AL">Albania</option>
+                            <option value="DE">Alemania</option>
+                            <option value="AD">Andorra</option>
+                            <option value="AO">Angola</option>
+                            <option value="AI">Anguilla</option>
+                            <option value="AQ">Antártida</option>
+                            <option value="AG">Antigua y Barbuda</option>
+                            <option value="AN">Antillas Holandesas</option>
+                            <option value="SA">Arabia Saudí</option>
+                            <option value="DZ">Argelia</option>
+                            <option value="AR">Argentina</option>
+                            <option value="AM">Armenia</option>
+                            <option value="AW">Aruba</option>
+                            <option value="AU">Australia</option>
+                            <option value="AT">Austria</option>
+                            <option value="AZ">Azerbaiyán</option>
+                            <option value="BS">Bahamas</option>
+                            <option value="BH">Bahrein</option>
+                            <option value="BD">Bangladesh</option>
+                            <option value="BB">Barbados</option>
+                            <option value="BE">Bélgica</option>
+                            <option value="BZ">Belice</option>
+                            <option value="BJ">Benin</option>
+                            <option value="BM">Bermudas</option>
+                            <option value="BY">Bielorrusia</option>
+                            <option value="MM">Birmania</option>
+                            <option value="BO">Bolivia</option>
+                            <option value="BA">Bosnia y Herzegovina</option>
+                            <option value="BW">Botswana</option>
+                            <option value="BR">Brasil</option>
+                            <option value="BN">Brunei</option>
+                            <option value="BG">Bulgaria</option>
+                            <option value="BF">Burkina Faso</option>
+                            <option value="BI">Burundi</option>
+                            <option value="BT">Bután</option>
+                            <option value="CV">Cabo Verde</option>
+                            <option value="KH">Camboya</option>
+                            <option value="CM">Camerún</option>
+                            <option value="CA">Canadá</option>
+                            <option value="TD">Chad</option>
+                            <option value="CL">Chile</option>
+                            <option value="CN">China</option>
+                            <option value="CY">Chipre</option>
+                            <option value="VA">Ciudad del Vaticano (Santa Sede)</option>
+                            <option value="CO">Colombia</option>
+                            <option value="KM">Comores</option>
+                            <option value="CG">Congo</option>
+                            <option value="CD">Congo, República Democrática del</option>
+                            <option value="KR">Corea</option>
+                            <option value="KP">Corea del Norte</option>
+                            <option value="CI">Costa de Marfíl</option>
+                            <option value="CR">Costa Rica</option>
+                            <option value="HR">Croacia (Hrvatska)</option>
+                            <option value="CU">Cuba</option>
+                            <option value="DK">Dinamarca</option>
+                            <option value="DJ">Djibouti</option>
+                            <option value="DM">Dominica</option>
+                            <option value="EC">Ecuador</option>
+                            <option value="EG">Egipto</option>
+                            <option value="SV">El Salvador</option>
+                            <option value="AE">Emiratos Árabes Unidos</option>
+                            <option value="ER">Eritrea</option>
+                            <option value="SI">Eslovenia</option>
+                            <option value="ES">España</option>
+                            <option value="US">Estados Unidos</option>
+                            <option value="EE">Estonia</option>
+                            <option value="ET">Etiopía</option>
+                            <option value="FJ">Fiji</option>
+                            <option value="PH">Filipinas</option>
+                            <option value="FI">Finlandia</option>
+                            <option value="FR">Francia</option>
+                            <option value="GA">Gabón</option>
+                            <option value="GM">Gambia</option>
+                            <option value="GE">Georgia</option>
+                            <option value="GH">Ghana</option>
+                            <option value="GI">Gibraltar</option>
+                            <option value="GD">Granada</option>
+                            <option value="GR">Grecia</option>
+                            <option value="GL">Groenlandia</option>
+                            <option value="GP">Guadalupe</option>
+                            <option value="GU">Guam</option>
+                            <option value="GT">Guatemala</option>
+                            <option value="GY">Guayana</option>
+                            <option value="GF">Guayana Francesa</option>
+                            <option value="GN">Guinea</option>
+                            <option value="GQ">Guinea Ecuatorial</option>
+                            <option value="GW">Guinea-Bissau</option>
+                            <option value="HT">Haití</option>
+                            <option value="HN">Honduras</option>
+                            <option value="HU">Hungría</option>
+                            <option value="IN">India</option>
+                            <option value="ID">Indonesia</option>
+                            <option value="IQ">Irak</option>
+                            <option value="IR">Irán</option>
+                            <option value="IE">Irlanda</option>
+                            <option value="BV">Isla Bouvet</option>
+                            <option value="CX">Isla de Christmas</option>
+                            <option value="IS">Islandia</option>
+                            <option value="KY">Islas Caimán</option>
+                            <option value="CK">Islas Cook</option>
+                            <option value="CC">Islas de Cocos o Keeling</option>
+                            <option value="FO">Islas Faroe</option>
+                            <option value="HM">Islas Heard y McDonald</option>
+                            <option value="FK">Islas Malvinas</option>
+                            <option value="MP">Islas Marianas del Norte</option>
+                            <option value="MH">Islas Marshall</option>
+                            <option value="UM">Islas menores de Estados Unidos</option>
+                            <option value="PW">Islas Palau</option>
+                            <option value="SB">Islas Salomón</option>
+                            <option value="SJ">Islas Svalbard y Jan Mayen</option>
+                            <option value="TK">Islas Tokelau</option>
+                            <option value="TC">Islas Turks y Caicos</option>
+                            <option value="VI">Islas Vírgenes (EEUU)</option>
+                            <option value="VG">Islas Vírgenes (Reino Unido)</option>
+                            <option value="WF">Islas Wallis y Futuna</option>
+                            <option value="IL">Israel</option>
+                            <option value="IT">Italia</option>
+                            <option value="JM">Jamaica</option>
+                            <option value="JP">Japón</option>
+                            <option value="JO">Jordania</option>
+                            <option value="KZ">Kazajistán</option>
+                            <option value="KE">Kenia</option>
+                            <option value="KG">Kirguizistán</option>
+                            <option value="KI">Kiribati</option>
+                            <option value="KW">Kuwait</option>
+                            <option value="LA">Laos</option>
+                            <option value="LS">Lesotho</option>
+                            <option value="LV">Letonia</option>
+                            <option value="LB">Líbano</option>
+                            <option value="LR">Liberia</option>
+                            <option value="LY">Libia</option>
+                            <option value="LI">Liechtenstein</option>
+                            <option value="LT">Lituania</option>
+                            <option value="LU">Luxemburgo</option>
+                            <option value="MK">Macedonia, Ex-República Yugoslava de</option>
+                            <option value="MG">Madagascar</option>
+                            <option value="MY">Malasia</option>
+                            <option value="MW">Malawi</option>
+                            <option value="MV">Maldivas</option>
+                            <option value="ML">Malí</option>
+                            <option value="MT">Malta</option>
+                            <option value="MA">Marruecos</option>
+                            <option value="MQ">Martinica</option>
+                            <option value="MU">Mauricio</option>
+                            <option value="MR">Mauritania</option>
+                            <option value="YT">Mayotte</option>
+                            <option value="MX">México</option>
+                            <option value="FM">Micronesia</option>
+                            <option value="MD">Moldavia</option>
+                            <option value="MC">Mónaco</option>
+                            <option value="MN">Mongolia</option>
+                            <option value="MS">Montserrat</option>
+                            <option value="MZ">Mozambique</option>
+                            <option value="NA">Namibia</option>
+                            <option value="NR">Nauru</option>
+                            <option value="NP">Nepal</option>
+                            <option value="NI">Nicaragua</option>
+                            <option value="NE">Níger</option>
+                            <option value="NG">Nigeria</option>
+                            <option value="NU">Niue</option>
+                            <option value="NF">Norfolk</option>
+                            <option value="NO">Noruega</option>
+                            <option value="NC">Nueva Caledonia</option>
+                            <option value="NZ">Nueva Zelanda</option>
+                            <option value="OM">Omán</option>
+                            <option value="NL">Países Bajos</option>
+                            <option value="PA">Panamá</option>
+                            <option value="PG">Papúa Nueva Guinea</option>
+                            <option value="PK">Paquistán</option>
+                            <option value="PY">Paraguay</option>
+                            <option value="PE">Perú</option>
+                            <option value="PN">Pitcairn</option>
+                            <option value="PF">Polinesia Francesa</option>
+                            <option value="PL">Polonia</option>
+                            <option value="PT">Portugal</option>
+                            <option value="PR">Puerto Rico</option>
+                            <option value="QA">Qatar</option>
+                            <option value="UK">Reino Unido</option>
+                            <option value="CF">República Centroafricana</option>
+                            <option value="CZ">República Checa</option>
+                            <option value="ZA">República de Sudáfrica</option>
+                            <option value="DO">República Dominicana</option>
+                            <option value="SK">República Eslovaca</option>
+                            <option value="RE">Reunión</option>
+                            <option value="RW">Ruanda</option>
+                            <option value="RO">Rumania</option>
+                            <option value="RU">Rusia</option>
+                            <option value="EH">Sahara Occidental</option>
+                            <option value="KN">Saint Kitts y Nevis</option>
+                            <option value="WS">Samoa</option>
+                            <option value="AS">Samoa Americana</option>
+                            <option value="SM">San Marino</option>
+                            <option value="VC">San Vicente y Granadinas</option>
+                            <option value="SH">Santa Helena</option>
+                            <option value="LC">Santa Lucía</option>
+                            <option value="ST">Santo Tomé y Príncipe</option>
+                            <option value="SN">Senegal</option>
+                            <option value="SC">Seychelles</option>
+                            <option value="SL">Sierra Leona</option>
+                            <option value="SG">Singapur</option>
+                            <option value="SY">Siria</option>
+                            <option value="SO">Somalia</option>
+                            <option value="LK">Sri Lanka</option>
+                            <option value="PM">St Pierre y Miquelon</option>
+                            <option value="SZ">Suazilandia</option>
+                            <option value="SD">Sudán</option>
+                            <option value="SE">Suecia</option>
+                            <option value="CH">Suiza</option>
+                            <option value="SR">Surinam</option>
+                            <option value="TH">Tailandia</option>
+                            <option value="TW">Taiwán</option>
+                            <option value="TZ">Tanzania</option>
+                            <option value="TJ">Tayikistán</option>
+                            <option value="TF">Territorios franceses del Sur</option>
+                            <option value="TP">Timor Oriental</option>
+                            <option value="TG">Togo</option>
+                            <option value="TO">Tonga</option>
+                            <option value="TT">Trinidad y Tobago</option>
+                            <option value="TN">Túnez</option>
+                            <option value="TM">Turkmenistán</option>
+                            <option value="TR">Turquía</option>
+                            <option value="TV">Tuvalu</option>
+                            <option value="UA">Ucrania</option>
+                            <option value="UG">Uganda</option>
+                            <option value="UY">Uruguay</option>
+                            <option value="UZ">Uzbekistán</option>
+                            <option value="VU">Vanuatu</option>
+                            <option value="VE">Venezuela</option>
+                            <option value="VN">Vietnam</option>
+                            <option value="YE">Yemen</option>
+                            <option value="YU">Yugoslavia</option>
+                            <option value="ZM">Zambia</option>
+                            <option value="ZW">Zimbabue</option>
+                        </select>
+                    </div>
+                    <div class="form-group col">
+                        <label class="sr-only">Ciudad</label>
+                        <select class="custom-select" id="city-protest-select" name="city" onchange="getSelectValue();"
+                            required>
+                            <option value="0" selected>Ciudad</option>
+                            <option value='selecciona'>Selecciona</option>
+                            <option value='A Coruña'>A Coruña</option>
+                            <option value='álava'>álava</option>
+                            <option value='Albacete'>Albacete</option>
+                            <option value='Alicante'>Alicante</option>
+                            <option value='Almería'>Almería</option>
+                            <option value='Asturias'>Asturias</option>
+                            <option value='ávila'>Ávila</option>
+                            <option value='Badajoz'>Badajoz</option>
+                            <option value='Barcelona'>Barcelona</option>
+                            <option value='Burgos'>Burgos</option>
+                            <option value='Cáceres'>Cáceres</option>
+                            <option value='Cádiz'>Cádiz</option>
+                            <option value='Cantabria'>Cantabria</option>
+                            <option value='Castellón'>Castellón</option>
+                            <option value='Ceuta'>Ceuta</option>
+                            <option value='Ciudad Real'>Ciudad Real</option>
+                            <option value='Córdoba'>Córdoba</option>
+                            <option value='Cuenca'>Cuenca</option>
+                            <option value='Gerona'>Gerona</option>
+                            <option value='Girona'>Girona</option>
+                            <option value='Las Palmas'>Las Palmas</option>
+                            <option value='Granada'>Granada</option>
+                            <option value='Guadalajara'>Guadalajara</option>
+                            <option value='Guipúzcoa'>Guipúzcoa</option>
+                            <option value='Huelva'>Huelva</option>
+                            <option value='Huesca'>Huesca</option>
+                            <option value='Jaén'>Jaén</option>
+                            <option value='La Rioja'>La Rioja</option>
+                            <option value='León'>León</option>
+                            <option value='Lleida'>Lleida</option>
+                            <option value='Lugo'>Lugo</option>
+                            <option value='Madrid'>Madrid</option>
+                            <option value='Malaga'>Málaga</option>
+                            <option value='Mallorca'>Mallorca</option>
+                            <option value='Melilla'>Melilla</option>
+                            <option value='Murcia'>Murcia</option>
+                            <option value='Navarra'>Navarra</option>
+                            <option value='Orense'>Orense</option>
+                            <option value='Palencia'>Palencia</option>
+                            <option value='Pontevedra'>Pontevedra</option>
+                            <option value='Salamanca'>Salamanca</option>
+                            <option value='Segovia'>Segovia</option>
+                            <option value='Sevilla'>Sevilla</option>
+                            <option value='Soria'>Soria</option>
+                            <option value='Tarragona'>Tarragona</option>
+                            <option value='Tenerife'>Tenerife</option>
+                            <option value='Teruel'>Teruel</option>
+                            <option value='Toledo'>Toledo</option>
+                            <option value='Valencia'>Valencia</option>
+                            <option value='Valladolid'>Valladolid</option>
+                            <option value='Vizcaya'>Vizcaya</option>
+                            <option value='Zamora'>Zamora</option>
+                            <option value='Zaragoza'>Zaragoza</option>
+                        </select>
+                    </div>
+                    <div class="form-group col">
+                        <label class="sr-only" for="street-protest">Punto de reunión</label>
+                        <input type="text" class="form-control" id="street-protest" name="meeting-point"
+                            placeholder="Punto de reunión">
+                    </div>
+                    <div class="form-group col">
+                        <label class="sr-only" for="number-street-protest">Número</label>
+                        <input type="text" class="form-control" id="number-street-protest" name="name-meeting-point"
+                            placeholder="Número">
+                    </div>
+                    <div class="form-group col fj-date input-daterange">
+                        <label class="sr-only" for="date-protest">Fecha</label>
+                        <input type="text" class="form-control" id="date-protest" name="date" value="Fecha">
+                    </div>
+                </div>
+                <div class="form-row" style="margin-top: 10px">
+                    <div class="form-group col">
+                        <label class="sr-only">Tipo de protesta</label>
+                        <select class="custom-select" id="type-protest-select" name="tipo-protesta" required>
+                            <option value="0" selected>Manifestación</option>
+                            <option value="1">Protesta</option>
+                            <option value="2">Huelga</option>
+                        </select>
+                    </div>
+                    <div class="form-group col">
+                        <label class="sr-only">Propuesta por:</label>
+                        <select class="custom-select" id="initiated-select" name="promovido" required>
+                            <option value="0" selected>Persona física</option>
+                            <option value="1">Organización</option>
+                            <option value="2">Partido político</option>
+                        </select>
+                    </div>
+                    <div class="form-group col">
+                        <label class="sr-only">Sector a defender</label>
+                        <select class="custom-select" id="defense-sector-protest" name="whoDefends" required>
+                            <option value="0" selected>Corrupción</option>
+                            <option value='1'>Sanidad</option>
+                            <option value='2'>Partidos políticos y sindicatos</option>
+                            <option value='3'>Entidad privada</option>
+                            <option value='4'>Educación</option>
+                            <option value='5'>Judicial</option>
+                            <option value='6'>Economía</option>
+                        </select>
+                    </div>
+                    <div class="form-group col">
+                        <label class="sr-only" for="street">Nombre de la protesta</label>
+                        <input type="text" class="form-control" id="name-protest" placeholder="Nombre de la protesta">
+                    </div>
+                </div>
+                <div class="form-row" id="attached-doc" style="margin-top: 10px">
+                    <label for="attached-doc">Introduce aquí la autorización firmada por la delegación del
+                        gobierno</label>
+                    <input type="file" class="form-control-file" id="attached-doc">
+                </div>
+                <div class="form-row mt-4">
+                    <div id="map" class="col-md-6" style="height: 300px">
+
+                    </div>
+                    <div id="info-map" class="col-md-4">
+                        <div id="accordion">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Agregar
+                                    </button>
+                                </h5>
+                                </div>
+                            
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                <div class="card-body">
+                                    <form id="form-protests-create-map">
+                                        <table>
+                                            <tr>
+                                                <td>Título</td>
+                                                <td><input id="form-tittle-map" type="text" class="form-control" name="titulo" autocomplete="off"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Coordenada X</td>
+                                                <td><input id="form-cx-map" type="text" class="form-control" disabled="disabled" name="cx" autocomplete="off"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Coordenada Y</td>
+                                                <td><input id="form-cy-map" type="text" class="form-control" disabled="disabled" name="cy" autocomplete="off"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><button type="button" id="button-map-save" class="btn btn-primary">Grabar</button></td>
+                                                <td><button type="button" id="button-map-delete" class="btn btn-danger">Cancelar</button></td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingTwo">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Buscar
+                                    </button>
+                                </h5>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                <div class="card-body">
+                                    
+                                </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingThree">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Eliminar
+                                    </button>
+                                </h5>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                <div class="card-body">
+                                    
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row" style="margin-top: 20px">
+                    <h4>Carta de protesta</h4>
+                </div>
+                <div class="form-row" style="margin-top: 10px">
+                    <div class="form-group col">
+                        <label for="street">Título de la carta</label>
+                        <input type="text" class="form-control" id="tittle-protest-letter"
+                            placeholder="Explicalo en una linea">
+                    </div>
+                    <div class="form-group">
+                        <label for="protest-letter">Carta de protesta</label>
+                        <textarea class="form-control" id="body-protest-letter" rows="12" style="width: 1100px"
+                            placeholder="¿Qué es lo que defiendes?¿Porqué lo defiendes?"></textarea>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" type="submit" onclick="capturar();"
+                    style="margin-top: 30px">Realizar</button>
+            </form>
+        </div>
+    </div>
+    <footer class="bg-dark mt-6">
+        <div class="container">
+            <div class="row pt-5">
+                <div class="col-md-3 text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120pt"
+                        height="120pt" viewBox="0 0 120 120" version="1.1">
+                        <g id="surface1">
+                            <path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;"
+                                d="M 3.769531 33.816406 C 10.953125 33.347656 17.386719 37.34375 24.417969 35.53125 C 25.558594 35.230469 31.445312 38.855469 26.171875 42.78125 C 23.75 44.578125 23.269531 46.855469 22.761719 49.835938 C 21.925781 54.730469 25.539062 61.703125 17.367188 64.027344 C 15.765625 64.484375 17.292969 65.816406 17.707031 66.613281 C 19.601562 70.207031 19.335938 73.527344 19.074219 77.667969 C 18.769531 82.546875 17.679688 86.589844 16.113281 90.929688 C 15.578125 92.441406 15.496094 95.742188 17.976562 95.769531 C 25.207031 95.839844 26.695312 101.386719 29.445312 106.1875 C 31.335938 109.484375 34.480469 113.667969 38.539062 109.617188 C 44.28125 103.878906 50.65625 100.433594 58.503906 102.347656 C 71.703125 105.570312 75.78125 91.269531 85.914062 88.925781 C 83.113281 80.753906 99.792969 76.28125 90.035156 66.496094 C 88.023438 64.472656 90.269531 60.949219 91.886719 58.792969 C 97.1875 51.6875 99.238281 41.652344 110.335938 39.664062 C 113.433594 39.109375 115.867188 35.230469 118.78125 33.113281 C 121.652344 31.015625 121.21875 28.136719 120.621094 25.496094 C 119.769531 21.613281 116.925781 23.910156 114.675781 23.867188 C 110.101562 23.8125 105.308594 24.921875 101.292969 21.121094 C 100.1875 20.0625 97.199219 19.695312 95.855469 20.433594 C 88.78125 24.355469 82.824219 20 77.015625 17.652344 C 74.25 16.53125 71.792969 15.632812 68.792969 15.046875 C 57.246094 12.769531 45.519531 14.46875 33.851562 13.222656 C 24.695312 12.238281 15.65625 9.34375 6.164062 9.828125 C 0.527344 10.101562 0.0117188 12.050781 0 16.714844 C -0.0117188 22.988281 5.890625 27.667969 3.769531 33.816406 Z M 3.769531 33.816406 " />
+                        </g>
+                    </svg>
+                </div>
+                <div class="col-md-3">
+                    <h4 class="footer-heading text-white mb-5">Servicios</h4>
+                    <ul class="list-unstyled">
+                        <li><a class="text-secondary" href="protests.html">Detalles de protestas</a></li>
+                        <li><a class="text-secondary" href="event-planner.html">Organizador de eventos</a></li>
+                        <li><a class="text-secondary" href="collaborations.html">Te ayudamos</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h4 class="footer-heading text-white mb-5">Empresa</h4>
+                    <ul class="list-unstyled">
+                        <li><a class="text-secondary" href="about-as.html">Sobre nosotros</a></li>
+                        <li><a class="text-secondary" href="transparency.html">Transparencia</a></li>
+                        <li><a class="text-secondary" href="legal-info.html">Información legal</a></li>
+                        <li><a class="text-secondary" href="contact.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3" style="margin-left: -40px; margin-top: -20px">
+                    <div class="logo-footer text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80pt"
+                            height="113pt" viewBox="0 0 80 113" version="1.1">
                             <g id="surface1">
-                            <path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 3.769531 33.816406 C 10.953125 33.347656 17.386719 37.34375 24.417969 35.53125 C 25.558594 35.230469 31.445312 38.855469 26.171875 42.78125 C 23.75 44.578125 23.269531 46.855469 22.761719 49.835938 C 21.925781 54.730469 25.539062 61.703125 17.367188 64.027344 C 15.765625 64.484375 17.292969 65.816406 17.707031 66.613281 C 19.601562 70.207031 19.335938 73.527344 19.074219 77.667969 C 18.769531 82.546875 17.679688 86.589844 16.113281 90.929688 C 15.578125 92.441406 15.496094 95.742188 17.976562 95.769531 C 25.207031 95.839844 26.695312 101.386719 29.445312 106.1875 C 31.335938 109.484375 34.480469 113.667969 38.539062 109.617188 C 44.28125 103.878906 50.65625 100.433594 58.503906 102.347656 C 71.703125 105.570312 75.78125 91.269531 85.914062 88.925781 C 83.113281 80.753906 99.792969 76.28125 90.035156 66.496094 C 88.023438 64.472656 90.269531 60.949219 91.886719 58.792969 C 97.1875 51.6875 99.238281 41.652344 110.335938 39.664062 C 113.433594 39.109375 115.867188 35.230469 118.78125 33.113281 C 121.652344 31.015625 121.21875 28.136719 120.621094 25.496094 C 119.769531 21.613281 116.925781 23.910156 114.675781 23.867188 C 110.101562 23.8125 105.308594 24.921875 101.292969 21.121094 C 100.1875 20.0625 97.199219 19.695312 95.855469 20.433594 C 88.78125 24.355469 82.824219 20 77.015625 17.652344 C 74.25 16.53125 71.792969 15.632812 68.792969 15.046875 C 57.246094 12.769531 45.519531 14.46875 33.851562 13.222656 C 24.695312 12.238281 15.65625 9.34375 6.164062 9.828125 C 0.527344 10.101562 0.0117188 12.050781 0 16.714844 C -0.0117188 22.988281 5.890625 27.667969 3.769531 33.816406 Z M 3.769531 33.816406 "/>
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 155.635498 302.186256 C 168.970703 350.037749 205.548096 387.934735 252.875 402.982923 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 342.125 402.982923 C 389.451904 387.934735 426.029297 350.037749 439.364502 302.186256 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 444.768311 262.630185 C 444.768311 181.276825 378.847656 115.350041 297.5 115.350041 C 216.152344 115.350041 150.231689 181.276825 150.231689 262.630185 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 150.231689 262.630185 C 150.231689 267.694759 151.016113 272.759334 152.526855 277.591054 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 152.526855 277.591054 C 152.439697 285.915584 153.485596 294.1819 155.635498 302.186256 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 271.555908 346.312085 C 288.813232 348.087597 306.186768 348.087597 323.444092 346.312085 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 442.473145 277.591054 C 443.983887 272.759334 444.768311 267.694759 444.768311 262.630185 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 439.364502 302.186256 C 441.543457 294.1819 442.589355 285.915584 442.473145 277.591054 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 297.5 657.72518 L 297.5 726.446211 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 297.5 657.72518 L 595.058105 485.937154 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 595.058105 485.937154 L 595.058105 554.658186 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 297.5 726.446211 L 595.058105 554.658186 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M -0.0581055 485.937154 L -0.0581055 554.658186 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M -0.0581055 485.937154 L 297.5 657.72518 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M -0.0581055 554.658186 L 297.5 726.446211 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 252.875 528.898714 L 297.5 554.658186 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 297.5 554.658186 L 342.125 528.898714 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 416.529053 382.899267 L 396.715088 371.460315 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 416.529053 434.418211 L 461.154053 460.177683 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 461.154053 460.177683 L 505.779053 434.418211 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 595.058105 485.937154 L 505.779053 434.418211 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 89.220947 434.418211 L -0.0581055 485.937154 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 89.220947 434.418211 L 133.845947 460.177683 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 133.845947 460.177683 L 178.470947 434.418211 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 198.284912 371.460315 L 178.470947 382.899267 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 297.5 382.87016 L 342.125 357.081582 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 252.875 357.081582 L 297.5 382.87016 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 271.555908 346.312085 L 252.875 357.081582 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 342.125 357.081582 L 323.444092 346.312085 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 252.875 357.081582 L 252.875 528.898714 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 297.5 382.87016 L 297.5 554.658186 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 342.125 357.081582 L 342.125 528.898714 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 461.154053 288.389657 L 461.154053 460.177683 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 416.529053 349.368294 L 416.529053 434.418211 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 442.473145 277.591054 L 461.154053 288.389657 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 461.154053 288.389657 L 505.779053 262.630185 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 461.154053 236.841607 L 443.925781 246.796114 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 505.779053 262.630185 L 461.154053 236.841607 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 505.779053 262.630185 L 505.779053 434.418211 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 89.220947 262.630185 L 133.845947 288.389657 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 151.074219 246.796114 L 133.845947 236.841607 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 133.845947 288.389657 L 152.526855 277.591054 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 133.845947 236.841607 L 89.220947 262.630185 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 133.845947 288.389657 L 133.845947 460.177683 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 89.220947 262.630185 L 89.220947 434.418211 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 178.470947 349.368294 L 178.470947 434.418211 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
                             </g>
                         </svg>
                     </div>
-                    <div class="col-md-3">
-                        <h4 class="footer-heading text-white mb-5">Servicios</h4>
-                        <ul class="list-unstyled">
-                            <li><a class="text-secondary" href="protests.html">Detalles de protestas</a></li>
-                            <li><a class="text-secondary" href="event-planner.html">Organizador de eventos</a></li>
-                            <li><a class="text-secondary" href="collaborations.html">Te ayudamos</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3">
-                        <h4 class="footer-heading text-white mb-5">Empresa</h4>
-                        <ul class="list-unstyled">
-                            <li><a class="text-secondary" href="about-as.html">Sobre nosotros</a></li>
-                            <li><a class="text-secondary" href="transparency.html">Transparencia</a></li>
-                            <li><a class="text-secondary" href="legal-info.html">Información legal</a></li>
-                            <li><a class="text-secondary" href="contact.html">Contacto</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3" style="margin-left: -40px; margin-top: -20px">
-                        <div class="logo-footer text-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80pt" height="113pt" viewBox="0 0 80 113" version="1.1">
-                                <g id="surface1">
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 155.635498 302.186256 C 168.970703 350.037749 205.548096 387.934735 252.875 402.982923 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 342.125 402.982923 C 389.451904 387.934735 426.029297 350.037749 439.364502 302.186256 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 444.768311 262.630185 C 444.768311 181.276825 378.847656 115.350041 297.5 115.350041 C 216.152344 115.350041 150.231689 181.276825 150.231689 262.630185 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 150.231689 262.630185 C 150.231689 267.694759 151.016113 272.759334 152.526855 277.591054 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 152.526855 277.591054 C 152.439697 285.915584 153.485596 294.1819 155.635498 302.186256 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 271.555908 346.312085 C 288.813232 348.087597 306.186768 348.087597 323.444092 346.312085 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 442.473145 277.591054 C 443.983887 272.759334 444.768311 267.694759 444.768311 262.630185 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 439.364502 302.186256 C 441.543457 294.1819 442.589355 285.915584 442.473145 277.591054 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 297.5 657.72518 L 297.5 726.446211 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 297.5 657.72518 L 595.058105 485.937154 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 595.058105 485.937154 L 595.058105 554.658186 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 297.5 726.446211 L 595.058105 554.658186 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M -0.0581055 485.937154 L -0.0581055 554.658186 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M -0.0581055 485.937154 L 297.5 657.72518 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M -0.0581055 554.658186 L 297.5 726.446211 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 252.875 528.898714 L 297.5 554.658186 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 297.5 554.658186 L 342.125 528.898714 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 416.529053 382.899267 L 396.715088 371.460315 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 416.529053 434.418211 L 461.154053 460.177683 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 461.154053 460.177683 L 505.779053 434.418211 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 595.058105 485.937154 L 505.779053 434.418211 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 89.220947 434.418211 L -0.0581055 485.937154 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 89.220947 434.418211 L 133.845947 460.177683 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 133.845947 460.177683 L 178.470947 434.418211 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 198.284912 371.460315 L 178.470947 382.899267 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 297.5 382.87016 L 342.125 357.081582 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 252.875 357.081582 L 297.5 382.87016 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 271.555908 346.312085 L 252.875 357.081582 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 342.125 357.081582 L 323.444092 346.312085 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 252.875 357.081582 L 252.875 528.898714 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 297.5 382.87016 L 297.5 554.658186 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 342.125 357.081582 L 342.125 528.898714 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 461.154053 288.389657 L 461.154053 460.177683 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 416.529053 349.368294 L 416.529053 434.418211 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 442.473145 277.591054 L 461.154053 288.389657 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 461.154053 288.389657 L 505.779053 262.630185 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 461.154053 236.841607 L 443.925781 246.796114 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 505.779053 262.630185 L 461.154053 236.841607 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 505.779053 262.630185 L 505.779053 434.418211 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 89.220947 262.630185 L 133.845947 288.389657 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 151.074219 246.796114 L 133.845947 236.841607 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 133.845947 288.389657 L 152.526855 277.591054 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 133.845947 236.841607 L 89.220947 262.630185 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 133.845947 288.389657 L 133.845947 460.177683 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 89.220947 262.630185 L 89.220947 434.418211 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 178.470947 349.368294 L 178.470947 434.418211 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                </g>
-                            </svg>
-                        </div>
-                        <p class="h5 text-center"><small class="text-muted"><em>Difúndelo<br>¡¡¡Que lo conozca todo el mundo!!!</em></small></p>
-                    </div>
-                </div>
-                <div class="w-100 h-line bg-info mt-5"></div>
-                <div class="clearfix pt-5 pb-5 w-100">
-                    <button type="button" class="btn text-secondary" data-toggle="modal" data-target="#exampleModal">
-                    Español
-                    </button>
-                    <div class="float-right">
-                        <a href="#" class="pl-0 pr-3"><i class="fab fa-facebook-square fa-2x text-secondary"></i></a>
-                        <a href="#" class="pl-3 pr-3"><i class="fab fa-twitter fa-2x text-secondary"></i></a>
-                        <a href="#" class="pl-3 pr-3"><i class="fab fa-instagram fa-2x text-secondary"></i></a>
-                    </div>
+                    <p class="h5 text-center"><small class="text-muted"><em>Difúndelo<br>¡¡¡Que lo conozca todo el
+                                mundo!!!</em></small></p>
                 </div>
             </div>
-        </footer>
+            <div class="w-100 h-line bg-info mt-5"></div>
+            <div class="clearfix pt-5 pb-5 w-100">
+                <button type="button" class="btn text-secondary" data-toggle="modal" data-target="#exampleModal">
+                    Español
+                </button>
+                <div class="float-right">
+                    <a href="#" class="pl-0 pr-3"><i class="fab fa-facebook-square fa-2x text-secondary"></i></a>
+                    <a href="#" class="pl-3 pr-3"><i class="fab fa-twitter fa-2x text-secondary"></i></a>
+                    <a href="#" class="pl-3 pr-3"><i class="fab fa-instagram fa-2x text-secondary"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="dependencias/jquery/jquery.js"></script>
     <script src="dependencias/popper.js"></script>
     <script src="dependencias/bootstrap/js/bootstrap.min.js"></script>
-    
+
     <!-- Otra dependencia js -->
+    <script src="dependencias/jquery/jquery-ui/jquery-ui.min.js"></script>
     <script defer src="js/fontawesome-all.js"></script>
 
-    <!-- Maps js -->
-    <script defer src="js/maps.js"></script>
+    <!-- Calendar js -->
+    <script defer src="dependencias/datepicker-calendarios/js/bootstrap-datepicker.js"></script>
+    <script src="js/bootstrap-datepicker.es.js"></script>
+
 
     <!-- Nuestros js -->
-    <script src="js/form-contact.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/style-register.js"></script>
+    <script src="js/protests-create.js"></script>
 
     <!-- API de Google Maps  -->
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5akWPMLPYomMobHO0gvV2Z7WssIsFuZM&callback=initMap">
     </script>
-    <script src="js/google-map-contact.js"></script>
+    <script src="js/maps-post.js"></script>
 
-    </body>
+</body>
+
 </html>

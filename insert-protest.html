@@ -1063,74 +1063,21 @@
                     <input type="file" class="form-control-file" id="attached-doc">
                 </div>
                 <div class="form-row mt-4">
-                    <div id="map" class="col-md-6" style="height: 300px">
+                    <div id="geomap" class="col-md-6" style="height: 300px">
 
                     </div>
-                    <div id="info-map" class="col-md-4">
-                        <div id="accordion">
-                            <div class="card">
-                                <div class="card-header" id="headingOne">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    Agregar
-                                    </button>
-                                </h5>
-                                </div>
-                            
-                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                                <div class="card-body">
-                                    <form id="form-protests-create-map">
-                                        <table>
-                                            <tr>
-                                                <td>Título</td>
-                                                <td><input id="form-tittle-map" type="text" class="form-control" name="titulo" autocomplete="off"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Coordenada X</td>
-                                                <td><input id="form-cx-map" type="text" class="form-control" disabled="disabled" name="cx" autocomplete="off"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Coordenada Y</td>
-                                                <td><input id="form-cy-map" type="text" class="form-control" disabled="disabled" name="cy" autocomplete="off"></td>
-                                            </tr>
-                                            <tr>
-                                                <td><button type="button" id="button-map-save" class="btn btn-primary">Grabar</button></td>
-                                                <td><button type="button" id="button-map-delete" class="btn btn-danger">Cancelar</button></td>
-                                            </tr>
-                                        </table>
-                                    </form>
-                                </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" id="headingTwo">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Buscar
-                                    </button>
-                                </h5>
-                                </div>
-                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                                <div class="card-body">
-                                    
-                                </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" id="headingThree">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Eliminar
-                                    </button>
-                                </h5>
-                                </div>
-                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                                <div class="card-body">
-                                    
-                                </div>
-                                </div>
-                            </div>
+                    <div class="col-md-6">
+                        <input type="text" id="search_location" class="form-control" placeholder="Search location">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default get_map" type="submit">
+                                Locate
+                            </button>
                         </div>
+                        <!-- display selected location information -->
+                        <h4>Location Details</h4>
+                        <p>Address: <input type="text" class="search_addr" size="45"></p>
+                        <p>Latitude: <input type="text" class="search_latitude" size="30"></p>
+                        <p>Longitude: <input type="text" class="search_longitude" size="30"></p>
                     </div>
                 </div>
                 <div class="form-row" style="margin-top: 20px">

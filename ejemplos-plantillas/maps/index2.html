@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Dependencias CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+
+        <!-- Nuestros CSS -->
+        <link rel="stylesheet" href="index2.css">
+       
+        
+    </head>
+    <body>
+
+            <!-- search input box -->
+        <form>
+        <div class="form-group input-group">
+            <input type="text" id="search_location" class="form-control" placeholder="Search location">
+            <div class="input-group-btn">
+                <button class="btn btn-default get_map" type="submit">
+                    Locate
+                </button>
+            </div>
+        </div>
+        </form>
+        
+        <!-- display google map -->
+        <div id="geomap"></div>
+        
+        <!-- display selected location information -->
+        <h4>Location Details</h4>
+        <p>Address: <input type="text" class="search_addr" size="45"></p>
+        <p>Latitude: <input type="text" class="search_latitude" size="30"></p>
+        <p>Longitude: <input type="text" class="search_longitude" size="30"></p>
+
+        
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <!-- Nuestros js -->
+        <script src="index2.js"></script>
+
+        <!-- API de Google Maps  -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5akWPMLPYomMobHO0gvV2Z7WssIsFuZM"></script>
+
+    </body>
+</html>

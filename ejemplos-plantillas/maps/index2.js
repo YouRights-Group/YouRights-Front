@@ -1,9 +1,3 @@
-//  https://www.youtube.com/watch?v=1b4NzbSJ7dI&list=PLHAwr9gJjquel5iPqOXxPQkV2Dou6zddO&index=11
-//  https://www.youtube.com/watch?v=mQ6kXrBqJcc
-
-// todo lo que hace referencia a marcadores_nuevos sirve para
-// cuando pinches en el mapa siempre se quede el último pinchado
-
 var geocoder;
 var map;
 var marker;
