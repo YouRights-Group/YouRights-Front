@@ -6,15 +6,6 @@ var geocoder;
 var map;
 var marker;
 
-var marcadores_nuevos = [];
-
-function quitar_marcadores(lista){
-    // recorrer el array de los marcadores
-    for (i in lista){
-        lista[i].setMap(null);
-    }
-};
-
 /*
  * Google Map with marker
  */
@@ -122,44 +113,5 @@ $(document).ready(function () {
                 }
             }
         });
-    });
-
-    google.maps.event.addListener(map, 'click', function (event) {
-
-        // alert(event.latLng)
-        var coordenadas = event.latLng.toString();
-
-        coordenadas = coordenadas.replace("(","");
-        coordenadas = coordenadas.replace(")","");
-        var lista = coordenadas.split(",");
-
-        // alert("La coordenada X es: " + lista [0]);
-        // alert("La coordenada Y es: " + lista [1]);
-
-        var direccion = new google.maps.LatLng(lista[0],lista[1]);
-
-        var marcador = new google.maps.Marker({
-            // titulo: prompt("Titulo del marcador?"),
-            position: direccion,
-            map: map,
-            animation: google.maps.Animation.DROP,
-            draggble: false // no permite el arrastre del marcador
-        });
-
-        // pasar coordenadas al formulario
-        // $("#form-protests-create-map").find("input[name='cx']").val(lista[0]);
-        // $("#form-protests-create-map").find("input[name='cx']").val(lista[1]);
-        
-        var cxMap = $(".search_latitude").val(lista[0]);
-        var cyMap = $(".search_longitude").val(lista[1]);
-
-        marcadores_nuevos.push(marcador);
-
-        google.maps.event.addListener(marcador, "click", function(){
-            // alert(marcador.titulo);
-        });
-
-        quitar_marcadores(marcadores_nuevos);
-        marker.setPosition(direccion);
     });
 });
