@@ -34,12 +34,16 @@ function initialize() {
     map = new google.maps.Map(document.getElementById("geomap"), options);
 
     geocoder = new google.maps.Geocoder();
+    
 
     marker = new google.maps.Marker({
         map: map,
         draggable: true,
-        position: latlng
+        position: latlng,
+        animation: google.maps.Animation.DROP,
+        draggble: false // no permite el arrastre del marcador
     });
+
 
     google.maps.event.addListener(marker, "dragend", function () {
         var point = marker.getPosition();
@@ -67,10 +71,12 @@ $(document).ready(function () {
     var PostCodeid = '#search_location';
     $(function () {
         $(PostCodeid).autocomplete({
-            source: function (request, response) {
+            source: 
+            function (request, response) {
                 geocoder.geocode({
                     'address': request.term
-                }, function (results, status) {
+                }, 
+                function (results, status) {
                     response($.map(results, function (item) {
                         return {
                             label: item.formatted_address,
@@ -126,6 +132,7 @@ $(document).ready(function () {
 
     google.maps.event.addListener(map, 'click', function (event) {
 
+        
         // alert(event.latLng)
         var coordenadas = event.latLng.toString();
 
@@ -136,20 +143,22 @@ $(document).ready(function () {
         // alert("La coordenada X es: " + lista [0]);
         // alert("La coordenada Y es: " + lista [1]);
 
-        var direccion = new google.maps.LatLng(lista[0],lista[1]);
-
+        var latlng = new google.maps.LatLng(lista[0],lista[1]);
+        
         var marcador = new google.maps.Marker({
             // titulo: prompt("Titulo del marcador?"),
-            position: direccion,
+            position: latlng,
             map: map,
             animation: google.maps.Animation.DROP,
-            draggble: false // no permite el arrastre del marcador
+            draggble: false, // no permite el arrastre del marcador
         });
 
         // pasar coordenadas al formulario
         // $("#form-protests-create-map").find("input[name='cx']").val(lista[0]);
         // $("#form-protests-create-map").find("input[name='cx']").val(lista[1]);
         
+
+
         var cxMap = $(".search_latitude").val(lista[0]);
         var cyMap = $(".search_longitude").val(lista[1]);
 
@@ -160,6 +169,6 @@ $(document).ready(function () {
         });
 
         quitar_marcadores(marcadores_nuevos);
-        marker.setPosition(direccion);
+        marker.setPosition(latlng);
     });
 });
