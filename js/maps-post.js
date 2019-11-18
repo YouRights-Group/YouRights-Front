@@ -1,174 +1,154 @@
 //  https://www.youtube.com/watch?v=1b4NzbSJ7dI&list=PLHAwr9gJjquel5iPqOXxPQkV2Dou6zddO&index=11
 //  https://www.youtube.com/watch?v=mQ6kXrBqJcc
+//  https://www.youtube.com/watch?v=29Dp2mSwS4w
 
-
-var geocoder;
-var map;
-var marker;
-
-var marcadores_nuevos = [];
-
-function quitar_marcadores(lista){
-    // recorrer el array de los marcadores
-    for (i in lista){
-        lista[i].setMap(null);
-    }
-};
-
-/*
- * Google Map with marker
- */
 function initialize() {
-    var initialLat = $('.search_latitude').val();
-    var initialLong = $('.search_longitude').val();
-    initialLat = initialLat?initialLat:36.169648;
-    initialLong = initialLong?initialLong:-115.141000;
 
-    var latlng = new google.maps.LatLng(initialLat, initialLong);
-    var options = {
-        zoom: 16,
-        center: latlng,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
+	var mapOptions, map, marker, searchBox, city,
+		infoWindow = '',
+		addressEl = document.querySelector( '#map-search' ),
+		latEl = document.querySelector( '.latitude' ),
+		longEl = document.querySelector( '.longitude' ),
+		element = document.getElementById( 'map-canvas' );
+	city = document.querySelector( '.reg-input-city' );
 
-    map = new google.maps.Map(document.getElementById("geomap"), options);
+	mapOptions = {
+		// How far the maps zooms in.
+		zoom: 5,
+		// Current Lat and Long position of the pin/
+		center: new google.maps.LatLng( 40.42928819958918, -3.6999707343627506 ),
+		// center : {
+		// 	lat: -34.397,
+		// 	lng: 150.644
+		// },
+		disableDefaultUI: false, // Disables the controls like zoom control on the map if set to true
+		scrollWheel: true, // If set to false disables the scrolling on the map.
+		draggable: true, // If set to false , you cannot move the map around.
+		// mapTypeId: google.maps.MapTypeId.HYBRID, // If set to HYBRID its between sat and ROADMAP, Can be set to SATELLITE as well.
+		// maxZoom: 11, // Wont allow you to zoom more than this
+		// minZoom: 9  // Wont allow you to go more up.
 
-    geocoder = new google.maps.Geocoder();
-    
+	};
 
-    marker = new google.maps.Marker({
-        map: map,
-        draggable: true,
-        position: latlng,
-        animation: google.maps.Animation.DROP,
-        draggble: false // no permite el arrastre del marcador
-    });
+	/**
+	 * Creates the map using google function google.maps.Map() by passing the id of canvas and
+	 * mapOptions object that we just created above as its parameters.
+	 *
+	 */
+	// Create an object map with the constructor function Map()
+	map = new google.maps.Map( element, mapOptions ); // Till this like of code it loads up the map.
+
+	/**
+	 * Creates the marker on the map
+	 *
+	 */
+	marker = new google.maps.Marker({
+		position: mapOptions.center,
+		map: map,
+		// icon: 'http://pngimages.net/sites/default/files/google-maps-png-image-70164.png',
+		draggable: true
+	});
+
+	/**
+	 * Creates a search box
+	 */
+	searchBox = new google.maps.places.SearchBox( addressEl );
+
+	/**
+	 * When the place is changed on search box, it takes the marker to the searched location.
+	 */
+	google.maps.event.addListener( searchBox, 'places_changed', function () {
+		var places = searchBox.getPlaces(),
+			bounds = new google.maps.LatLngBounds(),
+			i, place, lat, long, resultArray,
+			addresss = places[0].formatted_address;
+
+		for( i = 0; place = places[i]; i++ ) {
+			bounds.extend( place.geometry.location );
+			marker.setPosition( place.geometry.location );  // Set marker position new.
+		}
+
+		map.fitBounds( bounds );  // Fit to the bound
+		map.setZoom( 15 ); // This function sets the zoom to 15, meaning zooms to level 15.
+		// console.log( map.getZoom() );
+
+		lat = marker.getPosition().lat();
+		long = marker.getPosition().lng();
+		latEl.value = lat;
+		longEl.value = long;
+
+		resultArray =  places[0].address_components;
+
+		// Get the city and set the city input value to the one selected
+		for( var i = 0; i < resultArray.length; i++ ) {
+			if ( resultArray[ i ].types[0] && 'administrative_area_level_2' === resultArray[ i ].types[0] ) {
+				citi = resultArray[ i ].long_name;
+				city.value = citi;
+			}
+		}
+
+		// Closes the previous info window if it already exists
+		if ( infoWindow ) {
+			infoWindow.close();
+		}
+		/**
+		 * Creates the info Window at the top of the marker
+		 */
+		infoWindow = new google.maps.InfoWindow({
+			content: addresss
+		});
+
+		infoWindow.open( map, marker );
+	} );
 
 
-    google.maps.event.addListener(marker, "dragend", function () {
-        var point = marker.getPosition();
-        map.panTo(point);
-        geocoder.geocode({'latLng': marker.getPosition()}, function (results, status) {
-            if (status == google.maps.GeocoderStatus.OK) {
-                map.setCenter(results[0].geometry.location);
-                marker.setPosition(results[0].geometry.location);
-                $('.search_addr').val(results[0].formatted_address);
-                $('.search_latitude').val(marker.getPosition().lat());
-                $('.search_longitude').val(marker.getPosition().lng());
-            }
-        });
-    });
+	/**
+	 * Finds the new position of the marker when the marker is dragged.
+	 */
+	google.maps.event.addListener( marker, "dragend", function ( event ) {
+		var lat, long, address, resultArray, citi;
+
+		console.log( 'i am dragged' );
+		lat = marker.getPosition().lat();
+		long = marker.getPosition().lng();
+
+		var geocoder = new google.maps.Geocoder();
+		geocoder.geocode( { latLng: marker.getPosition() }, function ( result, status ) {
+			if ( 'OK' === status ) {  // This line can also be written like if ( status == google.maps.GeocoderStatus.OK ) {
+				address = result[0].formatted_address;
+				resultArray =  result[0].address_components;
+
+				// Get the city and set the city input value to the one selected
+				for( var i = 0; i < resultArray.length; i++ ) {
+					if ( resultArray[ i ].types[0] && 'administrative_area_level_2' === resultArray[ i ].types[0] ) {
+						citi = resultArray[ i ].long_name;
+						console.log( citi );
+						city.value = citi;
+					}
+				}
+				addressEl.value = address;
+				latEl.value = lat;
+				longEl.value = long;
+
+			} else {
+				console.log( 'Geocode was not successful for the following reason: ' + status );
+			}
+
+			// Closes the previous info window if it already exists
+			if ( infoWindow ) {
+				infoWindow.close();
+			}
+
+			/**
+			 * Creates the info Window at the top of the marker
+			 */
+			infoWindow = new google.maps.InfoWindow({
+				content: address
+			});
+
+			infoWindow.open( map, marker );
+		} );
+	});
+
 
 }
-
-$(document).ready(function () {
-    //load google map
-    initialize();
-    
-    /*
-     * autocomplete location search
-     */
-    var PostCodeid = '#search_location';
-    $(function () {
-        $(PostCodeid).autocomplete({
-            source: 
-            function (request, response) {
-                geocoder.geocode({
-                    'address': request.term
-                }, 
-                function (results, status) {
-                    response($.map(results, function (item) {
-                        return {
-                            label: item.formatted_address,
-                            value: item.formatted_address,
-                            lat: item.geometry.location.lat(),
-                            lon: item.geometry.location.lng()
-                        };
-                    }));
-                });
-            },
-            select: function (event, ui) {
-                $('.search_addr').val(ui.item.value);
-                $('.search_latitude').val(ui.item.lat);
-                $('.search_longitude').val(ui.item.lon);
-                var latlng = new google.maps.LatLng(ui.item.lat, ui.item.lon);
-                marker.setPosition(latlng);
-                initialize();
-            }
-        });
-    });
-    
-    /*
-     * Point location on google map
-     */
-    $('.get_map').click(function (e) {
-        var address = $(PostCodeid).val();
-        geocoder.geocode({'address': address}, function (results, status) {
-            if (status == google.maps.GeocoderStatus.OK) {
-                map.setCenter(results[0].geometry.location);
-                marker.setPosition(results[0].geometry.location);
-                $('.search_addr').val(results[0].formatted_address);
-                $('.search_latitude').val(marker.getPosition().lat());
-                $('.search_longitude').val(marker.getPosition().lng());
-            } else {
-                alert("Geocode was not successful for the following reason: " + status);
-            }
-        });
-        e.preventDefault();
-    });
-
-    //Add listener to marker for reverse geocoding
-    google.maps.event.addListener(marker, 'drag', function () {
-        geocoder.geocode({'latLng': marker.getPosition()}, function (results, status) {
-            if (status == google.maps.GeocoderStatus.OK) {
-                if (results[0]) {
-                    $('.search_addr').val(results[0].formatted_address);
-                    $('.search_latitude').val(marker.getPosition().lat());
-                    $('.search_longitude').val(marker.getPosition().lng());
-                }
-            }
-        });
-    });
-
-    google.maps.event.addListener(map, 'click', function (event) {
-
-        
-        // alert(event.latLng)
-        var coordenadas = event.latLng.toString();
-
-        coordenadas = coordenadas.replace("(","");
-        coordenadas = coordenadas.replace(")","");
-        var lista = coordenadas.split(",");
-
-        // alert("La coordenada X es: " + lista [0]);
-        // alert("La coordenada Y es: " + lista [1]);
-
-        var latlng = new google.maps.LatLng(lista[0],lista[1]);
-        
-        var marcador = new google.maps.Marker({
-            // titulo: prompt("Titulo del marcador?"),
-            position: latlng,
-            map: map,
-            animation: google.maps.Animation.DROP,
-            draggble: false, // no permite el arrastre del marcador
-        });
-
-        // pasar coordenadas al formulario
-        // $("#form-protests-create-map").find("input[name='cx']").val(lista[0]);
-        // $("#form-protests-create-map").find("input[name='cx']").val(lista[1]);
-        
-
-
-        var cxMap = $(".search_latitude").val(lista[0]);
-        var cyMap = $(".search_longitude").val(lista[1]);
-
-        marcadores_nuevos.push(marcador);
-
-        google.maps.event.addListener(marcador, "click", function(){
-            // alert(marcador.titulo);
-        });
-
-        quitar_marcadores(marcadores_nuevos);
-        marker.setPosition(latlng);
-    });
-});
