@@ -1043,13 +1043,14 @@
                     <div class="form-group col">
                         <label class="sr-only">Sector a defender</label>
                         <select class="custom-select" id="defense-sector-protest" name="whoDefends" required>
-                            <option value="0" selected>Corrupción</option>
-                            <option value='1'>Sanidad</option>
-                            <option value='2'>Partidos políticos y sindicatos</option>
-                            <option value='3'>Entidad privada</option>
-                            <option value='4'>Educación</option>
-                            <option value='5'>Judicial</option>
-                            <option value='6'>Economía</option>
+                            <option value='0' selected>Otros</option>
+                            <option value="1">Corrupción</option>
+                            <option value='2'>Sanidad</option>
+                            <option value='3'>Partidos políticos y sindicatos</option>
+                            <option value='4'>Entidad privada</option>
+                            <option value='5'>Educación</option>
+                            <option value='6'>Judicial</option>
+                            <option value='7'>Economía</option>
                         </select>
                     </div>
                     <div class="form-group col">
@@ -1071,10 +1072,26 @@
 
                     </div>
                     <div class="col-md-6">
-                            <label for="">Address: <input id="map-search" class="controls" type="text" placeholder="Search Box" size="104"></label><br>
-                            <label for="">Lat: <input type="text" class="latitude"></label>
-                            <label for="">Long: <input type="text" class="longitude"></label>
-                            <label for="">City <input type="text" class="reg-input-city" placeholder="City"></label>
+                        <label for="">Address: <input id="map-search" class="controls" type="text" placeholder="Search Box" size="104"></label><br>
+                        <label for=""><input type="text" class="latitude d-none"></label>
+                        <label for=""><input type="text" class="longitude d-none"></label>
+                        <label for=""><input type="text" class="reg-input-city d-none" placeholder="City"></label>
+                        <!--<label for="">Lat: <input type="text" class="latitude"></label>-->
+                        <!--<label for="">Long: <input type="text" class="longitude"></label>-->
+                        <!--<label for="">City <input type="text" class="reg-input-city" placeholder="City"></label>-->
+                        <button id="save-point-map" type="button" class="btn btn-primary">Guardar</button>
+                        <button id="delete-point-map" type="button" class="btn btn-danger">Eliminar</button>
+                        <table id="table-map" class="table table-bordere mt-3">
+                            <thead>
+                                <tr>
+                                    <td>Nº punto</td>
+                                    <td>Calle</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                 <div class="form-row" style="margin-top: 20px">

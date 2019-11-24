@@ -155,34 +155,33 @@ function initialize() {
 	});
 	console.log(mapOptions.center);
 
-}
 
-$("#save-point-map").on("click", function (){
+	$("#save-point-map").on("click", function (){
 
-	var pointLat2 = $(".latitude").val();
-	var pointLong2 = $(".longitude").val();
-	var pointAddress2 = $(".controls").val();
-	console.log(pointLat2);
-	console.log(pointLong2);
-	console.log(pointAddress2);
+		var pointLat = $(".latitude").val();
+		var pointLong = $(".longitude").val();
+		var pointAddress = $(".controls").val();
+		console.log(pointLat);
+		console.log(pointLong);
+		console.log(pointAddress);
 
-	agregar();	
-});
-var pointLat = [];
-var pointLong = [];
-var pointAddress = pointAddress2;
-var idPointMap = 0;
-console.log(pointLat);
+		agregar();	
+	});
+	
+	var idPointMap = 0;
 
-function agregar(){
-	idPointMap++;
-	var linePointMap = `
-		<tr class="selected" id="line${idPointMap}">
-			<td>${idPointMap}</td>
-			<td>${pointAddress}</td>
-		</tr>
-	`
-	$('#table-map').append(linePointMap);
+	function agregar(){
+		idPointMap++;
+		var linePointMap = `
+			<tr class="selected" id="line${idPointMap}">
+				<td>${idPointMap}</td>
+				<td>${pointAddress}</td>
+			</tr>
+		`
+		$('table-map').append(linePointMap);
+
+	}
+
 
 }
 
