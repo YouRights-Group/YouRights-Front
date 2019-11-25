@@ -2,6 +2,7 @@
 //  https://www.youtube.com/watch?v=mQ6kXrBqJcc
 //  https://www.youtube.com/watch?v=29Dp2mSwS4w
 //  https://www.youtube.com/watch?v=keO6egndYrE
+//  https://www.youtube.com/watch?v=V5-pqK37pZg
 
 function initialize() {
 
@@ -159,31 +160,56 @@ function initialize() {
 
 $("#save-point-map").on("click", function (){
 
-	var pointLat2 = $(".latitude").val();
-	var pointLong2 = $(".longitude").val();
-	var pointAddress2 = $(".controls").val();
-	console.log(pointLat2);
-	console.log(pointLong2);
-	console.log(pointAddress2);
+	pointLat = $(".latitude").val();
+	pointLong = $(".longitude").val();
+	pointAddress = $(".controls").val();
+	console.log(pointLat);
+	console.log(pointLong);
+	console.log(pointAddress);
 
 	agregar();	
 });
-var pointLat = [];
-var pointLong = [];
-var pointAddress = pointAddress2;
+
+$("#delete-point-map").on("click", function (){
+	deleteId(id_line_selected);
+});
+
+var pointLat = $(".latitude").val();
+var pointLong = $(".longitude").val();
+var pointAddress = $(".controls").val();
 var idPointMap = 0;
-console.log(pointLat);
 
 function agregar(){
 	idPointMap++;
-	var linePointMap = `
-		<tr class="selected" id="line${idPointMap}">
+	linePointMap = `
+		<tr class="selected" id="line${idPointMap}" onclick="selected(this.id);">
 			<td>${idPointMap}</td>
 			<td>${pointAddress}</td>
 		</tr>
 	`
-	$('#table-map').append(linePointMap);
-
+	$('#outputTableMap').append(linePointMap);
+	arrangeId();
 }
 
+function selected(id_line){
+	if($('#'+id_line).hasClass('seleccionada')){
+		$('#'+id_line).removeClass('seleccionada');
+	}else{
+		$('#'+id_line).addClass('seleccionada');
+	}
+	id_line_selected=id_line;
+};
+
+function deleteId(id_line){
+	$('#'+id_line).remove();
+	arrangeId();
+};
+
+function arrangeId(){
+	var num = 1;
+	$('#table-map tbody tr').each(function(){
+		$(this).find('td').eq(0).text(num);
+		num++;
+	});
+};
 

@@ -29,6 +29,17 @@
 .h-line {
     height: 2px;
 }
+.selected{
+    cursor: pointer;
+}
+.selected:hover{
+    background-color: #0585c0;
+    color: white;
+}
+.seleccionada{
+    background-color: #0585c0;
+    color: white;
+}
 
 .main_btn {
     display: inline-block;
