@@ -1063,12 +1063,8 @@
                         gobierno</label>
                     <input type="file" class="form-control-file" id="attached-doc">
                 </div>
-                   Para mapa con acoordeon
-
-                
-
                 <div class="form-row mt-4">
-                    <div id="map-canvas" class="col-md-6" style="height: 300px">
+                    <div id="map_canvas" class="col-md-6" style="height: 300px">
 
                     </div>
                     <div class="col-md-6">
@@ -1080,7 +1076,8 @@
                         <!--<label for="">Long: <input type="text" class="longitude"></label>-->
                         <!--<label for="">City <input type="text" class="reg-input-city" placeholder="City"></label>-->
                         <button id="save-point-map" type="button" class="btn btn-primary">Guardar</button>
-                        <button id="delete-point-map" type="button" class="btn btn-danger">Eliminar</button>
+                        <button id="delete-point-map" type="button" class="btn btn-warning">Eliminar</button>
+                        <button id="deleteAll-point-map" type="button" class="btn btn-danger">Eliminar todo</button>
                         <table id="table-map" class="table table-bordered mt-3">
                             <thead>
                                 <tr>
@@ -1380,7 +1377,7 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5akWPMLPYomMobHO0gvV2Z7WssIsFuZM&libraries=places&callback=initialize">
     </script>
     <script src="js/maps-post.js"></script>
-
+    <!--<script src="js/map-correcto4.js"></script>  Este es el JS de google maps para rutas -->
 </body>
 
 </html>

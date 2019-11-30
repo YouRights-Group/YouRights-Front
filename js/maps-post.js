@@ -11,7 +11,7 @@ function initialize() {
 		addressEl = document.querySelector( '#map-search' ),
 		latEl = document.querySelector( '.latitude' ),
 		longEl = document.querySelector( '.longitude' ),
-		element = document.getElementById( 'map-canvas' );
+		element = document.getElementById( 'map_canvas' );
 		city = document.querySelector( '.reg-input-city' );
 		console.log(latEl);
 
@@ -173,6 +173,9 @@ $("#save-point-map").on("click", function (){
 $("#delete-point-map").on("click", function (){
 	deleteId(id_line_selected);
 });
+$('#deleteAll-point-map').click(function(){
+	deleteAllLine();
+});
 
 var pointLat = $(".latitude").val();
 var pointLong = $(".longitude").val();
@@ -184,7 +187,9 @@ function agregar(){
 	linePointMap = `
 		<tr class="selected" id="line${idPointMap}" onclick="selected(this.id);">
 			<td>${idPointMap}</td>
-			<td>${pointAddress}</td>
+			<td id="dataMapAddress${idPointMap}">${pointAddress}</td>
+			<td id="dataMapLat${idPointMap}" class="d-none">${pointLat}</td>
+			<td id="dataMapLong${idPointMap}" class="d-none">${pointLong}</td>
 		</tr>
 	`
 	$('#outputTableMap').append(linePointMap);
@@ -212,4 +217,9 @@ function arrangeId(){
 		num++;
 	});
 };
-
+function deleteAllLine(){
+	$('#tabla tbody tr').each(function(){
+		$(this).remove();
+	});
+	
+}
