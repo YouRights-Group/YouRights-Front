@@ -26,79 +26,15 @@ function initialize() {
 	directionsRenderer.setMap(map);
 	
 	google.maps.event.addListener(map, 'click', function(event) {
-        addPoint(event.latLng);
+        addWayPointToRoute(event.latLng);
         
     });
 }
 
 
 var markers = [];
-var clickMarker = [];
 var polylines = [];
 var isFirst = true;
-
-function addPoint(location) {
-	var request = {
-		origin: location,
-		destination: location,
-		travelMode: google.maps.DirectionsTravelMode.WALKING
-	};
-	directionsService.route(request, function(response, status) {
-        var lat, long, address, resultArray, citi;
-
-		if (status == google.maps.DirectionsStatus.OK) {
-			var marker = new google.maps.Marker({
-				position: response.routes[0].legs[0].start_location, 
-				map: map,
-				draggable : true
-			});
-			marker.arrayIndex = 0;
-			clickMarker.push(marker);
-        };
-        
-        var geocoder = new google.maps.Geocoder();
-		geocoder.geocode( { latLng: marker.getPosition() }, function ( result, status ) {
-			if ( 'OK' === status ) {  // This line can also be written like if ( status == google.maps.GeocoderStatus.OK ) {
-				console.log(result[0]);
-				address = result[0].formatted_address;
-				resultArray =  result[0].address_components;
-
-				// Get the city and set the city input value to the one selected
-				for( var i = 0; i < resultArray.length; i++ ) {
-					if ( resultArray[ i ].types[0] && 'administrative_area_level_2' === resultArray[ i ].types[0] ) {
-						citi = resultArray[ i ].long_name;
-						console.log( citi );
-						city.value = citi;
-					}
-                }
-                lat = marker.getPosition().lat();
-                long = marker.getPosition().lng();
-				addressEl.value = address;
-				latEl.value = lat;
-				longEl.value = long;
-
-			} else {
-				console.log( 'Geocode was not successful for the following reason: ' + status );
-			}
-
-			// Closes the previous info window if it already exists
-			if ( infoWindow ) {
-				infoWindow.close();
-			}
-
-			/**
-			 * Creates the info Window at the top of the marker
-			 */
-			infoWindow = new google.maps.InfoWindow({
-				content: address
-			});
-
-			infoWindow.open( map, marker );
-		} );
-	});
-	console.log(markers);
-	console.log(clickMarker);
-}
 
 function addWayPointToRoute(location) {
 	if (isFirst) {
@@ -209,11 +145,11 @@ function appendWayPoint(location) {
 
 function recalculateRoute(marker) { //recalculate the polyline to fit the new position of the dragged marker
 	if (marker.arrayIndex > 0) { //its not the first so recalculate the route from previous to this marker
-		polylines[markers.arrayIndex - 1].setMap(null);
+		polylines[marker.arrayIndex - 1].setMap(null);
 		
 		var request = {
-			origin: markers[markers.arrayIndex - 1].position,
-			destination: markers.position,
+			origin: markers[marker.arrayIndex - 1].position,
+			destination: marker.position,
 			travelMode: google.maps.DirectionsTravelMode.WALKING
 		};
 		
@@ -225,16 +161,16 @@ function recalculateRoute(marker) { //recalculate the polyline to fit the new po
 					polyline.getPath().push(path[x]);
 				}
 				polyline.setMap(map);
-				polylines[markers.arrayIndex - 1] = polyline;
+				polylines[marker.arrayIndex - 1] = polyline;
 			}
 		});
 	}
-	if (markers.arrayIndex < markers.length - 1) { //its not the last, so recalculate the route from this to next marker
+	if (marker.arrayIndex < markers.length - 1) { //its not the last, so recalculate the route from this to next marker
 		polylines[marker.arrayIndex].setMap(null);
 		
 		var request = {
-			origin: markers.position,
-			destination: markers[markers.arrayIndex + 1].position,
+			origin: marker.position,
+			destination: markers[marker.arrayIndex + 1].position,
 			travelMode: google.maps.DirectionsTravelMode.WALKING
 		};
 		
@@ -246,7 +182,7 @@ function recalculateRoute(marker) { //recalculate the polyline to fit the new po
 					polyline.getPath().push(path[x]);
 				}
 				polyline.setMap(map);
-				polylines[markers.arrayIndex] = polyline;
+				polylines[marker.arrayIndex] = polyline;
 			}
 		});
 	}
@@ -282,11 +218,6 @@ $("#save-point-map").on("click", function (){
 	console.log(pointAddress);
 
 	agregar();	
-	markers += clickMarker.pop();
-	recalculateRoute(markers);
-	
-	console.log(markers);
-	console.log(clickMarker);
 });
 
 $("#delete-point-map").on("click", function (){
