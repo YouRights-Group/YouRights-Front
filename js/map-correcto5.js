@@ -9,34 +9,63 @@ var marker = [];
 
 function initialize() {
 
-	var mapOptions, city,
+	var mapOptions, map, searchBox, city,
 		infoWindow = '',
 		addressEl = document.querySelector('#map-search'),
 		latEl = document.querySelector('.latitude'),
 		longEl = document.querySelector('.longitude'),
-		city = document.querySelector('.reg-input-city');
+		element = document.getElementById('map_canvas');
+	city = document.querySelector('.reg-input-city');
+	console.log(latEl);
 
 	var directionsService = new google.maps.DirectionsService;
 	var directionsRenderer = new google.maps.DirectionsRenderer;
 
-	var map = new google.maps.Map(document.getElementById('map_canvas'), {
+	var mapOptions = {
+		// How far the maps zooms in.
 		zoom: 5,
-		center: {lat: 40.42928819958918, lng: -3.6999707343627506},
-		disableDefaultUI: false,
-		scrollWheel: true,
-		draggable: true
-	  });
+		// Current Lat and Long position of the pin/
+		center: new google.maps.LatLng(40.42928819958918, -3.6999707343627506),
+		// center : {
+		// 	lat: -34.397,
+		// 	lng: 150.644
+		// },
+		disableDefaultUI: false, // Disables the controls like zoom control on the map if set to true
+		scrollWheel: true, // If set to false disables the scrolling on the map.
+		draggable: true, // If set to false , you cannot move the map around.
+		// mapTypeId: google.maps.MapTypeId.HYBRID, // If set to HYBRID its between sat and ROADMAP, Can be set to SATELLITE as well.
+		// maxZoom: 11, // Wont allow you to zoom more than this
+		// minZoom: 9  // Wont allow you to go more up.
+
+	};
+	console.log(mapOptions.center);
 
 	directionsRenderer.setMap(map);
+
+	/**
+	 * Creates the map using google function google.maps.Map() by passing the id of canvas and
+	 * mapOptions object that we just created above as its parameters.
+	 *
+	 */
+	// Create an object map with the constructor function Map()
+	map = new google.maps.Map(element, mapOptions); // Till this like of code it loads up the map.
+
+	/**
+	 * Creates the marker on the map
+	 *
+	 */
 	marker = new google.maps.Marker({
-		position: map.center,
+		position: mapOptions.center,
 		map: map,
 		// icon: 'http://pngimages.net/sites/default/files/google-maps-png-image-70164.png',
-		draggable: true,
-
+		draggable: true
 	});
 	console.log(marker);
-	var searchBox = new google.maps.places.SearchBox(addressEl);
+
+	/**
+	 * Creates a search box
+	 */
+	searchBox = new google.maps.places.SearchBox(addressEl);
 
 	/**
 	 * When the place is changed on search box, it takes the marker to the searched location.
@@ -136,6 +165,7 @@ function initialize() {
 			infoWindow.open(map, marker);
 		});
 	});
+	console.log(mapOptions.center);
 
 	$('#rutear').on("click", function () {
 		calculateAndDisplayRoute(directionsService, directionsRenderer);
@@ -144,24 +174,37 @@ function initialize() {
 }
 
 function calculateAndDisplayRoute(directionsService, directionsRenderer) {
-    var selectedMode = document.getElementById('mode').value;
-    directionsService.route({
-		// `{lat: `+startPoint.lat+`, lng: `+startPoint.lng+`}`
-      origin: startPointAddress,  // Haight.
-      destination: endPointAddress,  // Ocean Beach.
-      // Note that Javascript allows us to access the constant
-      // using square brackets and a string value as its
-      // "property."
-      travelMode: google.maps.TravelMode[selectedMode]
-    }, function(response, status) {
-      if (status == 'OK') {
-        directionsRenderer.setDirections(response);
-      } else {
-        window.alert('Directions request failed due to ' + status);
-      }
+	var waypts = [];
+	var checkboxArray = $('.waypoint');
+	for (var i = 1; i < checkboxArray.length; i++) {
+		if (checkboxArray.dataMapAddress[i]) {
+			console.log(this);
+		}
+	}
+	console.log(waypts);
+
+	console.log(start);
+
+	var end = waypts[waypts.length-1];
+	
+	console.log($('.start'));
+	console.log(end);
+
+	directionsService.route({
+		origin: startPoint,
+		destination: endPoint,
+		waypoints: waypts,
+		optimizeWaypoints: true,
+		travelMode: 'DRIVING'
+	}, function (response, status) {
+		if (status === 'OK') {
+			directionsRenderer.setDirections(response);
+			var route = response.routes[0];
+		} else {
+			window.alert('Directions request failed due to ' + status);
+		}
 	});
-	console.log(origin);
-  }
+}
 
 $("#save-point-map").on("click", function () {
 
@@ -188,11 +231,8 @@ var pointAddress = $(".controls").val();
 var idPointMap = 0;
 var isFirst = true;
 var startPoint = [];
-	var startPointAddress = [];
 var endPoint = [];
-	var endPointAddress = [];
 var waypoints = [];
-	var waypointsAddress = [];
 
 function agregarWaypoint() {
 	idPointMap++;
@@ -208,11 +248,11 @@ function agregarWaypoint() {
 	arrangeId();
 	
 
-	function waypoint(id,address,lat,lng){
+	function waypoint(id,address,latitude,longitude){
 		this.id=id;
 		this.address=address;
-		this.lat=lat;
-		this.lng=lng;
+		this.latitude=latitude;
+		this.longitude=longitude;
 	}
 
 	waypts = new waypoint (
@@ -229,19 +269,13 @@ function getWaypoint(){
 	dataBaseWaypoint.push(waypts);
 	startPoint = dataBaseWaypoint[0];
 	endPoint = dataBaseWaypoint[dataBaseWaypoint.length-1];
-	for (var i = 1 ; i < dataBaseWaypoint.length-1 ; i++){
+	for (var i = 1 ; i <= dataBaseWaypoint.length-2 ; i++){
 		waypoints += dataBaseWaypoint[i];
-		waypointsAddress += dataBaseWaypoint[i].address;
 	}
-	startPointAddress = startPoint.address;
-	endPointAddress = endPoint.address;
 	console.log(dataBaseWaypoint);
 	console.log(startPoint);
 	console.log(endPoint);
 	console.log(waypoints);
-	console.log(startPointAddress);
-	console.log(endPointAddress);
-	console.log(waypointsAddress);
 	document.getElementById("demo").innerHTML = endPoint.id;
 };
 

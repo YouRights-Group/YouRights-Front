@@ -1068,6 +1068,12 @@
 
                     </div>
                     <div class="col-md-6">
+                            <select id="mode">
+                                    <option value="DRIVING">Driving</option>
+                                    <option value="WALKING">Walking</option>
+                                    <option value="BICYCLING">Bicycling</option>
+                                    <option value="TRANSIT">Transit</option>
+                                  </select>
                         <label for="">Address: <input id="map-search" class="controls" type="text" placeholder="Search Box" size="104"></label><br>
                         <label for=""><input type="text" class="latitude d-none"></label>
                         <label for=""><input type="text" class="longitude d-none"></label>
@@ -1079,6 +1085,7 @@
                         <button id="delete-point-map" type="button" class="btn btn-warning">Eliminar</button>
                         <button id="deleteAll-point-map" type="button" class="btn btn-danger">Eliminar todo</button>
                         <button id="rutear" type="button" class="btn btn-danger">Rutear</button>
+                        <p id="demo"></p>
                         <table id="table-map" class="table table-bordered mt-3">
                             <thead>
                                 <tr>
@@ -1379,6 +1386,7 @@
     </script>
     <script src="js/maps-post.js"></script>
     <!--<script src="js/map-correcto4.js"></script>  Este es el JS de google maps para rutas -->
+    <!--<script src="js/prueba8.js"></script>-->
 </body>
 
 </html>
