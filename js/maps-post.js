@@ -9,7 +9,7 @@ var marker = [];
 
 function initialize() {
 
-	var mapOptions, city,
+	var city,
 		infoWindow = '',
 		addressEl = document.querySelector('#map-search'),
 		latEl = document.querySelector('.latitude'),
@@ -142,17 +142,15 @@ function initialize() {
 	});
 
 }
-
 function calculateAndDisplayRoute(directionsService, directionsRenderer) {
-    var selectedMode = document.getElementById('mode').value;
+	getDataRoute();
+	
     directionsService.route({
 		// `{lat: `+startPoint.lat+`, lng: `+startPoint.lng+`}`
-      origin: startPointAddress,  // Haight.
-      destination: endPointAddress,  // Ocean Beach.
-      // Note that Javascript allows us to access the constant
-      // using square brackets and a string value as its
-      // "property."
-      travelMode: google.maps.TravelMode[selectedMode]
+      origin: startPoint, 
+	  destination: endPoint, 
+	  waypoints: [waypoints], // Si esta vacio ( [] ) 
+      travelMode: google.maps.TravelMode.WALKING
     }, function(response, status) {
       if (status == 'OK') {
         directionsRenderer.setDirections(response);
@@ -187,13 +185,15 @@ var pointLong = $(".longitude").val();
 var pointAddress = $(".controls").val();
 var idPointMap = 0;
 var isFirst = true;
+// var wayptsLatLng = [];
+var getWayptsLatLng = [];
 var startPoint = [];
 	var startPointAddress = [];
 var endPoint = [];
 	var endPointAddress = [];
 var waypoints = [];
 	var waypointsAddress = [];
-
+var aaa = [];
 function agregarWaypoint() {
 	idPointMap++;
 	linePointMap = `
@@ -221,29 +221,65 @@ function agregarWaypoint() {
 		pointLat,
 		pointLong
 	);
+	function getwayptsLatLng(lat,lng){
+		this.lat=lat;
+		this.lng=lng;
+	}
+	wayptsLatLng = new getwayptsLatLng(
+		pointLat,
+		pointLong
+	);
+	console.log(wayptsLatLng);
+
+
 	getWaypoint();
 }
 
 var dataBaseWaypoint = [];
+console.log(dataBaseWaypoint);
+
+var getdataBaseWaypointRoute = [];
+
 function getWaypoint(){
 	dataBaseWaypoint.push(waypts);
-	startPoint = dataBaseWaypoint[0];
-	endPoint = dataBaseWaypoint[dataBaseWaypoint.length-1];
-	for (var i = 1 ; i < dataBaseWaypoint.length-1 ; i++){
-		waypoints += dataBaseWaypoint[i];
-		waypointsAddress += dataBaseWaypoint[i].address;
+	getdataBaseWaypointRoute.push(wayptsLatLng);
+	console.log(getdataBaseWaypointRoute);
+};
+
+function getDataRoute(){
+	console.log(getdataBaseWaypointRoute);
+	getStartPoint = getdataBaseWaypointRoute.shift();
+	getEndPoint = getdataBaseWaypointRoute.pop();
+	startPoint = getStartPoint.lat + ', ' + getStartPoint.lng;
+	endPoint = getEndPoint.lat + ', ' + getEndPoint.lng;
+	
+	// var aaa = new google.maps.LatLng(40.427720143403775, -3.6958508613158756);
+
+	for (var i = 0; i < getdataBaseWaypointRoute.length; i++) {
+		if (getdataBaseWaypointRoute[i]) {
+			waypoints.push ({
+				// location: getdataBaseWaypointRoute[i].lat + ', ' +  getdataBaseWaypointRoute[i].lng,
+				// location: aaa,
+				location: LatLng(getdataBaseWaypointRoute[i].lat, getdataBaseWaypointRoute[i].lng[noWrap]),
+				// location: toJSON(getdataBaseWaypointRoute[i]),
+				stopover: true
+		  });
+		  console.log(aaa);
+		}
 	}
-	startPointAddress = startPoint.address;
-	endPointAddress = endPoint.address;
+	
+	// startPointAddress = startPoint.address;
+	// endPointAddress = endPoint.address;
+
+	
+	waypointsAddress = waypoints['address'];
 	console.log(dataBaseWaypoint);
+	console.log(getdataBaseWaypointRoute);
 	console.log(startPoint);
 	console.log(endPoint);
 	console.log(waypoints);
-	console.log(startPointAddress);
-	console.log(endPointAddress);
-	console.log(waypointsAddress);
-	document.getElementById("demo").innerHTML = endPoint.id;
 };
+
 
 function selected(id_line) {
 	if ($('#' + id_line).hasClass('seleccionada')) {

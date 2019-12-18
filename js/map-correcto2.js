@@ -16,6 +16,7 @@ function initialize() {
     initialLong = initialLong?initialLong:-115.141000;
 
     var latlng = new google.maps.LatLng(initialLat, initialLong);
+    console.log(latlng);
     var options = {
         zoom: 16,
         center: latlng,

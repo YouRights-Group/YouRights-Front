@@ -14,6 +14,7 @@ var mapOptions, map, searchBox, city,
 
 function initialize() {
 	var position = new google.maps.LatLng(40.42928819958918, -3.6999707343627506);
+	console.log(position);
 	
 	directionsService = new google.maps.DirectionsService();
 	directionsRenderer = new google.maps.DirectionsRenderer();
