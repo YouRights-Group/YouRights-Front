@@ -270,7 +270,7 @@
     <div class="row justify-content-center mb-5">
         <div class="col-md-7 mt-6 w-100 text-center ">
             <h1 class="heading" data-aos="fade-up">Inserta tu protesta</h1>
-            <p class="h6 mt-5" data-aos="fade-up">Con el siguiente formulario podrás insertar la protesta que quieras
+            <<br class="h6 mt-5" data-aos="fade-up">Con el siguiente formulario podrás insertar la protesta que quieras
                 para que cualquier persona pueda apuntarse en la misma lucha que tú.
         </div>
         <div class="container mt-6 w-100">
@@ -1064,32 +1064,42 @@
                     <input type="file" class="form-control-file" id="attached-doc">
                 </div>
                 <div class="form-row mt-4">
-                    <div id="map_canvas" class="col-md-6" style="height: 300px">
-
+                    <div id="map_canvas" class="col-md-6" style="height: 550px">
                     </div>
                     <div class="col-md-6">
-                        <label for="">Address: <input id="map-search" class="controls" type="text" placeholder="Search Box" size="104"></label><br>
+                        <p><small><strong>Nota: </strong>Busca la calle o arrastra el puntero inicial.
+                            Elimina de uno en uno. Inicia la ruta para verla en pantalla. 
+                            Los puntos guardados en la lista se quedan registrados en el formulario.</small>
+                        </p>
+                        <div class="col-12 mt-0" style="margin-bottom: -30px">
+                            <div class="input-group mb-5">
+                                <p class="mb-1">Busca la calle: </p>          
+                                <input id="map-search" class="controls w-100" type="text" placeholder="Search Box"><br>
+                            </div>
+                        </div>
+                        <div class="col-12" style="margin-bottom: -30px">
+                            <button id="save-point-map" type="button" class="btn btn-primary">Guardar</button>
+                            <button id="delete-point-map" type="button" class="btn btn-warning">Eliminar</button>
+                            <button id="deleteAll-point-map" type="button" class="btn btn-danger">Eliminar todo</button>
+                            <button id="rutear" type="button" class="btn btn-success float-right">Inicia la ruta</button>
+                        </div>
                         <label for=""><input type="text" class="latitude d-none"></label>
                         <label for=""><input type="text" class="longitude d-none"></label>
                         <label for=""><input type="text" class="reg-input-city d-none" placeholder="City"></label>
-                        <!--<label for="">Lat: <input type="text" class="latitude"></label>-->
-                        <!--<label for="">Long: <input type="text" class="longitude"></label>-->
-                        <!--<label for="">City <input type="text" class="reg-input-city" placeholder="City"></label>-->
-                        <button id="save-point-map" type="button" class="btn btn-primary">Guardar</button>
-                        <button id="delete-point-map" type="button" class="btn btn-warning">Eliminar</button>
-                        <button id="deleteAll-point-map" type="button" class="btn btn-danger">Eliminar todo</button>
-                        <button id="rutear" type="button" class="btn btn-danger">Rutear</button>
-                        <table id="table-map" class="table table-bordered mt-3">
-                            <thead>
-                                <tr>
-                                    <td>Nº punto</td>
-                                    <td>Calle</td>
-                                </tr>
-                            </thead>
-                            <tbody id="outputTableMap">
 
-                            </tbody>
-                        </table>
+                        <div class="col-12">
+                            <table id="table-map" class="table table-bordered mt-3">
+                                <thead>
+                                    <tr>
+                                        <td>Nº punto</td>
+                                        <td>Calle</td>
+                                    </tr>
+                                </thead>
+                                <tbody id="outputTableMap">
+
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
                 <div class="form-row" style="margin-top: 20px">
