@@ -1,3 +1,6 @@
+//  https://www.youtube.com/watch?v=c3qWHnJJbSY
+//  https://www.youtube.com/watch?v=-iv274it7CM
+
 //  https://www.youtube.com/watch?v=1b4NzbSJ7dI&list=PLHAwr9gJjquel5iPqOXxPQkV2Dou6zddO&index=11
 //  https://www.youtube.com/watch?v=mQ6kXrBqJcc
 //  https://www.youtube.com/watch?v=29Dp2mSwS4w
@@ -5,9 +8,24 @@
 //  https://www.youtube.com/watch?v=V5-pqK37pZg
 //  https://developers-dot-devsite-v2-prod.appspot.com/maps/documentation/javascript/examples/directions-waypoints
 
+const protestsCreate = document.getElementById('form-protests-create');
+
+// -----------  MAPS <- ----------------  //
+
 var marker = [];
 var directionsService = [];
 var directionsRenderer = [];
+
+var valor = [];
+
+$('select#type-protest-select').on('change',function(){
+    valor = $(this).val();
+    if( valor == "huelga"){
+        $( "#all-map" ).addClass( "d-none" );
+    } else {
+        $("#all-map").removeClass( "d-none" )
+    }
+});
 
 function initialize() {
 	var city,
@@ -36,15 +54,10 @@ function initialize() {
 	marker = new google.maps.Marker({
 		position: map.center,
 		map: map,
-		// icon: 'http://pngimages.net/sites/default/files/google-maps-png-image-70164.png',
 		draggable: true
 	});
-	console.log(marker);
 	var searchBox = new google.maps.places.SearchBox(addressEl);
 
-	/**
-	 * When the place is changed on search box, it takes the marker to the searched location.
-	 */
 	google.maps.event.addListener(searchBox, "places_changed", function () {
 		var places = searchBox.getPlaces(),
 			bounds = new google.maps.LatLngBounds(),
@@ -97,13 +110,9 @@ function initialize() {
 		infoWindow.open(map, marker);
 	});
 
-	/**
-	 * Finds the new position of the marker when the marker is dragged.
-	 */
 	google.maps.event.addListener(marker, "dragend", function hola(event) {
 		var lat, long, address, resultArray, citi;
 
-		console.log("i am dragged");
 		lat = marker.getPosition().lat();
 		long = marker.getPosition().lng();
 
@@ -113,19 +122,15 @@ function initialize() {
 		},
 			function (result, status) {
 				if ("OK" === status) {
-					// This line can also be written like if ( status == google.maps.GeocoderStatus.OK ) {
-					console.log(result[0]);
 					address = result[0].formatted_address;
-					resultArray = result[0].address_components;
-
-					// Get the city and set the city input value to the one selected
-					for (var i = 0; i < resultArray.length; i++) {
+                    resultArray = result[0].address_components;
+                    
+                    for (var i = 0; i < resultArray.length; i++) {
 						if (
 							resultArray[i].types[0] &&
 							"administrative_area_level_2" === resultArray[i].types[0]
 						) {
 							citi = resultArray[i].long_name;
-							console.log(citi);
 							city.value = citi;
 						}
 					}
@@ -137,15 +142,10 @@ function initialize() {
 						"Geocode was not successful for the following reason: " + status
 					);
 				}
-
-				// Closes the previous info window if it already exists
 				if (infoWindow) {
 					infoWindow.close();
 				}
 
-				/**
-				 * Creates the info Window at the top of the marker
-				 */
 				infoWindow = new google.maps.InfoWindow({
 					content: address
 				});
@@ -165,10 +165,9 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
 	getDataRoute();
 
 	directionsService.route({
-		// `{lat: `+startPoint.lat+`, lng: `+startPoint.lng+`}`
 		origin: startPoint,
 		destination: endPoint,
-		waypoints: waypoints, // Si esta vacio ( [] )
+		waypoints: waypoints,
 		travelMode: google.maps.TravelMode.WALKING
 	},
 		function (response, status) {
@@ -179,18 +178,19 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
 			}
 		}
 	);
-	console.log(origin);
 }
 
 $("#save-point-map").on("click", function () {
 	pointLat = $(".latitude").val();
 	pointLong = $(".longitude").val();
 	pointAddress = $(".controls").val();
-	console.log(pointLat);
-	console.log(pointLong);
-	console.log(pointAddress);
-
-	agregarWaypoint();
+    
+    var valor = $("#type-protest-select").val();
+    if((valor == "manifestacion") || (valor == "protesta" && dataBaseWaypoint.length == 0)){
+        agregarWaypoint();
+    } else {
+        alert("No puede haber más de 1 punto en el mapa. Consideramos que una protesta solo se realiza en un sitio concreto y que no tiene recorrido.");
+    }
 });
 
 $("#delete-point-map").on("click", function () {
@@ -222,7 +222,6 @@ function agregarWaypoint() {
 	`;
 	$("#outputTableMap").append(linePointMap);
 	
-
 	function waypoint(id, address, lat, lng) {
 		this.id = id;
 		this.address = address;
@@ -237,26 +236,22 @@ function agregarWaypoint() {
 		this.lng = lng;
 	}
 	wayptsLatLng = new getwayptsLatLng(pointLat, pointLong);
-	console.log(wayptsLatLng);
 
 	getWaypoint();
 	arrangeId();
-	
 }
 
 var dataBaseWaypoint = [];
-console.log(dataBaseWaypoint);
-
 var getdataBaseWaypointRoute = [];
 
 function getWaypoint() {
 	dataBaseWaypoint.push(waypts);
-	getdataBaseWaypointRoute.push(wayptsLatLng);
-	console.log(dataBaseWaypoint);
+    getdataBaseWaypointRoute.push(wayptsLatLng);
+    console.log(dataBaseWaypoint);
+    console.log(getdataBaseWaypointRoute);
 }
 
 function getDataRoute() {
-	console.log(getdataBaseWaypointRoute);
 	getStartPoint = getdataBaseWaypointRoute[0];
 	getEndPoint = getdataBaseWaypointRoute[getdataBaseWaypointRoute.length - 1];
 	startPoint = getStartPoint.lat + ", " + getStartPoint.lng;
@@ -264,26 +259,13 @@ function getDataRoute() {
 
 	for (var i = 1; i < getdataBaseWaypointRoute.length - 1; i++) {
 		getWaypoints = getdataBaseWaypointRoute[i].lat + ", " + getdataBaseWaypointRoute[i].lng;
-		console.log(getWaypoints);
 		if (getdataBaseWaypointRoute[i]) {
 			waypoints.push({
 				location: getWaypoints,
 				stopover: true
 			});
-			console.log(getWaypoints);
-			console.log(waypoints);
 		}
 	}
-
-	// startPointAddress = startPoint.address;
-	// endPointAddress = endPoint.address;
-
-	console.log(waypts);
-	console.log(dataBaseWaypoint);
-	console.log(getdataBaseWaypointRoute);
-	console.log(startPoint);
-	console.log(endPoint);
-	console.log(waypoints);
 }
 
 function selected(id_line) {
@@ -293,13 +275,10 @@ function selected(id_line) {
 		$("#" + id_line).addClass("seleccionada");
 	}
 	id_line_selected = id_line;
-	console.log(id_line);
-	console.log(id_line_selected);
 }
 
 function deleteId(id_line) {
 	var ccc = id_line-1;
-	console.log(ccc);
 	$("#" + id_line).remove();
 	dataBaseWaypoint.splice(ccc,1);
 	getdataBaseWaypointRoute.splice(ccc,1);
@@ -318,13 +297,9 @@ function arrangeId() {
 		num1++;
 
 	});
-	// Object.defineProperty(waypts, "id", {value : num2++});
+	
 	for (var i = 0; i < dataBaseWaypoint.length; i++) {
 		Object.defineProperty(dataBaseWaypoint[i], "id", {value : i});
-		// bbb.push(waypts);
-
-		console.log(dataBaseWaypoint);
-		console.log("hola");
 	};
 }
 
@@ -335,3 +310,137 @@ function deleteAllLine() {
 	directionsRenderer.setDirections({routes: []}); 
 	arrangeId()
 }
+
+// -----------  MAPS -> ----------------  //
+
+protestsCreate.addEventListener('submit', function (e) {
+    e.preventDefault();
+    console.log('me diste un click')
+    
+    // ------------   Datos personales   --------------- //
+    /*
+    function PersonalInformation(
+        firstNameUser, 
+        lastNameUser, 
+        dniUser, 
+        emailUser, 
+        repeatEmailUser, 
+        countryUser, 
+        cityUser, 
+        streetUser, 
+        numberStreetUser, 
+        phoneUser,
+        postalCodeUser
+    ){
+        this.firstNameUser = firstNameUser;
+        this.lastNameUser = lastNameUser;
+        this.dniUser = dniUser;
+        this.emailUser = emailUser;
+        this.repeatEmailUser = repeatEmailUser;
+        this.countryUser = countryUser;
+        this.cityUser = cityUser;
+        this.postalCodeUser = postalCodeUser;
+        this.streetUser = streetUser;
+        this.numberStreetUser = numberStreetUser;
+        this.phoneUser = phoneUser;
+    }
+    var firstNameUser = document.getElementById("first-name").value;
+    console.log(firstNameUser);
+    var lastNameUser = document.getElementById("last-name").value;
+    console.log(lastNameUser);
+    var dniUser = document.getElementById("dni-user").value;
+    console.log(dniUser);
+    var emailUser = document.getElementById("email-user").value;
+    console.log(emailUser);
+    var repeatEmailUser = document.getElementById("repeat-email-user").value;
+    console.log(repeatEmailUser);
+    var countryUser = document.getElementById("country-select").value;
+    console.log(countryUser);
+    var cityUser = document.getElementById("city-select").value;
+    console.log(cityUser);
+    var postalCodeUser = document.getElementById("postal-code-user").value;
+    console.log(postalCodeUser);
+    var streetUser = document.getElementById("street-user").value;
+    console.log(streetUser);
+    var numberStreetUser = document.getElementById("number-street-user").value;
+    console.log(numberStreetUser);
+    var phoneUser = document.getElementById("phone-user").value;
+    console.log(phoneUser);
+
+    personalInformation = new PersonalInformation(
+        firstNameUser,
+        lastNameUser, 
+        dniUser,
+        emailUser,
+        repeatEmailUser,
+        countryUser,
+        cityUser,
+        postalCodeUser,
+        streetUser,
+        numberStreetUser,
+        phoneUser
+    );
+    console.log(personalInformation);
+    */
+    // ------------   Datos personales.   --------------- //
+
+    // ------------   Datos de la protesta   --------------- //
+
+    function DataProtest(nameProtest, cityProtest, whoDefendsProtest, promotedByProtest, dateProtest) {
+        this.name = nameProtest;
+        this.city = cityProtest;
+        this.whoDefends = whoDefendsProtest;
+        this.promotedBy = promotedByProtest;
+        this.date = dateProtest;
+        // this.area = areaProtest1;
+        // this.time = timeProtest1;
+    }
+    var countryProtestGet = document.getElementById("country-protest-select").value;
+    console.log(countryProtestGet);
+    var cityProtestGet = document.getElementById("city-protest-select").value;
+    console.log(cityProtestGet);
+    var dateProtestGet = document.getElementById("date-protest").value;
+    console.log(dateProtestGet);
+    var typeProtestGet = document.getElementById("type-protest-select").value;
+    console.log(typeProtestGet);
+    var initiatedProtestGet = document.getElementById("initiated-select").value;
+    console.log(initiatedProtestGet);
+    var defenseSectorProtestGet = document.getElementById("defense-sector-protest").value;
+    console.log(defenseSectorProtestGet);
+    var nameProtestGet = document.getElementById("name-protest").value;
+    console.log(nameProtestGet);
+    var tittleProtestLetterGet = document.getElementById("tittle-protest-letter").value;
+    console.log(tittleProtestLetterGet);
+    var bodyProtestLetterGet = document.getElementById("body-protest-letter").value;
+    console.log(bodyProtestLetterGet);
+    
+
+    dataForm = new DataProtest(
+        nameProtestGet,
+        cityProtestGet, 
+        defenseSectorProtestGet,
+        initiatedProtestGet,
+        dateProtestGet
+    );
+    console.log(dataForm);
+    // ------------   Datos de la protesta  --------------- //
+
+    fetch(`http://prueba-env.us-east-2.elasticbeanstalk.com/protests/create`, {
+            method: 'POST',
+            headers: [
+                ["Content-Type", "application/json"]
+              ],
+            body: JSON.stringify(dataForm)
+        })
+        //  console.log(newProtest);
+
+        // tambien:    .then((resp) => resp.json())
+        .then(function (response) {
+            return response.json()
+        })
+        .then(function (data) {
+            console.log(data)
+            return data;
+        })
+        
+});
