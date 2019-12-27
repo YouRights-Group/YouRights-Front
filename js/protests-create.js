@@ -10,183 +10,214 @@
 
 const protestsCreate = document.getElementById('form-protests-create');
 
+//  ----------------   Contador <-    -----------------  //
+
+init_contador("protestLetter", "letterLength", 280);
+function init_contador(protestLetter, letterLength, max) {
+    $("#" + protestLetter).keyup(function () {
+        updateContador(protestLetter, letterLength, max);
+    });
+
+    $("#" + protestLetter).change(function () {
+        updateContador(protestLetter, letterLength, max);
+    });
+
+}
+function updateContador(protestLetter, letterLength, max) {
+    var contador = $("#" + letterLength);
+    var ta = $("#" + protestLetter);
+    contador.html("0/" + max);
+
+    contador.html(ta.val().length + "/" + max);
+    if (parseInt(ta.val().length) > max) {
+        ta.val(ta.val().substring(0, max - 1));
+        contador.html(max + "/" + max);
+    }
+}
+
+//  ----------------   Contador ->    -----------------  //
+
 // -----------  MAPS <- ----------------  //
 
 var marker = [];
 var directionsService = [];
 var directionsRenderer = [];
 
-var valor = [];
+var typeProtest = [];
 
-$('select#type-protest-select').on('change',function(){
-    valor = $(this).val();
-    if( valor == "huelga"){
-        $( "#all-map" ).addClass( "d-none" );
+$('select#type-protest-select').on('change', function () {
+    typeProtest = $(this).val();
+    if (typeProtest == "huelga") {
+        $("#all-map").addClass("d-none");
+        $("#datepicker-protest").removeClass("d-none");
+        $("#datepicker-protest-time").addClass("d-none");
     } else {
-        $("#all-map").removeClass( "d-none" )
-    }
+        $("#all-map").removeClass("d-none");
+        $("#datepicker-protest").addClass("d-none");
+        $("#datepicker-protest-time").removeClass("d-none");
+    };
 });
 
 function initialize() {
-	var city,
-		infoWindow = "",
-		addressEl = document.querySelector("#map-search"),
-		latEl = document.querySelector(".latitude"),
-		longEl = document.querySelector(".longitude"),
-		city = document.querySelector(".reg-input-city");
+    var city,
+        infoWindow = "",
+        addressEl = document.querySelector("#map-search"),
+        latEl = document.querySelector(".latitude"),
+        longEl = document.querySelector(".longitude"),
+        city = document.querySelector(".reg-input-city");
 
-	directionsService = new google.maps.DirectionsService();
-	directionsRenderer = new google.maps.DirectionsRenderer();
+    directionsService = new google.maps.DirectionsService();
+    directionsRenderer = new google.maps.DirectionsRenderer();
 
-	var map = new google.maps.Map(document.getElementById("map_canvas"), {
-		zoom: 5,
-		center: {
-			lat: 40.42928819958918,
-			lng: -3.6999707343627506
-		},
-		disableDefaultUI: false,
-		scrollWheel: true,
-		draggable: true
-	});
+    var map = new google.maps.Map(document.getElementById("map_canvas"), {
+        zoom: 5,
+        center: {
+            lat: 40.42928819958918,
+            lng: -3.6999707343627506
+        },
+        disableDefaultUI: false,
+        scrollWheel: true,
+        draggable: true
+    });
 
-	directionsRenderer.setMap(map);
+    directionsRenderer.setMap(map);
 
-	marker = new google.maps.Marker({
-		position: map.center,
-		map: map,
-		draggable: true
-	});
-	var searchBox = new google.maps.places.SearchBox(addressEl);
+    marker = new google.maps.Marker({
+        position: map.center,
+        map: map,
+        draggable: true
+    });
+    var searchBox = new google.maps.places.SearchBox(addressEl);
 
-	google.maps.event.addListener(searchBox, "places_changed", function () {
-		var places = searchBox.getPlaces(),
-			bounds = new google.maps.LatLngBounds(),
-			i,
-			place,
-			lat,
-			long,
-			resultArray,
-			addresss = places[0].formatted_address;
+    google.maps.event.addListener(searchBox, "places_changed", function () {
+        var places = searchBox.getPlaces(),
+            bounds = new google.maps.LatLngBounds(),
+            i,
+            place,
+            lat,
+            long,
+            resultArray,
+            addresss = places[0].formatted_address;
 
-		for (i = 0;
-			(place = places[i]); i++) {
-			bounds.extend(place.geometry.location);
-			marker.setPosition(place.geometry.location); // Set marker position new.
-		}
+        for (i = 0;
+            (place = places[i]); i++) {
+            bounds.extend(place.geometry.location);
+            marker.setPosition(place.geometry.location); // Set marker position new.
+        }
 
-		map.fitBounds(bounds); // Fit to the bound
-		map.setZoom(15); // This function sets the zoom to 15, meaning zooms to level 15.
-		// console.log( map.getZoom() );
+        map.fitBounds(bounds); // Fit to the bound
+        map.setZoom(15); // This function sets the zoom to 15, meaning zooms to level 15.
+        // console.log( map.getZoom() );
 
-		lat = marker.getPosition().lat();
-		long = marker.getPosition().lng();
-		latEl.value = lat;
-		longEl.value = long;
+        lat = marker.getPosition().lat();
+        long = marker.getPosition().lng();
+        latEl.value = lat;
+        longEl.value = long;
 
-		resultArray = places[0].address_components;
+        resultArray = places[0].address_components;
 
-		// Get the city and set the city input value to the one selected
-		for (var i = 0; i < resultArray.length; i++) {
-			if (
-				resultArray[i].types[0] &&
-				"administrative_area_level_2" === resultArray[i].types[0]
-			) {
-				citi = resultArray[i].long_name;
-				city.value = citi;
-			}
-		}
+        // Get the city and set the city input value to the one selected
+        for (var i = 0; i < resultArray.length; i++) {
+            if (
+                resultArray[i].types[0] &&
+                "administrative_area_level_2" === resultArray[i].types[0]
+            ) {
+                citi = resultArray[i].long_name;
+                city.value = citi;
+            }
+        }
 
-		// Closes the previous info window if it already exists
-		if (infoWindow) {
-			infoWindow.close();
-		}
+        // Closes the previous info window if it already exists
+        if (infoWindow) {
+            infoWindow.close();
+        }
 		/**
 		 * Creates the info Window at the top of the marker
 		 */
-		infoWindow = new google.maps.InfoWindow({
-			content: addresss
-		});
+        infoWindow = new google.maps.InfoWindow({
+            content: addresss
+        });
 
-		infoWindow.open(map, marker);
-	});
+        infoWindow.open(map, marker);
+    });
 
-	google.maps.event.addListener(marker, "dragend", function hola(event) {
-		var lat, long, address, resultArray, citi;
+    google.maps.event.addListener(marker, "dragend", function hola(event) {
+        var lat, long, address, resultArray, citi;
 
-		lat = marker.getPosition().lat();
-		long = marker.getPosition().lng();
+        lat = marker.getPosition().lat();
+        long = marker.getPosition().lng();
 
-		var geocoder = new google.maps.Geocoder();
-		geocoder.geocode({
-			latLng: marker.getPosition()
-		},
-			function (result, status) {
-				if ("OK" === status) {
-					address = result[0].formatted_address;
+        var geocoder = new google.maps.Geocoder();
+        geocoder.geocode({
+            latLng: marker.getPosition()
+        },
+            function (result, status) {
+                if ("OK" === status) {
+                    address = result[0].formatted_address;
                     resultArray = result[0].address_components;
-                    
+
                     for (var i = 0; i < resultArray.length; i++) {
-						if (
-							resultArray[i].types[0] &&
-							"administrative_area_level_2" === resultArray[i].types[0]
-						) {
-							citi = resultArray[i].long_name;
-							city.value = citi;
-						}
-					}
-					addressEl.value = address;
-					latEl.value = lat;
-					longEl.value = long;
-				} else {
-					console.log(
-						"Geocode was not successful for the following reason: " + status
-					);
-				}
-				if (infoWindow) {
-					infoWindow.close();
-				}
+                        if (
+                            resultArray[i].types[0] &&
+                            "administrative_area_level_2" === resultArray[i].types[0]
+                        ) {
+                            citi = resultArray[i].long_name;
+                            city.value = citi;
+                        }
+                    }
+                    addressEl.value = address;
+                    latEl.value = lat;
+                    longEl.value = long;
+                } else {
+                    console.log(
+                        "Geocode was not successful for the following reason: " + status
+                    );
+                }
+                if (infoWindow) {
+                    infoWindow.close();
+                }
 
-				infoWindow = new google.maps.InfoWindow({
-					content: address
-				});
+                infoWindow = new google.maps.InfoWindow({
+                    content: address
+                });
 
-				infoWindow.open(map, marker);
-			}
-		);
-	});
+                infoWindow.open(map, marker);
+            }
+        );
+    });
 
-	$("#rutear").on("click", function () {
-		calculateAndDisplayRoute(directionsService, directionsRenderer);
-	});
+    $("#rutear").on("click", function () {
+        calculateAndDisplayRoute(directionsService, directionsRenderer);
+    });
 }
 
 function calculateAndDisplayRoute(directionsService, directionsRenderer) {
-	waypoints = [];
-	getDataRoute();
+    waypoints = [];
+    getDataRoute();
 
-	directionsService.route({
-		origin: startPoint,
-		destination: endPoint,
-		waypoints: waypoints,
-		travelMode: google.maps.TravelMode.WALKING
-	},
-		function (response, status) {
-			if (status == "OK") {
-				directionsRenderer.setDirections(response);
-			} else {
-				window.alert("Directions request failed due to " + status);
-			}
-		}
-	);
+    directionsService.route({
+        origin: startPoint,
+        destination: endPoint,
+        waypoints: waypoints,
+        travelMode: google.maps.TravelMode.WALKING
+    },
+        function (response, status) {
+            if (status == "OK") {
+                directionsRenderer.setDirections(response);
+            } else {
+                window.alert("Directions request failed due to " + status);
+            }
+        }
+    );
 }
 
 $("#save-point-map").on("click", function () {
-	pointLat = $(".latitude").val();
-	pointLong = $(".longitude").val();
-	pointAddress = $(".controls").val();
-    
-    var valor = $("#type-protest-select").val();
-    if((valor == "manifestacion") || (valor == "protesta" && dataBaseWaypoint.length == 0)){
+    pointLat = $(".latitude").val();
+    pointLong = $(".longitude").val();
+    pointAddress = $(".controls").val();
+
+    var typeProtest = $("#type-protest-select").val();
+    if ((typeProtest == "manifestacion") || (typeProtest == "protesta" && dataBaseWaypoint.length == 0)) {
         agregarWaypoint();
     } else {
         alert("No puede haber más de 1 punto en el mapa. Consideramos que una protesta solo se realiza en un sitio concreto y que no tiene recorrido.");
@@ -194,10 +225,10 @@ $("#save-point-map").on("click", function () {
 });
 
 $("#delete-point-map").on("click", function () {
-	deleteId(id_line_selected);
+    deleteId(id_line_selected);
 });
 $("#deleteAll-point-map").click(function () {
-	deleteAllLine();
+    deleteAllLine();
 });
 
 var pointLat = $(".latitude").val();
@@ -211,8 +242,8 @@ var endPoint = [];
 var waypoints = [];
 
 function agregarWaypoint() {
-	idPointMap++;
-	linePointMap = `
+    idPointMap++;
+    linePointMap = `
 		<tr class="selected waypoint" id="${idPointMap}" onclick="selected(this.id);">
 			<td >${idPointMap}</td>
 			<td id="dataMapAddress${idPointMap}">${pointAddress}</td>
@@ -220,95 +251,95 @@ function agregarWaypoint() {
 			<td id="dataMapLong${idPointMap}" class="d-none">${pointLong}</td>
 		</tr>
 	`;
-	$("#outputTableMap").append(linePointMap);
-	
-	function waypoint(id, address, lat, lng) {
-		this.id = id;
-		this.address = address;
-		this.lat = lat;
-		this.lng = lng;
-	}
+    $("#outputTableMap").append(linePointMap);
 
-	waypts = new waypoint(idPointMap, pointAddress, pointLat, pointLong);
+    function waypoint(id, address, lat, lng) {
+        this.id = id;
+        this.address = address;
+        this.lat = lat;
+        this.lng = lng;
+    }
 
-	function getwayptsLatLng(lat, lng) {
-		this.lat = lat;
-		this.lng = lng;
-	}
-	wayptsLatLng = new getwayptsLatLng(pointLat, pointLong);
+    waypts = new waypoint(idPointMap, pointAddress, pointLat, pointLong);
 
-	getWaypoint();
-	arrangeId();
+    function getwayptsLatLng(lat, lng) {
+        this.lat = lat;
+        this.lng = lng;
+    }
+    wayptsLatLng = new getwayptsLatLng(pointLat, pointLong);
+
+    getWaypoint();
+    arrangeId();
 }
 
 var dataBaseWaypoint = [];
 var getdataBaseWaypointRoute = [];
 
 function getWaypoint() {
-	dataBaseWaypoint.push(waypts);
+    dataBaseWaypoint.push(waypts);
     getdataBaseWaypointRoute.push(wayptsLatLng);
     console.log(dataBaseWaypoint);
     console.log(getdataBaseWaypointRoute);
 }
 
 function getDataRoute() {
-	getStartPoint = getdataBaseWaypointRoute[0];
-	getEndPoint = getdataBaseWaypointRoute[getdataBaseWaypointRoute.length - 1];
-	startPoint = getStartPoint.lat + ", " + getStartPoint.lng;
-	endPoint = getEndPoint.lat + ", " + getEndPoint.lng;
+    getStartPoint = getdataBaseWaypointRoute[0];
+    getEndPoint = getdataBaseWaypointRoute[getdataBaseWaypointRoute.length - 1];
+    startPoint = getStartPoint.lat + ", " + getStartPoint.lng;
+    endPoint = getEndPoint.lat + ", " + getEndPoint.lng;
 
-	for (var i = 1; i < getdataBaseWaypointRoute.length - 1; i++) {
-		getWaypoints = getdataBaseWaypointRoute[i].lat + ", " + getdataBaseWaypointRoute[i].lng;
-		if (getdataBaseWaypointRoute[i]) {
-			waypoints.push({
-				location: getWaypoints,
-				stopover: true
-			});
-		}
-	}
+    for (var i = 1; i < getdataBaseWaypointRoute.length - 1; i++) {
+        getWaypoints = getdataBaseWaypointRoute[i].lat + ", " + getdataBaseWaypointRoute[i].lng;
+        if (getdataBaseWaypointRoute[i]) {
+            waypoints.push({
+                location: getWaypoints,
+                stopover: true
+            });
+        }
+    }
 }
 
 function selected(id_line) {
-	if ($("#" + id_line).hasClass("seleccionada")) {
-		$("#" + id_line).removeClass("seleccionada");
-	} else {
-		$("#" + id_line).addClass("seleccionada");
-	}
-	id_line_selected = id_line;
+    if ($("#" + id_line).hasClass("seleccionada")) {
+        $("#" + id_line).removeClass("seleccionada");
+    } else {
+        $("#" + id_line).addClass("seleccionada");
+    }
+    id_line_selected = id_line;
 }
 
 function deleteId(id_line) {
-	var ccc = id_line-1;
-	$("#" + id_line).remove();
-	dataBaseWaypoint.splice(ccc,1);
-	getdataBaseWaypointRoute.splice(ccc,1);
-	arrangeId();
+    var ccc = id_line - 1;
+    $("#" + id_line).remove();
+    dataBaseWaypoint.splice(ccc, 1);
+    getdataBaseWaypointRoute.splice(ccc, 1);
+    arrangeId();
 }
 
 function arrangeId() {
-	var num1 = 1;
-	$("#table-map tbody tr").each(function () {
-		$(this).eq(0).attr("id", num1);
-		$(this).find("td").eq(0).text(num1);
-		$(this).find("td").eq(1).attr("id","dataMapAddress" + num1);
-		$(this).find("td").eq(2).attr("id","dataMapLat" + num1);
-		$(this).find("td").eq(3).attr("id","dataMapLong" + num1);
-		
-		num1++;
+    var num1 = 1;
+    $("#table-map tbody tr").each(function () {
+        $(this).eq(0).attr("id", num1);
+        $(this).find("td").eq(0).text(num1);
+        $(this).find("td").eq(1).attr("id", "dataMapAddress" + num1);
+        $(this).find("td").eq(2).attr("id", "dataMapLat" + num1);
+        $(this).find("td").eq(3).attr("id", "dataMapLong" + num1);
 
-	});
-	
-	for (var i = 0; i < dataBaseWaypoint.length; i++) {
-		Object.defineProperty(dataBaseWaypoint[i], "id", {value : i});
-	};
+        num1++;
+
+    });
+
+    for (var i = 0; i < dataBaseWaypoint.length; i++) {
+        Object.defineProperty(dataBaseWaypoint[i], "id", { value: i });
+    };
 }
 
 function deleteAllLine() {
-	$('.waypoint').remove();
-	dataBaseWaypoint = [];
-	getdataBaseWaypointRoute = [];
-	directionsRenderer.setDirections({routes: []}); 
-	arrangeId()
+    $('.waypoint').remove();
+    dataBaseWaypoint = [];
+    getdataBaseWaypointRoute = [];
+    directionsRenderer.setDirections({ routes: [] });
+    arrangeId()
 }
 
 // -----------  MAPS -> ----------------  //
@@ -316,7 +347,7 @@ function deleteAllLine() {
 protestsCreate.addEventListener('submit', function (e) {
     e.preventDefault();
     console.log('me diste un click')
-    
+
     // ------------   Datos personales   --------------- //
     /*
     function PersonalInformation(
@@ -413,11 +444,11 @@ protestsCreate.addEventListener('submit', function (e) {
     console.log(tittleProtestLetterGet);
     var bodyProtestLetterGet = document.getElementById("body-protest-letter").value;
     console.log(bodyProtestLetterGet);
-    
+
 
     dataForm = new DataProtest(
         nameProtestGet,
-        cityProtestGet, 
+        cityProtestGet,
         defenseSectorProtestGet,
         initiatedProtestGet,
         dateProtestGet
@@ -426,12 +457,12 @@ protestsCreate.addEventListener('submit', function (e) {
     // ------------   Datos de la protesta  --------------- //
 
     fetch(`http://prueba-env.us-east-2.elasticbeanstalk.com/protests/create`, {
-            method: 'POST',
-            headers: [
-                ["Content-Type", "application/json"]
-              ],
-            body: JSON.stringify(dataForm)
-        })
+        method: 'POST',
+        headers: [
+            ["Content-Type", "application/json"]
+        ],
+        body: JSON.stringify(dataForm)
+    })
         //  console.log(newProtest);
 
         // tambien:    .then((resp) => resp.json())
@@ -442,5 +473,5 @@ protestsCreate.addEventListener('submit', function (e) {
             console.log(data)
             return data;
         })
-        
+
 });

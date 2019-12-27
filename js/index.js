@@ -1,9 +1,20 @@
 
 $(document).ready(function() {
-
+    /*
     $('.fj-date').datepicker({
         format: "dd/mm/yyyy",
         language: 'es',
+    });
+    */
+    $('.date-protest').datetimepicker({
+        timepicker:false,
+        format:'d/m/Y'
+    });
+    
+    $('.time-protest').datetimepicker({
+        step: 10,
+        datepicker:false,
+        format:'H:i'
     });
 
     $("#map-click").on("click",function(){
