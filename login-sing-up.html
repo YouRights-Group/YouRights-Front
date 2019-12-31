@@ -81,26 +81,26 @@
                 <article class="card-body mx-auto" style="max-width: 400px;">
                     <h4 class="card-title mt-3 text-center">Entra aquí</h4>
                     <p>
-                        <a href="" class="btn btn-block btn-primary"> <i class="fab fa-twitter"></i>   Entra con Twitter</a>
-                        <a href="" class="btn btn-block btn-primary"> <i class="fab fa-facebook-f"></i>   Entra con facebook</a>
+                        <a href="" class="btn btn-block btn-primary hide"> <i class="fab fa-twitter"></i>   Entra con Twitter</a>
+                        <a href="" class="btn btn-block btn-primary hide"> <i class="fab fa-facebook-f"></i>   Entra con facebook</a>
                     </p>
-                    <p class="divider-text text-center">
+                    <p class="divider-text text-center hide">
                         <span class="bg-light">OR</span>
                     </p>
                     <form id="formulario" action="" name="" method="post">
-                        <div class="form-group input-group">
+                        <div class="form-group input-group hide">
                             <div class="input-group-prepend">
-                                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                                <span class="input-group-text"> <i class="fa fa-user"></i></span>
                             </div>
-                            <input id="login-name" name="name" class="form-control" placeholder="Nombre para tu usuario" type="text">
+                            <input id="login-email" name="email" class="form-control" placeholder="Email" type="email">
                         </div> <!-- form-group// -->
-                        <div class="form-group input-group">
+                        <div class="form-group input-group hide">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                             </div>
-                                <input id="login-password" name="password" class="form-control" placeholder="Tu contraseña" type="password">
+                            <input id="login-password" name="password" class="form-control" placeholder="Tu contraseña" type="password">
                         </div> <!-- form-group// -->
-                        <div class="form-group custom-control custom-switch">
+                        <div class="form-group custom-control custom-switch hide">
                             <input type="checkbox" class="custom-control-input" id="remember-ging-up">
                             <label class="custom-control-label" for="remember-ging-up">Recordar</label>
                         </div>
@@ -108,10 +108,20 @@
                             <input type="checkbox" class="custom-control-input" id="forgot-password">
                             <label class="custom-control-label" for="forgot-password">¿Olvidaste la contraseña?</label>
                         </div>
+                        <div class="form-group input-group d-none" id="repeat-email-forgot">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                            </div>
+                            <input id="repeat-email" name="repeat-email" class="form-control" placeholder="Email" type="email">
+                        </div> <!-- form-group// -->
                         <div class="form-group">
                             <button id="login-submit" type="submit" class="btn btn-primary btn-block">Pulsa para entrar</button>
                         </div> <!-- form-group// -->      
                     </form>
+                    <div id="divError" class="alert alert-danger collapse">
+                        <a id="linkClose" href="#" class="close">&times;</a>
+                        <div id="divErrorText"></div>
+                    </div>
                 </article>
             </div>
             <div class="col-12 sing-up-form d-none">
@@ -130,73 +140,44 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                             </div>
-                            <input name="" class="form-control" placeholder="Nombre" type="text">
+                            <input name="" id="register-email" class="form-control" placeholder="Email" type="email">
                         </div> <!-- form-group// -->
-                        <div class="form-group input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                            </div>
-                            <input name="" class="form-control" placeholder="Apellidos" type="text">
-                        </div> <!-- form-group// -->
-                        <div class="form-group input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                            </div>
-                            <input name="" class="form-control" placeholder="Nombre para tu usuario" type="text">
-                        </div> <!-- form-group// -->
-                        <div class="form-group input-group">
-                            <div class="input-group-prepend">
-                            <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
-                            </div>
-                            <input name="" class="form-control" placeholder="Dirección Email" type="email">
-                        </div> <!-- form-group// -->
-                        <div class="form-group input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
-                            </div>
-                            <select class="custom-select" style="max-width: 120px;">
-                                <option selected="">+34</option>
-                                <option value="1">+972</option>
-                                <option value="2">+198</option>
-                                <option value="3">+701</option>
-                            </select>
-                            <input name="" class="form-control" placeholder="Número de teléfono" type="number">
-                        </div> <!-- form-group// -->
-                        <div class="form-group input-group">
+                        <div class="form-group input-group d-none">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"> <i class="fa fa-building"></i> </span>
                             </div>
                             <select class="form-control">
-                            <option selected=""> Tipo de usuario</option>
-                            <option>Usuario normal</option>
-                            <option>Colaborador</option>
-                            <option>Trabajador</option>
+                            <option value="0" selected=""> Tipo de usuario</option>
+                            <option value="normal-user">Usuario normal</option>
+                            <option value="collaborator">Colaborador</option>
+                            <option value="employer">Trabajador</option>
                             </select>
                         </div> <!-- form-group end.// -->
                         <div class="form-group input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                             </div>
-                                <input class="form-control" placeholder="Tu contraseña" type="password">
+                                <input id="register-password" class="form-control" placeholder="Tu contraseña" type="password">
                         </div> <!-- form-group// -->
                         <div class="form-group input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                             </div>
-                                <input class="form-control" placeholder="Repite tu contraseña" type="password">
+                                <input id="register-repeated-password" class="form-control" placeholder="Repite tu contraseña" type="password">
                         </div> <!-- form-group// -->
                         <div class="form-group custom-control custom-switch">
                             <input type="checkbox" class="custom-control-input" id="remember-login">
                             <label class="custom-control-label" for="remember-login">Recordar</label>
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-block"> Crear cuenta  </button>
+                            <button type="submit" id="register-submit" class="btn btn-primary btn-block"> Crear cuenta  </button>
                         </div> <!-- form-group// -->      
                     </form>
+                    <div id="divError" class="alert alert-danger collapse">
+                        <a id="linkClose" href="#" class="close">&times;</a>
+                        <div id="divErrorText"></div>
+                    </div>
                 </article>
-            </div>
-            <div class="alert alert-primary" id="respuesta" role="alert">
-                A simple primary alert—check it out!
             </div>
         </div> <!-- card.// -->
                     

@@ -75,4 +75,15 @@ $(document).ready(function() {
             $( ".login-form" ).removeClass("d-none");
         }
     });
+    $('#forgot-password').click(function(){
+        if(this.checked){
+            $( "#repeat-email-forgot" ).removeClass("d-none");
+            $( ".hide" ).hide(1000,"swing");
+            $('#login-submit').text("Enviar email de recordatorio");
+        }else {
+            $( "#repeat-email-forgot" ).addClass( "d-none" );
+            $( ".hide" ).show(1000,"swing");
+            $('#login-submit').text("Pulsa para entrar");
+        }
+    });
 });

@@ -14,7 +14,23 @@ $(document).ready(function() {
         dom: 'Bfrtip',
         ajax: {
             url: "http://prueba-env.us-east-2.elasticbeanstalk.com/protests/list",
-            dataSrc: "protests"
+            dataSrc: "protests",
+            // headers y error para token
+            headers: {
+                'Authorization': 'Bearer '
+                    + sessionStorage.getItem("token")
+            },
+            error: function (jQXHR) {
+                // If status code is 401, access token expired, so
+                // redirect the user to the login page
+                if (jQXHR.status == "401") {
+                    $('#errorModal').modal('show');
+                }
+                else {
+                    $('#divErrorText').text(jqXHR.responseText);
+                    $('#divError').show('fade');
+                }
+            }
         },
         columns: [
             {
@@ -75,6 +91,11 @@ $(document).ready(function() {
             $.ajax({
                 url: url,
                 method: "DELETE",
+                // headers para token
+                headers: {
+                    'Authorization': 'Bearer '
+                        + sessionStorage.getItem("token")
+                },
                 success: function (){
                     console.log("Petición Exitosa")
                     button.parents("tr").remove();
