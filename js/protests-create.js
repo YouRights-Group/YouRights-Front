@@ -434,6 +434,8 @@ function deleteAllLine() {
 
 // -----------  MAPS -> ----------------  //
 
+// -----------  POST <- ----------------  //
+
 const protestsCreate = document.getElementById('form-protests-create');
 
 protestsCreate.addEventListener('submit', function (e) {
@@ -567,3 +569,5 @@ console.log(personalInformation);
         })
 
 });
+
+// -----------  POST -> ----------------  //
