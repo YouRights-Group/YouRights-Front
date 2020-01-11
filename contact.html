@@ -149,12 +149,17 @@
                     </div>
                 </section>
                 <div class="col-md-7 mx-auto mt-6" data-aos="fade-up" data-aos-delay="100">
-                    <form method="post" class="bg-light p-md-5 p-4 mb-5 border" action="./php/from-contact.php">
+                    <form method="post" class="bg-light p-md-5 p-4 mb-5 border" id="form-contact" action="./php/from-contact.php">
                         <!-- form message -->
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="alert alert-success contact__msg" style="display: none" role="alert">
-                                    Tu mensaje fue enviado exitosamente.
+                        <div class="modal fade" id="alert-post" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content ">
+                                    <div class="modal-body alert-success">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        Tu mensaje fue enviado exitosamente.
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -163,17 +168,17 @@
                         <div class="row">
                             <div class="col-md-6 form-group">
                                 <label for="name">Nombre</label>
-                                <input type="text" name="name" id="name" class="form-control" required>
+                                <input type="text" name="name" id="name-contact" class="form-control" required>
                             </div>
                             <div class="col-md-6 form-group">
                                 <label for="phone">Teléfono</label>
-                                <input type="text" name="phone" id="phone" class="form-control" required>
+                                <input type="text" name="phone" id="phone-contact" class="form-control" required>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6 form-group">
                                 <label for="inputCity">Ciudad</label>
-                                <select name="city" type="text" id="inputCity" class="form-control" required>
+                                <select name="city" type="text" id="city-contact" class="form-control" required>
                                     <option selected>Elige...</option>
                                     <option value='selecciona'>Selecciona</option>
                                     <option value='A Coruña' >A Coruña</option>
@@ -233,21 +238,21 @@
                             </div>
                             <div class="col-md-6 form-group">
                                 <label for="email">Email</label>
-                                <input type="email" name="email" id="email" class="form-control" required>
+                                <input type="email" name="email" id="email-contact" class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="attched">Inserte archivo adjunto</label>
-                            <input name="attched" type="file" class="form-control-file" id="attched">
+                            <input name="attched" type="file" class="form-control-file" id="attched-contact">
                         </div>
                         <div class="form-group">
                             <label for="subjet">Asunto</label>
-                            <input class="form-control" name="subject" type="text" id="subjet" required>
+                            <input class="form-control" name="subject" type="text" id="subjet-contact" required>
                         </div>
                         <div class="row mb-4">
                             <div class="col-md-12 form-group">
                             <label for="message">Escribe el mensaje</label>
-                            <textarea name="message" id="message" class="form-control" cols="30" rows="8" required></textarea>
+                            <textarea name="message" id="message-contact" class="form-control" cols="30" rows="8" required></textarea>
                             </div>
                         </div>
                         <div class="row">
@@ -370,8 +375,9 @@
     <!-- Maps js -->
     <script defer src="js/maps.js"></script>
 
-    <!-- Nuestros js -->
+    <!-- Nuestros js 
     <script src="js/form-contact.js"></script>
-
+-->
+    <script src="js/contact.js"></script>
     </body>
 </html>

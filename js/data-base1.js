@@ -2,15 +2,28 @@
 // https://www.youtube.com/watch?v=e-HA2YQUoi0
 // fetch con data-table  https://datatables.net/forums/discussion/54076/use-fetch-api-instead-of-ajax-call-in-datatable
 $(document).ready(function() {
+/*
+    if (sessionStorage.getItem('accessToken') == null) {
+        window.location.href = "login-sing-up.html";
+    }
+*/
+    $('#linkClose').click(function () {
+        $('#divError').hide('fade');
+    });
+
+    $('#errorModal').on('hidden.bs.modal', function () {
+        window.location.href = "Login.html";
+    });
 
     var table = $('#list-protest').DataTable({
         // processing: true,
         // serverSide: true,
         // orderMulti: false,
         // dom: '<"top"i>rt<"botton"lp><"clear">',
-        // searching: false,
+        searching: false,
         info: false,
-        pageLength : 10,
+        pageLength : 15,
+        pagingType: "simple_numbers",
         dom: 'Bfrtip',
         ajax: {
             url: "http://prueba-env.us-east-2.elasticbeanstalk.com/protests/list",
@@ -75,10 +88,14 @@ $(document).ready(function() {
     });
 
     // filtro de los select
-    $('#city_select').change(function(){
+    $('#city-protest-select').change(function(){
         table.column(3).search($(this).val())
         .draw();
+        console.log("hola");
     });   
+    $('#filter-text').on( 'keyup', function () {
+        table.search( this.value ).draw();
+    } );
 
     $('#list-protest').on('click', '.js-eliminar', function(){
         var button = $(this);

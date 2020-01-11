@@ -5,13 +5,13 @@
 .map {
   height: 100%;
   width: 100%;
-  margin-top: 20px;
-  margin-left: 150px;
-  z-index: 1;
+  margin-top: 40px;
 }
 .map svg {
   margin: 0 auto;
   display: block;
+  height: 95%;
+  width: 95%;
 }
 .map path {
   fill: #d3d3d3;

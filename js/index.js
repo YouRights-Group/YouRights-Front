@@ -6,25 +6,35 @@ $(document).ready(function() {
         language: 'es',
     });
     */
-    $('.date-protest').datetimepicker({
+    $('#account-bank').click (function(){
+        $("#modal-account-bank").modal();
+        console.log("hola");
+    }); 
+    $('.date-datepicker').datetimepicker({
         timepicker:false,
         format:'d/m/Y'
     });
     
-    $('.time-protest').datetimepicker({
+    $('.time-datepicker').datetimepicker({
         step: 10,
         datepicker:false,
         format:'H:i'
     });
 
     $("#map-click").on("click",function(){
-        $("#modal-map").modal(console.log("Hello world!"));
+        $("#modal-map").modal();
         $('#map-city').append('Poner aquí (Ciudad, País)')
         $('#modal-body-map').append('<h5><strong>Cantidad de protestas: </strong></h5>')
         $('#modal-body-map').append('<h5><strong>En defensa de: </strong></h5>')
         
     });
 
+    $("#btn-sing-up").removeClass("btn-outline-info");
+    $("#btn-sing-up").addClass("btn-info");
+    $("#delete-datepicker").on("click",function(){
+        $('#start-datepicker').val('');
+        $('#end-datepicker').val('');
+    });
     
 
     console.log("Hello world!");

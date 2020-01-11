@@ -10,7 +10,7 @@
 //  https://www.youtube.com/watch?v=-AR-6X_98rM
 
 
-const protestsCreate = document.getElementById('form-protests-create');
+
 
 //  ----------------   Contador <-    -----------------  //
 
@@ -55,8 +55,10 @@ input.addEventListener('change', function(e){
         document.body.appendChild(imagen)
         console.log(reader);
     },
-    reader.readAsDataURL(input.files[0]) // Esta es la clave para leer el formato
-    console.log(reader)
+    reader.readAsDataURL(input.files[0]), // Esta es la clave para leer el formato
+    attachedDoc.push(reader);
+    console.log(reader);
+    console.log(attachedDoc);
 }, false )
 
 /*
@@ -431,6 +433,8 @@ function deleteAllLine() {
 }
 
 // -----------  MAPS -> ----------------  //
+
+const protestsCreate = document.getElementById('form-protests-create');
 
 protestsCreate.addEventListener('submit', function (e) {
     e.preventDefault();

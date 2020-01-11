@@ -260,7 +260,12 @@ var regions=[
         "population": 1958238
     },
 ];
-
+var region = [];
+var clickRegion = [];
+var modalMap =  $("#modal-map");
+var modalCity = $('#map-city');
+var modalBody = $('#modal-body-map');
+var uri = "";
 
 var temp_array= regions.map(function(item){
     return item.population;
@@ -284,8 +289,10 @@ $(function() {
             '</div>'
          )
         .appendTo('body');
-        console.log(regions);
-    })
+        region.push(region_data.region_name);
+        clickRegion = region.pop();
+    }
+
     .mouseleave(function () {
         $('.info_panel').remove();
     })
@@ -297,6 +304,84 @@ $(function() {
             top: mouseY-50,
             left: mouseX - ($('.info_panel').width()/2)
         });
-    });
+    }))
+    ;
 
 });
+
+$(function() {
+
+    for(i = 0; i < regions.length; i++) {
+
+        $('#'+ regions[i].region_code)
+        .css({'fill': 'rgba(0, 56, 255,' + regions[i].population/highest_value +')'})
+        .data('region', regions[i]);
+    }
+    $('.map path').click(function (numberProtest, defenceWho) {
+        var clickRegion1 = $(this).data('region');
+        region.push(clickRegion1);
+        clickRegion = region.pop();
+        var clickRegionName = clickRegion.region_name;
+        console.log(clickRegionName);
+        $(modalMap).modal();
+        $(modalCity).html(clickRegionName + ', ' + 'España'),
+        $(modalBody).html(`<h5><strong>Cantidad de protestas: ${numberProtest.numberProtest}</strong></h5>`),
+        $(modalBody).html(`<h5><strong>Cantidad de protestas: ${defenceWho.defenceWho}</strong></h5>`)
+    });
+});
+
+/*
+$.ajax({
+    url: '/api/employees',
+    method: 'GET',
+    headers: {
+        'Authorization': 'Bearer '
+            + sessionStorage.getItem("accessToken")
+    },
+    success: function () {
+
+        for(i = 0; i < regions.length; i++) {
+
+            $('#'+ regions[i].region_code)
+            .css({'fill': 'rgba(0, 56, 255,' + regions[i].population/highest_value +')'})
+            .data('region', regions[i]);
+        }
+    
+        $('.map path').mouseover(function (e) {
+            var region_data=$(this).data('region');
+            $('<div class="info_panel">'+
+                region_data.region_name + '<br>' +
+                'Population: ' + region_data.population.toLocaleString("en-UK") +
+                '</div>'
+             )
+            .appendTo('body');
+            console.log(regions);
+        })
+        .mouseleave(function () {
+            $('.info_panel').remove();
+        })
+        .mousemove(function(e) {
+            var mouseX = e.pageX, //X coordinates of mouse
+                mouseY = e.pageY; //Y coordinates of mouse
+    
+            $('.info_panel').css({
+                top: mouseY-50,
+                left: mouseX - ($('.info_panel').width()/2)
+            });
+        });
+
+    },
+    error: function (jQXHR) {
+        // If status code is 401, access token expired, so
+        // redirect the user to the login page
+        if (jQXHR.status == "401") {
+            $('#errorModal').modal('show');
+        }
+        else {
+            $('#divErrorText').text(jqXHR.responseText);
+            $('#divError').show('fade');
+        }
+    }
+});
+
+*/
