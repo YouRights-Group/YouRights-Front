@@ -12,7 +12,7 @@ $(document).ready(function() {
     });
 
     $('#errorModal').on('hidden.bs.modal', function () {
-        window.location.href = "Login.html";
+        window.location.href = "login-sing-up.html";
     });
 
     var table = $('#list-protest').DataTable({
@@ -26,12 +26,12 @@ $(document).ready(function() {
         pagingType: "simple_numbers",
         dom: 'Bfrtip',
         ajax: {
-            url: "http://prueba-env.us-east-2.elasticbeanstalk.com/protests/list",
+            url: "http://prueba-env.us-east-2.elasticbeanstalk.com/protests/list/1",
             dataSrc: "protests",
             // headers y error para token
             headers: {
-                'Authorization': 'Bearer '
-                    + sessionStorage.getItem("token")
+                // 'Authorization': 'Bearer '
+                //    + sessionStorage.getItem("token")
             },
             error: function (jQXHR) {
                 // If status code is 401, access token expired, so
@@ -86,6 +86,11 @@ $(document).ready(function() {
         ]
         
     });
+    $('#country-protest-select').change(function(){
+        table.column(3).search($(this).val())
+        .draw();
+        console.log("hola");
+    }); 
 
     // filtro de los select
     $('#city-protest-select').change(function(){

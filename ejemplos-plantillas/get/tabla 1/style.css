@@ -1,0 +1,106 @@
+body {
+  padding: 40px;
+}
+
+.table-filter {
+  position: relative;
+}
+
+.table-filter__link {
+  display: block;
+}
+.table-filter__link:hover, .table-filter__link:active, .table-filter__link:focus {
+  text-decoration: none;
+}
+
+.table-filter__counter {
+  color: #aaa;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.table-filter__dropdown {
+  background: #fff;
+  box-shadow: 0 5px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  left: -99999px;
+  list-style-type: none;
+  margin: 0;
+  min-width: 250px;
+  max-height: 350px;
+  overflow-y: auto;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+.table-filter:hover .table-filter__dropdown {
+  left: 0;
+}
+
+.data-table tr th:nth-last-child(1):hover .table-filter__dropdown, .data-table tr th:nth-last-child(2):hover .table-filter__dropdown {
+  left: auto;
+  right: 0;
+}
+
+.table-filter__dropdown-title {
+  color: #888;
+  cursor: default;
+  font-size: 12px;
+  letter-spacing: .025em;
+  text-transform: uppercase;
+  padding: 10px 10px 0;
+}
+
+.table-filter__filter-toggle {
+  cursor: pointer;
+  display: block;
+  padding: 0 5px;
+  float: right;
+}
+.table-filter__filter-toggle:hover {
+  color: #444 !important;
+}
+
+.table-filter__dropdown-item {
+  border-bottom: 1px solid #eee;
+  display: block;
+  font-size: 14px;
+  width: 100%;
+}
+.table-filter__dropdown-item:last-of-type {
+  border: 0;
+}
+
+.table-filter__filter-label {
+  cursor: pointer;
+  display: block;
+  margin-bottom: 0;
+  padding: 5px 10px;
+}
+.table-filter__filter-label:hover, .table-filter__filter-label:focus, .table-filter__filter-label:active {
+  background: #eee;
+}
+
+.table-filter__filter-checkbox {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.fa-smile {
+  color: green;
+}
+
+.fa-angry {
+  color: red;
+}
+
+.fa-meh {
+  color: gray;
+}
+
+.fa-frown {
+  color: blue;
+}
