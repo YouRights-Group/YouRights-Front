@@ -1,41 +1,69 @@
-//  https://www.youtube.com/watch?v=c3qWHnJJbSY
+//  https://www.youtube.com/watch?v=pq3-3ZmaMcI&list=PL6n9fhu94yhW7yoUOGNOfHurUE6bpOO2b&index=24
+//  http://csharp-video-tutorials.blogspot.com/2016/12/aspnet-web-api-login-page.html
 
-const protestsCreate = document.getElementById('form-protests-create');
+var registerEmail = $('#register-email').val();
+var registerPassword1 = $('#register-password').val();
+var registerPassword2 = $('#register-repeated-password').val();
+var loginEmail = $('#login-email').val();
+var loginPassword = $('#login-password').val();
+var urlR = ('http://prueba-env.us-east-2.elasticbeanstalk.com/sign-up');
+var urlL = ('http://prueba-env.us-east-2.elasticbeanstalk.com/login');
 
-protestsCreate.addEventListener('submit', function(e){
-    e.preventDefault();
-    console.log('me diste un click')
-
-    const formData = new FormData(this);
-
-    const searchParams  = new URLSearchParams();
-
-    // el for recorre el formdata del 1 (0) al 9 (10) input
-    for (const pair of formData){
-        searchParams.append(pair[0], pair[2]);
-    }
-
-    //  http://prueba-env.us-east-2.elasticbeanstalk.com/protests/create
-    //  http://jsonplaceholder.typicode.com/posts
-
-    fetch('http://prueba-env.us-east-2.elasticbeanstalk.com/protests/create', {
-
-            method: 'post',
-            headers: {
-                'Content-Type': 'application/json',
+$("#register-submit").on("click", function () {
+    $('#linkClose').click(function () {
+        $('#divError').hide('fade');
+    });
+    $('#register-submit').click(function () {
+        $.ajax({
+            url: urlR,
+            method: 'POST',
+            data: {
+                email: registerEmail,
+                password: registerPassword1,
+                confirmPassword: registerPassword2
             },
-            body: searchParams
-
-    })
-        .then(function(response){
-            return response.json();
-        })
-        .then(function(text){
-            console.log(text);
-        })
-        .catch(function(error){
-            console.log(error);
-        })
-
+            success: function () {
+                // $('#successModal').modal('show');
+                sessionStorage.setItem("token", response.access_token);
+                window.location.href = "page-main.html";
+            },
+            error: function (jqXHR) {
+                $('#divErrorText').text(jqXHR.responseText);
+                $('#divError').show('fade');
+            }
+        });
+    });
 });
 
+$("#login-submit").on("click", function () {
+    $('#linkClose').click(function () {
+        $('#divError').hide('fade');
+    });
+    $('#btnLogin').click(function () {
+        $.ajax({
+            // Post username, password & the grant type to /token
+            url: urlL,
+            method: 'POST',
+            contentType: 'application/json',
+            data: {
+                username: loginEmail,
+                password: loginPassword,
+                grant_type: 'password'
+            },
+            // When the request completes successfully, save the
+            // access token in the browser session storage and
+            // redirect the user to Data.html page. We do not have
+            // this page yet. So please add it to the
+            // EmployeeService project before running it
+            success: function (response) {
+                sessionStorage.setItem("token", response.access_token);
+                window.location.href = "page-main.html";
+            },
+            // Display errors if any in the Bootstrap alert <div>
+            error: function (jqXHR) {
+                $('#divErrorText').text(jqXHR.responseText);
+                $('#divError').show('fade');
+            }
+        });
+    });
+});
