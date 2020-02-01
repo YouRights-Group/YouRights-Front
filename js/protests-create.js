@@ -511,20 +511,46 @@ console.log(personalInformation);
 
     // ------------   Datos de la protesta   --------------- //
 
-    function DataProtest(nameProtest, cityProtest, whoDefendsProtest, promotedByProtest, dateProtest) {
-        this.name = nameProtest;
-        this.city = cityProtest;
-        this.whoDefends = whoDefendsProtest;
-        this.promotedBy = promotedByProtest;
-        this.date = dateProtest;
-        // this.area = areaProtest1;
-        // this.time = timeProtest1;
+    function DataProtest(
+        //  areaProtest,
+        //  cityProtest,
+        //  countryProtest,
+        dateProtest,
+        defenseSectorProtest,
+        //  document,
+        //  locationsProtest,
+        //  monthProtest,
+        nameProtest,
+        promotedByProtest,
+        protestType,
+        //  timeProtest,
+        userType
+        ) {
+
+        //  this.areaProtest = areaProtest,
+        //  this.cityProtest = cityProtest,
+        //  this.countryProtest = countryProtest,
+        this.dateProtest = dateProtest,
+        this.defenseSectorProtest = defenseSectorProtest,
+        //  this.document = document,
+        //  this.id = 0,
+        //  this.locationsProtest = locationsProtest,
+        //  this.monthProtest = monthProtest,
+        this.nameProtest = nameProtest,
+        //  this.promotedByProtest = promotedByProtest,
+        this.protestType = protestType
+        //  this.timeProtest = timeProtest,
+        //  this.userType = userType
+
     }
-    var countryProtestGet = document.getElementById("country-protest-select").value;
-    console.log(countryProtestGet);
-    var cityProtestGet = document.getElementById("city-protest-select").value;
-    console.log(cityProtestGet);
-    var dateProtestGet = document.getElementById("date-protest").value;
+    function Token(token) {
+        this.token = token;
+    }
+    //  var countryProtestGet = document.getElementById("country-protest-select").value;
+    //  console.log(countryProtestGet);
+    //  var cityProtestGet = document.getElementById("city-protest-select").value;
+    //  console.log(cityProtestGet);
+    var dateProtestGet = document.getElementById("start-datepicker-protest").value;
     console.log(dateProtestGet);
     var typeProtestGet = document.getElementById("type-protest-select").value;
     console.log(typeProtestGet);
@@ -534,27 +560,34 @@ console.log(personalInformation);
     console.log(defenseSectorProtestGet);
     var nameProtestGet = document.getElementById("name-protest").value;
     console.log(nameProtestGet);
-    var tittleProtestLetterGet = document.getElementById("tittle-protest-letter").value;
-    console.log(tittleProtestLetterGet);
-    var bodyProtestLetterGet = document.getElementById("body-protest-letter").value;
-    console.log(bodyProtestLetterGet);
+    //  var tittleProtestLetterGet = document.getElementById("tittle-protest-letter").value;
+    //  console.log(tittleProtestLetterGet);
+    //  var bodyProtestLetterGet = document.getElementById("protestLetter").value;
+    //  console.log(bodyProtestLetterGet);
 
+    var getToken = sessionStorage.getItem("token")
+    console.log(getToken);
 
     dataForm = new DataProtest(
-        nameProtestGet,
-        cityProtestGet,
+        dateProtestGet,
         defenseSectorProtestGet,
-        initiatedProtestGet,
-        dateProtestGet
+        nameProtestGet,
+        typeProtestGet
     );
     console.log(dataForm);
+
+    dataToken = new Token(
+        getToken,
+    );
+    console.log(dataToken);
     // ------------   Datos de la protesta  --------------- //
+
+
+
 
     fetch(`http://prueba-env.us-east-2.elasticbeanstalk.com/protests/create`, {
         method: 'POST',
-        headers: [
-            ["Content-Type", "application/json"]
-        ],
+        headers: dataToken,
         body: JSON.stringify(dataForm)
     })
         //  console.log(newProtest);

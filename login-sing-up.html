@@ -119,10 +119,6 @@
                                 <button id="login-submit" type="submit" class="btn btn-primary btn-block">Pulsa para entrar</button>
                             </div> <!-- form-group// -->      
                         </div>
-                        <div id="divError" class="alert alert-danger collapse">
-                            <a id="linkClose" href="#" class="close">&times;</a>
-                            <div id="divErrorText"></div>
-                        </div>
                     </article>
                 </div>
                 <div class="col-12 sing-up-form d-none">
@@ -178,14 +174,22 @@
                                 <button type="submit" id="register-submit" class="btn btn-primary btn-block"> Crear cuenta  </button>
                             </div> <!-- form-group// -->      
                         </div>
-                        <div id="divError" class="alert alert-danger collapse">
-                            <a id="linkClose" href="#" class="close">&times;</a>
-                            <div id="divErrorText"></div>
-                        </div>
                     </article>
                 </div>
             </div> <!-- card.// -->
         </form>
+        <div class="modal fade" id="div-error" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="float-right mr-2" aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="modal-body" id="text-error">
+                    </div>
+                </div>
+            </div>
+        </div>
         
 
         <!-- Optional JavaScript -->
