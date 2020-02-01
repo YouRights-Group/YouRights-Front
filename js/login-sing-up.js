@@ -81,7 +81,7 @@ $("#login-submit").on("click", function (e) {
     .then(function (response) {
         //  var token = response.json();
         //  console.log(token);
-        sessionStorage.setItem("token", response.json ());
+        sessionStorage.setItem("token", response);
         console.log(sessionStorage);
         window.location.href = "page-main.html";
         console.log(response);

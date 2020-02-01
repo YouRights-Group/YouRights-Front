@@ -1,5 +1,58 @@
 $(document).ready(function () {
 
+    var marker = [];
+    var directionsService = [];
+    var directionsRenderer = [];
+
+    var typeProtest = [];
+    initialize();
+
+    function initialize() {
+        var city,
+            infoWindow = "",
+            addressEl = document.querySelector("#map-search"),
+            latEl = document.querySelector(".latitude"),
+            longEl = document.querySelector(".longitude"),
+            city = document.querySelector(".reg-input-city");
+    
+        directionsService = new google.maps.DirectionsService();
+        directionsRenderer = new google.maps.DirectionsRenderer();
+    
+        var map = new google.maps.Map(document.getElementById("map_canvas"), {
+            zoom: 5,
+            center: {
+                lat: 40.42928819958918,
+                lng: -3.6999707343627506
+            },
+            disableDefaultUI: false,
+            scrollWheel: true,
+            draggable: true
+        });
+    
+        directionsRenderer.setMap(map);
+
+        calculateAndDisplayRoute(directionsService, directionsRenderer);
+    }
+
+
+
+    function calculateAndDisplayRoute(directionsService, directionsRenderer) {    
+        directionsService.route({
+            origin: data.startPoint,
+            destination: data.endPoint,
+            waypoints: data.waypoint,
+            travelMode: google.maps.TravelMode.WALKING
+        },
+            function (response, status) {
+                if (status == "OK") {
+                    directionsRenderer.setDirections(response);
+                } else {
+                    window.alert("Directions request failed due to " + status);
+                }
+            }
+        );
+    };
+
 
 // -----------  GET <- ----------------  //
 
@@ -11,10 +64,13 @@ $(document).ready(function () {
     console.log(getToken);
 
     dataToken = new Token(
-        `Bearer ` + getToken,
+        `Bearer` + getToken,
     );
     console.log(dataToken);
 
+    if (sessionStorage.getItem('token') == null) {
+        window.location.href = "protest-id.html";
+    }
 
     $('#linkClose').click(function () {
         $('#divError').hide('fade');
@@ -24,30 +80,6 @@ $(document).ready(function () {
         window.location.href = "protest-id.html";
     });
 
-
-    document.getElementById('getPosts').addEventListener('click', getPosts);
-
-    function getPosts(){
-        fetch('http://prueba-env.us-east-2.elasticbeanstalk.com/protests/91')
-        .then((res) => res.json())
-        .then((data) => { 
-            let output = '<h2 class="mb-4">Users</h2>';
-            output += `
-                <ul class="list-group mb-3">
-                <li class="list-group-item">ID: ${data.countryProtest}</li>
-                <li class="list-group-item">Name: ${data.cityProtest}</li>
-                <li class="list-group-item">Email: ${data.protestType}</li>
-                <li class="list-group-item">ID: ${data.defenseSectorProtest}</li>
-                <li class="list-group-item">Name: ${data.nameProtest}</li>
-                <li class="list-group-item">Email: ${data.userType}</li>
-                <li class="list-group-item">ID: ${data.promotedByProtest}</li>
-                </ul>
-            `;
-            document.getElementById('output').innerHTML = output;
-        })
-    }
-
-/*
     $.ajax({
         url: 'http://prueba-env.us-east-2.elasticbeanstalk.com/protests/91',
         method: 'GET',
@@ -82,8 +114,6 @@ $(document).ready(function () {
             }
         }
     });
-
-*/
 
 // -----------  GET -> ----------------  //
 

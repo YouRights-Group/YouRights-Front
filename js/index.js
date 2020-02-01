@@ -12,7 +12,7 @@ $(document).ready(function() {
     }); 
     $('.date-datepicker').datetimepicker({
         timepicker:false,
-        format:'d/m/Y'
+        format:'d-m-Y'
     });
     
     $('.time-datepicker').datetimepicker({

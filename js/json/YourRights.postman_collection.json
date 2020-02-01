@@ -1,0 +1,483 @@
+{
+	"info": {
+		"_postman_id": "24b59f9d-79ab-493a-9c46-932ea3034512",
+		"name": "YourRights",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"anis_jaja@hotmail.com\",\r\n  \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://prueba-env.us-east-2.elasticbeanstalk.com/login",
+					"protocol": "http",
+					"host": [
+						"prueba-env",
+						"us-east-2",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recordar usuario",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://prueba-env.us-east-2.elasticbeanstalk.com/forgot_pwd?email=anis_jaja@hotmail.com",
+					"protocol": "http",
+					"host": [
+						"prueba-env",
+						"us-east-2",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"forgot_pwd"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "anis_jaja@hotmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registro",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"anis_jaja@hotmail.com\",\r\n  \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://prueba-env.us-east-2.elasticbeanstalk.com/sign-up",
+					"protocol": "http",
+					"host": [
+						"prueba-env",
+						"us-east-2",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"sign-up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Regenerar pasword",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"newPassword\": \"string\",\r\n  \"token\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://prueba-env.us-east-2.elasticbeanstalk.com/regenerate_pwd",
+					"protocol": "http",
+					"host": [
+						"prueba-env",
+						"us-east-2",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"regenerate_pwd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset Token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoiYW5pc19qYWphQGhvdG1haWwuY29tIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTU4MDU1MzYxNiwiZXhwIjoxNTgwNTU0ODE2fQ.VKnlN-_BzBtIFNHIdyzvMhGVnxFGoB9VJFH1RqfOe890N648OoBZQscbd1ARD8HtzbWttBaEkJd1gGvpawEh3g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://prueba-env.us-east-2.elasticbeanstalk.com/reset",
+					"protocol": "http",
+					"host": [
+						"prueba-env",
+						"us-east-2",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"reset"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener lista de propuestas por página",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://prueba-env.us-east-2.elasticbeanstalk.com/protests/list/1",
+					"protocol": "http",
+					"host": [
+						"prueba-env",
+						"us-east-2",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"protests",
+						"list",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filtro de propuestas",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cityProtest\": \"SAN SEBASTIAN\",\r\n  \"countryProtest\": \"ESPAÑA\",\r\n  \"fromProtest\": \"20-09-2019\",\r\n  \"monthProtest\": \"NOVENBER\",\r\n  \"pageIndex\": 1,\r\n  \"toProtest\": \"01-02-2020\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://prueba-env.us-east-2.elasticbeanstalk.com/protests/search",
+					"protocol": "http",
+					"host": [
+						"prueba-env",
+						"us-east-2",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"protests",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detalle protesta",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoiYW5pc19qYWphQGhvdG1haWwuY29tIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTU4MDU1NTAzNiwiZXhwIjoxNTgwNTU2MjM2fQ.qdqI16eWVcl1T6sj7chWSWLMAxfOR5NPH6x07PG5puxXzkN8oqJrlUJOuAuz2vD0yZswSY4r3NfZAq7dVae1OA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://prueba-env.us-east-2.elasticbeanstalk.com/protests/86",
+					"protocol": "http",
+					"host": [
+						"prueba-env",
+						"us-east-2",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"protests",
+						"86"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear protesta sin adjunto",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoiYW5pc19qYWphQGhvdG1haWwuY29tIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTU4MDU1NTAzNiwiZXhwIjoxNTgwNTU2MjM2fQ.qdqI16eWVcl1T6sj7chWSWLMAxfOR5NPH6x07PG5puxXzkN8oqJrlUJOuAuz2vD0yZswSY4r3NfZAq7dVae1OA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"areaProtest\": \"Madrid oeste\",\r\n  \"cityProtest\": \"Boadilla del Monte\",\r\n  \"countryProtest\": \"España\",\r\n  \"dateProtest\": \"01-02-2020\",\r\n  \"defenseSectorProtest\": \"desahucios\",\r\n  \"locationsProtest\": [\r\n    {\r\n      \"latitude\": 40.4272263,\r\n      \"longitude\": -3.9268272,\r\n      \"pointNumber\": 1\r\n    }\r\n  ],\r\n  \"monthProtest\": \"FEBRUARY\",\r\n  \"nameProtest\": \"Prueba protesta 2\",\r\n  \"promotedByProtest\": \"SA\",\r\n  \"protestType\": \"MANIFESTACION\",\r\n  \"timeProtest\": \"01-02-2020\",\r\n  \"userType\": \"FISICA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://prueba-env.us-east-2.elasticbeanstalk.com/protests/create",
+					"protocol": "http",
+					"host": [
+						"prueba-env",
+						"us-east-2",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"protests",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar protesta",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoiYW5pc19qYWphQGhvdG1haWwuY29tIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTU4MDU1NTAzNiwiZXhwIjoxNTgwNTU2MjM2fQ.qdqI16eWVcl1T6sj7chWSWLMAxfOR5NPH6x07PG5puxXzkN8oqJrlUJOuAuz2vD0yZswSY4r3NfZAq7dVae1OA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://prueba-env.us-east-2.elasticbeanstalk.com/protests/delete/{id}",
+					"protocol": "http",
+					"host": [
+						"prueba-env",
+						"us-east-2",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"protests",
+						"delete",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear protesta con adjunto",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoiYW5pc19qYWphQGhvdG1haWwuY29tIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTU4MDU1NTAzNiwiZXhwIjoxNTgwNTU2MjM2fQ.qdqI16eWVcl1T6sj7chWSWLMAxfOR5NPH6x07PG5puxXzkN8oqJrlUJOuAuz2vD0yZswSY4r3NfZAq7dVae1OA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"areaProtest\": \"Madrid oeste\",\r\n  \"cityProtest\": \"Boadilla del Monte\",\r\n  \"countryProtest\": \"España\",\r\n  \"dateProtest\": \"01-02-2020\",\r\n  \"defenseSectorProtest\": \"desahucios\",\r\n  \"document\": null,\r\n  \"locationsProtest\": [\r\n    {\r\n      \"latitude\": 40.4272263,\r\n      \"longitude\": -3.9268272,\r\n      \"pointNumber\": 1\r\n    }\r\n  ],\r\n  \"monthProtest\": \"FEBRUARY\",\r\n  \"nameProtest\": \"Prueba protesta 2\",\r\n  \"promotedByProtest\": \"SA\",\r\n  \"protestType\": \"MANIFESTACION\",\r\n  \"timeProtest\": \"01-02-2020\",\r\n  \"userType\": \"FISICA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://prueba-env.us-east-2.elasticbeanstalk.com/protests/create",
+					"protocol": "http",
+					"host": [
+						"prueba-env",
+						"us-east-2",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"protests",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar protesta",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoiYW5pc19qYWphQGhvdG1haWwuY29tIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTU4MDU1NTAzNiwiZXhwIjoxNTgwNTU2MjM2fQ.qdqI16eWVcl1T6sj7chWSWLMAxfOR5NPH6x07PG5puxXzkN8oqJrlUJOuAuz2vD0yZswSY4r3NfZAq7dVae1OA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 86,\r\n    \"protestType\": \"MANIFESTACION\",\r\n    \"userType\": \"FISICA\",\r\n    \"locationsProtest\": [\r\n        {\r\n            \"latitude\": 40.5612055,\r\n            \"longitude\": -3.632532,\r\n            \"pointNumber\": 0\r\n        },\r\n        {\r\n            \"latitude\": 41.5612055,\r\n            \"longitude\": 3.632532,\r\n            \"pointNumber\": 1\r\n        }\r\n    ],\r\n    \"nameProtest\": \"Propuesta por los animales\",\r\n    \"cityProtest\": \"San Sebastián de los Reyes\",\r\n    \"countryProtest\": \"Francia\",\r\n    \"defenseSectorProtest\": \"Animales\",\r\n    \"promotedByProtest\": \"Ana Roman\",\r\n    \"dateProtest\": \"31-12-2018\",\r\n    \"areaProtest\": \"Torrejon\",\r\n    \"timeProtest\": \"11:25:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://prueba-env.us-east-2.elasticbeanstalk.com/protests/86",
+					"protocol": "http",
+					"host": [
+						"prueba-env",
+						"us-east-2",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"protests",
+						"86"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -543,8 +543,8 @@ console.log(personalInformation);
         //  this.userType = userType
 
     }
-    function Token(token) {
-        this.token = token;
+    function Token(Authorization) {
+        this.Authorization = Authorization;
     }
     //  var countryProtestGet = document.getElementById("country-protest-select").value;
     //  console.log(countryProtestGet);
@@ -577,15 +577,15 @@ console.log(personalInformation);
     console.log(dataForm);
 
     dataToken = new Token(
-        getToken,
+        `Bearer` + getToken,
     );
     console.log(dataToken);
     // ------------   Datos de la protesta  --------------- //
 
 
+    var url = "http://prueba-env.us-east-2.elasticbeanstalk.com/protests/create";
 
-
-    fetch(`http://prueba-env.us-east-2.elasticbeanstalk.com/protests/create`, {
+    fetch(url, {
         method: 'POST',
         headers: dataToken,
         body: JSON.stringify(dataForm)
@@ -594,7 +594,6 @@ console.log(personalInformation);
 
         // tambien:    .then((resp) => resp.json())
         .then(function (response) {
-            return response.json()
         })
         .then(function (data) {
             console.log(data)

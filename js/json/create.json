@@ -1,0 +1,72 @@
+{
+  "areaProtest": "Madrid",
+  "cityProtest": "Madrid",
+  "countryProtest": "España",
+  "dateProtest": "2020-01-22T19:19:58.319Z",
+  "defenseSectorProtest": "Corrupción",
+  "document": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "id": 0,
+  "locationsProtest": [
+    {
+      "latitude": 40.43464544903863,
+      "longitude": -3.7189393165160656,
+      "pointNumber": 0
+    },
+    {
+      "latitude": 40.430594885149425,
+      "longitude": -3.7160210731078624,
+      "pointNumber": 1
+    },
+    {
+      "latitude": 40.42981087685996,
+      "longitude": -3.7054638984252453,
+      "pointNumber": 2
+    },
+    {
+      "latitude": 40.428896188970334,
+      "longitude": -3.701901924853468,
+      "pointNumber": 3
+    },
+    {
+      "latitude": 40.42778547980812,
+      "longitude": -3.6957221152831554,
+      "pointNumber": 4
+    },
+    {
+      "latitude": 40.42536799057677,
+      "longitude": -3.690355729123991,
+      "pointNumber": 5
+    },
+    {
+      "latitude": 40.42543332926604,
+      "longitude": -3.6866650095194986,
+      "pointNumber": 6
+    }
+  ],
+  "monthProtest": "Enero",
+  "nameProtest": "País sin corrupción",
+  "promotedByProtest": "Alvaro Lopez",
+  "protestType": "MANIFESTACION",
+  "timeProtest": "2020-01-22T19:19:58.319Z",
+  "userType": "FISICA"
+},
+{
+  "areaProtest": "Madrid oeste",
+  "cityProtest": "Boadilla del Monte",
+  "countryProtest": "España",
+  "dateProtest": "24-02-2020",
+  "defenseSectorProtest": "desahucios",
+  "locationsProtest": [
+    {
+      "latitude": 40.4272263,
+      "longitude": -3.9268272,
+      "pointNumber": 1
+    }
+  ],
+  "monthProtest": "FEBRUARY",
+  "nameProtest": "Prueba protesta 2",
+  "promotedByProtest": "SA",
+  "protestType": "MANIFESTACION",
+  "timeProtest": "12:00",
+  "userType": "FISICA"
+ }
