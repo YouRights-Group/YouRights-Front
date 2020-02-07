@@ -1,0 +1,225 @@
+
+URL Pública: http://www.yourrights.eu
+
+www.tusderechos.com , www.tusderechos.es esta pillado por una persona llamada Teresa Herrero López desde 2008, los dominios no están funcionando, por lo que tenemos que investigar para ver quien es y si lo puede poner a la venta. El proveedor del dominio es www.internetx.com
+
+Swagger:
+http://prueba-env.us-east-2.elasticbeanstalk.com/swagger-ui.html   
+
+Obtener info de una propuesta
+Endpoint: http://prueba-env.us-east-2.elasticbeanstalk.com/protests/id
+Método: GET
+Parámetros:
+Id = id de una protesta obtenido del listado
+	Ejemplo: http://prueba-env.us-east-2.elasticbeanstalk.com/protests/10
+Salida OK: 200/OK
+Body de la respuesta
+
+{
+  "id": 10,
+  "name": "P2",
+  "city": "Madrid",
+  "whoDefends": "Desahucios",
+  "promotedBy": "Stop Desahucios",
+  "date": "11-06-0026",
+  "area": "Fuenlabrada",
+  "time": "15:23"
+}
+
+Salida KO:  (falta por sacar)
+
+Obtener todas las propuestas guardadas en la BBDD
+Endpoint:  http://prueba-env.us-east-2.elasticbeanstalk.com/protests/lists
+Método: GET
+Salida: 200/OK
+
+Parametros que puede ver si no está registrado
+"name": "P2",
+      "city": "Madrid",
+      "whoDefends": "Desahucios",
+      "promotedBy": "Stop Desahucios"
+“Month”: “En letra”
+Body de la respuesta:
+
+{
+  "protests": [
+    {
+      "id": 10,
+      "name": "P2",
+      "city": "Madrid",
+      "whoDefends": "Desahucios",
+      "promotedBy": "Stop Desahucios",
+      "date": "11-06-0026",
+      "area": "Fuenlabrada",
+      "time": "15:23"
+    },
+    {
+      "id": 11,
+      "name": "P2",
+      "city": "Madrid",
+      "whoDefends": "Desahucios",
+      "promotedBy": "Stop Desahucios",
+      "date": "11-06-0026",
+      "area": "Fuenlabrada",
+      "time": "15:23"
+    }
+  ]
+}
+Salida KO:  (falta por sacar)
+
+Crear una propuesta
+Endpoint:  http://prueba-env.us-east-2.elasticbeanstalk.com/protests/create
+Método: POST
+Body de la request:
+{
+  "areaProtest": "Torrejon",
+  "cityProtest": "Torrejon de Ardoz",
+  "dateProtest": "20-10-2019",
+  "nameProtest": "Propuesta por los animales",
+  "promotedByProtest": "Ana Roman",
+  "timeProtest": "12:25",
+  "defenseSectorProtest": "Animales",
+  "countryProtest": "España",
+  "locationsProtest": [
+    {
+      "latitude": 40.5612055,
+      "longitude": -3.632532
+    },
+    {
+      "latitude": 40.5612055,
+      "longitude": 3.632532
+    }
+  ],
+  "protestType": "MANIFESTACION",
+  "userType": "FISICA"
+}
+
+
+
+
+Salida OK: 200/OK
+Salida KO:  (falta por sacar)
+
+Buscar protesta filtrada por ciudad
+Endpoint: http://prueba-env.us-east-2.elasticbeanstalk.com/protests/search/city
+Método: GET
+Parámetros:
+City = ciudad por la que se quiere filtrar
+	Ejemplo: http://prueba-env.us-east-2.elasticbeanstalk.com/protests/search/Madrid
+Salida OK: 200/OK
+Body de la respuesta
+{
+  "protests": [
+    {
+      "id": 10,
+      "name": "P2",
+      "city": "Madrid",
+      "whoDefends": "Desahucios",
+      "promotedBy": "Stop Desahucios",
+      "date": "11-06-0026",
+      "area": "Fuenlabrada",
+      "time": "15:23"
+    },
+    {
+      "id": 11,
+      "name": "P2",
+      "city": "Madrid",
+      "whoDefends": "Desahucios",
+      "promotedBy": "Stop Desahucios",
+      "date": "11-06-0026",
+      "area": "Fuenlabrada",
+      "time": "15:23"
+    }
+  ]
+}
+Salida KO:  (falta por sacar)
+
+Borrar propuesta
+
+Endpoint: http://prueba-env.us-east-2.elasticbeanstalk.com/protests/delete/id
+Método: GET
+Parámetros:
+Id = id de la protesta a borrar
+Salida OK: 200/OK
+Salida KO:  (falta por sacar)
+
+Login
+
+Endpoint: http://prueba-env.us-east-2.elasticbeanstalk.com/protests/login
+Método: POST
+Body de la request:
+{
+  "user": "Ana",
+  "passwors": "1234"
+}
+Salida OK: 200/OK
+Body de la response:
+{
+  "token": "eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoiQW5hIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTU3MTU2ODU4OCwiZXhwIjoxNTcxNTY5MTg4fQ.XjvTcyi5rxVqEe4PcNYmOG5R0F16CvriO_6Bk2uCtmQyd79N_-j9mOvNOxnJMLjylDAe_QW5x3rLXqucDuJ0kw"
+}
+
+Cosas que cambiar
+Creo que sería conveniente cambiar algunas de las etiquetas del JSon, dentro de las protestas todas las etiquetas habría que mantenerlas con un Protest de sufijo, Ej: nameProtest   
+Al igual que todo lo relacionado con los usuarios Ej: nameUser
+
+Con respecto a las protestas, mi formulario tiene los siguientes parámetros:
+
+{
+countryProtest,
+cityProtest,
+dateProtest,   (dd/mm/ññññ, ya lo cambiaré por dd-mm-ññññ) [ANA] Te lo cambio yo ok
+typeProtest,
+initiatedProtest, [ANA] ¿Estos es lo que era antes promotedBy? Siiiii, si quieres ponle el mismo nombre pero con Protest de sufijo.
+defenseSectorProtest,  (sustituye a whoDefends) [ANA] Hecho ok
+nameProtest,
+tittleProtestLetter,
+bodyProtestLetter
+}
+
+Dentro de todas las protestas podemos tener:
+Huelgas (Parón por parte de un sector, no significa que haya manifestación)
+Manifestaciones 
+Protestas (Reunión en un sitio concreto para protestar)
+[ANA] Yo tengo una lista de los tipos de protestas, que son Manifestación, Protesta, Huelga, ¿con eso es suficiente? Pues no lo se, esto tenemos que hablarlo el martes porque no se como enfocarlo.
+
+[ANA] He pensado que para los campos de areas, ciudades y paises, lo tengamos en una lista guardada en el back y que yo te devuelva en una petición para que tu lo muestres en un combo.
+Pues nose que hacer, si el filtro lo hago yo de toda la base de datos que me des o pedirte a ti cierta parte de esa DB, tenemos que hablarlo el martes. De todas formas tengo el filtro de la ciudad hecho, asique si como veamos.
+
+Según las anteriores especificaciones deberíamos de meter dentro de cada huelga las manifestaciones o protestas que se pueden realizar con la misma huelga.
+
+
+Con respecto a los usuarios mi formulario tiene los siguientes parámetros:
+
+{
+firstNameUser,
+lastNameUser, 
+dniUser,
+emailUser,
+repeatEmailUser,
+countryUser,
+cityUser,
+postalCodeUser,
+streetUser,
+numberStreetUser,
+phoneUser
+}
+
+[ANA] En el proceso de registro y login sólo obligaría al usuario a meter su correo electrónico y a que genere una contraseña. La gente es muy reacia a dar sus datos personales. Ok
+
+No se si esto concuerda con los que has creado tú pero de momento lo tengo ya escrito para no perder tiempo.
+
+
+Continuaré con la paginación y el filtro de la lista. [ANA] Tengo la paginación puesta a 20 registros, pero si quieres más dímelo y te lo cambio en un momento.
+La tabla la he realizado al final con Datatables, ya vienen un monton de cosas hechas, por eso nose que hacer en este caso. Viene un filtro de poner por pagina 5 10 20 50 o todos sabes….
+Lo hablamos el martes.
+
+Tipo de código que puedo poner en una variable para enviar en post de una imagen adjunta:
+
+"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAwADAAAD/4QBaRXhpZgAATU0AKgAAAAgABQ…… (3.5Mb mas)”
+
+Asi lo podrías tu leer???????
+
+
+
+
+

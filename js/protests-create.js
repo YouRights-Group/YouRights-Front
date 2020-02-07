@@ -383,6 +383,7 @@ function getDataRoute() {
             });
         }
     }
+    console.log(waypoints);
 }
 
 function selected(id_line) {

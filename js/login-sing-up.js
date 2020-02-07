@@ -5,6 +5,8 @@ var urlR = ('http://prueba-env.us-east-2.elasticbeanstalk.com/sign-up');
 var urlL = ('http://prueba-env.us-east-2.elasticbeanstalk.com/login');
 var divError =  $("#div-error");
 var textError = $('#text-error');
+var bntInsertProtest = sessionStorage.getItem('bntInsertProtest');
+
 
 $("#register-submit").on("click", function (e) {
     e.preventDefault();
@@ -36,8 +38,18 @@ $("#register-submit").on("click", function (e) {
 
         // tambien:    .then((resp) => resp.json())
         .then(function (response) {
-            return response.json()
-        })
+            sessionStorage.setItem("token", response);
+            console.log(sessionStorage);
+
+            if(bntInsertProtest == "click"){
+                window.location.href = "insert-protest.html";
+                sessionStorage.removeItem('bntInsertProtest');
+            }else {
+                window.location.href = "page-main.html";
+            }
+
+            console.log(response);
+            })
         .then(function () {
             $(divError).modal();
             $(textError).html('Te enviaremos un email para que confirmes la cuenta')
@@ -48,7 +60,6 @@ $("#register-submit").on("click", function (e) {
         $(divError).modal();
         $(textError).html('Las contraseñas no coinciden')
     }
-
 
 });
 
@@ -83,7 +94,14 @@ $("#login-submit").on("click", function (e) {
         //  console.log(token);
         sessionStorage.setItem("token", response);
         console.log(sessionStorage);
-        window.location.href = "page-main.html";
+
+        if(bntInsertProtest == "click"){
+            window.location.href = "insert-protest.html";
+            sessionStorage.removeItem('bntInsertProtest');
+        }else {
+            window.location.href = "page-main.html";
+        }
+
         console.log(response);
         // location.href="page-main.html";
     })
@@ -125,8 +143,18 @@ $("#regenerate-submit").on("click", function (e) {
 
         // tambien:    .then((resp) => resp.json())
         .then(function (response) {
-            return response.json()
-        })
+            sessionStorage.setItem("token", response);
+            console.log(sessionStorage);
+
+            if(bntInsertProtest == "click"){
+                window.location.href = "insert-protest.html";
+                sessionStorage.removeItem('bntInsertProtest');
+            }else {
+                window.location.href = "page-main.html";
+            }
+
+            console.log(response);
+            })
         .then(function (data) {
             console.log(data)
             return data;
@@ -134,6 +162,5 @@ $("#regenerate-submit").on("click", function (e) {
         console.log(getDataRegenerate);
     } else {
     }
-
 
 });

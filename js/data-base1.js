@@ -2,11 +2,18 @@
 // https://www.youtube.com/watch?v=e-HA2YQUoi0
 // fetch con data-table  https://datatables.net/forums/discussion/54076/use-fetch-api-instead-of-ajax-call-in-datatable
 $(document).ready(function() {
-/*
-    if (sessionStorage.getItem('accessToken') == null) {
-        window.location.href = "login-sing-up.html";
-    }
-*/
+
+    $('#btn-insert-protest').click(function () {
+
+        if (sessionStorage.getItem('token') == null) {
+            sessionStorage.setItem('bntInsertProtest', 'click');
+            console.log(sessionStorage);
+            location.href = "login-sing-up.html";
+        }else {
+            location.href = "insert-protest.html";
+        }
+    });
+
     $('#linkClose').click(function () {
         $('#divError').hide('fade');
     });

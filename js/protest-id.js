@@ -1,19 +1,72 @@
 $(document).ready(function () {
 
+    getPosts();
 
-// -----------  GET <- ----------------  //
+    
+    var marker = [];
+    var directionsService = [];
+    var directionsRenderer = [];
 
-    function Token(Authorization) {
-        this.Authorization = Authorization;
+
+    var getStartPoint = [];
+    var getEndPoint = [];
+    var getWayPoints = [];
+    var startPoint = [];
+    var endPoint = [];
+    var wayPoints = [];
+    var allPoints = [];
+
+    initialize();
+
+
+    function initialize() {
+        var city,
+            infoWindow = "",
+            addressEl = document.querySelector("#map-search"),
+            latEl = document.querySelector(".latitude"),
+            longEl = document.querySelector(".longitude"),
+            city = document.querySelector(".reg-input-city");
+    
+        directionsService = new google.maps.DirectionsService();
+        directionsRenderer = new google.maps.DirectionsRenderer();
+    
+        var map = new google.maps.Map(document.getElementById("map_canvas"), {
+            zoom: 5,
+            center: {
+                lat: 40.42928819958918,
+                lng: -3.6999707343627506
+            },
+            disableDefaultUI: false,
+            scrollWheel: true,
+            draggable: true
+        });
+    
+        directionsRenderer.setMap(map);
+
+        calculateAndDisplayRoute(directionsService, directionsRenderer);
     }
 
-    var getToken = sessionStorage.getItem("token")
-    console.log(getToken);
 
-    dataToken = new Token(
-        `Bearer ` + getToken,
-    );
-    console.log(dataToken);
+
+    function calculateAndDisplayRoute(directionsService, directionsRenderer) {    
+        directionsService.route({
+            origin: data.startPoint,
+            destination: data.endPoint,
+            waypoints: data.waypoint,
+            travelMode: google.maps.TravelMode.WALKING
+        },
+            function (response, status) {
+                if (status == "OK") {
+                    directionsRenderer.setDirections(response);
+                } else {
+                    window.alert("Directions request failed due to " + status);
+                }
+            }
+        );
+    };
+
+
+// -----------  GET <- ----------------  //
 
 
     $('#linkClose').click(function () {
@@ -25,25 +78,86 @@ $(document).ready(function () {
     });
 
 
-    document.getElementById('getPosts').addEventListener('click', getPosts);
 
     function getPosts(){
         fetch('http://prueba-env.us-east-2.elasticbeanstalk.com/protests/91')
         .then((res) => res.json())
-        .then((data) => { 
-            let output = '<h2 class="mb-4">Users</h2>';
+        .then((data) => {
             output += `
-                <ul class="list-group mb-3">
-                <li class="list-group-item">ID: ${data.countryProtest}</li>
-                <li class="list-group-item">Name: ${data.cityProtest}</li>
-                <li class="list-group-item">Email: ${data.protestType}</li>
-                <li class="list-group-item">ID: ${data.defenseSectorProtest}</li>
-                <li class="list-group-item">Name: ${data.nameProtest}</li>
-                <li class="list-group-item">Email: ${data.userType}</li>
-                <li class="list-group-item">ID: ${data.promotedByProtest}</li>
-                </ul>
+                <div class="row border-bottom" id="div-country-protestId">
+                    <div class="col-6 h6">País en el que protesta:</div>
+                    <div class="offset-1" id="data-country-protestId">${data.countryProtest}</div>
+                </div>
+                <div class="row border-bottom mt-4" id="div-country-protestId">
+                    <div class="col-6 h6">La ciudad:</div>
+                    <div class="offset-1" id="data-city-protestId">${data.cityProtest}</div>
+                </div>
+                <div class="row border-bottom mt-4" id="div-country-protestId">
+                    <div class="col-6 h6">Tipo de protesta:</div>
+                    <div class="offset-1" id="data-type-protestId">${data.protestType}</div>
+                </div>
+                <div class="row border-bottom mt-4" id="div-country-protestId">
+                    <div class="col-6 h6">Temática de la protesta:</div>
+                    <div class="offset-1" id="data-defenceSector-protestId">${data.defenseSectorProtest}</div>
+                </div>
+                <div class="row border-bottom mt-4" id="div-country-protestId">
+                    <div class="col-6 h6">¿Qué es lo que defiende?:</div>
+                    <div class="offset-1" id="data-name-defenceSector-protestId">${data.nameProtest}</div>
+                </div>
+                <div class="row border-bottom mt-4" id="div-country-protestId">
+                    <div class="col-6 h6">Propuesto por:</div>
+                    <div class="offset-1" id="data-date-protestId">${data.promotedByProtest}</div>
+                </div>
+                <div class="row border-bottom mt-4" id="div-country-protestId">
+                    <div class="col-6 h6">Calle de reunión: </div>
+                    <div class="offset-1" id="data-time-protestId">.......</div>
+                </div>
+                <div class="row border-bottom mt-4" id="div-country-protestId">
+                    <div class="col-6 h6">Fecha y hora: </div>
+                    <div class="offset-1" id="data-name-defenceSector-protestId">${data.dateProtest} / ${data.timeProtest}</div>
+                </div>
             `;
-            document.getElementById('output').innerHTML = output;
+            $('#output').html(output);
+            $('#title-letter-protestId').html(".......");
+            $('#text-letter-protestId').html("........");
+            $('#name-protest').html(`${data.nameProtest}`);
+
+            allPoints = data.locationsProtest;
+            getDataRoute();
+            function getDataRoute(){
+                getStartPoint = allPoints.shift();
+                //  getEndPoint = allPoints.pop();
+                var getAllWaypoints = allPoints;
+                startPoint = getStartPoint.latitude + ", " +  getStartPoint.longitude;
+                endPoint = getEndPoint.latitude + ", " +  getEndPoint.longitude;
+                console.log(getAllWaypoints);
+
+                /*
+                var dias = ["0","1","2","3","4","5","6","7","8",]
+                for (i = 0; i < dias.length; i++) {
+                    console.log(i + "<br>");
+                }
+                */
+                for (i = 0; i < getAllWaypoints.length; i++) {
+                    getWaypoints = getAllWaypoints[i].latitude + ", " + getAllWaypoints[i].longitude;
+                    if (getAllWaypoints[i]) {
+                        wayPoints.push({
+                            location: getWaypoints,
+                            stopover: true
+                        });
+                    }
+                }
+
+                console.log(allPoints);
+                console.log(getStartPoint);
+                console.log(getEndPoint);
+                console.log(startPoint);
+                console.log(endPoint);
+                console.log(wayPoints);
+            };
+            
+
+            
         })
     }
 
