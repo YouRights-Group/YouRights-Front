@@ -89,32 +89,32 @@ $(document).ready(function() {
             {
                 data: "name",
                 render: function (data, type, name){
-                    return `<a id="${name.id}" class="protest-id" href='protest-id.html'>${name.nameProtest}</a>`
+                    return `<a id="protest-${name.id}" href='../protest-id'>${name.nameProtest}</a>`
                 },
                 visible: true,
             },
             {
                 data: "whoDefends",
                 render: function (data, type, whoDefends){
-                    return "<a>" + whoDefends.defenseSectorProtest + "</a"
+                    return "<a" + whoDefends.id + ">" + whoDefends.defenseSectorProtest + "</a"
                 },
             },
             {
                 data: "promotedBy",
                 render: function (data, type, promotedBy){
-                    return "<a>" + promotedBy.promotedByProtest + "</a"
+                    return "<a" + promotedBy.id + ">" + promotedBy.promotedByProtest + "</a"
                 },
             },
             {
                 data: "city",
                 render: function (data, type, city){
-                    return "<a>" + city.cityProtest + "</a"
+                    return "<a" + city.id + ">" + city.cityProtest + "</a"
                 },
             },
             {
                 data: "date",
                 render: function (data, type, date){
-                    return "<a>" + date.dateProtest + "</a"
+                    return "<a" + date.id + ">" + date.dateProtest + "</a"
                 },
             },
             {
@@ -125,6 +125,11 @@ $(document).ready(function() {
             }
         ]
     });
+    aaa();
+    function aaa(){
+        sessionStorage.setItem("protesId", `${name.id}`);
+        console.log(sessionStorage);
+    };
 /*
     $('#country-protest-select').change(function(){
         table.column(3).search($(this).val())
@@ -142,10 +147,8 @@ $(document).ready(function() {
         table.search( this.value ).draw();
     } );
 */
-    $('#list-protest').on('click', '.protest-id', function(){
-        var button = $(this);
-        protestId = button.attr("id");
-        sessionStorage.setItem("protesId", protestId);
+    $('#list-protest').on('click', '.js-eliminar', function(){
+
     });
 
     $('#list-protest').on('click', '.js-eliminar', function(){

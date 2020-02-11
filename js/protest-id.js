@@ -4,6 +4,7 @@ $(document).ready(function () {
 
     
     var marker = [];
+    var markerPoint = [];
     var directionsService = [];
     var directionsRenderer = [];
 
@@ -16,17 +17,9 @@ $(document).ready(function () {
     var wayPoints = [];
     var allPoints = [];
 
-    initialize();
+ 
 
-
-    function initialize() {
-        var city,
-            infoWindow = "",
-            addressEl = document.querySelector("#map-search"),
-            latEl = document.querySelector(".latitude"),
-            longEl = document.querySelector(".longitude"),
-            city = document.querySelector(".reg-input-city");
-    
+    function initialize() {    
         directionsService = new google.maps.DirectionsService();
         directionsRenderer = new google.maps.DirectionsRenderer();
     
@@ -40,30 +33,18 @@ $(document).ready(function () {
             scrollWheel: true,
             draggable: true
         });
+
+        marker = new google.maps.Marker({
+            position: startPoint,
+            map: map,
+            draggable: true
+        });
     
-        directionsRenderer.setMap(map);
-
-        calculateAndDisplayRoute(directionsService, directionsRenderer);
-    }
-
-
-
-    function calculateAndDisplayRoute(directionsService, directionsRenderer) {    
-        directionsService.route({
-            origin: data.startPoint,
-            destination: data.endPoint,
-            waypoints: data.waypoint,
-            travelMode: google.maps.TravelMode.WALKING
-        },
-            function (response, status) {
-                if (status == "OK") {
-                    directionsRenderer.setDirections(response);
-                } else {
-                    window.alert("Directions request failed due to " + status);
-                }
-            }
-        );
+        directionsRenderer.setMap(map);        
     };
+        
+
+    
 
 
 // -----------  GET <- ----------------  //
@@ -78,9 +59,11 @@ $(document).ready(function () {
     });
 
 
-
     function getPosts(){
-        fetch('http://prueba-env.us-east-2.elasticbeanstalk.com/protests/91')
+        var root = 'http://prueba-env.us-east-2.elasticbeanstalk.com/protests/';
+        var protestId = sessionStorage.protesId;
+        var url = root += protestId;
+        fetch(url)
         .then((res) => res.json())
         .then((data) => {
             output += `
@@ -122,22 +105,35 @@ $(document).ready(function () {
             $('#text-letter-protestId').html("........");
             $('#name-protest').html(`${data.nameProtest}`);
 
+            var attachedDoc = data.document;
+            var e = 0;
+            $('#attached-protestId').html(`
+                <h5 class="card-title">Documentos adjuntos</h5>
+                <div id="` + e + `" class="row w-100" style="height: 100px;">` + attachedDoc + `</div>
+            `);
+
             allPoints = data.locationsProtest;
             getDataRoute();
             function getDataRoute(){
                 getStartPoint = allPoints.shift();
-                //  getEndPoint = allPoints.pop();
+                getEndPoint = allPoints.pop();
                 var getAllWaypoints = allPoints;
-                startPoint = getStartPoint.latitude + ", " +  getStartPoint.longitude;
-                endPoint = getEndPoint.latitude + ", " +  getEndPoint.longitude;
+                startPoint = {
+                    lat: getStartPoint.latitude,
+                    lng: getStartPoint.longitude
+                }
+                endPoint = {
+                    lat: getEndPoint.latitude,
+                    lng: getEndPoint.longitude,
+                }
                 console.log(getAllWaypoints);
 
-                /*
-                var dias = ["0","1","2","3","4","5","6","7","8",]
-                for (i = 0; i < dias.length; i++) {
-                    console.log(i + "<br>");
-                }
-                */
+                console.log(allPoints);
+                console.log(getStartPoint);
+                console.log(getEndPoint);
+                console.log(startPoint);
+                console.log(endPoint);
+                console.log(wayPoints);
                 for (i = 0; i < getAllWaypoints.length; i++) {
                     getWaypoints = getAllWaypoints[i].latitude + ", " + getAllWaypoints[i].longitude;
                     if (getAllWaypoints[i]) {
@@ -146,14 +142,58 @@ $(document).ready(function () {
                             stopover: true
                         });
                     }
-                }
-
-                console.log(allPoints);
-                console.log(getStartPoint);
-                console.log(getEndPoint);
-                console.log(startPoint);
-                console.log(endPoint);
+                };
                 console.log(wayPoints);
+                
+
+                if(getEndPoint == ""){
+                    initialize();
+                }else {
+                    initialize();
+                    function initialize() {    
+                        directionsService = new google.maps.DirectionsService();
+                        directionsRenderer = new google.maps.DirectionsRenderer();
+                    
+                        var map = new google.maps.Map(document.getElementById("map_canvas"), {
+                            zoom: 5,
+                            center: {
+                                lat: 40.42928819958918,
+                                lng: -3.6999707343627506
+                            },
+                            disableDefaultUI: false,
+                            scrollWheel: true,
+                            draggable: true
+                        });
+                
+                        marker = new google.maps.Marker({
+                            position: startPoint,
+                            map: map,
+                            draggable: true
+                        });
+                    
+                        directionsRenderer.setMap(map);  
+                        calculateAndDisplayRoute(directionsService, directionsRenderer)    
+                    };
+                    function calculateAndDisplayRoute(directionsService, directionsRenderer) {                    
+                        directionsService.route({
+                            origin: startPoint,
+                            destination: endPoint,
+                            travelMode: google.maps.TravelMode.WALKING
+                        },
+                            function (response, status) {
+                                if (status == "OK") {
+                                    directionsRenderer.setDirections(response);
+                                } else {
+                                    window.alert("Directions request failed due to " + status);
+                                }
+                            }
+                        );
+                    }
+                }
+                
+
+                
+
             };
             
 
