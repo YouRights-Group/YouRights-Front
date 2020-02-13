@@ -54,9 +54,9 @@
   "areaProtest": "Madrid oeste",
   "cityProtest": "Boadilla del Monte",
   "countryProtest": "España",
-  "dateProtest": "24-02-2020",
-  "defenseSectorProtest": "desahucios",
-  "locationsProtest": [
+  // "dateProtest": "24-02-2020",
+  // "defenseSectorProtest": "desahucios",
+  // "locationsProtest": [
     {
       "latitude": 40.4272263,
       "longitude": -3.9268272,
@@ -64,9 +64,9 @@
     }
   ],
   "monthProtest": "FEBRUARY",
-  "nameProtest": "Prueba protesta 2",
+  // "nameProtest": "Prueba protesta 2",
   "promotedByProtest": "SA",
-  "protestType": "MANIFESTACION",
-  "timeProtest": "12:00",
-  "userType": "FISICA"
+  // "protestType": "MANIFESTACION",
+  // "timeProtest": "12:00",
+  // "userType": "FISICA"
  }

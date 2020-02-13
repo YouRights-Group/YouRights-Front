@@ -356,9 +356,21 @@ function agregarWaypoint() {
 
     getWaypoint();
     arrangeId();
+    getDataProtest();
 }
 
 var dataBaseWaypoint = [];
+
+var dataAddressPoint = [];
+var getDataAddress = [];
+var dataAddress = [];
+var dataAddressNumber = [];
+var getAllZipCode = [];
+var getZipCode = [];
+var zipCode = [];
+var dataArea = [];
+var dataCountry = [];
+
 var getdataBaseWaypointRoute = [];
 
 function getWaypoint() {
@@ -367,6 +379,67 @@ function getWaypoint() {
     console.log(dataBaseWaypoint);
     console.log(getdataBaseWaypointRoute);
 }
+function getDataProtest(){
+    for ( i = 0 ; i < dataBaseWaypoint.length ; i++ ){
+        dataAddressPoint = dataBaseWaypoint[0].address;
+        getDataAddress = dataAddressPoint.split(",");
+        getAllZipCode  = getDataAddress[2];
+        getZipCode = getAllZipCode.split(" ");
+        if(getDataAddress.length == 3){
+            console.log("tiene 3");
+            getAllZipCode  = getDataAddress[1];
+            getZipCode = getAllZipCode.split(" ");
+
+            dataAddress = getDataAddress[0];
+            zipCode = getZipCode[1];
+            dataArea = getZipCode[2];
+            dataCountry = getDataAddress[2];
+            console.log(getDataAddress);
+            console.log(dataAddress);
+            console.log(zipCode);
+            console.log(dataArea);
+            console.log(dataCountry);
+        } else if (getDataAddress.length == 4){
+            console.log("tiene 4");
+            getAllZipCode  = getDataAddress[2];
+            getZipCode = getAllZipCode.split(" ");
+
+            dataAddress = getDataAddress[0];
+            dataAddressNumber = getDataAddress[1];
+            zipCode = getZipCode[1];
+            dataArea = getZipCode[2];
+            dataCountry = getDataAddress[3];
+            console.log(getDataAddress);
+            console.log(dataAddress);
+            console.log(dataAddressNumber);
+            console.log(zipCode);
+            console.log(dataArea);
+            console.log(dataCountry);
+        } else {
+            console.log("tiene + de 4");
+            for( i = getDataAddress.length ; i >= 3 ; i--){
+                getAllZipCode  = getDataAddress[i-2];
+                console.log(getAllZipCode);
+                getZipCode = getAllZipCode.split(" ");
+                console.log(getZipCode);
+            }
+            
+            
+
+            dataAddress = getDataAddress[0];
+            dataAddressNumber = getDataAddress[1];
+            zipCode = getZipCode[1];
+            dataArea = getZipCode[2];
+            dataCountry = getDataAddress[4];
+            console.log(getDataAddress);
+            console.log(dataAddress);
+            console.log(dataAddressNumber);
+            console.log(zipCode);
+            console.log(dataArea);
+            console.log(dataCountry);
+        };
+    };
+};
 
 function getDataRoute() {
     getStartPoint = getdataBaseWaypointRoute[0];
@@ -519,12 +592,12 @@ console.log(personalInformation);
         dateProtest,
         defenseSectorProtest,
         //  document,
-        //  locationsProtest,
+        locationsProtest,
         //  monthProtest,
         nameProtest,
         promotedByProtest,
         protestType,
-        //  timeProtest,
+        timeProtest,
         userType
         ) {
 
@@ -535,14 +608,13 @@ console.log(personalInformation);
         this.defenseSectorProtest = defenseSectorProtest,
         //  this.document = document,
         //  this.id = 0,
-        //  this.locationsProtest = locationsProtest,
+        this.locationsProtest = locationsProtest,
         //  this.monthProtest = monthProtest,
         this.nameProtest = nameProtest,
         //  this.promotedByProtest = promotedByProtest,
-        this.protestType = protestType
-        //  this.timeProtest = timeProtest,
-        //  this.userType = userType
-
+        this.protestType = protestType,
+        this.timeProtest = timeProtest,
+        this.userType = userType
     }
     function Token(Authorization) {
         this.Authorization = Authorization;
@@ -553,6 +625,8 @@ console.log(personalInformation);
     //  console.log(cityProtestGet);
     var dateProtestGet = document.getElementById("start-datepicker-protest").value;
     console.log(dateProtestGet);
+    var timeProtestGet = document.getElementById("time-datepicker-protest").value;
+    console.log(timeProtestGet);
     var typeProtestGet = document.getElementById("type-protest-select").value;
     console.log(typeProtestGet);
     var initiatedProtestGet = document.getElementById("initiated-select").value;
@@ -572,8 +646,11 @@ console.log(personalInformation);
     dataForm = new DataProtest(
         dateProtestGet,
         defenseSectorProtestGet,
+        getdataBaseWaypointRoute,
         nameProtestGet,
-        typeProtestGet
+        typeProtestGet,
+        timeProtestGet,
+        initiatedProtestGet
     );
     console.log(dataForm);
 
