@@ -303,7 +303,7 @@ $("#save-point-map").on("click", function () {
     pointAddress = $(".controls").val();
 
     var typeProtest = $("#type-protest-select").val();
-    if ((typeProtest == "manifestacion") || (typeProtest == "protesta" && dataBaseWaypoint.length == 0)) {
+    if ((typeProtest == "MANIFESTACION") || (typeProtest == "PROTESTA" && dataBaseWaypoint.length == 0)) {
         agregarWaypoint();
     } else {
         alert("No puede haber más de 1 punto en el mapa. Consideramos que una protesta solo se realiza en un sitio concreto y que no tiene recorrido.");
@@ -318,7 +318,9 @@ $("#deleteAll-point-map").click(function () {
 });
 
 var pointLat = $(".latitude").val();
+var pointLatWithComma = [];
 var pointLong = $(".longitude").val();
+var pointLongWithComma = [];
 var pointAddress = $(".controls").val();
 var idPointMap = '';
 var isFirst = true;
@@ -326,6 +328,7 @@ var getWaypoints = [];
 var startPoint = [];
 var endPoint = [];
 var waypoints = [];
+var n = 0;
 
 function agregarWaypoint() {
     idPointMap++;
@@ -338,6 +341,11 @@ function agregarWaypoint() {
     </tr>
 `;
     $("#outputTableMap").append(linePointMap);
+
+    pointLatWithComma = pointLat.replace(/["']/g, "");
+    pointLongWithComma = pointLat.replace(/["']/g, "");
+    console.log(pointLat);
+    console.log(pointLong);
 
     function waypoint(id, address, lat, lng) {
         this.id = id;
@@ -354,6 +362,16 @@ function agregarWaypoint() {
     }
     wayptsLatLng = new getwayptsLatLng(pointLat, pointLong);
 
+    function getDataWayptsLatLng(latitude, longitude, pointNumber) {
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.pointNumber = pointNumber;
+    }
+    getPointLatWithOutComma = Number(pointLat);
+    getPointLongWithOutComma = Number(pointLong);
+
+    dataWayptsLatLng = new getDataWayptsLatLng(getPointLatWithOutComma, getPointLongWithOutComma, n++);
+
     getWaypoint();
     arrangeId();
     getDataProtest();
@@ -369,15 +387,19 @@ var getAllZipCode = [];
 var getZipCode = [];
 var zipCode = [];
 var dataArea = [];
+var dataCity = [];
 var dataCountry = [];
+var dataAllWayPointPost = [];
 
 var getdataBaseWaypointRoute = [];
 
 function getWaypoint() {
     dataBaseWaypoint.push(waypts);
     getdataBaseWaypointRoute.push(wayptsLatLng);
+    dataAllWayPointPost.push(dataWayptsLatLng);
     console.log(dataBaseWaypoint);
     console.log(getdataBaseWaypointRoute);
+    console.log(dataAllWayPointPost);
 }
 function getDataProtest(){
     for ( i = 0 ; i < dataBaseWaypoint.length ; i++ ){
@@ -386,21 +408,15 @@ function getDataProtest(){
         getAllZipCode  = getDataAddress[2];
         getZipCode = getAllZipCode.split(" ");
         if(getDataAddress.length == 3){
-            console.log("tiene 3");
             getAllZipCode  = getDataAddress[1];
             getZipCode = getAllZipCode.split(" ");
 
             dataAddress = getDataAddress[0];
             zipCode = getZipCode[1];
             dataArea = getZipCode[2];
+            dataCity = dataArea;
             dataCountry = getDataAddress[2];
-            console.log(getDataAddress);
-            console.log(dataAddress);
-            console.log(zipCode);
-            console.log(dataArea);
-            console.log(dataCountry);
         } else if (getDataAddress.length == 4){
-            console.log("tiene 4");
             getAllZipCode  = getDataAddress[2];
             getZipCode = getAllZipCode.split(" ");
 
@@ -408,35 +424,18 @@ function getDataProtest(){
             dataAddressNumber = getDataAddress[1];
             zipCode = getZipCode[1];
             dataArea = getZipCode[2];
+            dataCity = dataArea;
             dataCountry = getDataAddress[3];
-            console.log(getDataAddress);
-            console.log(dataAddress);
-            console.log(dataAddressNumber);
-            console.log(zipCode);
-            console.log(dataArea);
-            console.log(dataCountry);
         } else {
-            console.log("tiene + de 4");
-            for( i = getDataAddress.length ; i >= 3 ; i--){
-                getAllZipCode  = getDataAddress[i-2];
-                console.log(getAllZipCode);
-                getZipCode = getAllZipCode.split(" ");
-                console.log(getZipCode);
-            }
-            
-            
-
+            var longAddress = getDataAddress.length
+            getAllZipCode  = getDataAddress[longAddress - 3]
+            getZipCode = getAllZipCode.split(" ");
             dataAddress = getDataAddress[0];
             dataAddressNumber = getDataAddress[1];
             zipCode = getZipCode[1];
             dataArea = getZipCode[2];
+            dataCity = getDataAddress[3];
             dataCountry = getDataAddress[4];
-            console.log(getDataAddress);
-            console.log(dataAddress);
-            console.log(dataAddressNumber);
-            console.log(zipCode);
-            console.log(dataArea);
-            console.log(dataCountry);
         };
     };
 };
@@ -473,6 +472,7 @@ function deleteId(id_line) {
     $("#" + id_line).remove();
     dataBaseWaypoint.splice(ccc, 1);
     getdataBaseWaypointRoute.splice(ccc, 1);
+    dataAllWayPointPost.splice(ccc, 1)
     arrangeId();
 }
 
@@ -500,6 +500,7 @@ function deleteAllLine() {
     $('.waypoint').remove();
     dataBaseWaypoint = [];
     getdataBaseWaypointRoute = [];
+    dataAllWayPointPost = [];
     directionsRenderer.setDirections({
         routes: []
     });
@@ -516,84 +517,17 @@ protestsCreate.addEventListener('submit', function (e) {
     e.preventDefault();
     console.log('me diste un click')
 
-// ------------   Datos personales   --------------- //
-/*
-function PersonalInformation(
-    firstNameUser, 
-    lastNameUser, 
-    dniUser, 
-    emailUser, 
-    repeatEmailUser, 
-    countryUser, 
-    cityUser, 
-    streetUser, 
-    numberStreetUser, 
-    phoneUser,
-    postalCodeUser
-){
-    this.firstNameUser = firstNameUser;
-    this.lastNameUser = lastNameUser;
-    this.dniUser = dniUser;
-    this.emailUser = emailUser;
-    this.repeatEmailUser = repeatEmailUser;
-    this.countryUser = countryUser;
-    this.cityUser = cityUser;
-    this.postalCodeUser = postalCodeUser;
-    this.streetUser = streetUser;
-    this.numberStreetUser = numberStreetUser;
-    this.phoneUser = phoneUser;
-}
-var firstNameUser = document.getElementById("first-name").value;
-console.log(firstNameUser);
-var lastNameUser = document.getElementById("last-name").value;
-console.log(lastNameUser);
-var dniUser = document.getElementById("dni-user").value;
-console.log(dniUser);
-var emailUser = document.getElementById("email-user").value;
-console.log(emailUser);
-var repeatEmailUser = document.getElementById("repeat-email-user").value;
-console.log(repeatEmailUser);
-var countryUser = document.getElementById("country-select").value;
-console.log(countryUser);
-var cityUser = document.getElementById("city-select").value;
-console.log(cityUser);
-var postalCodeUser = document.getElementById("postal-code-user").value;
-console.log(postalCodeUser);
-var streetUser = document.getElementById("street-user").value;
-console.log(streetUser);
-var numberStreetUser = document.getElementById("number-street-user").value;
-console.log(numberStreetUser);
-var phoneUser = document.getElementById("phone-user").value;
-console.log(phoneUser);
- 
-personalInformation = new PersonalInformation(
-    firstNameUser,
-    lastNameUser, 
-    dniUser,
-    emailUser,
-    repeatEmailUser,
-    countryUser,
-    cityUser,
-    postalCodeUser,
-    streetUser,
-    numberStreetUser,
-    phoneUser
-);
-console.log(personalInformation);
-*/
-    // ------------   Datos personales.   --------------- //
-
     // ------------   Datos de la protesta   --------------- //
 
     function DataProtest(
-        //  areaProtest,
-        //  cityProtest,
-        //  countryProtest,
+        areaProtest,
+        cityProtest,
+        countryProtest,
         dateProtest,
         defenseSectorProtest,
         //  document,
         locationsProtest,
-        //  monthProtest,
+        monthProtest,
         nameProtest,
         promotedByProtest,
         protestType,
@@ -601,17 +535,17 @@ console.log(personalInformation);
         userType
         ) {
 
-        //  this.areaProtest = areaProtest,
-        //  this.cityProtest = cityProtest,
-        //  this.countryProtest = countryProtest,
+        this.areaProtest = areaProtest,
+        this.cityProtest = cityProtest,
+        this.countryProtest = countryProtest,
         this.dateProtest = dateProtest,
         this.defenseSectorProtest = defenseSectorProtest,
         //  this.document = document,
         //  this.id = 0,
         this.locationsProtest = locationsProtest,
-        //  this.monthProtest = monthProtest,
+        this.monthProtest = monthProtest,
         this.nameProtest = nameProtest,
-        //  this.promotedByProtest = promotedByProtest,
+        this.promotedByProtest = promotedByProtest,
         this.protestType = protestType,
         this.timeProtest = timeProtest,
         this.userType = userType
@@ -619,10 +553,6 @@ console.log(personalInformation);
     function Token(Authorization) {
         this.Authorization = Authorization;
     }
-    //  var countryProtestGet = document.getElementById("country-protest-select").value;
-    //  console.log(countryProtestGet);
-    //  var cityProtestGet = document.getElementById("city-protest-select").value;
-    //  console.log(cityProtestGet);
     var dateProtestGet = document.getElementById("start-datepicker-protest").value;
     console.log(dateProtestGet);
     var timeProtestGet = document.getElementById("time-datepicker-protest").value;
@@ -635,40 +565,107 @@ console.log(personalInformation);
     console.log(defenseSectorProtestGet);
     var nameProtestGet = document.getElementById("name-protest").value;
     console.log(nameProtestGet);
+    var promotedByProtest = document.getElementById("promotedByProtest").value;
+    console.log(promotedByProtest);
     //  var tittleProtestLetterGet = document.getElementById("tittle-protest-letter").value;
     //  console.log(tittleProtestLetterGet);
     //  var bodyProtestLetterGet = document.getElementById("protestLetter").value;
     //  console.log(bodyProtestLetterGet);
+    var dateMonthProtestGet = dateProtestGet[3] + dateProtestGet[4];
+    console.log(dateMonthProtestGet);
+    var monthProtestGet = [];
+    month();
+    function month(){
+        if(dateMonthProtestGet == 01){
+            monthProtestGet = "Enero"
+        }else if (dateMonthProtestGet == 02){
+            monthProtestGet = "Febrero"
+        }else if (dateMonthProtestGet == 03){
+            monthProtestGet = "Marzo"
+        }else if (dateMonthProtestGet == 04){
+            monthProtestGet = "Abril"
+        }else if (dateMonthProtestGet == 05){
+            monthProtestGet = "Mayo"
+        }else if (dateMonthProtestGet == 06){
+            monthProtestGet = "Junio"
+        }else if (dateMonthProtestGet == 07){
+            monthProtestGet = "Julio"
+        }else if (dateMonthProtestGet == 08){
+            monthProtestGet = "Agosto"
+        }else if (dateMonthProtestGet == 09){
+            monthProtestGet = "Septiembre"
+        }else if (dateMonthProtestGet == 10){
+            monthProtestGet = "Octubre"
+        }else if (dateMonthProtestGet == 11){
+            monthProtestGet = "Noviembre"
+        }else if (dateMonthProtestGet == 12){
+            monthProtestGet = "Diciembre"
+        }
+        console.log(monthProtestGet);
+    }
+    
 
     var getToken = sessionStorage.getItem("token")
     console.log(getToken);
+    console.log(sessionStorage);
 
-    dataForm = new DataProtest(
+    data = new DataProtest(
+        dataArea,
+        dataCity,
+        dataCountry,
         dateProtestGet,
         defenseSectorProtestGet,
-        getdataBaseWaypointRoute,
+        dataAllWayPointPost,
+        monthProtestGet,
         nameProtestGet,
+        promotedByProtest,
         typeProtestGet,
         timeProtestGet,
         initiatedProtestGet
     );
-    console.log(dataForm);
+    console.log(data);
+    zzz = JSON.stringify(data);
+    console.log(zzz);
 
     dataToken = new Token(
-        `Bearer` + getToken,
+        `Bearer ` + getToken,
     );
     console.log(dataToken);
     // ------------   Datos de la protesta  --------------- //
 
 
-    var url = "http://prueba-env.us-east-2.elasticbeanstalk.com/protests/create";
+    var urlCreate = "http://prueba-env.us-east-2.elasticbeanstalk.com/protests/create";
+    var urlFile = "http://prueba-env.us-east-2.elasticbeanstalk.com/protests/loadfile/";
 
-    fetch(url, {
+    fetch(urlCreate, {
         method: 'POST',
-        headers: dataToken,
-        body: JSON.stringify(dataForm)
+        headers: {
+            'Authorization': `Bearer ` + sessionStorage.token,
+            "Accept": "application/json",
+            'Content-Type': 'application/json',
+        },
+        mode: 'no-cors',
+        body: JSON.stringify(data)
     })
-        //  console.log(newProtest);
+        // console.log(body);
+
+        // tambien:    .then((resp) => resp.json())
+        .then(function (response) {
+        })
+        .then(function (data) {
+            console.log(data)
+            return data;
+        })
+    fetch(urlFile, {
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ` + sessionStorage.token,
+            'Content-Type': 'application/json',
+        },
+        mode: 'no-cors',
+        body: attachedDoc
+    })
+        // console.log(body);
 
         // tambien:    .then((resp) => resp.json())
         .then(function (response) {
