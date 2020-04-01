@@ -644,7 +644,7 @@ protestsCreate.addEventListener('submit', function (e) {
             "Accept": "application/json",
             'Content-Type': 'application/json',
         },
-        mode: 'no-cors',
+        //mode: 'no-cors',
         body: JSON.stringify(data)
     })
         // console.log(body);
@@ -662,7 +662,7 @@ protestsCreate.addEventListener('submit', function (e) {
             'Authorization': `Bearer ` + sessionStorage.token,
             'Content-Type': 'application/json',
         },
-        mode: 'no-cors',
+        //mode: 'no-cors',
         body: attachedDoc
     })
         // console.log(body);

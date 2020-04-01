@@ -100,7 +100,9 @@ $(document).ready(function () {
                     <div class="offset-1" id="data-name-defenceSector-protestId">${data.dateProtest} / ${data.timeProtest}</div>
                 </div>
             `;
-            $('#output').html(output);
+            getOutput = String(output)
+            console.log(getOutput)
+            $('#output').html(getOutput);
             $('#title-letter-protestId').html(".......");
             $('#text-letter-protestId').html("........");
             $('#name-protest').html(`${data.nameProtest}`);
@@ -200,6 +202,25 @@ $(document).ready(function () {
             
         })
     }
+
+    // conseguir el archivo desde la url correcta
+/*
+    function getPosts(){
+        var root = 'http://prueba-env.us-east-2.elasticbeanstalk.com/protests/';
+        var protestId = sessionStorage.protesId;
+        var url = root += protestId;
+        fetch(url)
+        .then((res) => res.json())
+        .then((data) => {
+            var attachedDoc = data.document;
+            var e = 0;
+            $('#attached-protestId').html(`
+                <h5 class="card-title">Documentos adjuntos</h5>
+                <div id="` + e + `" class="row w-100" style="height: 100px;">` + attachedDoc + `</div>
+            `);
+        })
+    }
+*/
 
 /*
     $.ajax({

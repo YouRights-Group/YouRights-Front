@@ -1,85 +1,228 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <!-- Dependencias CSS -->
-        <link rel="stylesheet" href="dependencias/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="dependencias/jquery/jquery-ui/jquery-ui.min.css">
-        <link rel="stylesheet" href="css/fontawesome-all.css">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <!-- Nuestros CSS -->
-        <link rel="stylesheet" href="css/index.css">
-        <link rel="stylesheet" href="css/style-maps-logo.css">
-       
-        
-    </head>
-    <body>
-        <div class="col position-absolute w-100" id="nav-main" style="z-index: 1">
-            <nav class="navbar navbar-light navbar-expand-xl bg-transparent justify-content-center w-75 mx-auto ftco-navbar-light">
-                <a href="index.html" class="navbar-brand d-flex mr-auto pb-0" style="width: 120px">
-                    <div class="logo-nav" style="margin-top: -5px">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30pt" height="34pt" viewBox="0 0 120 169" version="1.1">
-                            <g id="surface1">
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 155.645182 302.18505 C 168.970703 350.02242 205.538411 387.914756 252.875 402.978273 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 342.125 402.978273 C 389.461589 387.914756 426.029297 350.02242 439.354818 302.18505 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 444.777995 262.61899 C 444.777995 181.287676 378.847656 115.331268 297.5 115.331268 C 216.152344 115.331268 150.222005 181.287676 150.222005 262.61899 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 150.222005 262.61899 C 150.222005 267.698548 151.016113 272.758645 152.526855 277.60466 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 152.526855 277.60466 C 152.430013 285.895433 153.475911 294.166744 155.645182 302.18505 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 271.546224 346.305196 C 288.803548 348.095692 306.196452 348.095692 323.453776 346.305196 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 442.473145 277.60466 C 444.003255 272.758645 444.777995 267.698548 444.777995 262.61899 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 439.354818 302.18505 C 441.524089 294.186206 442.589355 285.895433 442.473145 277.60466 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 297.5 657.71519 L 297.5 726.435189 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 297.5 657.71519 L 595.058105 485.944388 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 595.058105 485.944388 L 595.058105 554.664386 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 297.5 726.435189 L 595.058105 554.664386 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M -0.0581055 485.944388 L -0.0581055 554.664386 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M -0.0581055 485.944388 L 297.5 657.71519 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M -0.0581055 554.664386 L 297.5 726.435189 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 252.875 528.89682 L 297.5 554.664386 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 297.5 554.664386 L 342.125 528.89682 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 416.519368 382.893584 L 396.724772 371.449982 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 416.519368 434.409255 L 461.144368 460.176821 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 461.144368 460.176821 L 505.788737 434.409255 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 595.058105 485.944388 L 505.788737 434.409255 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 89.211263 434.409255 L -0.0581055 485.944388 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 89.211263 434.409255 L 133.855632 460.176821 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 133.855632 460.176821 L 178.480632 434.409255 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 198.275228 371.449982 L 178.480632 382.893584 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 297.5 382.85466 L 342.125 357.087093 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 252.875 357.087093 L 297.5 382.85466 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 271.546224 346.305196 L 252.875 357.087093 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 342.125 357.087093 L 323.453776 346.305196 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 252.875 357.087093 L 252.875 528.89682 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 297.5 382.85466 L 297.5 554.664386 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 342.125 357.087093 L 342.125 528.89682 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 461.144368 288.386557 L 461.144368 460.176821 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 416.519368 349.360716 L 416.519368 434.409255 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 442.473145 277.60466 L 461.144368 288.386557 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 461.144368 288.386557 L 505.788737 262.61899 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 461.144368 236.851424 L 443.925781 246.796459 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 505.788737 262.61899 L 461.144368 236.851424 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 505.788737 262.61899 L 505.788737 434.409255 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 89.211263 262.61899 L 133.855632 288.386557 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 151.074219 246.796459 L 133.855632 236.851424 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 133.855632 288.386557 L 152.526855 277.60466 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 133.855632 236.851424 L 89.211263 262.61899 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 133.855632 288.386557 L 133.855632 460.176821 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 89.211263 262.61899 L 89.211263 434.409255 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 178.480632 349.360716 L 178.480632 434.409255 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
-                            </g>
-                            </svg>
-                             
-                    </div>
-                    YouRights
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
-                    <!-- PARA METER LINKS EN EL CENTRO
+    <!-- Dependencias CSS -->
+    <link rel="stylesheet" href="dependencias/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dependencias/jquery/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/fontawesome-all.css">
+
+    <!-- Nuestros CSS -->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/index.scss">
+    <link rel="stylesheet" href="css/style-maps-logo.css">
+
+
+</head>
+
+<body>
+    <div class="col position-absolute w-100" id="nav-main" style="z-index: 1">
+        <nav
+            class="navbar navbar-light navbar-expand-xl bg-transparent justify-content-center w-75 mx-auto ftco-navbar-light">
+            <a href="index.html" class="navbar-brand d-flex mr-auto pb-0" style="width: 120px">
+                <div class="logo-nav" style="margin-top: -5px">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30pt"
+                        height="34pt" viewBox="0 0 120 169" version="1.1">
+                        <g id="surface1">
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 155.645182 302.18505 C 168.970703 350.02242 205.538411 387.914756 252.875 402.978273 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 342.125 402.978273 C 389.461589 387.914756 426.029297 350.02242 439.354818 302.18505 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 444.777995 262.61899 C 444.777995 181.287676 378.847656 115.331268 297.5 115.331268 C 216.152344 115.331268 150.222005 181.287676 150.222005 262.61899 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 150.222005 262.61899 C 150.222005 267.698548 151.016113 272.758645 152.526855 277.60466 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 152.526855 277.60466 C 152.430013 285.895433 153.475911 294.166744 155.645182 302.18505 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 271.546224 346.305196 C 288.803548 348.095692 306.196452 348.095692 323.453776 346.305196 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 442.473145 277.60466 C 444.003255 272.758645 444.777995 267.698548 444.777995 262.61899 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 439.354818 302.18505 C 441.524089 294.186206 442.589355 285.895433 442.473145 277.60466 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 297.5 657.71519 L 297.5 726.435189 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 297.5 657.71519 L 595.058105 485.944388 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 595.058105 485.944388 L 595.058105 554.664386 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 297.5 726.435189 L 595.058105 554.664386 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M -0.0581055 485.944388 L -0.0581055 554.664386 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M -0.0581055 485.944388 L 297.5 657.71519 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M -0.0581055 554.664386 L 297.5 726.435189 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 252.875 528.89682 L 297.5 554.664386 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 297.5 554.664386 L 342.125 528.89682 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 416.519368 382.893584 L 396.724772 371.449982 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 416.519368 434.409255 L 461.144368 460.176821 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 461.144368 460.176821 L 505.788737 434.409255 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 595.058105 485.944388 L 505.788737 434.409255 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 89.211263 434.409255 L -0.0581055 485.944388 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 89.211263 434.409255 L 133.855632 460.176821 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 133.855632 460.176821 L 178.480632 434.409255 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 198.275228 371.449982 L 178.480632 382.893584 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 297.5 382.85466 L 342.125 357.087093 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 252.875 357.087093 L 297.5 382.85466 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 271.546224 346.305196 L 252.875 357.087093 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 342.125 357.087093 L 323.453776 346.305196 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 252.875 357.087093 L 252.875 528.89682 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 297.5 382.85466 L 297.5 554.664386 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 342.125 357.087093 L 342.125 528.89682 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 461.144368 288.386557 L 461.144368 460.176821 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 416.519368 349.360716 L 416.519368 434.409255 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 442.473145 277.60466 L 461.144368 288.386557 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 461.144368 288.386557 L 505.788737 262.61899 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 461.144368 236.851424 L 443.925781 246.796459 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 505.788737 262.61899 L 461.144368 236.851424 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 505.788737 262.61899 L 505.788737 434.409255 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 89.211263 262.61899 L 133.855632 288.386557 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 151.074219 246.796459 L 133.855632 236.851424 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 133.855632 288.386557 L 152.526855 277.60466 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 133.855632 236.851424 L 89.211263 262.61899 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 133.855632 288.386557 L 133.855632 460.176821 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 89.211263 262.61899 L 89.211263 434.409255 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                            <path
+                                style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;"
+                                d="M 178.480632 349.360716 L 178.480632 434.409255 "
+                                transform="matrix(0.201681,0,0,0.200713,0,0)" />
+                        </g>
+                    </svg>
+
+                </div>
+                YouRights
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
+                <!-- PARA METER LINKS EN EL CENTRO
                     <ul class="navbar-nav w-100 justify-content-center">
                         <li class="nav-item active">
                             <a class="nav-link" href="#">Link</a>
@@ -92,196 +235,568 @@
                         </li>
                     </ul>
                     -->
-                    <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="page-main.html">Mapa virtual <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Servicios
-                            </a>
-                            <div class="dropdown-menu mt-1" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="protests.html">Detalles de protestas</a>
-                                <a class="dropdown-item" href="event-planner.html">Organizador de eventos</a>
-                                <a class="dropdown-item" href="collaborations.html">Te ayudamos</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
+                <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="page-main.html">Mapa virtual <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Servicios
+                        </a>
+                        <div class="dropdown-menu mt-1" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="protests.html">Detalles de protestas</a>
+                            <a class="dropdown-item" href="event-planner.html">Organizador de eventos</a>
+                            <a class="dropdown-item" href="collaborations.html">Te ayudamos</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="about-as.html">Sobre nosotros</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="transparency.html">Transparencia & Donaciones</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="legal-info.html">Información legal</a>
-                        </li>
-                        <li class="nav-item">
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="transparency.html">Transparencia & Donaciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="legal-info.html">Información legal</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contacto</a>
-                        </li>
-                        <li class="nav-item ml-2">
-                            <a class="btn btn-outline-info" href="login-sing-up.html" role="button">Entrada</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-        <div class="row" style="height: 300px; padding-top: 60px">
-            <img class="card-img img-fluid h-100" src="./img/Prototipo/Imagen 12.jpg" alt="Card image">
-        </div>
-        <div class="row mt-5">
-            <div class="container pl-6">
-                <i class="fas fa-balance-scale fa-4x fa-pull-left text-secondary mt-3"></i>
-                <h2 class="display-4 ml-7 mt-3 text-secondary">Información legal</h2>
+                    </li>
+                    <li class="nav-item ml-2">
+                        <a class="btn btn-outline-info" href="login-sing-up.html" role="button">Entrada</a>
+                    </li>
+                </ul>
             </div>
+        </nav>
+    </div>
+    <div class="row" style="height: 300px; padding-top: 60px">
+        <img class="card-img img-fluid h-100" src="./img/Prototipo/Imagen 12.jpg" alt="Card image">
+    </div>
+    <div class="row mt-5 text-center">
+        <!--
+        <div class="col-md-4">
+            <i class="fas fa-balance-scale fa-4x fa-pull-left text-secondary mt-3"></i>
         </div>
-        <div class="row mx-6 mt-5 mx-auto" style="width: 1400px">
-            <div class="accordion w-100" id="accordionExample">
+        -->
+        <div class="col">
+            <h2 class="display-4 mt-3 text-secondary">Información legal</h2>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col mx-auto">
+            <div class="accordion w-75 mx-auto" id="accordionExample">
                 <div class="card border-0">
-                    <div class="card-header bg-white w-100" id="headingOne">
+                    <div class="card-header bg-white w-100 accordion-header" id="headingOne">
                         <h5 class="mb-0">
-                            <button class="btn btn-link text-info text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Información general<i class="fas fa-angle-down fa-2x float-right"></i></button>
-                            
+                            <button class="btn btn-link text-info text-decoration-none w-100 text-left" type="button"
+                                data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                                aria-controls="collapseOne">
+                                INFORMACIÓN GENERAL
+                                <i class="fas fa-angle-down fa-2x float-right"></i>
+                            </button>
                         </h5>
                     </div>
                     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                         <div class="card-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            Los titulares del sitio web http://www.tusderechos.es es la empresa privada YouRights S.L. con
+                            domicilio en __________________ y con CIF ______________. Posible contacto en el número +34
+                            689782048 y en el correo ____________.<br><br>
+                            Este sitio web está constituido por los sitios web asociados a los dominios www.tuderecho.es,
+                            www.tuderecho.eu y www.yourights.eu.<br><br>
+                            Estas condiciones regulan el acceso y el uso permitido a la web, cuya función es la de informar
+                            sobre YouRights, sus funciones, actividades organizativas, servicios aportados, donaciones y
+                            material económico y cualesquiera otras relevantes o convenientes para el objeto funcional de
+                            YouRights.<br><br>
+                            La utilización de la web y de cualquiera de las páginas que contiene y sus subdominios implica
+                            la aceptación íntegra de las condiciones de este documento.<br><br>
+                            La función principal de YouRights es la comunicación social de todas aquellas protestas,
+                            manifestaciones o huelgas que se vayan a producir en el territorio Español, tal y como defiende
+                            el artículo 21 de la sección I del Capítulo II de nuestra Constitución Española de 1978, siendo
+                            comunicada previamente a la fecha de su ejecución como se establece en el apartado 2 de dicho
+                            artículo, a la delegación del gobierno. Poniendo en tesitura el articulo 16 donde garantiza la
+                            libertad ideológica en sus manifestaciones, se dará comunicación con el fin de provocar una
+                            negociación pacífica y civilizada con los gestores de nuestro gobierno o con las empresas
+                            privadas, ateniéndose y pudiendo ser modificada la constitución, la ley orgánica, reales
+                            decretos, ley ordinaria y a los reglamentos vigentes, a través de la resolución de conflictos
+                            por medios convencionales o alternativos (ADR).<br><br>
+                            YouRights se reserva el derecho de modificar unilateralmente los servicios ofrecidos en la web,
+                            así como los de añadir, modificar o borrar sin aviso previo la información contenida en su web
+                            al objeto de mantener actualizada su información. YouRights podrá cesar en cualquier momento y
+                            sin previo aviso en la prestación de sus servicios a través de la web así como modificar el
+                            servicio prestado.<br><br>
+                            YouRight se comprometerá con toda y cada una de las acciones tomadas en la web, tanto la
+                            comunicación de todas las protestas, huelgas y manifestaciones (PHM) que se vayan a mencionar y
+                            registrar dentro de ella como la gestión adecuada de los servicios prestados siempre y cuando
+                            los socios de dicha empresa estén de acuerdo y cuando los usuarios comuniquen la información
+                            adecuada con su debida ética y moral a YouRights.<br><br>
                         </div>
                     </div>
                 </div>
                 <div class="card border-0">
-                    <div class="card-header bg-white" id="headingTwo">
+                    <div class="card-header bg-white accordion-header" id="headingTwo">
                         <h5 class="mb-0">
-                            <button class="btn btn-link text-info text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Collapsible Group Item #2<i class="fas fa-angle-down fa-2x float-right"></i></button>
+                            <button class="btn btn-link text-info text-decoration-none w-100 text-left" type="button"
+                                data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                                aria-controls="collapseTwo">
+                                DERECHO Y OBLIGACIONES DEL TITULAR Y DE LOS USUARIOS
+                                <i class="fas fa-angle-down fa-2x float-right"></i>
+                            </button>
                         </h5>
                     </div>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                         <div class="card-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            El usuario de la web se obliga a utilizarla conforme lo establecido en este documento legal y en
+                            las leyes aplicables, sin lesionar derechos ajenos ni utilizar programas informáticos que
+                            pudieran dañar el contenido o las aplicaciones contenidas en la web. El usuario reconoce que
+                            YouRights no es responsable de la posible ilicitud o lesión de derechos de las actividades
+                            realizadas por los usuarios y, a título enunciativo y no limitativo, se abstendrá de: <br><br>
+                            <ul>
+                                <li>
+                                    Publicar contenido ofensivo, injurioso, calumnioso, racista, discriminatorio o que de
+                                    cualquier otro modo pueda lesionar derechos de terceros.
+                                </li>
+                                <li>
+                                    Publicar datos, imágenes personales o información privada de terceros.
+                                </li>
+                                <li>
+                                    Utilizar el servicio para realizar comunicaciones comerciales no autorizadas o recopilar
+                                    datos de otros usuarios.
+                                </li>
+                                <li>
+                                    Publicar archivos que contengan virus o que de cualquier modo puedan dañar el equipo de
+                                    otro usuario o su software, al igual que los servidores donde este alojado YouRights.
+                                </li>
+                                <li>
+                                    Publicación masiva de datos para el colapso funcional de los servidores y romper toda
+                                    gestión cotidiana.
+                                </li>
+                                <li>
+                                    Publicar contenido que pudiera vulnerar el derecho al honor, a la intimidad o a la
+                                    propia imagen de terceros.
+                                </li>
+                                <li>
+                                    Publicar fuera de la web datos, imágenes, documentos o cualquier otro contenido extraído
+                                    del servicio y que pertenezcan a otros usuarios de la web de YouRights.
+                                </li>
+                            </ul>
+                            Asimismo, el usuario se compromete a reportar a YouRights todos aquellos contenidos o
+                            actividades de cuya ilicitud tenga fundadas sospechas.<br><br>
+                            YouRights se reserva el derecho a retirar los contenidos difundidos sin autorización o cuya
+                            ilicitud le conste o de las que tenga fundadas sospechas.<br><br>
+                            Todos los usuarios que puedan incluir contenido en la web declaran expresamente que poseen todos
+                            los derechos sobre los mismos o están autorizados para su difusión.<br><br>
+                            Conforme al artículo 16 de la ley 34/2002 del 11 de julio y jurisprudencia aplicable, YouRights
+                            no se hace responsable de la posible ilicitud de las obras, de las opiniones vertidas en ellas o
+                            de cualquier lesión de derechos de terceros que pudieran originar dentro de los límites
+                            legalmente establecidos.<br><br>
+                            YouRights podrá cancelar o suspender la cuenta o el acceso a la web sin previo aviso de
+                            cualquier usuario que, conforme el criterio unilateral de YouRights, ésta considere que se halla
+                            incumpliendo con este documento legal o la legalidad vigente.<br><br>
+                            Las publicaciones compartidas en las redes sociales por parte de los usuarios, se identificarán
+                            los autores titulares siendo por tanto los responsables de sus contenidos de su titularidad
+                            independientemente de la gestión aplicada por YouRights en comunicación.<br><br>
                         </div>
                     </div>
                 </div>
                 <div class="card border-0">
-                    <div class="card-header bg-white" id="headingThree">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link text-info text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Collapsible Group Item #3<i class="fas fa-angle-down fa-2x float-right"></i></button>
-                    </h5>
+                    <div class="card-header bg-white accordion-header" id="headingThree">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link text-info text-decoration-none w-100 text-left" type="button"
+                                data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                                aria-controls="collapseThree">
+                                POLÍTICA DE PRIVACIDAD
+                                <i class="fas fa-angle-down fa-2x float-right"></i>
+                            </button>
+                        </h5>
                     </div>
                     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                         <div class="card-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            A través de este sitio web no se recaban datos de carácter personal de los usuarios sin su
+                            conocimiento.<br><br>
+                            YouRights utilizará cookies para recoger información de los usuarios y poder dar un mayor
+                            servicio a los usuarios siempre que estos lo permitan. El uso de los datos recogidos de las
+                            cookies será posteriormente detallados a este documento para el uso coherente y ético del modelo
+                            económico empresarial. Con carácter general, si navega por internet usted puede aceptar o
+                            rechazar las cookies de terceros desde las opciones de configuración de su navegador.<br><br>
+                            La plataforma del que es titular YouRights puede contener enlaces a sitios web de terceros,
+                            cuyas políticas de privacidad son ajenas a la de la YouRights. Al acceder a tales sitios web
+                            usted puede decidir si acepta sus políticas de privacidad y de cookies. <br><br>
+                            Según el ordenamiento de la Ley Orgánica 3/2018 del 5 de diciembre se asigna como delegado de la
+                            protección de datos y con los debidos títulos que acreditan el conocimiento en el derecho y la
+                            práctica de la materia de protección de datos al socio de YouRights donde asesora y ejerce
+                            funciones legales y de comunicación.<br><br><br>
+                            <p class="h6">Responsable del tratamiento</p><br>
+                            Los usuarios que se registren estarán dando su consentimiento de los datos introducidos en dicho
+                            momento para el uso y gestión por parte de YouRights.<br><br>
+                            Los usuarios que den el consentimiento para aportar datos de cualquier índole aceptarán el uso y
+                            gestión por parte de YouRights.<br><br><br>
+                            <p class="h6">Finalidad</p><br>
+                            Los datos de registro tienen la finalidad de ofrecerle el mejor servicio y con el objeto de
+                            facilitar el uso, se analizarán el número de páginas visitadas, el número de visitas, así como
+                            la actividad de los visitantes y su frecuencia de utilización, etc. A estos efectos, YouRights
+                            utiliza la información estadística elaborada por el Proveedor de Servicios de Internet.<br><br>
+                            Los usuarios que aporten datos a YouRights aceptarán el uso de ellos para la comunicación, gestión 
+                            y análisis del objeto de servicio que la web esté dispuesta a dar, teniendo en cuenta la protección 
+                            de datos personales que garantizan los derechos digitales de los usuarios tal y como viene dispuesto 
+                            en la Ley Orgánica 3/2018 del 5 de diciembre, al igual que lo relativo a la protección de las 
+                            personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de 
+                            ellos como detalla el Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo del 27 de abril 
+                            de 2016.<br><br>
+                            Los datos aportados por los usuarios podrán estar visibles en forma de estadísticas o análisis
+                            para la comunicación social de datos relevantes para la sociedad.<br><br>
+                            Los datos aportados por los usuarios podrán ser comunicados o cedidos a terceros con la
+                            finalidad exclusiva de publicidad enfocada al cliente.<br><br><br>
+                            <p class="h6">Legitimación</p><br>
+                            El tratamiento de sus datos se realiza para el cumplimiento de obligaciones legales por parte de
+                            la YouRights, para el cumplimiento de misiones realizadas por los servicios de esta empresa, así
+                            como cuando la finalidad del tratamiento requiera su consentimiento, que habrá de ser prestado
+                            mediante una clara acción afirmativa.<br><br><br>
+                            <p class="h6">Conservación de datos</p><br>
+                            Los datos recabados por YouRights se guardarán en los servidores correspondientes a través de
+                            una gestión adecuada del código fuente de la web.<br><br>
+                            Los datos personales proporcionados se conservarán durante el tiempo necesario que dure el
+                            registro del usuario. En caso de cancelación del registro, los datos aportados que estén en
+                            proceso de análisis se conservarán durante el tiempo necesario para cumplir con la finalidad y
+                            para la que se recaban y para determinar las posibles responsabilidades que se pudieran derivar
+                            de la finalidad junto con los periodos establecidos en la normativa vigente.<br><br><br>
+                            <p class="h6">Comunicación de datos</p><br>
+                            Los usuarios que aporten datos a la hora de crear una protesta, huelga o manifestación (PHM) a
+                            YouRights aceptarán el uso de ellos para la comunicación, gestión y análisis adecuados del
+                            objeto de servicio que la web esté dispuesta a dar.<br><br>
+                            El usuario que ha creado la PHM estará aceptando que los datos adjuntos aportados son veraces y
+                            cumplen con la normativa vigente española. Será de obligado cumplimento el comunicar la
+                            representación legal del usuario para poder determinar acciones si ello lo requiere. Dicho
+                            usuario será el responsable directo de los datos aportados en la creación de PHM a menos que se
+                            demuestre lo contrario ya que estará aportando el documento oficial firmado por la delegación
+                            del gobierno en la comunicación al estado de dicha PHM, y según lo dispuesto anteriormente este
+                            documento es veraz según el usuario en cuestión.<br><br>
+                            Los datos aportados por los usuarios podrán ser comunicados o cedidos a terceros con la
+                            finalidad exclusiva de publicidad enfocada al cliente, por obligación legal, entre las que
+                            pueden estar las comunicaciones al Defensor del Pueblo, Jueces y Tribunales, interesados en los
+                            procedimientos relacionados con las reclamaciones presentadas. Todo ello teniendo en cuenta la
+                            protección de datos personales que garantizan los derechos digitales de los usuarios tal y como
+                            viene dispuesto en la Ley Orgánica 3/2018 del 5 de diciembre.<br><br><br>
+                            <p class="h6">Consentimiento de los datos</p><br>
+                            Como es mencionado con anterioridad, a la hora del registro de usuarios queda consentido el
+                            consentimiento al tratamiento de dichos datos.<br><br>
+                            En caso de que no se consienta algún tipo de dato, no habrá más consecuencia que la de no poder
+                            ofrecer un servicio lo más eficiente posible, eso puede conllevar a la no visualización de
+                            diversos datos de interés.<br><br><br>
+                            <p class="h6">Derechos de los interesados</p><br>
+                            Cualquier persona tiene derecho a obtener información sobre el tratamiento de sus datos que se
+                            llevan a cabo por YouRights.<br><br>
+                            Puede ejercer sus derechos de acceso, rectificación, cancelación y oposición de sus datos
+                            (derechos ARCO), así como a no ser objeto de decisiones basadas únicamente en el tratamiento
+                            automatizado de sus datos, cuando procedan, ante YouRights en la dirección de correo electrónico
+                            ____________.<br><br>
+                        </div>
+                    </div>
+                </div>
+                <div class="card border-0">
+                    <div class="card-header bg-white accordion-header" id="headingThree">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link text-info text-decoration-none w-100 text-left" type="button"
+                                data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                                aria-controls="collapseThree">
+                                AVISO LEGAL
+                                <i class="fas fa-angle-down fa-2x float-right"></i>
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                        <div class="card-body">
+                            Esta documentación legal podrá ser modificado posteriormente a su puesta en actividad para
+                            mejorar las menciones dispuestas.<br><br><br>
+                            <p class="h6">Responsabilidad de los contenidos</p><br>
+                            YouRights no se hace responsable de la legalidad de otros sitios web de terceros desde los que
+                            pueda accederse al portal. YouRights tampoco responde por la legalidad de otros sitios web de
+                            terceros, que pudieran estar vinculados o enlazados desde esta web.<br><br>
+                            YouRights no será responsable del uso que terceros hagan de la información publicada en el
+                            portal, ni tampoco de los daños sufridos o pérdidas económicas que, de forma directa o
+                            indirecta, produzcan o puedan producir perjuicios económicos, materiales o sobre datos,
+                            provocados por el uso de dicha información.<br><br><br>
+                            <p class="h6">Reproducción de contenidos</p><br>
+                            Será libre la reproducción o comunicación total o parcial de los contenidos publicados en la web
+                            siempre y cuando se mencione el origen de los datos, YouRights.<br><br><br>
+                            <p class="h6">Portal de transparencia</p><br>
+                            A través de la información publicada en el portal de transparencia, YouRights mostrará en el
+                            momento que pueda hacerse cargo, todos los movimientos bancarios que involucren a dicha entidad,
+                            tanto donaciones e ingresos de algún tipo, como gastos de cualquier índole. Procurando tener la
+                            mayor transparencia económica.<br><br>
+                            Todos y cada uno de los botones para realizar las donaciones, tendrán una breve explicación
+                            detallando a donde irá dirigida dicha donación.<br><br>
+                            Las donaciones incluidas en alguna de las PHM serán exclusivamente destinadas a dicha PHM. En
+                            caso de que dicha PHM tenga todos los servicios prestados debido a la intervención económica
+                            tanto puntual como consecuencia de las donaciones, el dinero sobrante se destinará al ámbito
+                            general que dicha PHM proteste. En el siguiente caso que haya sobrantes económicos de las
+                            donaciones en las áreas generales de las PHM, el dinero será gestionado por YouRights para
+                            proporcionar un salario coherente de los trabajadores de la empresa o para poder avanzar en los
+                            servicios prestados a los ciudadanos.<br><br>
+                            En caso de que se done dinero para el servicio general de YouRights, el montante ira destinado
+                            al salario coherente de los trabajadores y a los avances tecnológicos para poder prestar más
+                            servicios a los ciudadanos.<br><br><br>
+                            <p class="h6">Ley aplicable</p><br>
+                            La ley aplicable en caso de disputa o conflicto de interpretación de los términos que conforman
+                            este documento legal, así como cualquier cuestión relacionada con los servicios del presente
+                            portal, será la ley española.<br><br>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <footer class="bg-dark mt-6">
-            <div class="container">
-                <div class="row pt-5">
-                    <div class="col-md-3 text-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120pt" height="120pt" viewBox="0 0 120 120" version="1.1">
+    </div>
+
+    <footer class="bg-dark mt-6">
+        <div class="container">
+            <div class="row pt-5">
+                <div class="col-md-3 text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120pt"
+                        height="120pt" viewBox="0 0 120 120" version="1.1">
+                        <g id="surface1">
+                            <path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;"
+                                d="M 3.769531 33.816406 C 10.953125 33.347656 17.386719 37.34375 24.417969 35.53125 C 25.558594 35.230469 31.445312 38.855469 26.171875 42.78125 C 23.75 44.578125 23.269531 46.855469 22.761719 49.835938 C 21.925781 54.730469 25.539062 61.703125 17.367188 64.027344 C 15.765625 64.484375 17.292969 65.816406 17.707031 66.613281 C 19.601562 70.207031 19.335938 73.527344 19.074219 77.667969 C 18.769531 82.546875 17.679688 86.589844 16.113281 90.929688 C 15.578125 92.441406 15.496094 95.742188 17.976562 95.769531 C 25.207031 95.839844 26.695312 101.386719 29.445312 106.1875 C 31.335938 109.484375 34.480469 113.667969 38.539062 109.617188 C 44.28125 103.878906 50.65625 100.433594 58.503906 102.347656 C 71.703125 105.570312 75.78125 91.269531 85.914062 88.925781 C 83.113281 80.753906 99.792969 76.28125 90.035156 66.496094 C 88.023438 64.472656 90.269531 60.949219 91.886719 58.792969 C 97.1875 51.6875 99.238281 41.652344 110.335938 39.664062 C 113.433594 39.109375 115.867188 35.230469 118.78125 33.113281 C 121.652344 31.015625 121.21875 28.136719 120.621094 25.496094 C 119.769531 21.613281 116.925781 23.910156 114.675781 23.867188 C 110.101562 23.8125 105.308594 24.921875 101.292969 21.121094 C 100.1875 20.0625 97.199219 19.695312 95.855469 20.433594 C 88.78125 24.355469 82.824219 20 77.015625 17.652344 C 74.25 16.53125 71.792969 15.632812 68.792969 15.046875 C 57.246094 12.769531 45.519531 14.46875 33.851562 13.222656 C 24.695312 12.238281 15.65625 9.34375 6.164062 9.828125 C 0.527344 10.101562 0.0117188 12.050781 0 16.714844 C -0.0117188 22.988281 5.890625 27.667969 3.769531 33.816406 Z M 3.769531 33.816406 " />
+                        </g>
+                    </svg>
+                </div>
+                <div class="col-md-3">
+                    <h4 class="footer-heading text-white mb-5">Servicios</h4>
+                    <ul class="list-unstyled">
+                        <li><a class="text-secondary" href="protests.html">Detalles de protestas</a></li>
+                        <li><a class="text-secondary" href="event-planner.html">Organizador de eventos</a></li>
+                        <li><a class="text-secondary" href="collaborations.html">Te ayudamos</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h4 class="footer-heading text-white mb-5">Empresa</h4>
+                    <ul class="list-unstyled">
+                        <li><a class="text-secondary" href="about-as.html">Sobre nosotros</a></li>
+                        <li><a class="text-secondary" href="transparency.html">Transparencia</a></li>
+                        <li><a class="text-secondary" href="legal-info.html">Información legal</a></li>
+                        <li><a class="text-secondary" href="contact.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3" style="margin-left: -40px; margin-top: -20px">
+                    <div class="logo-footer text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80pt"
+                            height="113pt" viewBox="0 0 80 113" version="1.1">
                             <g id="surface1">
-                            <path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 3.769531 33.816406 C 10.953125 33.347656 17.386719 37.34375 24.417969 35.53125 C 25.558594 35.230469 31.445312 38.855469 26.171875 42.78125 C 23.75 44.578125 23.269531 46.855469 22.761719 49.835938 C 21.925781 54.730469 25.539062 61.703125 17.367188 64.027344 C 15.765625 64.484375 17.292969 65.816406 17.707031 66.613281 C 19.601562 70.207031 19.335938 73.527344 19.074219 77.667969 C 18.769531 82.546875 17.679688 86.589844 16.113281 90.929688 C 15.578125 92.441406 15.496094 95.742188 17.976562 95.769531 C 25.207031 95.839844 26.695312 101.386719 29.445312 106.1875 C 31.335938 109.484375 34.480469 113.667969 38.539062 109.617188 C 44.28125 103.878906 50.65625 100.433594 58.503906 102.347656 C 71.703125 105.570312 75.78125 91.269531 85.914062 88.925781 C 83.113281 80.753906 99.792969 76.28125 90.035156 66.496094 C 88.023438 64.472656 90.269531 60.949219 91.886719 58.792969 C 97.1875 51.6875 99.238281 41.652344 110.335938 39.664062 C 113.433594 39.109375 115.867188 35.230469 118.78125 33.113281 C 121.652344 31.015625 121.21875 28.136719 120.621094 25.496094 C 119.769531 21.613281 116.925781 23.910156 114.675781 23.867188 C 110.101562 23.8125 105.308594 24.921875 101.292969 21.121094 C 100.1875 20.0625 97.199219 19.695312 95.855469 20.433594 C 88.78125 24.355469 82.824219 20 77.015625 17.652344 C 74.25 16.53125 71.792969 15.632812 68.792969 15.046875 C 57.246094 12.769531 45.519531 14.46875 33.851562 13.222656 C 24.695312 12.238281 15.65625 9.34375 6.164062 9.828125 C 0.527344 10.101562 0.0117188 12.050781 0 16.714844 C -0.0117188 22.988281 5.890625 27.667969 3.769531 33.816406 Z M 3.769531 33.816406 "/>
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 155.635498 302.186256 C 168.970703 350.037749 205.548096 387.934735 252.875 402.982923 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 342.125 402.982923 C 389.451904 387.934735 426.029297 350.037749 439.364502 302.186256 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 444.768311 262.630185 C 444.768311 181.276825 378.847656 115.350041 297.5 115.350041 C 216.152344 115.350041 150.231689 181.276825 150.231689 262.630185 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 150.231689 262.630185 C 150.231689 267.694759 151.016113 272.759334 152.526855 277.591054 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 152.526855 277.591054 C 152.439697 285.915584 153.485596 294.1819 155.635498 302.186256 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 271.555908 346.312085 C 288.813232 348.087597 306.186768 348.087597 323.444092 346.312085 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 442.473145 277.591054 C 443.983887 272.759334 444.768311 267.694759 444.768311 262.630185 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 439.364502 302.186256 C 441.543457 294.1819 442.589355 285.915584 442.473145 277.591054 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 297.5 657.72518 L 297.5 726.446211 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 297.5 657.72518 L 595.058105 485.937154 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 595.058105 485.937154 L 595.058105 554.658186 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 297.5 726.446211 L 595.058105 554.658186 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M -0.0581055 485.937154 L -0.0581055 554.658186 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M -0.0581055 485.937154 L 297.5 657.72518 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M -0.0581055 554.658186 L 297.5 726.446211 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 252.875 528.898714 L 297.5 554.658186 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 297.5 554.658186 L 342.125 528.898714 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 416.529053 382.899267 L 396.715088 371.460315 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 416.529053 434.418211 L 461.154053 460.177683 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 461.154053 460.177683 L 505.779053 434.418211 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 595.058105 485.937154 L 505.779053 434.418211 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 89.220947 434.418211 L -0.0581055 485.937154 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 89.220947 434.418211 L 133.845947 460.177683 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 133.845947 460.177683 L 178.470947 434.418211 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 198.284912 371.460315 L 178.470947 382.899267 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 297.5 382.87016 L 342.125 357.081582 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 252.875 357.081582 L 297.5 382.87016 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 271.555908 346.312085 L 252.875 357.081582 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 342.125 357.081582 L 323.444092 346.312085 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 252.875 357.081582 L 252.875 528.898714 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 297.5 382.87016 L 297.5 554.658186 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 342.125 357.081582 L 342.125 528.898714 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 461.154053 288.389657 L 461.154053 460.177683 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 416.529053 349.368294 L 416.529053 434.418211 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 442.473145 277.591054 L 461.154053 288.389657 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 461.154053 288.389657 L 505.779053 262.630185 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 461.154053 236.841607 L 443.925781 246.796114 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 505.779053 262.630185 L 461.154053 236.841607 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 505.779053 262.630185 L 505.779053 434.418211 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 89.220947 262.630185 L 133.845947 288.389657 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 151.074219 246.796114 L 133.845947 236.841607 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 133.845947 288.389657 L 152.526855 277.591054 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 133.845947 236.841607 L 89.220947 262.630185 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 133.845947 288.389657 L 133.845947 460.177683 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 89.220947 262.630185 L 89.220947 434.418211 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
+                                <path
+                                    style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;"
+                                    d="M 178.470947 349.368294 L 178.470947 434.418211 "
+                                    transform="matrix(0.134454,0,0,0.134204,0,0)" />
                             </g>
                         </svg>
                     </div>
-                    <div class="col-md-3">
-                        <h4 class="footer-heading text-white mb-5">Servicios</h4>
-                        <ul class="list-unstyled">
-                            <li><a class="text-secondary" href="protests.html">Detalles de protestas</a></li>
-                            <li><a class="text-secondary" href="event-planner.html">Organizador de eventos</a></li>
-                            <li><a class="text-secondary" href="collaborations.html">Te ayudamos</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3">
-                        <h4 class="footer-heading text-white mb-5">Empresa</h4>
-                        <ul class="list-unstyled">
-                            <li><a class="text-secondary" href="about-as.html">Sobre nosotros</a></li>
-                            <li><a class="text-secondary" href="transparency.html">Transparencia</a></li>
-                            <li><a class="text-secondary" href="legal-info.html">Información legal</a></li>
-                            <li><a class="text-secondary" href="contact.html">Contacto</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3" style="margin-left: -40px; margin-top: -20px">
-                        <div class="logo-footer text-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80pt" height="113pt" viewBox="0 0 80 113" version="1.1">
-                                <g id="surface1">
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 155.635498 302.186256 C 168.970703 350.037749 205.548096 387.934735 252.875 402.982923 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 342.125 402.982923 C 389.451904 387.934735 426.029297 350.037749 439.364502 302.186256 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 444.768311 262.630185 C 444.768311 181.276825 378.847656 115.350041 297.5 115.350041 C 216.152344 115.350041 150.231689 181.276825 150.231689 262.630185 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 150.231689 262.630185 C 150.231689 267.694759 151.016113 272.759334 152.526855 277.591054 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 152.526855 277.591054 C 152.439697 285.915584 153.485596 294.1819 155.635498 302.186256 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 271.555908 346.312085 C 288.813232 348.087597 306.186768 348.087597 323.444092 346.312085 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 442.473145 277.591054 C 443.983887 272.759334 444.768311 267.694759 444.768311 262.630185 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 439.364502 302.186256 C 441.543457 294.1819 442.589355 285.915584 442.473145 277.591054 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 297.5 657.72518 L 297.5 726.446211 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 297.5 657.72518 L 595.058105 485.937154 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 595.058105 485.937154 L 595.058105 554.658186 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 297.5 726.446211 L 595.058105 554.658186 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M -0.0581055 485.937154 L -0.0581055 554.658186 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M -0.0581055 485.937154 L 297.5 657.72518 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M -0.0581055 554.658186 L 297.5 726.446211 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 252.875 528.898714 L 297.5 554.658186 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 297.5 554.658186 L 342.125 528.898714 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 416.529053 382.899267 L 396.715088 371.460315 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 416.529053 434.418211 L 461.154053 460.177683 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 461.154053 460.177683 L 505.779053 434.418211 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 595.058105 485.937154 L 505.779053 434.418211 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 89.220947 434.418211 L -0.0581055 485.937154 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 89.220947 434.418211 L 133.845947 460.177683 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 133.845947 460.177683 L 178.470947 434.418211 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 198.284912 371.460315 L 178.470947 382.899267 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 297.5 382.87016 L 342.125 357.081582 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 252.875 357.081582 L 297.5 382.87016 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 271.555908 346.312085 L 252.875 357.081582 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 342.125 357.081582 L 323.444092 346.312085 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 252.875 357.081582 L 252.875 528.898714 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 297.5 382.87016 L 297.5 554.658186 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 342.125 357.081582 L 342.125 528.898714 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 461.154053 288.389657 L 461.154053 460.177683 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 416.529053 349.368294 L 416.529053 434.418211 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 442.473145 277.591054 L 461.154053 288.389657 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 461.154053 288.389657 L 505.779053 262.630185 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 461.154053 236.841607 L 443.925781 246.796114 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 505.779053 262.630185 L 461.154053 236.841607 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 505.779053 262.630185 L 505.779053 434.418211 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 89.220947 262.630185 L 133.845947 288.389657 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 151.074219 246.796114 L 133.845947 236.841607 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 133.845947 288.389657 L 152.526855 277.591054 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 133.845947 236.841607 L 89.220947 262.630185 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 133.845947 288.389657 L 133.845947 460.177683 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 89.220947 262.630185 L 89.220947 434.418211 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                    <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:10;" d="M 178.470947 349.368294 L 178.470947 434.418211 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
-                                </g>
-                            </svg>
-                        </div>
-                        <p class="h5 text-center"><small class="text-muted"><em>Difúndelo<br>¡¡¡Que lo conozca todo el mundo!!!</em></small></p>
-                    </div>
-                </div>
-                <div class="w-100 h-line bg-info mt-5"></div>
-                <div class="clearfix pt-5 pb-5 w-100">
-                    <button type="button" class="btn text-secondary" data-toggle="modal" data-target="#exampleModal">
-                    Español
-                    </button>
-                    <div class="float-right">
-                        <a href="#" class="pl-0 pr-3"><i class="fab fa-facebook-square fa-2x text-secondary"></i></a>
-                        <a href="#" class="pl-3 pr-3"><i class="fab fa-twitter fa-2x text-secondary"></i></a>
-                        <a href="#" class="pl-3 pr-3"><i class="fab fa-instagram fa-2x text-secondary"></i></a>
-                    </div>
+                    <p class="h5 text-center"><small class="text-muted"><em>Difúndelo<br>¡¡¡Que lo conozca todo el
+                                mundo!!!</em></small></p>
                 </div>
             </div>
-        </footer>
+            <div class="w-100 h-line bg-info mt-5"></div>
+            <div class="clearfix pt-5 pb-5 w-100">
+                <button type="button" class="btn text-secondary" data-toggle="modal" data-target="#exampleModal">
+                    Español
+                </button>
+                <div class="float-right">
+                    <a href="#" class="pl-0 pr-3"><i class="fab fa-facebook-square fa-2x text-secondary"></i></a>
+                    <a href="#" class="pl-3 pr-3"><i class="fab fa-twitter fa-2x text-secondary"></i></a>
+                    <a href="#" class="pl-3 pr-3"><i class="fab fa-instagram fa-2x text-secondary"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="dependencias/jquery/jquery.js"></script>
-        <script src="dependencias/popper.js"></script>
-        <script src="dependencias/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="dependencias/jquery/jquery.js"></script>
+    <script src="dependencias/popper.js"></script>
+    <script src="dependencias/bootstrap/js/bootstrap.min.js"></script>
 
-        <!-- Otra dependencia js -->
-        <script defer src="js/fontawesome-all.js"></script>
+    <!-- Otra dependencia js -->
+    <script defer src="js/fontawesome-all.js"></script>
 
-        <!-- Nuestros js -->
-        <script src="js/index.js"></script>
-    </body>
+    <!-- Nuestros js -->
+    <script src="js/index.js"></script>
+</body>
+
 </html>

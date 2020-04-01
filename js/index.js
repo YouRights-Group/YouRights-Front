@@ -7,7 +7,9 @@ $(document).ready(function () {
     */
     $('#account-bank').click(function () {
         $("#modal-account-bank").modal();
-        console.log("hola");
+    });
+    $(document).ready(function () {
+        $("#modal-notice").modal();
     });
     $('.date-datepicker').datetimepicker({
         timepicker: false,
@@ -55,26 +57,20 @@ $(window).scroll(function () {
 /*
 navOpen();
 function navOpen() {
-    $(document).click(function (event) {
-        if ($(event.target).parents(".navbar-collapse").length < 1) {
-            var clickover = $(event.target);
-            var $navbar = $(".navbar-collapse");
-            var _opened = $navbar.hasClass("show");
-            if(_opened === true){
-                console.log("esta abierto")
-                $("#ul-collapse").addClass("pl-3 pb-2 pr-3 border rounded bg-white")
-            }else if(_opened === false){
-                console.log("esta cerrado");
-                $("#ul-collapse").addClass("pl-3 pb-2 pr-3 border rounded bg-white")
-            }else if (_opened === true && !clickover.hasClass("navbar-toggle")) {
-                $navbar.collapse('hide');
-                $navbar.removeClass("pl-3 pb-2 pr-3 border rounded bg-white")
-            }
-            
-        }
+    $("#navbar-toggler").on("click", function () {
+            var showNav = $(".navbar-collapse").hasClass("show");
+            var aaa = $("#nav-main").hasClass("position-fixed");
+            if(showNav === true){
+                $("#collapsingNavbar3").removeClass("bg-white border rounded")
+            }else if(showNav === false){
+                $("#collapsingNavbar3").addClass("bg-white border rounded")
+            }else if (showNav === true && aaa === true) {// no funciona
+                console.log("hola")
+                $("#collapsingNavbar3").removeClass("bg-white border rounded")
+            }      
     })
 };
-*/
+
 
 $(document).click(function (event) {
     if ($(event.target).parents(".navbar-collapse").length < 1) {
@@ -84,10 +80,37 @@ $(document).click(function (event) {
         if (_opened === true && !clickover.hasClass("navbar-toggle")) {
             $navbar.collapse('hide');
         }
-        
+
     }
 });
 
+
+--------------
+navOpen();
+function navOpen() {
+    $(document).click(function (event) {
+        if ($(event.target).parents(".navbar-collapse").length < 1) {
+            var clickover = $(event.target);
+            var $navbar = $(".navbar-collapse");
+            var _opened = $navbar.hasClass("show");
+            if(_opened === true){
+                console.log("esta abierto")
+                $("#ul-collapse").removeClass("pl-3 pb-2 pr-3 border rounded bg-white")
+            }else if(_opened === false){
+                console.log("esta cerrado");
+                $("#ul-collapse").addClass("pl-3 pb-2 pr-3 border rounded bg-white")
+            }else if (_opened === true && clickover.hasClass("navbar-toggle")) {
+                $navbar.collapse('hide');
+                $navbar.removeClass("pl-3 pb-2 pr-3 border rounded bg-white")
+                $("#ul-collapse").removeClass("pl-3 pb-2 pr-3 border rounded bg-white")
+            }
+            
+        }
+    })
+};
+
+
+*/
 
 
 $(document).ready(function () {
@@ -103,10 +126,11 @@ $(document).ready(function () {
 });
 
 // Para cambiar el icono del accordion cuando esta desplegado, FUNCIONA
-$(".accordion").click(function () {
+$('.collapse').on('shown.bs.collapse', function () {
     $(this).parent().find(".fa-angle-down").removeClass("fa-angle-down").addClass("fa-angle-up");
+}).on('hidden.bs.collapse', function () {
+    $(this).parent().find(".fa-angle-up").removeClass("fa-angle-up").addClass("fa-angle-down");
 });
-
 
 
 
