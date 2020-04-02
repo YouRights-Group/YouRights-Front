@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="dependencias/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="dependencias/jquery/jquery-ui/jquery-ui.min.css">
         <link rel="stylesheet" href="css/fontawesome-all.css">
+        <link rel="stylesheet" href="dependencias/videojs/css/video-js.css">
 
         <!-- Nuestros CSS -->
         <link rel="stylesheet" href="css/index.css">
@@ -137,21 +138,22 @@
                         <h2>Fundador, socios y trabajadores</h2>
                         <h6>Es la hora de dar a conocer al fundador y todos los socios que han hecho posible esta plataforma.</h6>
                     </div>
-                    <section class="py-5 bg-light mt-5" id="section-about">
+                    <section class="pt-3 bg-light mt-5" id="section-about">
                         <div class="container">
                             <div class="row align-items-center ml-3">
-                                <div class="col-md-12 col-lg-7 ml-auto order-lg-2 position-relative mb-5" data-aos="fade-up" style="height: 80%">
-                                    <img src="img/Prototipo/Imagen 3.jpg" alt="Image" class="img-fluid rounded">
-                                </div>
                                 <div class="col-md-12 col-lg-4 order-lg-1" data-aos="fade-up">
-                                    <h6 class="mb-4 display-4"><strong>Hola a todos</strong></h6>
+                                    <h6 class="mb-4 display-4 text-center"><strong>Hola y vienbenidos</strong></h6>
                                     <h6 class="mb-5">Aquí podras ver un breve video de como somos y que es 
                                         lo que hacemos.
-                                        <br>Si una imagen vale mas de mil palabras...<br>
+                                        <br>Si una imagen vale más de mil palabras...<br>
                                         ¿Cuánto vale un video? 
                                         <i class="fab fa-angellist fa-2x mt-4 ml-5"></i></h6>
-                                    <p><a href="https://vimeo.com/channels/staffpicks/93951774"  data-fancybox class="btn btn-primary text-white py-2 mr-3 text-uppercase letter-spacing-1">Mira el video</a></p>
-                                </div>                        
+                                </div> 
+                                <div class="col-md-12 col-lg-7 ml-auto order-lg-2 position-relative mb-5" data-aos="fade-up" style="height: 80%">
+                                    <video class="fm-video video-js vjs-16-9 vjs-big-play-centered" data-setup="{}" controls id="fm-video">
+                                        <source src="video/Ayuntamiento corrupto.mp4" type="video/mp4">
+                                    </video>
+                                </div>             
                             </div>
                         </div>
                     </section>
@@ -168,7 +170,11 @@
                                     <div class="back">
                                     <!-- back content -->
                                         <blockquote>
-                                            <p>&ldquo;Para hacer del mundo una mejor sociedad es necesario trabajar por ella, sin importar lo que cueste. Recordemos que simpre ha habido alguien luchando por nosotros aunque no sepamos de que forma, y gracias a esas personas podemos disfrutar de nuestra vida actual. Sigamos aportando nuestro granito de arena para combertirlo en una gran fortaleza.&rdquo;</p>
+                                            <p>&ldquo;Para hacer del mundo una mejor sociedad es necesario trabajar por ella, 
+                                                sin importar lo que cueste. Recordemos que simpre ha habido alguien luchando 
+                                                por nosotros aunque no sepamos de que forma, y gracias a esas personas podemos 
+                                                disfrutar de nuestra vida actual. Sigamos aportando nuestro granito de arena 
+                                                para combertirlo en una gran fortaleza.&rdquo;</p>
                                         </blockquote>
                                         <div class="author d-flex">
                                             <div class="image mr-3 align-self-center">
@@ -208,10 +214,10 @@
                     </div>
                     <ul class="nav nav-pills mb-3 mt-6" id="pills-tab" role="tablist">
                         <li class="nav-item">
-                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Carta del fundador</a>
+                            <a class="nav-link botton-color2 active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Carta del fundador</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Carta de los colaboradores</a>
+                            <a class="nav-link color2" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Carta de los colaboradores</a>
                         </li>
                     </ul>
                     <div class="tab-content mt-5" id="pills-tabContent">
@@ -339,6 +345,7 @@
         <script src="dependencias/jquery/jquery.js"></script>
         <script src="dependencias/popper.js"></script>
         <script src="dependencias/bootstrap/js/bootstrap.min.js"></script>
+        <script src="dependencias/videojs/js/video.js"></script>
 
         <!-- Otra dependencia js -->
         <script defer src="js/fontawesome-all.js"></script>

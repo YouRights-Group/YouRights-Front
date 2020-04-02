@@ -38,8 +38,18 @@ $(document).ready(function () {
     });
 
 
-    console.log("Hello world!");
+    
 });
+$('about-as').ready(function () {
+    //para que los videos tengan el estilo y la dependencia de Videojs.com
+    Video();
+    function Video() {
+        var reproductor = videojs('fm-video', {
+            fluid: true
+        });
+    };
+});
+
 
 // Para fijar el nav cuando se hace scroll 
 $(window).scroll(function () {
@@ -53,6 +63,17 @@ $(window).scroll(function () {
     $('#nav-main2').append(scrollNav);
     console.log("#nav-scroll")
 });
+
+// para redimensionar la hoja de transparencia. NO FUNCIONA
+$(document).ready(function () {
+    var aaa = screen.width;
+    if(aaa < 1000){
+        $("#transparency-notice").css("height", "1500px")
+        $("#transparency-footer").css("margin-top", "640px")
+    }
+    
+});
+
 
 /*
 navOpen();

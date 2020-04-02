@@ -128,12 +128,18 @@
         <div class="row" style="height: 300px; padding-top: 60px">
             <img class="card-img img-fluid h-100" src="./img/Prototipo/Imagen 12.jpg" alt="Card image">
         </div>
-        <div class="row mt-5">
-            <div class="container pl-6">
-                <i class="fas fa-compress fa-4x fa-pull-left text-secondary" style="margin-top: 35px"></i>
-                <h1 class="display-3 ml-7 mt-3 text-secondary">Transparencia & Donaciones</h1>
-                <p class="h5 text-center mt-4"><small class="text-muted"><em>Desde el principio de esta página siempre se ha querido ser transparente en todo. Creemos que es una buena práctica para la confianza.<br> Gracias a vosotros podremos dar más voz a todo aquello que más quieres.<br>Sigamos luchando en lo que creemos.</em></small></p>
-                <button type="button" class="btn btn-info btn-lg mt-3" id="account-bank" style="margin-left: 43%;">Dona aquí</button>
+        <div class="row mx-auto">
+            <div class="row justify-content-center mx-auto mb-5">
+                <div class="col-md-1 mt-5">
+                    <i class="fas fa-compress fa-5x fa-pull-left text-secondary"></i>
+                </div>
+                <div class="col-md-11 mx-auto">
+                    <h2 class="display-4 mt-5 text-secondary text-center">Transparencia & Donaciones</h2>
+                </div>
+            </div>
+            <div class="col-md-12 text-center">
+                <p class="h5 text-cente mx-5"><small class="text-muted"><em>Desde el principio de esta página siempre se ha querido ser transparente en todo. Creemos que es una buena práctica para la confianza.<br> Gracias a vosotros podremos dar más voz a todo aquello que más quieres.<br>Sigamos luchando en lo que creemos.</em></small></p>
+                <button type="button" class="btn btn-info btn-lg mt-3 mx-auto" id="account-bank" style="margin-left: 43%;">Dona aquí</button>
             </div>
         </div>
         <div class="modal fade" id="modal-account-bank" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -163,7 +169,7 @@
         </div>
 
         <div class="w-100 h-line bg-secondary mt-5"></div>
-        <div class="position-absolute w-100 " style="width: 100%; height: 100%; background-color: rgba(0,0,0,0.75); z-index: 1;">
+        <div class="position-absolute w-100 " style="width: 100%; height: 956px; background-color: rgba(0,0,0,0.75); z-index: 1;" id="transparency-notice">
             <p class="text-white mx-auto text-center h2 w-75" style="margin-top: 300px;">
                 Página en proceso de contrucción.
                 <br><br>
@@ -173,9 +179,8 @@
                 Por favor, tenga paciencia para las mejoras de esta plataforma.
             </p>
         </div>
-
-        <div class="row mx-6 mt-5 mx-auto" id="container-transparency" style="width: 1400px">
-            <div class="container">
+        <div class="row mx-6 mt-5 mx-auto" id="container-transparency">
+            <div class="container m--2">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link text-info active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">2019</a>
@@ -205,7 +210,7 @@
                                     </div>
                                     <div class="tercero mx-auto">
                                         <div><p class="h1 text-info">%</p></div>
-                                        <p class="h5 text-info text-center"><strong>Ganancia<br>por<br>colaborador</strong></p>
+                                        <p class="h5 text-info text-center"><strong>Colaboradores</strong></p>
                                     </div>
                                 </div>
                             </div>
@@ -257,7 +262,7 @@
                 </div>
             </div>
         </div>
-        <footer class="bg-dark mt-6">
+        <footer class="bg-dark mt-6" id="transparency-footer">
             <div class="container">
                 <div class="row pt-5">
                     <div class="col-md-3 text-center">
@@ -365,5 +370,6 @@
 
         <!-- Nuestros js -->
         <script src="js/index.js"></script>
+        
     </body>
 </html>
