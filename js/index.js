@@ -74,12 +74,65 @@ $(document).ready(function () {
     
 });
 
+$(document).ready(function () {
+    var widthScreen = $(document).width();
+    console.log(widthScreen)
+    if(widthScreen < 400){
+        $("#section-planner").addClass("mt-5")
+        $("#img-service-planner").addClass("d-none")
+        // filtro del mapa principal
+        $("#collapsingNavbar4").addClass("collapse")
+        $("#filter-map-main").removeClass("d-none")
+        $("#filter-map-main").css("top", "100px")
+        $("#aaa").css("top", "150px")
+        // cartas de publicidad event-planner
+        $("#div-card-deck-advertisement").removeClass("container")
+        $("#div-card-deck-advertisement").addClass("col")
+        // barra de navegación principal
+        $("#nav1").removeClass("w-75 justify-content-center mx-auto")
+        $("#nav1").addClass("w-100")
+        $("#navbar-toggler").css("right", "0px")
+    }else if(widthScreen < 1150 ){
+        // filtro del mapa principal
+        $("#collapsingNavbar4").addClass("collapse")
+        $("#filter-map-main").removeClass("d-none")
+        $("#filter-map-main").css("top", "200px")
+        $("#aaa").css("top", "250px")
+        // cartas de publicidad event-planner
+        $("#div-card-deck-advertisement").removeClass("container")
+        $("#div-card-deck-advertisement").addClass("col")
+    } else if(widthScreen < 1200 ){
+        // barra de navegación principal
+        console.log("hola")
+        $("#nav1").removeClass("justify-content-center")
+        $("#navbar-toggler").css("right", "0px")
+    } else {
+        $("#section-planner").removeClass("mt-5")
+        $("#img-service-planner").removeClass("d-none")
+    }
+});
+$(document).ready(function () {
+    var widthScreen = $(document).width();
+    if(widthScreen < 400){
+        $("#div-detail-protest").removeClass("justify-content-center")
+        $("#div-detail-protest").css("height", "900px")
+        $("#map_canvas").css("height", "350px")
+    } else if(widthScreen < 1200 ){
+        // barra de navegación principal
+        $("#nav1").removeClass("justify-content-center")
+        $("#navbar-toggler").css("right", "0px")
+    }
+});
 
-/*
+
+
 navOpen();
 function navOpen() {
+    var showNav = $(".navbar-collapse").hasClass("show");
+    if(showNav === false){
+        $("#collapsingNavbar3").removeClass("bg-white border rounded")
+    }
     $("#navbar-toggler").on("click", function () {
-            var showNav = $(".navbar-collapse").hasClass("show");
             var aaa = $("#nav-main").hasClass("position-fixed");
             if(showNav === true){
                 $("#collapsingNavbar3").removeClass("bg-white border rounded")
@@ -92,7 +145,7 @@ function navOpen() {
     })
 };
 
-
+/*
 $(document).click(function (event) {
     if ($(event.target).parents(".navbar-collapse").length < 1) {
         var clickover = $(event.target);

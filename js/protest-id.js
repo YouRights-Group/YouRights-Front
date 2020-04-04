@@ -68,36 +68,36 @@ $(document).ready(function () {
         .then((data) => {
             output += `
                 <div class="row border-bottom" id="div-country-protestId">
-                    <div class="col-6 h6">País en el que protesta:</div>
-                    <div class="offset-1" id="data-country-protestId">${data.countryProtest}</div>
+                    <div class="col-6 h6 p-0">País en el que protesta:</div>
+                    <div class="col-6 offset-1 p-0 ml-0" id="data-country-protestId">${data.countryProtest}</div>
                 </div>
                 <div class="row border-bottom mt-4" id="div-country-protestId">
-                    <div class="col-6 h6">La ciudad:</div>
-                    <div class="offset-1" id="data-city-protestId">${data.cityProtest}</div>
+                    <div class="col-6 h6 p-0">La ciudad:</div>
+                    <div class="col-6 offset-1 p-0 ml-0" id="data-city-protestId">${data.cityProtest}</div>
                 </div>
                 <div class="row border-bottom mt-4" id="div-country-protestId">
-                    <div class="col-6 h6">Tipo de protesta:</div>
-                    <div class="offset-1" id="data-type-protestId">${data.protestType}</div>
+                    <div class="col-6 h6 p-0">Tipo de protesta:</div>
+                    <div class="col-6 offset-1 p-0 ml-0" id="data-type-protestId">${data.protestType}</div>
                 </div>
                 <div class="row border-bottom mt-4" id="div-country-protestId">
-                    <div class="col-6 h6">Temática de la protesta:</div>
-                    <div class="offset-1" id="data-defenceSector-protestId">${data.defenseSectorProtest}</div>
+                    <div class="col-6 h6 p-0">Temática de la protesta:</div>
+                    <div class="col-6 offset-1 p-0 ml-0" id="data-defenceSector-protestId">${data.defenseSectorProtest}</div>
                 </div>
                 <div class="row border-bottom mt-4" id="div-country-protestId">
-                    <div class="col-6 h6">¿Qué es lo que defiende?:</div>
-                    <div class="offset-1" id="data-name-defenceSector-protestId">${data.nameProtest}</div>
+                    <div class="col-6 h6 p-0">¿Qué es lo que defiende?:</div>
+                    <div class="col-6 offset-1 p-0 ml-0" id="data-name-defenceSector-protestId">${data.nameProtest}</div>
                 </div>
                 <div class="row border-bottom mt-4" id="div-country-protestId">
-                    <div class="col-6 h6">Propuesto por:</div>
-                    <div class="offset-1" id="data-date-protestId">${data.promotedByProtest}</div>
+                    <div class="col-6 h6 p-0">Propuesto por:</div>
+                    <div class="col-6 offset-1 p-0 ml-0" id="data-date-protestId">${data.promotedByProtest}</div>
                 </div>
                 <div class="row border-bottom mt-4" id="div-country-protestId">
-                    <div class="col-6 h6">Calle de reunión: </div>
-                    <div class="offset-1" id="data-time-protestId">.......</div>
+                    <div class="col-6 h6 p-0">Calle de reunión: </div>
+                    <div class="col-6 offset-1 p-0 ml-0" id="data-time-protestId">.......</div>
                 </div>
                 <div class="row border-bottom mt-4" id="div-country-protestId">
-                    <div class="col-6 h6">Fecha y hora: </div>
-                    <div class="offset-1" id="data-name-defenceSector-protestId">${data.dateProtest} / ${data.timeProtest}</div>
+                    <div class="col-6 h6 p-0">Fecha y hora: </div>
+                    <div class="col-6 offset-1 p-0 ml-0" id="data-name-defenceSector-protestId">${data.dateProtest} / ${data.timeProtest}</div>
                 </div>
             `;
             getOutput = String(output)

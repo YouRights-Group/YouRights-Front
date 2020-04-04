@@ -17,9 +17,9 @@
   </head>
   <body>
     <div class="row bg-white">
-        <div class="col position-absolute w-100" id="nav-main" style="margin-left:15px; z-index: 1">
-            <nav class="navbar navbar-light navbar-expand-xl bg-transparent justify-content-center w-75 mx-auto ftco-navbar-light">
-                <a href="index.html" class="navbar-brand d-flex mr-auto pb-0" style="width: 160px">
+        <div class="col position-absolute w-100 px-0" id="nav-main" style="margin-left:15px; z-index: 1">
+            <nav class="navbar navbar-light navbar-expand-xl bg-transparent justify-content-center w-75 mx-auto ftco-navbar-light" id="nav1">
+                <a href="index.html" class="navbar-brand d-flex mx-0 pb-0" id="nav-page-index">
                     <div class="logo-nav" style="margin-top: -5px">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30pt" height="34pt" viewBox="0 0 120 169" version="1.1">
                             <g id="surface1">
@@ -78,7 +78,7 @@
                 <button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse w-100 pl-3 pb-2 pr-3 bg-white border rounded" id="collapsingNavbar3">
+                <div class="navbar-collapse collapse w-100 pl-3 pb-2 pr-3 pt-1 bg-white border rounded" id="collapsingNavbar3">
                     <!-- PARA METER LINKS EN EL CENTRO
                     <ul class="navbar-nav w-100 justify-content-center">
                         <li class="nav-item active">
@@ -93,10 +93,10 @@
                     </ul>
                     -->
                     <ul class="nav navbar-nav w-100 justify-content-end" style="width: 100px">
-                        <li class="nav-item active">
+                        <li class="nav-item active mr-3">
                             <a class="nav-link" href="page-main.html">Mapa virtual <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown mr-3">
                             <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Servicios
                             </a>
@@ -106,17 +106,18 @@
                                 <a class="dropdown-item" href="collaborations.html">Te ayudamos</a>
                             </div>
                         </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="about-as.html">Sobre nosotros</a>
+                        <li class="nav-item dropdown mr-3">
+                            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Nuestra empresa
+                            </a>
+                            <div class="dropdown-menu mt-1" aria-labelledby="navbarDropdownMenuLink2">
+                                <a class="dropdown-item" href="about-as.html">Sobre nosotros</a>
+                                <a class="dropdown-item" href="transparency.html">Transparencia & Donaciones</a>
+                                <a class="dropdown-item" href="legal-info.html">Información legal</a>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="transparency.html">Transparencia & Donaciones</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="legal-info.html">Información legal</a>
-                        </li>
-                        <li class="nav-item mr-3">
-                        <a class="nav-link" href="contact.html">Contacto</a>
+                        <li class="nav-item mr-3 mr-3">
+                            <a class="nav-link active" href="contact.html">Contacto</a>
                         </li>
                         <li class="nav-item">
                             <a class="btn btn-outline-info" href="login-sing-up.html" role="button">Entrada</a>
@@ -125,7 +126,7 @@
                 </div>
             </nav>
         </div>
-        <div class="row">
+        <div class="row w-100 mx-auto">
             <img class="card-img" src="./img/Prototipo/Imagen 12.jpg" alt="Card image">
         </div>
         <div class="modal fade" id="modal-notice" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -167,7 +168,7 @@
             </div>
         </div>
         -->
-        <div class="row mt-5 w-100 mx-auto">
+        <div class="row pl-2 mt-5 w-100 mx-auto">
             <div class="col text-center">
                 <h1><strong>Plataforma TuDerecho</strong></h1>
                 <p class="h5"><small class="text-muted"><em>Nos hemos esforzado para que tengas una plataforma adecuada a tus derechos. Te invitamos a entrar para que puedas obserbar la gran cantidad de cosas que estamos haciendo para que España y los demás paises del mundo puedan convivir de la manera mas adecuada posible.</em></small></p>
