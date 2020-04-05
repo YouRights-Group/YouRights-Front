@@ -16,9 +16,9 @@
         
     </head>
     <body class="bg-light">
-        <div class="row logo-register mx-auto">
+        <div class="row logo-register mx-auto w-auto">
             <a class="btn mx-auto" href="index.html">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="178pt" height="250pt" viewBox="-1 0 180 250" version="1.1">
+                <svg class="btn mx-auto" href="index.html" width="178pt" height="250pt" viewBox="-1 0 180 250" version="1.1">
                     <g id="surface1">
                         <path style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 155.644059 302.182469 C 168.975652 350.027589 205.536336 387.912093 252.869366 402.984423 " transform="matrix(0.29916,0,0,0.297265,0,0)"/>
                         <path style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 342.129667 402.984423 C 389.462697 387.912093 426.023382 350.027589 439.354974 302.182469 " transform="matrix(0.29916,0,0,0.297265,0,0)"/>
@@ -70,114 +70,116 @@
                 </svg>
             </a>
         </div>
-        <div class="custom-control custom-switch text-center mt-5">
-            <input type="checkbox" class="custom-control-input" id="sing-up-or-login">
-            <label class="custom-control-label" for="sing-up-or-login">Pincha para registrarte</label>
-        </div>
-        <form class="mt-4" id="form" method="post">
-            <div class="row bg-light w-75 mx-auto" style="height: 880px">
-                <div class="col-12 login-form">
-                    <article class="card-body mx-auto" style="max-width: 400px;">
-                        <h4 class="card-title mt-3 text-center">Entra aquí</h4>
-                        <!--
-                        <p>
-                            <a href="" class="btn btn-block btn-primary hide"> <i class="fab fa-twitter"></i>   Entra con Twitter</a>
-                            <a href="" class="btn btn-block btn-primary hide"> <i class="fab fa-facebook-f"></i>   Entra con facebook</a>
-                        </p>
-                        <p class="divider-text text-center hide">
-                            <span class="bg-light">OR</span>
-                        </p>
-                        -->
-                        <div class="mt-4">
-                            <div class="form-group input-group hide">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"> <i class="fa fa-user"></i></span>
-                                </div>
-                                <input id="login-email" name="email" class="form-control" placeholder="Email" type="email">
-                            </div> <!-- form-group// -->
-                            <div class="form-group input-group hide">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-                                </div>
-                                <input id="login-password" name="password" class="form-control" placeholder="Tu contraseña" type="password">
-                            </div> <!-- form-group// -->
-                            <div class="form-group custom-control custom-switch hide">
-                                <input type="checkbox" class="custom-control-input" id="remember-ging-up">
-                                <label class="custom-control-label" for="remember-ging-up">Recordar</label>
-                            </div>
-                            <div class="form-group custom-control custom-switch">
-                                <input type="checkbox" class="custom-control-input" id="forgot-password">
-                                <label class="custom-control-label" for="forgot-password">¿Olvidaste la contraseña?</label>
-                            </div>
-                            <div class="form-group input-group d-none" id="repeat-email-forgot">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-                                </div>
-                                <input id="repeat-email" name="repeat-email" class="form-control" placeholder="Email" type="email">
-                            </div> <!-- form-group// -->
-                            <div class="form-group">
-                                <button id="login-submit" type="submit" class="btn btn-primary btn-block">Pulsa para entrar</button>
-                            </div> <!-- form-group// -->      
-                        </div>
-                    </article>
-                </div>
-                <div class="col-12 sing-up-form d-none">
-                    <article class="card-body mx-auto" style="max-width: 400px;">
-                        <h4 class="card-title mt-3 text-center">Crea tu cuenta aquí</h4>
-                        <p class="text-center">Registrate <strong>Gratis</strong></p>
-                        <!--
-                        <p>
-                            <a href="" class="btn btn-block btn-primary"> <i class="fab fa-twitter"></i>   Entra con Twitter</a>
-                            <a href="" class="btn btn-block btn-primary"> <i class="fab fa-facebook-f"></i>   Entra con facebook</a>
-                        </p>
-                        <p class="divider-text text-center">
-                            <span class="bg-light">OR</span>
-                        </p>
-                        -->
-                        <div class="mt-4">
-                            <div class="form-group input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                                </div>
-                                <input name="" id="register-email" class="form-control" placeholder="Email" type="email">
-                            </div>
+        <div class="row w-100 m-0">
+            <div class="row custom-control custom-switch text-center mt-5 mx-auto">
+                <input type="checkbox" class="custom-control-input" id="sing-up-or-login">
+                <label class="custom-control-label" for="sing-up-or-login">Pincha para registrarte</label>
+            </div>
+            <form class="mt-4 w-100" id="form" method="post">
+                <div class="row bg-light w-75 mx-auto h-auto" id="login-div-input">
+                    <div class="col-12 login-form">
+                        <article class="card-body mx-auto" style="max-width: 400px;">
+                            <h4 class="card-title mt-3 text-center">Entra aquí</h4>
                             <!--
-                            <div class="form-group input-group d-none">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"> <i class="fa fa-building"></i> </span>
-                                </div>
-                                <select class="form-control">
-                                <option value="0" selected="">Tipo de usuario</option>
-                                <option value="normal-user">Usuario normal</option>
-                                <option value="collaborator">Colaborador</option>
-                                <option value="employer">Trabajador</option>
-                                </select>
-                            </div>
+                            <p>
+                                <a href="" class="btn btn-block btn-primary hide"> <i class="fab fa-twitter"></i>   Entra con Twitter</a>
+                                <a href="" class="btn btn-block btn-primary hide"> <i class="fab fa-facebook-f"></i>   Entra con facebook</a>
+                            </p>
+                            <p class="divider-text text-center hide">
+                                <span class="bg-light">OR</span>
+                            </p>
                             -->
-                            <div class="form-group input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                            <div class="mt-4">
+                                <div class="form-group input-group hide">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-user"></i></span>
+                                    </div>
+                                    <input id="login-email" name="email" class="form-control" placeholder="Email" type="email">
+                                </div> <!-- form-group// -->
+                                <div class="form-group input-group hide">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                                    </div>
+                                    <input id="login-password" name="password" class="form-control" placeholder="Tu contraseña" type="password">
+                                </div> <!-- form-group// -->
+                                <div class="form-group custom-control custom-switch hide">
+                                    <input type="checkbox" class="custom-control-input" id="remember-ging-up">
+                                    <label class="custom-control-label" for="remember-ging-up">Recordar</label>
                                 </div>
-                                    <input id="register-password" class="form-control" placeholder="Tu contraseña" type="password">
-                            </div> <!-- form-group// -->
-                            <div class="form-group input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                                <div class="form-group custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="forgot-password">
+                                    <label class="custom-control-label" for="forgot-password">¿Olvidaste la contraseña?</label>
                                 </div>
-                                    <input id="register-repeated-password" class="form-control" placeholder="Repite tu contraseña" type="password">
-                            </div> <!-- form-group// -->
-                            <div class="form-group custom-control custom-switch">
-                                <input type="checkbox" class="custom-control-input" id="remember-login">
-                                <label class="custom-control-label" for="remember-login">Recordar</label>
+                                <div class="form-group input-group d-none" id="repeat-email-forgot">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                                    </div>
+                                    <input id="repeat-email" name="repeat-email" class="form-control" placeholder="Email" type="email">
+                                </div> <!-- form-group// -->
+                                <div class="form-group">
+                                    <button id="login-submit" type="submit" class="btn btn-primary btn-block">Pulsa para entrar</button>
+                                </div> <!-- form-group// -->      
                             </div>
-                            <div class="form-group">
-                                <button type="submit" id="register-submit" class="btn btn-primary btn-block"> Crear cuenta  </button>
-                            </div> <!-- form-group// -->      
-                        </div>
-                    </article>
-                </div>
-            </div> <!-- card.// -->
-        </form>
+                        </article>
+                    </div>
+                    <div class="col-12 sing-up-form d-none">
+                        <article class="card-body mx-auto" style="max-width: 400px;">
+                            <h4 class="card-title mt-3 text-center">Crea tu cuenta aquí</h4>
+                            <p class="text-center">Registrate <strong>Gratis</strong></p>
+                            <!--
+                            <p>
+                                <a href="" class="btn btn-block btn-primary"> <i class="fab fa-twitter"></i>   Entra con Twitter</a>
+                                <a href="" class="btn btn-block btn-primary"> <i class="fab fa-facebook-f"></i>   Entra con facebook</a>
+                            </p>
+                            <p class="divider-text text-center">
+                                <span class="bg-light">OR</span>
+                            </p>
+                            -->
+                            <div class="mt-4">
+                                <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                                    </div>
+                                    <input name="" id="register-email" class="form-control" placeholder="Email" type="email">
+                                </div>
+                                <!--
+                                <div class="form-group input-group d-none">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+                                    </div>
+                                    <select class="form-control">
+                                    <option value="0" selected="">Tipo de usuario</option>
+                                    <option value="normal-user">Usuario normal</option>
+                                    <option value="collaborator">Colaborador</option>
+                                    <option value="employer">Trabajador</option>
+                                    </select>
+                                </div>
+                                -->
+                                <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                                    </div>
+                                        <input id="register-password" class="form-control" placeholder="Tu contraseña" type="password">
+                                </div> <!-- form-group// -->
+                                <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                                    </div>
+                                        <input id="register-repeated-password" class="form-control" placeholder="Repite tu contraseña" type="password">
+                                </div> <!-- form-group// -->
+                                <div class="form-group custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="remember-login">
+                                    <label class="custom-control-label" for="remember-login">Recordar</label>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" id="register-submit" class="btn btn-primary btn-block"> Crear cuenta  </button>
+                                </div> <!-- form-group// -->      
+                            </div>
+                        </article>
+                    </div>
+                </div> <!-- card.// -->
+            </form>
+        </div>
         <div class="modal fade" id="div-error" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -185,7 +187,8 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span class="float-right mr-2" aria-hidden="true">&times;</span>
                     </button>
-                    <div class="modal-body" id="text-error">
+                    <div class="modal-body" >
+                        <p id="text_error"></p>
                     </div>
                 </div>
             </div>

@@ -4,7 +4,7 @@
 var urlR = ('http://prueba-env.us-east-2.elasticbeanstalk.com/sign-up');
 var urlL = ('http://prueba-env.us-east-2.elasticbeanstalk.com/login');
 var divError =  $("#div-error");
-var textError = $('#text-error');
+var textError = $("#text_error");
 var bntInsertProtest = sessionStorage.getItem('bntInsertProtest');
 
 
@@ -70,6 +70,7 @@ $("#login-submit").on("click", function (e) {
     var loginEmail = document.getElementById('login-email').value;
     var loginPassword = document.getElementById('login-password').value;
 
+
     function DataLogin(loginEmail,loginPassword){
         this.email = loginEmail;
         this.password = loginPassword;
@@ -89,23 +90,44 @@ $("#login-submit").on("click", function (e) {
     //  console.log(newProtest);
 
     // tambien:    .then((resp) => resp.json())
-    .then(function (response) {
-        //  var token = response.json();
-        //  console.log(token);
-        sessionStorage.setItem("token", response);
-        console.log(sessionStorage);
+    .then(function (response ) {
+        return response.text().then(function(text) {
+            console.log(response)
+            //  console.log(text);
+            //  var token = response.json();
+            //  console.log(token);
+            sessionStorage.setItem("type", response);
+            console.log(sessionStorage);
 
-        if(bntInsertProtest == "click"){
-            window.location.href = "insert-protest.html";
-            sessionStorage.removeItem('bntInsertProtest');
-        }else {
-            window.location.href = "page-main.html";
-        }
+            var responseType = [];
+            var errorCode = [];
+            var errorCodeNotice = [];
 
-        console.log(response);
-        // location.href="page-main.html";
+            responseType = response.type;
+            errorCode = response.code;
+            errorCodeNotice = response.error;
+            errorCorsUrl = response.url;
+            console.log(responseType);
+            console.log(errorCode);
+            console.log(errorCodeNotice);
+            console.log(errorCorsUrl);
+
+            if(bntInsertProtest == "click"){
+                window.location.href = "insert-protest.html";
+                sessionStorage.removeItem('bntInsertProtest');
+            }else if(responseType === "cors"){
+                divError.modal();
+                textError.html('Error Cors: ' + errorCorsUrl); 
+            }else if(responseType === "error"){
+                divError.modal();
+                textError.html(errorCodeNotice); 
+            }else {
+                window.location.href = "page-main.html";
+            }
+            // location.href="page-main.html";
+        });
     })
-    .then(function () {
+    .then(function () {        
         //  console.log(data)
         //  return data;
         //  location.href="page-main.html";

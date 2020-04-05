@@ -132,13 +132,13 @@
             </div>
         </nav>
     </div>
-    <div class="row justify-content-center mb-5">
+    <div class="row justify-content-center mb-5 w-100 m-0">
         <div class="col-md-7 mt-6 w-100 text-center ">
             <h1 class="heading" data-aos="fade-up">Inserta tu protesta</h1>
             <br class="h6 mt-5" data-aos="fade-up">Con el siguiente formulario podrás insertar la protesta que quieras
                 para que cualquier persona pueda apuntarse en la misma lucha que tú.
         </div>
-        <div class="container mt-6 w-100">
+        <div class="container mt-4 w-100">
             <div class="row">
                 <div class="col bg-white m-3 pb-4" style="max-width: 24rem;">
                     <div class="container d-flex">
@@ -172,7 +172,7 @@
                 </div>
             </div>
         </div>
-        <div class="container mt-6 w-100">
+        <div class="container mt-4 w-100">
             <!-- Puedes ver este formulario y la explicación dentro de Bootstrap, Form -->
             <form id="form-protests-create">
                 <!-- form message -->
@@ -187,7 +187,7 @@
                     <h4>Datos de la protesta</h4>
                 </div>
                 <div class="form-row" style="margin-top: 10px">
-                    <div class="form-group col">
+                    <div class="form-group col-md-4">
                         <label class="sr-only">Tipo de protesta</label>
                         <select class="custom-select" id="type-protest-select" name="tipo-protesta" required>
                             <option value="MANIFESTACION" selected>Manifestación</option>
@@ -195,7 +195,7 @@
                             <option value="HUELGA">Huelga</option>
                         </select>
                     </div>
-                    <div class="form-group col">
+                    <div class="form-group col-md-4">
                         <label class="sr-only">Propuesta por:</label>
                         <select class="custom-select" id="initiated-select" name="promovido" required>
                             <option value="0" selected>¿A quíen representas?</option>
@@ -204,12 +204,12 @@
                             <option value="partido politico">Partido político</option>
                         </select>
                     </div>
-                    <div class="form-group col">
+                    <div class="form-group col-md-4">
                         <label class="sr-only" for="street">Org. o persona que lo promueve</label>
                         <input type="text" class="form-control" id="promotedByProtest" placeholder="Org., partido político, etc.">
                     </div>
                 </div>
-                <div class="form-row" style="margin-top: 10px">
+                <div class="form-row" style="margin-top: 10px" id="form-insert-div">
                     <div class="form-group col">
                         <label class="sr-only">Sector a defender</label>
                         <select class="custom-select" id="defense-sector-protest" name="whoDefends" required>
@@ -259,7 +259,7 @@
                                 <input id="map-search" class="controls w-100" type="text" placeholder="Search Box"><br>
                             </div>
                         </div>
-                        <div class="col-12" style="margin-bottom: -30px">
+                        <div class="col-12 mb--3" id="div-button-insert-map">
                             <button id="save-point-map" type="button" class="btn btn-primary">Guardar</button>
                             <button id="delete-point-map" type="button" class="btn btn-warning">Eliminar</button>
                             <button id="deleteAll-point-map" type="button" class="btn btn-danger">Eliminar todo</button>
@@ -288,11 +288,11 @@
                     <h4>Carta de protesta</h4>
                 </div>
                 <div class="form-row" style="margin-top: 10px">
-                    <div class="form-group row w-100">
+                    <div class="form-group col-md-12 w-100">
                         <label for="tittle-protest-letter">Título de la carta</label>
                         <input id="tittle-protest-letter" class="form-control" type="text" placeholder="Default input">
                     </div>
-                    <div class="form-group row w-100">
+                    <div class="form-group col-md-12 w-100">
                         <label for="protest-letter">Carta de protesta</label>
                         <label class="text-muted mt--3" id="letterLength" style="margin-left: 90%;"></label>
                         <textarea class="form-control" id="protestLetter" rows="12" maxlength="280"></textarea>

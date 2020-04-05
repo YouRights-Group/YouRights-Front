@@ -92,6 +92,19 @@ $(document).ready(function () {
         $("#nav1").removeClass("w-75 justify-content-center mx-auto")
         $("#nav1").addClass("w-100")
         $("#navbar-toggler").css("right", "0px")
+        // impunts de la pantalla del login
+        $("#login-div-input").addClass("w-100")
+        // cajas del formulario de insert protest
+        $("#form-insert-div div").removeClass("col")
+        $("#form-insert-div div").addClass("col-md-4")
+        $("#div-button-insert-map #rutear").removeClass("float-right")
+        $("#div-button-insert-map #rutear").addClass("mt-2")
+        $("#div-button-insert-map ").addClass("text-center")
+
+    }else if(widthScreen < 770 ){
+        // cajas del formulario de insert protest
+        $("#form-insert-div div").removeClass("col")
+        $("#form-insert-div div").addClass("col-md-4")
     }else if(widthScreen < 1150 ){
         // filtro del mapa principal
         $("#collapsingNavbar4").addClass("collapse")
@@ -117,7 +130,12 @@ $(document).ready(function () {
         $("#div-detail-protest").removeClass("justify-content-center")
         $("#div-detail-protest").css("height", "900px")
         $("#map_canvas").css("height", "350px")
-    } else if(widthScreen < 1200 ){
+    } else if(widthScreen < 992 ){
+        // cajas del formulario de insert protest
+        $("#div-button-insert-map #rutear").removeClass("float-right")
+        $("#div-button-insert-map #rutear").addClass("mt-2")
+        $("#div-button-insert-map ").addClass("text-center")
+    }else if(widthScreen < 1200 ){
         // barra de navegación principal
         $("#nav1").removeClass("justify-content-center")
         $("#navbar-toggler").css("right", "0px")
