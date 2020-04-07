@@ -100,7 +100,9 @@ $(document).ready(function () {
         $("#div-button-insert-map #rutear").removeClass("float-right")
         $("#div-button-insert-map #rutear").addClass("mt-2")
         $("#div-button-insert-map ").addClass("text-center")
-
+        // filtros y lista de protestas
+        $("#div-filter-protest").removeClass("d-flex")
+        $("#div-filter-protest button").addClass("d-none")
     }else if(widthScreen < 770 ){
         // cajas del formulario de insert protest
         $("#form-insert-div div").removeClass("col")
@@ -141,7 +143,6 @@ $(document).ready(function () {
         $("#navbar-toggler").css("right", "0px")
     }
 });
-
 
 
 navOpen();
