@@ -1,3 +1,6 @@
+<!--  https://www.youtube.com/watch?v=Vw-RuREf_sM  -->
+<!--  https://stripe.com/docs/stripe-js    -->
+
 <!doctype html>
 <html lang="en">
 
@@ -233,6 +236,9 @@
                 <p id="payment-notice-company">Esta donación será para TuDerecho (la empresa).
                     Este dinero será destinado para mejorar esta herramienta y poder ofrecer muchos
                     más servicios que tenemos pensado.</p>
+                <p>Preferimos la forma de pago con tarjeta ya que el proceso de "Concepto" esta 
+                    automatizado, esto nos será de más ayuda a la hora de poder hacer la página de 
+                    transparencia en la que detallaremos todas las transferencias.</p>
             </div>
         </div>
         <div class="col m-5">
@@ -280,36 +286,36 @@
                             <div class="card-body">
                                 <form id="payment-form">
                                     <div class="form-group row">
-                                        <label for="staticEmail" class="col-sm-4 col-form-label">Nombre: </label>
+                                        <label for="card-name" class="col-sm-4 col-form-label">Nombre: </label>
                                         <div class="col-sm-8">
-                                            <input type="name" class="form-control" id="inputName"
+                                            <input type="name" class="form-control" id="card-name"
                                                 placeholder="Nombre del dueño de la tarjeta">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="inputPassword" class="col-sm-4 col-form-label">Nº tarjeta: </label>
+                                        <label for="card-number" class="col-sm-4 col-form-label">Nº tarjeta: </label>
                                         <div class="col-sm-8">
-                                            <input type="password" class="form-control" id="inputPassword"
+                                            <input type="password" class="form-control" id="card-number"
                                                 placeholder="Nº tarjeta">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-6">
                                             <div class="form-group row">
-                                                <label for="inputPassword" class="col-sm-6 col-form-label">Expiración:
+                                                <label for="card-exp" class="col-sm-6 col-form-label">Expiración:
                                                 </label>
                                                 <div class="col-sm-6 p-0">
-                                                    <input type="password" class="form-control" id="inputPassword"
+                                                    <input type="password" class="form-control" id="card-exp"
                                                         placeholder="MM / YYYY">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-6">
                                             <div class="form-group row">
-                                                <label for="inputPassword" class="col-sm-6 col-form-label">CVC/CVV:
+                                                <label for="card-cvc" class="col-sm-6 col-form-label">CVC/CVV:
                                                 </label>
                                                 <div class="col-sm-6 p-0">
-                                                    <input type="password" class="form-control" id="inputPassword"
+                                                    <input type="password" class="form-control" id="card-cvc"
                                                         placeholder="123">
                                                 </div>
                                             </div>
@@ -337,7 +343,6 @@
                     </div>
                 </div>
             </div>
-        </!doctype>
 
 
 
@@ -346,12 +351,11 @@
         <script src="dependencias/jquery/jquery.js"></script>
         <script src="dependencias/popper.js"></script>
         <script src="dependencias/bootstrap/js/bootstrap.min.js"></script>
+        <script src="https://js.stripe.com/v3/"></script>
 
-        <!-- Otra dependencia js -->
-        <script defer src="js/fontawesome-all.js"></script>
 
         <!-- Nuestros js -->
-        <script src="js/index.js"></script>
+        <script src="js/payment.js"></script>
 
 </body>
 

@@ -277,3 +277,13 @@ margin-top: -3px;
     position: relative;
     overflow: auto;
 }
+
+
+/**  Estilos payment   **/
+
+.green{
+    border: solid green 1px;
+}
+.error{
+    border: solid red 1px;
+}
