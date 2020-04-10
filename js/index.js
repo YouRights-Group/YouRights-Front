@@ -11,16 +11,6 @@ $(document).ready(function () {
     $(document).ready(function () {
         $("#modal-notice").modal();
     });
-    $('.date-datepicker').datetimepicker({
-        timepicker: false,
-        format: 'd-m-Y'
-    });
-
-    $('.time-datepicker').datetimepicker({
-        step: 10,
-        datepicker: false,
-        format: 'H:i'
-    });
 
     $("#map-click").on("click", function () {
         $("#modal-map").modal();
@@ -39,15 +29,6 @@ $(document).ready(function () {
 
 
     
-});
-$('about-as').ready(function () {
-    //para que los videos tengan el estilo y la dependencia de Videojs.com
-    Video();
-    function Video() {
-        var reproductor = videojs('fm-video', {
-            fluid: true
-        });
-    };
 });
 
 

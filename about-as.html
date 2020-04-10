@@ -344,7 +344,7 @@
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="dependencias/jquery/jquery.js"></script>
-        <script src="dependencias/popper.js"></script>
+        <script src="dependencias/popper/popper.js"></script>
         <script src="dependencias/bootstrap/js/bootstrap.min.js"></script>
         <script src="dependencias/videojs/js/video.js"></script>
 
@@ -353,5 +353,17 @@
 
         <!-- Nuestros js -->
         <script src="js/index.js"></script>
+
+        <script>
+            $('about-as').ready(function () {
+                //para que los videos tengan el estilo y la dependencia de Videojs.com
+                Video();
+                function Video() {
+                    var reproductor = videojs('fm-video', {
+                        fluid: true
+                    });
+                };
+            });
+        </script>
     </body>
 </html>

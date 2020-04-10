@@ -6,6 +6,7 @@ var urlL = ('http://prueba-env.us-east-2.elasticbeanstalk.com/login');
 var divError =  $("#div-error");
 var textError = $("#text_error");
 var bntInsertProtest = sessionStorage.getItem('bntInsertProtest');
+console.log(sessionStorage)
 
 
 $("#register-submit").on("click", function (e) {
@@ -85,18 +86,16 @@ $("#login-submit").on("click", function (e) {
         headers: [
             ["Content-Type", "application/json"]
         ],
-        body: JSON.stringify(getDataLogin)
+        body: getDataLogin
     })
     //  console.log(newProtest);
 
     // tambien:    .then((resp) => resp.json())
     .then(function (response ) {
-        return response.text().then(function(text) {
             console.log(response)
             //  console.log(text);
             //  var token = response.json();
             //  console.log(token);
-            sessionStorage.setItem("type", response);
             console.log(sessionStorage);
 
             var responseType = [];
@@ -125,7 +124,6 @@ $("#login-submit").on("click", function (e) {
                 window.location.href = "page-main.html";
             }
             // location.href="page-main.html";
-        });
     })
     .then(function () {        
         //  console.log(data)

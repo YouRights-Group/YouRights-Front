@@ -527,7 +527,7 @@ protestsCreate.addEventListener('submit', function (e) {
         defenseSectorProtest,
         //  document,
         locationsProtest,
-        monthProtest,
+        //  monthProtest,
         nameProtest,
         promotedByProtest,
         protestType,
@@ -543,7 +543,7 @@ protestsCreate.addEventListener('submit', function (e) {
         //  this.document = document,
         //  this.id = 0,
         this.locationsProtest = locationsProtest,
-        this.monthProtest = monthProtest,
+        //  this.monthProtest = monthProtest,
         this.nameProtest = nameProtest,
         this.promotedByProtest = promotedByProtest,
         this.protestType = protestType,
@@ -571,6 +571,7 @@ protestsCreate.addEventListener('submit', function (e) {
     //  console.log(tittleProtestLetterGet);
     //  var bodyProtestLetterGet = document.getElementById("protestLetter").value;
     //  console.log(bodyProtestLetterGet);
+    /** 
     var dateMonthProtestGet = dateProtestGet[3] + dateProtestGet[4];
     console.log(dateMonthProtestGet);
     var monthProtestGet = [];
@@ -603,7 +604,7 @@ protestsCreate.addEventListener('submit', function (e) {
         }
         console.log(monthProtestGet);
     }
-    
+    */
 
     var getToken = sessionStorage.getItem("token")
     console.log(getToken);
@@ -616,7 +617,7 @@ protestsCreate.addEventListener('submit', function (e) {
         dateProtestGet,
         defenseSectorProtestGet,
         dataAllWayPointPost,
-        monthProtestGet,
+        // monthProtestGet,
         nameProtestGet,
         promotedByProtest,
         typeProtestGet,
@@ -640,11 +641,11 @@ protestsCreate.addEventListener('submit', function (e) {
     fetch(urlCreate, {
         method: 'POST',
         headers: {
-            'Authorization': `Bearer ` + sessionStorage.token,
-            "Accept": "application/json",
+            //  'Authorization': `Bearer ` + sessionStorage.token,
+            //  "Accept": "application/json",
             'Content-Type': 'application/json',
         },
-        //mode: 'no-cors',
+        mode: 'no-cors',
         body: JSON.stringify(data)
     })
         // console.log(body);
