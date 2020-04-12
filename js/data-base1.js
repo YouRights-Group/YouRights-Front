@@ -122,8 +122,9 @@ $(document).ready(function() {
                 render: function (deleteId){
                     return `<button id="btn-start" onclick="delete-protest" class='btn btn-link js-eliminar' role="button" data-name-id='${deleteId}'>Eliminar</button>`
                 },
-            }
+            },
         ]
+        
     });
 /*
     $('#country-protest-select').change(function(){

@@ -5,7 +5,9 @@ var urlR = ('http://prueba-env.us-east-2.elasticbeanstalk.com/sign-up');
 var urlL = ('http://prueba-env.us-east-2.elasticbeanstalk.com/login');
 var divError =  $("#div-error");
 var textError = $("#text_error");
-var bntInsertProtest = sessionStorage.getItem('bntInsertProtest');
+
+var bbb = sessionStorage.token;
+console.log(bbb)
 console.log(sessionStorage)
 
 
@@ -26,41 +28,24 @@ $("#register-submit").on("click", function (e) {
         registerPassword1
     );
 
+        console.log(getDataRegister)
+        if (registerPassword1 == registerPassword2){
+            //    Hay que ver si en la respuesta se registra el token, ahora mismo la respuesta esta vacia
+            $.ajax({
+                url: 'http://prueba-env.us-east-2.elasticbeanstalk.com/sign-up',
+                method: 'POST',
+                data: JSON.stringify(getDataRegister),
+                contentType: "application/json",
+                success: function (data) {
+                    console.log(data)
+                },
+                error: function (jqXHR) {
+                    console.log(jqXHR)
+                }
+            });
 
-    if (registerPassword1 == registerPassword2){
-        fetch(urlR, {
-            method: 'POST',
-            headers: [
-                ["Content-Type", "application/json"]
-            ],
-            body: JSON.stringify(getDataRegister)
-        })
-        //  console.log(newProtest);
-
-        // tambien:    .then((resp) => resp.json())
-        .then(function (response) {
-            sessionStorage.setItem("token", response);
-            console.log(sessionStorage);
-
-            if(bntInsertProtest == "click"){
-                window.location.href = "insert-protest.html";
-                sessionStorage.removeItem('bntInsertProtest');
-            }else {
-                window.location.href = "page-main.html";
-            }
-
-            console.log(response);
-            })
-        .then(function () {
-            $(divError).modal();
-            $(textError).html('Te enviaremos un email para que confirmes la cuenta')
-
-        })
-        console.log(getDataRegister);
-    } else {
-        $(divError).modal();
-        $(textError).html('Las contraseñas no coinciden')
-    }
+            console.log(getDataRegister);
+        }
 
 });
 
@@ -82,55 +67,85 @@ $("#login-submit").on("click", function (e) {
     );
 
     fetch(urlL, {
-        method: 'POST',
-        headers: [
-            ["Content-Type", "application/json"]
-        ],
-        body: getDataLogin
-    })
-    //  console.log(newProtest);
+        method: 'POST', // or 'PUT'
+        body: JSON.stringify(getDataLogin), // data can be `string` or {object}!
+        headers:{
+          'Content-Type': 'application/json'
+        }
+      }).then(res => res.json())
+      .catch(function (error) {
+        console.log(error)
+})
+      .then(function (response ) {
 
-    // tambien:    .then((resp) => resp.json())
-    .then(function (response ) {
-            console.log(response)
-            //  console.log(text);
-            //  var token = response.json();
-            //  console.log(token);
-            console.log(sessionStorage);
+        var responseType = [];
+        var errorCode = [];
+        var errorCodeNotice = [];
+        var bntInsertProtest = sessionStorage.getItem('bntInsertProtest');
 
-            var responseType = [];
-            var errorCode = [];
-            var errorCodeNotice = [];
+        responseType = response.type;
+        errorCode = response.code;
+        errorCodeNotice = response.error;
+        console.log(responseType);
+        console.log(errorCode);
+        console.log(errorCodeNotice);
 
-            responseType = response.type;
-            errorCode = response.code;
-            errorCodeNotice = response.error;
-            errorCorsUrl = response.url;
-            console.log(responseType);
-            console.log(errorCode);
-            console.log(errorCodeNotice);
-            console.log(errorCorsUrl);
-
-            if(bntInsertProtest == "click"){
+        if(responseType === "error"){
+            divError.modal();
+            textError.html(errorCodeNotice);
+        }else if(response.token){
+            if(bntInsertProtest === "click"){
                 window.location.href = "insert-protest.html";
                 sessionStorage.removeItem('bntInsertProtest');
-            }else if(responseType === "cors"){
-                divError.modal();
-                textError.html('Error Cors: ' + errorCorsUrl); 
-            }else if(responseType === "error"){
-                divError.modal();
-                textError.html(errorCodeNotice); 
+                sessionStorage.setItem('token', response.token);
             }else {
                 window.location.href = "page-main.html";
+                sessionStorage.setItem('token', response.token);
             }
-            // location.href="page-main.html";
-    })
-    .then(function () {        
-        //  console.log(data)
-        //  return data;
-        //  location.href="page-main.html";
-    })
+        }else {
+            divError.modal();
+            textError.html("Se ha producido un error inesperado, por favor, vuelve a intentarlo"); 
+        }
+})
 
+/**
+    $.ajax({
+        // la URL para la petición
+        url : "http://prueba-env.us-east-2.elasticbeanstalk.com/login",
+    
+        // la información a enviar
+        // (también es posible utilizar una cadena de datos)
+        data :  JSON.stringify(getDataLogin),
+    
+        // especifica si será una petición POST o GET
+        type : 'POST',
+        contentType: "application/json",
+    
+        // el tipo de información que se espera de respuesta
+        dataType : 'json',
+    
+        // código a ejecutar si la petición es satisfactoria;
+        // la respuesta es pasada como argumento a la función
+        success : function(json) {
+            $('<h1/>').text(json.title).appendTo('body');
+            $('<div class="content"/>').html(json.html).appendTo('body');
+            console.log(json)
+        },
+    
+        // código a ejecutar si la petición falla;
+        // son pasados como argumentos a la función
+        // el objeto de la petición en crudo y código de estatus de la petición
+        error : function(response) {
+            alert('Disculpe, existió un problema');
+            console.log(response)
+        },
+    
+        // código a ejecutar sin importar si la petición falló o no
+        complete : function(xhr, status) {
+            alert('Petición realizada');
+        }
+    });
+ */
     console.log(getDataLogin);
 });
 
@@ -147,7 +162,7 @@ $("#regenerate-submit").on("click", function (e) {
     };
     getDataRegenerate = new DataRegister(
         regeneratePassword1,
-        tokennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+        sessionStorage.token
     );
 
 

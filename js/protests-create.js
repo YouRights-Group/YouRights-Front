@@ -512,6 +512,7 @@ function deleteAllLine() {
 // -----------  POST <- ----------------  //
 
 const protestsCreate = document.getElementById('form-protests-create');
+console.log(sessionStorage)
 
 protestsCreate.addEventListener('submit', function (e) {
     e.preventDefault();
