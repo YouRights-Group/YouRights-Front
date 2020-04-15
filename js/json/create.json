@@ -4,13 +4,11 @@
   "countryProtest": "España",
   "dateProtest": "24-02-2020",
   "defenseSectorProtest": "desahucios",
-  "locationsProtest": [
-    {
-      "latitude": 40.4272263,
-      "longitude": -3.9268272,
-      "pointNumber": 1
-    }
-  ],
+  "locationsProtest": [{
+    "latitude": 40.4272263,
+    "longitude": -3.9268272,
+    "pointNumber": 1
+  }],
   "monthProtest": "FEBRUARY",
   "nameProtest": "Prueba protesta 2",
   "promotedByProtest": "SA",
@@ -25,8 +23,7 @@
   "countryProtest": " España",
   "dateProtest": "16-02-2020",
   "defenseSectorProtest": "educacion",
-  "locationsProtest": [
-    {
+  "locationsProtest": [{
       "latitude": 40.432162874308304,
       "longitude": -3.705120575671339,
       "pointNumber": 0
@@ -69,8 +66,7 @@
   "countryProtest": " España",
   "dateProtest": "16-02-2020",
   "defenseSectorProtest": "educacion",
-  "locationsProtest": [
-    {
+  "locationsProtest": [{
       "latitude": 40.43529874294453,
       "longitude": -3.7185101630736828,
       "pointNumber": 0
@@ -107,15 +103,13 @@
   "protestType": "manifestacion",
   "timeProtest": "11:40",
   "userType": "persona fisica"
-},
-{
+}, {
   "areaProtest": "Madrid",
   "cityProtest": "Madrid",
   "countryProtest": " España",
   "dateProtest": "17-02-2020",
   "defenseSectorProtest": "corrupcion",
-  "locationsProtest": [
-    {
+  "locationsProtest": [{
       "latitude": 40.43582137349912,
       "longitude": -3.707867157702589,
       "pointNumber": 0
@@ -152,4 +146,70 @@
   "protestType": "MANIFESTACION",
   "timeProtest": "18:10",
   "userType": "FISICA"
+}
+
+{
+  "areaProtest": "Alcorcon",
+  "cityProtest": "Madrid",
+  "countryProtest": "España",
+  "dateProtest": "2020-01-09T11:11:13.976Z",
+  "defenseSectorProtest": "corrupcion",
+  "document": "aaaaaaaaaaaaaaaaaaaaaaa",
+  "id": 0,
+  "locationsProtest": [{
+      "latitude": 40.43660531171412,
+      "longitude": -3.7130169990111828,
+      "pointNumber": 0
+    },
+    {
+      "latitude": 40.43242420228032,
+      "longitude": -3.7116437079955578,
+      "pointNumber": 1
+    },
+    {
+      "latitude": 40.424061203462635,
+      "longitude": -3.7109570624877453,
+      "pointNumber": 0
+    },
+    {
+      "latitude": 40.424061203462635,
+      "longitude": -3.7013440253783703,
+      "pointNumber": 0
+    }
+  ],
+  "monthProtest": "Enero",
+  "nameProtest": "Primera",
+  "promotedByProtest": "Fundación 1",
+  "protestType": "MANIFESTACION",
+  "timeProtest": "2020-01-09T11:11:13.976Z",
+  "userType": "FISICA"
+} {
+  "areaProtest": "Madrid",
+  "cityProtest": "Madrid",
+  "countryProtest": " España",
+  "dateProtest": "07-02-2020",
+  "defenseSectorProtest": "economia",
+  "locationsProtest": [{
+    "latitude": 40.43124821840872,
+    "longitude": -3.6917309882689953,
+    "pointNumber": 0
+  }, {
+    "latitude": 40.29312338005705,
+    "longitude": -3.7466626288939953,
+    "pointNumber": 1
+  }, {
+    "latitude": 40.314069575941296,
+    "longitude": -3.6148266913939953,
+    "pointNumber": 2
+  }, {
+    "latitude": 40.4228850733532,
+    "longitude": -3.5104565742064953,
+    "pointNumber": 3
+  }],
+  "monthProtest": "Febrero",
+  "nameProtest": "feliz",
+  "promotedByProtest": "partido x",
+  "protestType": "MANIFESTACION",
+  "timeProtest": "13:10",
+  "userType": "ORGANIZACION"
 }

@@ -1,360 +1,392 @@
 <!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Dependencias CSS -->
     <link rel="stylesheet" href="dependencias/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/fontawesome-all.css">
+    <link rel="stylesheet" href="dependencias/font-awesome/all.min.css">
 
     <!-- Nuestros CSS -->
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/style-maps-logo.css">
 
-    <title>Payment gateway</title>
-</head>
-
-<body>
-    <div class="row mx-auto mt-5 border border-info rounded" style="max-width: 40rem;">
-        <div class="row mx-auto w-100">
-            <div class="col-md-9 text-center pt-5 pl-5">
-                <p class="h1">Pasarela de donación</p>
-            </div>
-            <div class="col-md-3">
-                <a class="btn mx-auto p-0" href="index.html">
-                    <svg class="btn mx-auto" href="index.html" width="100pt" height="100pt" viewBox="-2 0 190 250"
-                        version="1.1">
-                        <g id="surface1">
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 155.644059 302.182469 C 168.975652 350.027589 205.536336 387.912093 252.869366 402.984423 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 342.129667 402.984423 C 389.462697 387.912093 426.023382 350.027589 439.354974 302.182469 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 444.77379 262.615962 C 444.77379 181.288457 378.847041 115.335516 297.499517 115.335516 C 216.151993 115.335516 150.225243 181.288457 150.225243 262.615962 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 150.225243 262.615962 C 150.225243 267.701395 151.021744 272.760546 152.523343 277.609447 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 152.523343 277.609447 C 152.431942 285.9012 153.476533 294.166671 155.644059 302.182469 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 271.54143 346.308784 C 288.803296 348.095913 306.195737 348.095913 323.457603 346.308784 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 442.47569 277.609447 C 444.003404 272.760546 444.77379 267.701395 444.77379 262.615962 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 439.354974 302.182469 C 441.522501 294.179811 442.593206 285.9012 442.47569 277.609447 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 297.499517 657.715992 L 297.499517 726.441611 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 297.499517 657.715992 L 595.06432 485.941369 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 595.06432 485.941369 L 595.06432 554.666987 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 297.499517 726.441611 L 595.06432 554.666987 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M -0.0522295 485.941369 L -0.0522295 554.666987 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M -0.0522295 485.941369 L 297.499517 657.715992 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M -0.0522295 554.666987 L 297.499517 726.441611 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 252.869366 528.898166 L 297.499517 554.666987 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 297.499517 554.666987 L 342.129667 528.898166 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 416.517604 382.892364 L 396.722604 371.446854 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 416.517604 434.403726 L 461.147754 460.172547 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 461.147754 460.172547 L 505.790962 434.403726 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 595.06432 485.941369 L 505.790962 434.403726 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 89.208071 434.403726 L -0.0522295 485.941369 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 89.208071 434.403726 L 133.851279 460.172547 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 133.851279 460.172547 L 178.48143 434.403726 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 198.276429 371.446854 L 178.48143 382.892364 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 297.499517 382.852942 L 342.129667 357.08412 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 252.869366 357.08412 L 297.499517 382.852942 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 271.54143 346.308784 L 252.869366 357.08412 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 342.129667 357.08412 L 323.457603 346.308784 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 252.869366 357.08412 L 252.869366 528.898166 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 297.499517 382.852942 L 297.499517 554.666987 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 342.129667 357.08412 L 342.129667 528.898166 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 461.147754 288.384783 L 461.147754 460.172547 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 416.517604 349.357416 L 416.517604 434.403726 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 442.47569 277.609447 L 461.147754 288.384783 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 461.147754 288.384783 L 505.790962 262.615962 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 461.147754 236.84714 L 443.92506 246.794615 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 505.790962 262.615962 L 461.147754 236.84714 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 505.790962 262.615962 L 505.790962 434.403726 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 89.208071 262.615962 L 133.851279 288.384783 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 151.073973 246.794615 L 133.851279 236.84714 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 133.851279 288.384783 L 152.523343 277.609447 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 133.851279 236.84714 L 89.208071 262.615962 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 133.851279 288.384783 L 133.851279 460.172547 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 89.208071 262.615962 L 89.208071 434.403726 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                            <path
-                                style="fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-                                d="M 178.48143 349.357416 L 178.48143 434.403726 "
-                                transform="matrix(0.29916,0,0,0.297265,0,0)" />
-                        </g>
-                    </svg>
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="row bg-white">
+        <div class="col position-absolute w-100 px-0" id="nav-main" style="margin-left:15px; z-index: 1">
+            <nav class="navbar navbar-light navbar-expand-xl bg-transparent justify-content-center w-75 mx-auto ftco-navbar-light" id="nav1">
+                <a href="index.html" class="navbar-brand d-flex mx-0 pb-0" id="nav-page-index">
+                    <div class="logo-nav" style="margin-top: -5px">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30pt" height="34pt" viewBox="0 0 120 169" version="1.1">
+                            <g id="surface1">
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 155.645182 302.18505 C 168.970703 350.02242 205.538411 387.914756 252.875 402.978273 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 342.125 402.978273 C 389.461589 387.914756 426.029297 350.02242 439.354818 302.18505 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 444.777995 262.61899 C 444.777995 181.287676 378.847656 115.331268 297.5 115.331268 C 216.152344 115.331268 150.222005 181.287676 150.222005 262.61899 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 150.222005 262.61899 C 150.222005 267.698548 151.016113 272.758645 152.526855 277.60466 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 152.526855 277.60466 C 152.430013 285.895433 153.475911 294.166744 155.645182 302.18505 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 271.546224 346.305196 C 288.803548 348.095692 306.196452 348.095692 323.453776 346.305196 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 442.473145 277.60466 C 444.003255 272.758645 444.777995 267.698548 444.777995 262.61899 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 439.354818 302.18505 C 441.524089 294.186206 442.589355 285.895433 442.473145 277.60466 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 297.5 657.71519 L 297.5 726.435189 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 297.5 657.71519 L 595.058105 485.944388 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 595.058105 485.944388 L 595.058105 554.664386 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 297.5 726.435189 L 595.058105 554.664386 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M -0.0581055 485.944388 L -0.0581055 554.664386 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M -0.0581055 485.944388 L 297.5 657.71519 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M -0.0581055 554.664386 L 297.5 726.435189 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 252.875 528.89682 L 297.5 554.664386 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 297.5 554.664386 L 342.125 528.89682 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 416.519368 382.893584 L 396.724772 371.449982 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 416.519368 434.409255 L 461.144368 460.176821 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 461.144368 460.176821 L 505.788737 434.409255 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 595.058105 485.944388 L 505.788737 434.409255 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 89.211263 434.409255 L -0.0581055 485.944388 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 89.211263 434.409255 L 133.855632 460.176821 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 133.855632 460.176821 L 178.480632 434.409255 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 198.275228 371.449982 L 178.480632 382.893584 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 297.5 382.85466 L 342.125 357.087093 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 252.875 357.087093 L 297.5 382.85466 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 271.546224 346.305196 L 252.875 357.087093 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 342.125 357.087093 L 323.453776 346.305196 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 252.875 357.087093 L 252.875 528.89682 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 297.5 382.85466 L 297.5 554.664386 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 342.125 357.087093 L 342.125 528.89682 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 461.144368 288.386557 L 461.144368 460.176821 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 416.519368 349.360716 L 416.519368 434.409255 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 442.473145 277.60466 L 461.144368 288.386557 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 461.144368 288.386557 L 505.788737 262.61899 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 461.144368 236.851424 L 443.925781 246.796459 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 505.788737 262.61899 L 461.144368 236.851424 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 505.788737 262.61899 L 505.788737 434.409255 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 89.211263 262.61899 L 133.855632 288.386557 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 151.074219 246.796459 L 133.855632 236.851424 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 133.855632 288.386557 L 152.526855 277.60466 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 133.855632 236.851424 L 89.211263 262.61899 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 133.855632 288.386557 L 133.855632 460.176821 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 89.211263 262.61899 L 89.211263 434.409255 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            <path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:20;" d="M 178.480632 349.360716 L 178.480632 434.409255 " transform="matrix(0.201681,0,0,0.200713,0,0)"/>
+                            </g>
+                            </svg>
+                             
+                    </div>
+                    TuDerecho
                 </a>
-            </div>
-        </div>
-        <div class="row w-75 bg-info mx-auto" style="height: 2px;"></div>
-        <div class="col-md-10 col-10 mx-auto mt-5">
-            <div class="row ml-3">
-                <p>Esta página esta diseñada para que se puedan hacer donaciones de una
-                    forma sencilla y eficaz.</p>
-                <p>Como sabe, desde TuDerecho nos estamos esforzando mucho para que la
-                    confianza y la transparencia sea nuestro pilar fundamental.</p>
-                <p>Según el botón que usted ha tocado esta donación se hará para que la
-                    <span id="payment-type-protest"><strong>PROTESTA</strong></span>
-                    con el nombre de <span id="payment-name-protest"><strong>NOMBRE</strong></span>
-                    en defensa de <span id="payment-defence-protest"><strong>DEFENCE</strong></span>
-                    pueda tener la mayoría de los servicios que prestamos y que así, se pueda hacer
-                    una mayor y mejor comunicación.</p>
-                <p id="payment-notice-company">Esta donación será para TuDerecho (la empresa).
-                    Este dinero será destinado para mejorar esta herramienta y poder ofrecer muchos
-                    más servicios que tenemos pensado.</p>
-                <p>Preferimos la forma de pago con tarjeta ya que el proceso de "Concepto" esta 
-                    automatizado, esto nos será de más ayuda a la hora de poder hacer la página de 
-                    transparencia en la que detallaremos todas las transferencias.</p>
-            </div>
-        </div>
-        <div class="col m-5">
-            <div class="accordion" id="accordionExample">
-                <div class="card">
-                    <div class="card-header" id="headingOne">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-                                aria-expanded="true" aria-controls="collapseOne">
-                                Transferencia normal
-                            </button>
-                        </h5>
-                    </div>
-
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                        data-parent="#accordionExample">
-                        <div class="card-body">
-                            La siguiente cuenta tiene como titular a Álvaro López García, fundador de YouRights.
-                            <br><br>
-                            <strong>IBAN: </strong> ES96 0073 0100 5205 9139 5025
-                            <br>
-                            <strong>SWIFT/BIC: </strong> OPENESMM
-                            <br><br>
-                            En las observaciones deben poner "Donación de (Nombre del donante),
-                            (Protesta, Manifestación o Huelga), (Nombre de la protesta), (Defensa de la protesta,
-                            Ej: Sanidad, Corrupción, etc.).
-                            <br><br>
-                            En el caso de no ser una donacion para una protesta, si no
-                            para esta herramienta, ponga lo siguiente: "Donación de (Nombre del donante), TuDerecho"
-                            <br><br>
-                            Gracias por aportar tu granito de arena.
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header" id="headingTwo">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                    data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Pago con tarjeta
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                            data-parent="#accordionExample">
-                            <div class="card-body">
-                                <form id="payment-form">
-                                    <div class="form-group row">
-                                        <label for="staticEmail" class="col-sm-4 col-form-label">Nombre: </label>
-                                        <div class="col-sm-8">
-                                            <input type="name" class="form-control" id="inputName"
-                                                placeholder="Nombre del dueño de la tarjeta">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="inputPassword" class="col-sm-4 col-form-label">Nº tarjeta: </label>
-                                        <div class="col-sm-8">
-                                            <input type="password" class="form-control" id="inputPassword"
-                                                placeholder="Nº tarjeta">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <div class="form-group row">
-                                                <label for="inputPassword" class="col-sm-6 col-form-label">Expiración:
-                                                </label>
-                                                <div class="col-sm-6 p-0">
-                                                    <input type="password" class="form-control" id="inputPassword"
-                                                        placeholder="MM / YYYY">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="form-group row">
-                                                <label for="inputPassword" class="col-sm-6 col-form-label">CVC/CVV:
-                                                </label>
-                                                <div class="col-sm-6 p-0">
-                                                    <input type="password" class="form-control" id="inputPassword"
-                                                        placeholder="123">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <div class="form-group row">
-                                                <label for="inputPassword" class="col-sm-6 col-form-label">Cantidad:
-                                                </label>
-                                                <div class="col-sm-6 p-0">
-                                                    <input type="password" class="form-control" id="inputPassword"
-                                                        placeholder="5€">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <button type="button" class="btn btn-primary w-100">Aceptar
-                                                donaciononar</button>
-                                        </div>
-                                    </div>
-                                </form>
+                <button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse w-100 pl-3 pb-2 pr-3 pt-1 bg-white border rounded" id="collapsingNavbar3">
+                    <!-- PARA METER LINKS EN EL CENTRO
+                    <ul class="navbar-nav w-100 justify-content-center">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="//codeply.com">Codeply</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                    </ul>
+                    -->
+                    <ul class="nav navbar-nav w-100 justify-content-end" style="width: 100px">
+                        <li class="nav-item active mr-3">
+                            <a class="nav-link" href="page-main.html">Mapa virtual <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item dropdown mr-3">
+                            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Servicios
+                            </a>
+                            <div class="dropdown-menu mt-1" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="protests.html">Detalles de protestas</a>
+                                <a class="dropdown-item" href="event-planner.html">Organizador de eventos</a>
+                                <a class="dropdown-item" href="collaborations.html">Te ayudamos</a>
                             </div>
+                        </li>
+                        <li class="nav-item dropdown mr-3">
+                            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Nuestra empresa
+                            </a>
+                            <div class="dropdown-menu mt-1" aria-labelledby="navbarDropdownMenuLink2">
+                                <a class="dropdown-item" href="about-as.html">Sobre nosotros</a>
+                                <a class="dropdown-item" href="transparency.html">Transparencia & Donaciones</a>
+                                <a class="dropdown-item" href="legal-info.html">Información legal</a>
+                            </div>
+                        </li>
+                        <li class="nav-item mr-3 mr-3">
+                            <a class="nav-link active" href="contact.html">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-outline-info" href="login-sing-up.html" role="button">Entrada</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="row w-100 mx-auto">
+            <img class="card-img" src="./img/Prototipo/Imagen 12.jpg" alt="Card image">
+        </div>
+        <div class="modal fade" id="modal-notice" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Tenga lo en cuenta</h5>
+                    </div>
+                    <div class="modal-body">
+                        Esta web acaba de ser sacada a internet, estamos trabajando para que todo lo que puedas ver este correctamente.
+                        <br><br>
+                        Esto es una iniciativa por unos programadores para que esta herramienta sea del ciudadano. 
+                        <br>
+                        Le recomendamos que lea el apartado "Sobre nosotros" para que pueda tener una opinión más objetiva sobres nosotros.
+                        <br><br>
+                        Te pedimos paciencia en el caso de que haya algún fallo y si es posible que nos lo comunique en el correo info@tuderecho.es
+                        <br><br>
+                        Necesitamos tu apoyo para que podamos hacer esta herramienta.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="position-relative" style="margin-top: -100px; padding-bottom: 100px">
+            <div class="row px-5">
+                <div class="col-4 mx-auto" style="max-width: 22rem;">
+                    <button type="button" class="btn p-0">
+                        <div class="card rounded m-0">
+                            <img class="img-fluid rounded" src="img/Prototipo/Fondo 1.jpg" alt="Card image cap">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Manifestación</h5>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+                
+            </div>
+        </div>
+        -->
+        <div class="row pl-2 mt-5 w-100 mx-auto">
+            <div class="col text-center">
+                <h1><strong>Plataforma TuDerecho</strong></h1>
+                <p class="h5"><small class="text-muted"><em>Nos hemos esforzado para que tengas una plataforma adecuada a tus derechos. Te invitamos a entrar para que puedas obserbar la gran cantidad de cosas que estamos haciendo para que España y los demás paises del mundo puedan convivir de la manera mas adecuada posible.</em></small></p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row align-items-center mx-auto" style="margin-top: 150px">
+                <div class="col-md-6" data-aos="fade-up">
+                    <h1 class="mb-4"><strong>Protesta por tus derechos</strong></h1>
+                    <h6 class="mb-5">
+                        Desde TuDerecho podrás ver, apuntarte y organizar cualquier tipo de 
+                        protesta que quieras hacer en cualquier lugar de tu país. Nosotros te 
+                        damos la herramienta para que puedas observar todas las manifestaciones 
+                        de tu región o las de cualquier otra zona.
+                        <br><br><strong> Siempre ha habido más de las que te cuentan.</strong><br><br>
+                        Desde esta plataforma también te ofrecemos servicios de organización de 
+                        eventos.</h6>
+                    <h3 class="mt--2 mb-4 display-5"><strong>Entra y descubre todo lo que hay.</strong></h3>
+                </div>  
+                <div class="col-md-6" data-aos="fade-up" style="height: 80%">
+                    <img src="img/Prototipo/Imagen 3.jpg" alt="Image" class="img-fluid rounded">
+                </div>              
+            </div>
+            <div class="row justify-content-md-center mx-auto mt-5">
+                <div class="col-md-3 bg-light m-3 pb-4" style="max-width: 24rem;">
+                    <div class="container">
+                        <i class="fa fa-eye fa-lg mt-4 font-5xl"></i>
+                        <div class="mt-4">
+                            <h5 class="card-title">Mira las protestas</h5>
+                            <h6 class="card-subtitle text-muted">Podrás saber donde hay una protesta y en defensa de que es. Filtra por lo que más te convenga y muevete.</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 bg-light m-3 pb-4" style="max-width: 24rem;">
+                    <div class="container">
+                        <i class="fa fa-list-alt fa-lg mt-4 font-5xl"></i>
+                        <div class="mt-4">
+                            <h5 class="card-title">Organizala tú mismo.</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Crea la protesta y publicala para que todo el mundo pueda asistir a ella. Hemos creado esta plataforma para quetodo el mundo se entere de cuantas hay, en defensa de que es y el cuando y donde se va ha producir.</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 bg-light m-3 pb-4" style="max-width: 24rem;">
+                    <div class="container">
+                        <i class="fa fa-bell fa-lg mt-4 font-5xl"></i>
+                        <div class="mt-4">
+                            <h5 class="card-title">¡¡¡Hazla grande!!!</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Ponemos a vuestra disposición la organización de los eventos tanto los escenarios y permisos necesarios para organizarla al igual que el mechindising para poderte dar ha conocerte y protestar por lo que más te importa.</h6>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="col text-center" style="margin-top: 130px">
+                <h1><strong>Sobre TuDerecho</strong></h1>
+                <p class="h5"><small class="text-muted"><em>Desde TuDerecho queremos informar a todos los usuarios de cualquier cosa que sea relevante ya sea buena o mala. Por eso te invitamos ha que entres en nuestra plataforma para ver como trabajamos y que inquietudes tenemos.</em></small></p>
+            </div>
+            <div class="row mx-auto" style="margin-top: 130px">
+                <div class="col-md-4 mb-3">
+                    <div class="card border-0 bg-light">
+                        <img class="card-img-top h-50 img-fluid" src="img/Prototipo/transparencia-economica.jpg" alt="Card image cap">
+                        <div class="card-body" style="height: 420px">
+                            <h4 class="card-title">Transparencia económica</h4>
+                            <p class="card-text">Queremos transmitir confianza a nuestros usuarios, 
+                                por ello pensamos que podemos empezar mostrando nuestras cuentas.
+                                <br>
+                                La transparencia es una de las formulas que creemos todos los usuarios, 
+                                trabajadores y sobre todo los ciudadanos deben saber si TuDerecho va a trabajar 
+                                por sus derechos, por eso te invitamos a que te informes a cerca de nosotros.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card border-0 bg-light">
+                        <img class="card-img-top h-50 img-fluid" src="img/Prototipo/info legal.jpg" alt="Card image cap">
+                        <div class="card-body" style="height: 420px">
+                            <h4 class="card-title">Información legal</h4>
+                            <p class="card-text">Estamos trabajando duro para que la información legal de 
+                                esta empresa este actualizada y sea lo mas explicito posible. 
+                                <br>
+                                Tenemos grandes planes para poder ayudar a todos los ciudadanos de la mejor forma posible, 
+                                por eso trabajamos codo con codo con los abogados
+                                ya que son una parte esencial de esta empresa.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card border-0 bg-light">
+                        <img class="card-img-top img-fluid" style="height: 165px" style="width: 100%;height: auto;" src="img/Prototipo/objetivos-generales.jpg" alt="Card image cap">
+                        <div class="card-body" style="height: 420px">
+                            <h4 class="card-title">Finalidad TuDerecho</h4>
+                            <p class="card-text">Usaremos la tecnología más puntera para desarrollar una herramienta 
+                                que dará los servicios necesarios para que los ciudadanos podamos convivir
+                                adecuadamente.
+                                <br>
+                                Sabemos que los privilegios de algunos son los derechos de otros, por ello
+                                queremos equilibrar la balanza dando distintas posibilidades a los usuarios.
+                                <br>
+                                TuDerecho no solo dará comunicación de las protestas, dará mucho más.                                   
+                            </p>
+                        </div>
+                    </img>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-dark mt-6">
+        <div class="container">
+            <div class="row pt-5">
+                <div class="col-md-3 pt-3 text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120pt" height="120pt" viewBox="0 0 120 120" version="1.1">
+                        <g id="surface1">
+                        <path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 3.769531 33.816406 C 10.953125 33.347656 17.386719 37.34375 24.417969 35.53125 C 25.558594 35.230469 31.445312 38.855469 26.171875 42.78125 C 23.75 44.578125 23.269531 46.855469 22.761719 49.835938 C 21.925781 54.730469 25.539062 61.703125 17.367188 64.027344 C 15.765625 64.484375 17.292969 65.816406 17.707031 66.613281 C 19.601562 70.207031 19.335938 73.527344 19.074219 77.667969 C 18.769531 82.546875 17.679688 86.589844 16.113281 90.929688 C 15.578125 92.441406 15.496094 95.742188 17.976562 95.769531 C 25.207031 95.839844 26.695312 101.386719 29.445312 106.1875 C 31.335938 109.484375 34.480469 113.667969 38.539062 109.617188 C 44.28125 103.878906 50.65625 100.433594 58.503906 102.347656 C 71.703125 105.570312 75.78125 91.269531 85.914062 88.925781 C 83.113281 80.753906 99.792969 76.28125 90.035156 66.496094 C 88.023438 64.472656 90.269531 60.949219 91.886719 58.792969 C 97.1875 51.6875 99.238281 41.652344 110.335938 39.664062 C 113.433594 39.109375 115.867188 35.230469 118.78125 33.113281 C 121.652344 31.015625 121.21875 28.136719 120.621094 25.496094 C 119.769531 21.613281 116.925781 23.910156 114.675781 23.867188 C 110.101562 23.8125 105.308594 24.921875 101.292969 21.121094 C 100.1875 20.0625 97.199219 19.695312 95.855469 20.433594 C 88.78125 24.355469 82.824219 20 77.015625 17.652344 C 74.25 16.53125 71.792969 15.632812 68.792969 15.046875 C 57.246094 12.769531 45.519531 14.46875 33.851562 13.222656 C 24.695312 12.238281 15.65625 9.34375 6.164062 9.828125 C 0.527344 10.101562 0.0117188 12.050781 0 16.714844 C -0.0117188 22.988281 5.890625 27.667969 3.769531 33.816406 Z M 3.769531 33.816406 "/>
+                        </g>
+                    </svg>
+                </div>
+                <div class="col-md-3 text-center">
+                    <h4 class="footer-heading text-white mb-3 pt-4">Servicios</h4>
+                    <ul class="list-unstyled">
+                        <li><a class="text-secondary" href="protests.html">Detalles de protestas</a></li>
+                        <li><a class="text-secondary" href="event-planner.html">Organizador de eventos</a></li>
+                        <li><a class="text-secondary" href="collaborations.html">Te ayudamos</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 text-center">
+                    <h4 class="footer-heading text-white mb-3 pt-4">Empresa</h4>
+                    <ul class="list-unstyled">
+                        <li><a class="text-secondary" href="about-as.html">Sobre nosotros</a></li>
+                        <li><a class="text-secondary" href="transparency.html">Transparencia</a></li>
+                        <li><a class="text-secondary" href="legal-info.html">Información legal</a></li>
+                        <li><a class="text-secondary" href="contact.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 text-center" >
+                    <div class="logo-footer">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80pt" height="113pt" viewBox="0 0 80 113" version="1.1">
+                            <g id="surface1">
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 155.635498 302.186256 C 168.970703 350.037749 205.548096 387.934735 252.875 402.982923 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 342.125 402.982923 C 389.451904 387.934735 426.029297 350.037749 439.364502 302.186256 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 444.768311 262.630185 C 444.768311 181.276825 378.847656 115.350041 297.5 115.350041 C 216.152344 115.350041 150.231689 181.276825 150.231689 262.630185 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 150.231689 262.630185 C 150.231689 267.694759 151.016113 272.759334 152.526855 277.591054 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 152.526855 277.591054 C 152.439697 285.915584 153.485596 294.1819 155.635498 302.186256 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 271.555908 346.312085 C 288.813232 348.087597 306.186768 348.087597 323.444092 346.312085 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 442.473145 277.591054 C 443.983887 272.759334 444.768311 267.694759 444.768311 262.630185 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 439.364502 302.186256 C 441.543457 294.1819 442.589355 285.915584 442.473145 277.591054 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 297.5 657.72518 L 297.5 726.446211 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 297.5 657.72518 L 595.058105 485.937154 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 595.058105 485.937154 L 595.058105 554.658186 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 297.5 726.446211 L 595.058105 554.658186 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M -0.0581055 485.937154 L -0.0581055 554.658186 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M -0.0581055 485.937154 L 297.5 657.72518 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M -0.0581055 554.658186 L 297.5 726.446211 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 252.875 528.898714 L 297.5 554.658186 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 297.5 554.658186 L 342.125 528.898714 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 416.529053 382.899267 L 396.715088 371.460315 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 416.529053 434.418211 L 461.154053 460.177683 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 461.154053 460.177683 L 505.779053 434.418211 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 595.058105 485.937154 L 505.779053 434.418211 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 89.220947 434.418211 L -0.0581055 485.937154 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 89.220947 434.418211 L 133.845947 460.177683 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 133.845947 460.177683 L 178.470947 434.418211 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 198.284912 371.460315 L 178.470947 382.899267 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 297.5 382.87016 L 342.125 357.081582 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 252.875 357.081582 L 297.5 382.87016 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 271.555908 346.312085 L 252.875 357.081582 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 342.125 357.081582 L 323.444092 346.312085 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 252.875 357.081582 L 252.875 528.898714 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 297.5 382.87016 L 297.5 554.658186 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 342.125 357.081582 L 342.125 528.898714 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 461.154053 288.389657 L 461.154053 460.177683 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 416.529053 349.368294 L 416.529053 434.418211 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 442.473145 277.591054 L 461.154053 288.389657 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 461.154053 288.389657 L 505.779053 262.630185 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 461.154053 236.841607 L 443.925781 246.796114 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 505.779053 262.630185 L 461.154053 236.841607 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 505.779053 262.630185 L 505.779053 434.418211 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 89.220947 262.630185 L 133.845947 288.389657 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 151.074219 246.796114 L 133.845947 236.841607 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 133.845947 288.389657 L 152.526855 277.591054 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 133.845947 236.841607 L 89.220947 262.630185 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 133.845947 288.389657 L 133.845947 460.177683 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 89.220947 262.630185 L 89.220947 434.418211 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                                <path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:0.8;stroke-miterlimit:20;" d="M 178.470947 349.368294 L 178.470947 434.418211 " transform="matrix(0.134454,0,0,0.134204,0,0)"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <p class="h5 text-center"><small class="text-muted"><em>Difúndelo<br>¡¡¡Que lo conozca todo el mundo!!!</em></small></p>
+                </div>
+            </div>
+            <div class="w-100 h-line bg-info mt-5"></div>
+            <div class="clearfix pt-5 pb-5 w-100">
+                <button type="button" class="btn text-secondary" data-toggle="modal" data-target="#exampleModal">
+                Español
+                </button>
+                <div class="float-right">
+                    <a href="#" class="pl-0 pr-3"><i class="fab fa-facebook-square fa-2x text-secondary"></i></a>
+                    <a href="#" class="pl-3 pr-3"><i class="fab fa-twitter fa-2x text-secondary"></i></a>
+                    <a href="#" class="pl-3 pr-3"><i class="fab fa-instagram fa-2x text-secondary"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="dependencias/jquery/jquery.js"></script>
+    <script src="dependencias/popper/popper.js"></script>
+    <script src="dependencias/bootstrap/js/bootstrap.min.js"></script>
+    
+    <!-- Otra dependencia js -->
+    <script defer src="dependencias/font-awesome/all.min.js"></script>
 
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="dependencias/jquery/jquery.js"></script>
-        <script src="dependencias/popper.js"></script>
-        <script src="dependencias/bootstrap/js/bootstrap.min.js"></script>
-        <script src="dependencias/payment/stripe.js"></script>
+    <!-- Nuestros js -->
+    <script src="js/index.js"></script>
 
-
-        <!-- Nuestros js -->
-        <script src="js/index.js"></script>
-        <script src="js/payment.js"></script>
-
-</body>
-
+  </body>
 </html>

@@ -1,7 +1,11 @@
 // data-table      https://www.youtube.com/watch?v=70j_1YRfblM
 // https://www.youtube.com/watch?v=e-HA2YQUoi0
 // fetch con data-table  https://datatables.net/forums/discussion/54076/use-fetch-api-instead-of-ajax-call-in-datatable
-$(document).ready(function() {
+// https://eldesvandejose.com/2016/12/05/el-plugin-datatables-xii-datos-dependientes/
+// https://es.stackoverflow.com/questions/105468/c%C3%B3mo-recorrer-una-table-que-tiene-paginaci%C3%B3n
+// https://datatables.net/forums/discussion/44058/datatable-ajax-json
+
+$(document).ready(function () {
 
     var countryFilter = [];
     var cityFilter = []
@@ -10,28 +14,28 @@ $(document).ready(function() {
     var numberPage = [];
     var protestId = [];
 
-    $('#country-protest-select').change(function(){
+    $('#country-protest-select').change(function () {
         countryFilter = $(this).val();
         console.log(countryFilter);
     });
-    $('#city-protest-select').change(function(){
+    $('#city-protest-select').change(function () {
         cityFilter = $(this).val();
         console.log(cityFilter);
     });
-    $('#type-protest-select').change(function(){
+    $('#type-protest-select').change(function () {
         typeProtestFilter = $(this).val();
         console.log(typeProtestFilter);
     });
-    $('#filter-text').change(function(){
+    $('#filter-text').change(function () {
         textFilter = $(this).val();
         console.log(textFilter);
     });
     //  No funcionaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
     $('.pagination').click(function () {
-        numberPage = $('.pagination h1').getAttribute("class"); 
+        numberPage = $('.pagination h1').getAttribute("class");
         console.log(numberPage);
     });
-        
+
 
     $('#btn-insert-protest').click(function () {
 
@@ -39,7 +43,7 @@ $(document).ready(function() {
             sessionStorage.setItem('bntInsertProtest', 'click');
             console.log(sessionStorage);
             location.href = "login-sing-up.html";
-        }else {
+        } else {
             location.href = "insert-protest.html";
         }
     });
@@ -52,6 +56,17 @@ $(document).ready(function() {
         window.location.href = "login-sing-up.html";
     });
 
+
+    // Get para pedir información del usuario y poder saber cual puede modificar o eliminar
+    var userAllId = []
+    
+    fetch('url')
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data)
+            
+        })
+
     var table = $('#list-protest').DataTable({
         // processing: true,
         // serverSide: true,
@@ -59,8 +74,8 @@ $(document).ready(function() {
         // dom: '<"top"i>rt<"botton"lp><"clear">',
         searching: false,
         info: false,
-        pageLength : 15,
-        pagingType: "simple_numbers",
+        pageLength: 10,
+        pagingType: "full_numbers",
         dom: 'Bfrtip',
         ajax: {
             url: "http://prueba-env.us-east-2.elasticbeanstalk.com/protests/list/1",
@@ -70,7 +85,7 @@ $(document).ready(function() {
                 // 'Authorization': 'Bearer '
                 //    + sessionStorage.getItem("token")
             },
-            body:{
+            body: {
 
             },
             error: function (jQXHR) {
@@ -78,81 +93,85 @@ $(document).ready(function() {
                 // redirect the user to the login page
                 if (jQXHR.status == "401") {
                     $('#errorModal').modal('show');
-                }
-                else {
+                } else {
                     $('#divErrorText').text(jqXHR.responseText);
                     $('#divError').show('fade');
                 }
             }
         },
-        columns: [
-            {
+        columns: [{
                 data: "name",
-                render: function (data, type, name){
+                render: function (data, type, name) {
                     return `<a id="${name.id}" class="protest-id" href='protest-id.html'>${name.nameProtest}</a>`
                 },
                 visible: true,
             },
             {
                 data: "whoDefends",
-                render: function (data, type, whoDefends){
+                render: function (data, type, whoDefends) {
                     return "<a>" + whoDefends.defenseSectorProtest + "</a"
                 },
             },
             {
                 data: "promotedBy",
-                render: function (data, type, promotedBy){
+                render: function (data, type, promotedBy) {
                     return "<a>" + promotedBy.promotedByProtest + "</a"
                 },
             },
             {
                 data: "city",
-                render: function (data, type, city){
+                render: function (data, type, city) {
                     return "<a>" + city.cityProtest + "</a"
                 },
             },
             {
                 data: "date",
-                render: function (data, type, date){
+                render: function (data, type, date) {
                     return "<a>" + date.dateProtest + "</a"
                 },
             },
             {
                 data: "id",
-                render: function (deleteId){
-                    return `<button id="btn-start" onclick="delete-protest" class='btn btn-link js-eliminar' role="button" data-name-id='${deleteId}'>Eliminar</button>`
+                render: function (deleteId) {
+                    return `
+                    <div class="col text-center">
+                            <button id="btn-start" onclick="delete-protest" class='btn btn-link bg-danger p-0 js-eliminar' style="height: 25px; width: 25px" role="button" data-name-id='${deleteId}'>
+                                <i class="fas fa-times text-white"></i>
+                            </button>
+                    </div>
+                    `
                 },
             },
         ]
-        
-    });
-/*
-    $('#country-protest-select').change(function(){
-        table.column(3).search($(this).val())
-        .draw();
-        console.log("hola");
-    }); 
 
-    // filtro de los select
-    $('#city-protest-select').change(function(){
-        table.column(3).search($(this).val())
-        .draw();
-        console.log("hola");
-    });   
-    $('#filter-text').on( 'keyup', function () {
-        table.search( this.value ).draw();
-    } );
-*/
-    $('#list-protest').on('click', '.protest-id', function(){
+    });
+    /*
+        $('#country-protest-select').change(function(){
+            table.column(3).search($(this).val())
+            .draw();
+            console.log("hola");
+        }); 
+
+        // filtro de los select
+        $('#city-protest-select').change(function(){
+            table.column(3).search($(this).val())
+            .draw();
+            console.log("hola");
+        });   
+        $('#filter-text').on( 'keyup', function () {
+            table.search( this.value ).draw();
+        } );
+    */
+    $('#list-protest').on('click', '.protest-id', function () {
         var button = $(this);
         protestId = button.attr("id");
         sessionStorage.setItem("protesId", protestId);
     });
 
-    $('#list-protest').on('click', '.js-eliminar', function(){
+    $('#list-protest').on('click', '.js-eliminar', function () {
         var button = $(this);
         var deleteId = confirm("¿Esta seguro de eliminar?");
-        if (deleteId == true){
+        if (deleteId == true) {
             var root = "http://prueba-env.us-east-2.elasticbeanstalk.com/protests/delete/";
             var rootId = button.attr("data-name-id")
             var url = root += rootId;
@@ -162,10 +181,10 @@ $(document).ready(function() {
                 method: "DELETE",
                 // headers para token
                 headers: {
-                    'Authorization': 'Bearer '
-                        + sessionStorage.getItem("token")
+                    'Authorization': 'Bearer ' +
+                        sessionStorage.getItem("token")
                 },
-                success: function (){
+                success: function () {
                     console.log("Petición Exitosa")
                     button.parents("tr").remove();
                 }
