@@ -70,7 +70,7 @@ $(document).ready(function () {
         $("#div-card-deck-advertisement").removeClass("container")
         $("#div-card-deck-advertisement").addClass("col")
         // barra de navegación principal
-        $("#nav1").removeClass("w-75 justify-content-center mx-auto")
+        $("#nav1").removeClass("w-75 mx-auto")
         $("#nav1").addClass("w-100")
         $("#navbar-toggler").css("right", "0px")
         // impunts de la pantalla del login
@@ -88,6 +88,10 @@ $(document).ready(function () {
         // cajas del formulario de insert protest
         $("#form-insert-div div").removeClass("col")
         $("#form-insert-div div").addClass("col-md-4")
+        // legal info  
+        $("#icon-legal-info").addClass("d-none")
+        // transparency
+        $("#icon-transparency").addClass("d-none")
     }else if(widthScreen < 1150 ){
         // filtro del mapa principal
         $("#collapsingNavbar4").addClass("collapse")
