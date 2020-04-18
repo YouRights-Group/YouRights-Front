@@ -11,13 +11,14 @@ var bbb = sessionStorage.token;
 console.log(bbb)
 console.log(sessionStorage)
 
+/*
 // Esto implementa el catchap que debemos poner en el registro
 grecaptcha.ready(function() {
     grecaptcha.execute('6LcvuekUAAAAAMkkTSksWDcHg4eh0i6bFv7BHL6w', {action: 'homepage'}).then(function(token) {
 
     });
 });
-
+*/
 
 $("#register-submit").on("click", function (e) {
     e.preventDefault();

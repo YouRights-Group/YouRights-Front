@@ -1,3 +1,8 @@
+//  https://www.youtube.com/watch?v=Vw-RuREf_sM
+//  https://stripe.com/docs/terminal/sdk/js
+//  https://stripe.com/docs/payments/accept-a-payment#web
+
+
 // Create a Stripe client.
 var stripe = Stripe('pk_test_omVVYBt4xvf42UG7jURQIiM800OPQemJ4S');
 
@@ -30,14 +35,14 @@ var card = elements.create('cardNumber', {
     invalid: "error"
   }
 });
-var cvc = elements.create('cardExpiry', {
+var exp = elements.create('cardExpiry', {
   classes:{
     base: "form-control",
     focus: "green",
     invalid: "error"
   }
 });
-var exp = elements.create('cardCvc', {
+var cvc = elements.create('cardCvc', {
   classes:{
     base: "form-control",
     focus: "green",
@@ -89,4 +94,42 @@ function stripeTokenHandler(token) {
 
   // Submit the form
   form.submit();
+}
+
+fetchConnectionToken(),
+function fetchConnectionToken() {
+  // Your backend should call /v1/terminal/connection_tokens and return the JSON response from Stripe
+  return fetch('https://{YOUR_BACKEND_URL}/connection_token', { method: "POST" })
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      return data.secret;
+    });
+}
+var terminal = StripeTerminal.create({
+  onFetchConnectionToken: fetchConnectionToken,
+  onUnexpectedReaderDisconnect: unexpectedDisconnect,
+});
+connectReaderHandler(),
+function connectReaderHandler() {
+  var config = {simulated: true};
+  terminal.discoverReaders(config).then(function(discoverResult) {
+    if (discoverResult.error) {
+      console.log('Failed to discover: ', discoverResult.error);
+    } else if (discoverResult.discoveredReaders.length === 0) {
+      console.log('No available readers.');
+    } else {
+      // Just select the first reader here.
+      var selectedReader = discoverResult.discoveredReaders[0];
+
+      terminal.connectReader(selectedReader).then(function(connectResult) {
+        if (connectResult.error) {
+          console.log('Failed to connect: ', connectResult.error);
+        } else {
+          console.log('Connected to reader: ', connectResult.reader.label);
+        }
+      });
+    }
+  });
 }

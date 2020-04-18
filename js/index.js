@@ -101,11 +101,15 @@ $(document).ready(function () {
         // cartas de publicidad event-planner
         $("#div-card-deck-advertisement").removeClass("container")
         $("#div-card-deck-advertisement").addClass("col")
+        // barra de navegación principal
+        $("#profile-nav").removeClass("btn-group")
+        $("#profile-nav .dropdown-menu").addClass("w-50")
     } else if(widthScreen < 1200 ){
         // barra de navegación principal
         console.log("hola")
         $("#nav1").removeClass("justify-content-center")
         $("#navbar-toggler").css("right", "0px")
+        
     } else {
         $("#section-planner").removeClass("mt-5")
         $("#img-service-planner").removeClass("d-none")
@@ -126,9 +130,22 @@ $(document).ready(function () {
         // barra de navegación principal
         $("#nav1").removeClass("justify-content-center")
         $("#navbar-toggler").css("right", "0px")
+        $("#profile-nav").removeClass("btn-group")
     }
 });
-
+$(document).ready(function () {
+    console.log(sessionStorage)
+    var signOff = $("sign-off")
+    if(sessionStorage.token){
+        $("#enter-yourights").addClass("d-none")
+        $("#profile-nav").removeClass("d-none")
+    }
+    $("#sign-off").on("click", function () {
+        sessionStorage.removeItem('token');
+        window.location.href = "index.html"; 
+        console.log(sessionStorage) 
+    })
+});
 
 navOpen();
 function navOpen() {
